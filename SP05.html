@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)file:///C:/Users/tinbu/Downloads/SP05.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAMBA | 素粒子 SP05 標準模型 ― すべての粒子が一枚の表に</title>
+<style>
+  :root{--primary:#0284c7;--primary-dark:#0369a1;--primary-light:#e0f2fe;--accent:#65a30d;--danger:#ef4444;--bg:#f0f9ff;--card:#ffffff;--text:#0c4a6e;--muted:#64748b;--border:#bae6fd;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+  header{background:linear-gradient(135deg,#0c4a6e,#0284c7,#38bdf8);color:white;}
+  .header-top{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid rgba(255,255,255,0.2);}
+  .logo{font-size:1.5rem;font-weight:900;letter-spacing:2px;color:#bef264;}
+  .header-sub{font-size:0.75rem;opacity:0.85;}
+  .chapter-title-bar{padding:14px 20px;display:flex;align-items:center;gap:12px;}
+  .chapter-badge{background:#bef264;color:#1a2e05;font-weight:900;font-size:0.75rem;padding:3px 10px;border-radius:20px;}
+  .chapter-title-text{font-size:1.1rem;font-weight:700;color:white;}
+  .tab-bar{display:flex;background:white;border-bottom:3px solid var(--primary-light);overflow-x:auto;padding:0 16px;gap:4px;}
+  .tab-btn{padding:10px 16px;border:none;background:none;font-size:0.82rem;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all 0.2s;font-family:inherit;margin-bottom:-3px;}
+  .tab-btn.active{color:var(--primary);border-bottom-color:var(--primary);}
+  .tab-btn:hover{color:var(--primary);}
+  main{max-width:860px;margin:0 auto;padding:20px 16px 60px;}
+  .tab-content{display:none;}.tab-content.active{display:block;}
+  .section-card{background:var(--card);border-radius:14px;box-shadow:0 2px 12px rgba(2,132,199,0.1);margin-bottom:20px;overflow:hidden;border:1px solid #e0f2fe;}
+  .section-header{padding:13px 20px;font-weight:800;font-size:0.95rem;display:flex;align-items:center;gap:8px;}
+  .sh-blue{background:#e0f2fe;border-left:4px solid #0284c7;color:#0c4a6e;}
+  .sh-green{background:#ecfccb;border-left:4px solid #65a30d;color:#1a2e05;}
+  .sh-amber{background:#fef9c3;border-left:4px solid #ca8a04;color:#713f12;}
+  .sh-purple{background:#ede9fe;border-left:4px solid #7c3aed;color:#3b0764;}
+  .sh-red{background:#fee2e2;border-left:4px solid #ef4444;color:#7f1d1d;}
+  .sh-cosmos{background:#0369a1;border-left:4px solid #bef264;color:#bef264;}
+  .sh-teal{background:#ccfbf1;border-left:4px solid #0d9488;color:#134e4a;}
+  .sh-orange{background:#fff7ed;border-left:4px solid #f97316;color:#7c2d12;}
+  .section-body{padding:18px 20px;}
+  .text-block{font-size:0.92rem;line-height:1.9;margin-bottom:12px;color:#0c4a6e;}
+  .key-box{background:#e0f2fe;border:2px solid #7dd3fc;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .key-box .box-label{font-weight:800;color:#0369a1;font-size:0.82rem;margin-bottom:6px;}
+  .important-box{background:#ecfccb;border:2px solid #a3e635;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .important-box .box-label{font-weight:800;color:#365314;font-size:0.82rem;margin-bottom:6px;}
+  .amber-box{background:#fef9c3;border:2px solid #fde047;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .amber-box .box-label{font-weight:800;color:#713f12;font-size:0.82rem;margin-bottom:6px;}
+  .note-block{background:#f0f9ff;border-left:3px solid #38bdf8;padding:8px 12px;border-radius:0 6px 6px 0;font-size:0.87rem;margin:8px 0;line-height:1.8;color:#0c4a6e;}
+  .warn-block{background:#fefce8;border-left:3px solid #eab308;padding:8px 12px;border-radius:0 6px 6px 0;font-size:0.87rem;margin:8px 0;line-height:1.8;color:#713f12;}
+  .btn{padding:7px 16px;border-radius:6px;border:none;font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.18s;font-family:inherit;}
+  .btn-primary{background:var(--primary);color:white;}.btn-primary:hover{background:var(--primary-dark);}
+  .btn-gray{background:#94a3b8;color:white;}.btn-gray:hover{background:#64748b;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;}
+  @media(max-width:580px){.two-col{grid-template-columns:1fr;}}
+  /* フラッシュカード */
+  .fc-speed-btn{padding:5px 12px;border-radius:20px;border:2px solid var(--border);background:white;font-size:0.78rem;font-weight:700;cursor:pointer;transition:all 0.15s;font-family:inherit;color:var(--primary);}
+  .fc-speed-btn.active{background:var(--primary);color:white;border-color:var(--primary);}
+  .flashcard-wrap{perspective:1000px;width:100%;max-width:480px;margin:0 auto;height:180px;cursor:pointer;}
+  .flashcard{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);}
+  .flashcard.flipped{transform:rotateY(180deg);}
+  .fc-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;}
+  .fc-front{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;box-shadow:0 4px 16px rgba(2,132,199,0.3);}
+  .fc-back{background:linear-gradient(135deg,#365314,#65a30d);color:white;transform:rotateY(180deg);box-shadow:0 4px 16px rgba(101,163,13,0.3);}
+  .fc-label{font-size:0.72rem;opacity:0.75;margin-bottom:8px;letter-spacing:1px;}
+  .fc-main{font-size:1.05rem;font-weight:800;line-height:1.6;}
+  .fc-sub{font-size:0.78rem;opacity:0.85;margin-top:8px;line-height:1.5;}
+  .fc-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;}
+  .fc-nav-btn{padding:7px 20px;border-radius:8px;border:2px solid var(--primary);background:white;color:var(--primary);font-weight:700;font-size:0.85rem;cursor:pointer;transition:all 0.15s;font-family:inherit;}
+  .fc-nav-btn:hover{background:var(--primary);color:white;}
+  .fc-nav-btn:disabled{opacity:0.35;cursor:default;}
+  .fc-progress{display:flex;gap:4px;justify-content:center;margin-top:10px;flex-wrap:wrap;}
+  .fc-dot{width:8px;height:8px;border-radius:50%;background:#bae6fd;transition:all 0.2s;}
+  .fc-dot.done{background:var(--accent);}
+  .fc-dot.current{background:var(--primary);transform:scale(1.3);}
+  .fc-timer-bar{height:4px;background:#bae6fd;border-radius:99px;margin-top:10px;overflow:hidden;}
+  .fc-timer-fill{height:100%;background:var(--accent);border-radius:99px;transition:width linear;}
+  /* クイズ */
+  .quiz-card{border:2px solid #bae6fd;border-radius:10px;padding:16px;margin:12px 0;background:#f0f9ff;}
+  .quiz-q{font-weight:700;font-size:0.9rem;margin-bottom:12px;line-height:1.7;color:#0c4a6e;}
+  .quiz-opts{display:flex;flex-direction:column;gap:8px;}
+  .quiz-opt{padding:9px 14px;border:2px solid #bae6fd;border-radius:7px;cursor:pointer;font-size:0.87rem;transition:all 0.15s;background:white;font-family:inherit;text-align:left;color:#0c4a6e;}
+  .quiz-opt:hover:not(:disabled){border-color:var(--primary);background:#e0f2fe;}
+  .quiz-opt.correct{background:#ecfccb;border-color:#65a30d;color:#1a2e05;font-weight:700;}
+  .quiz-opt.wrong{background:#fee2e2;border-color:var(--danger);color:#7f1d1d;}
+  .quiz-feedback{margin-top:10px;padding:8px 12px;border-radius:6px;font-size:0.85rem;display:none;font-weight:600;line-height:1.8;}
+  .quiz-feedback.show{display:block;}
+  .quiz-feedback.ok{background:#ecfccb;color:#1a2e05;}
+  .quiz-feedback.ng{background:#fee2e2;color:#7f1d1d;}
+  .quiz-result{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;border-radius:10px;padding:16px 20px;margin-top:16px;text-align:center;display:none;}
+  .quiz-result-score{font-size:2.2rem;font-weight:900;}
+  .quiz-result-msg{font-size:0.9rem;opacity:0.9;margin-top:4px;}
+  .confetti-piece{position:fixed;width:10px;height:10px;border-radius:2px;animation:confettiFall 1.5s ease-out forwards;pointer-events:none;z-index:9999;}
+  @keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(80vh) rotate(720deg);opacity:0}}
+  .ch-btn{padding:6px 14px;border-radius:20px;border:2px solid var(--border);background:white;color:var(--muted);font-size:0.8rem;font-weight:700;cursor:pointer;transition:all 0.15s;font-family:inherit;}
+  .ch-btn.active{background:var(--primary);color:white;border-color:var(--primary);}
+  .ch-btn:hover{border-color:var(--primary);color:var(--primary);}
+  .ch-btn.active:hover{color:white;}
+  /* 折りたたみクイズ */
+  .unit-quiz-wrap{margin-top:18px;border:2px solid #7dd3fc;border-radius:10px;overflow:hidden;}
+  .unit-quiz-toggle{width:100%;background:linear-gradient(135deg,#0369a1,#0284c7);color:white;border:none;padding:11px 16px;font-size:0.88rem;font-weight:800;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;letter-spacing:0.5px;}
+  .unit-quiz-toggle:hover{filter:brightness(1.1);}
+  .uq-arrow{font-size:1rem;transition:transform 0.25s;}
+  .unit-quiz-body{display:none;padding:14px;background:#f0f9ff;}
+  .unit-quiz-body.open{display:block;}
+  .uq-card{background:white;border:2px solid #bae6fd;border-radius:9px;padding:14px;margin-bottom:10px;}
+  .uq-card:last-child{margin-bottom:0;}
+  .uq-num{font-size:0.72rem;font-weight:800;color:#0369a1;margin-bottom:4px;}
+  .uq-q{font-weight:700;font-size:0.88rem;margin-bottom:10px;line-height:1.7;color:#0c4a6e;}
+  .uq-opts{display:flex;flex-direction:column;gap:7px;}
+  .uq-opt{padding:9px 13px;border:2px solid #bae6fd;border-radius:7px;cursor:pointer;font-size:0.85rem;background:white;font-family:inherit;text-align:left;color:#0c4a6e;transition:all 0.15s;display:flex;align-items:center;gap:8px;}
+  .uq-opt:hover:not(:disabled){border-color:#0369a1;background:#e0f2fe;}
+  .uq-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#dbeafe;color:#0369a1;font-weight:800;font-size:0.75rem;flex-shrink:0;}
+  .uq-opt.correct{background:#ecfccb;border-color:#65a30d;color:#1a2e05;font-weight:700;}
+  .uq-opt.correct .uq-badge{background:#65a30d;color:white;}
+  .uq-opt.wrong{background:#fee2e2;border-color:#ef4444;color:#7f1d1d;}
+  .uq-opt.wrong .uq-badge{background:#ef4444;color:white;}
+  .uq-fb{margin-top:9px;padding:8px 12px;border-radius:6px;font-size:0.82rem;display:none;font-weight:600;line-height:1.8;}
+  .uq-fb.show-ok{display:block;background:#ecfccb;color:#1a2e05;}
+  .uq-fb.show-ng{display:block;background:#fee2e2;color:#7f1d1d;}
+  .uq-result{margin-top:12px;border-radius:9px;padding:14px 16px;text-align:center;display:none;}
+  .uq-result.pass{background:linear-gradient(135deg,#15803d,#4ade80);color:white;}
+  .uq-result.retry{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;}
+  .uq-result-score{font-size:1.8rem;font-weight:900;}
+  .uq-result-msg{font-size:0.85rem;opacity:0.92;margin-top:4px;}
+  .uq-retry-btn{margin-top:10px;padding:7px 20px;border-radius:20px;border:2px solid white;background:transparent;color:white;font-weight:800;font-size:0.82rem;cursor:pointer;font-family:inherit;}
+  /* SP05専用：標準模型テーブル */
+  .sm-table{width:100%;border-collapse:separate;border-spacing:3px;font-size:0.8rem;}
+  .sm-cell{border-radius:6px;padding:7px 5px;text-align:center;line-height:1.4;}
+  .sm-header{font-weight:800;font-size:0.75rem;padding:6px 4px;text-align:center;color:#94a3b8;background:transparent;}
+  .sm-quark{background:#1a0a00;border:1px solid #92400e;color:#fbbf24;}
+  .sm-lepton{background:#0f001a;border:1px solid #5b21b6;color:#c084fc;}
+  .sm-boson{background:#001a2e;border:1px solid #0369a1;color:#38bdf8;}
+  .sm-higgs{background:#001a0a;border:1px solid #15803d;color:#4ade80;}
+  .sm-name{font-weight:900;font-size:0.88rem;}
+  .sm-sub{font-size:0.7rem;opacity:0.8;margin-top:2px;}
+  .timeline-item{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start;}
+  .timeline-dot{min-width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.75rem;flex-shrink:0;margin-top:2px;}
+  .unsolved-card{border-radius:10px;padding:14px;margin-bottom:10px;border-left:5px solid;}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-top"><div class="logo">GAMBA</div><div class="header-sub">江原予備校 ／ 物理・宇宙</div></div>
+  <div class="chapter-title-bar">
+    <span class="chapter-badge">SP05</span>
+    <span class="chapter-title-text">素粒子への旅 ― 標準模型 ― すべての粒子が一枚の表に</span>
+  </div>
+</header>
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab(&#39;learn&#39;)">📖 学習</button>
+  <button class="tab-btn" onclick="showTab(&#39;flash&#39;)">🃏 フラッシュカード</button>
+  <button class="tab-btn" onclick="showTab(&#39;quiz&#39;)">🔭 ミニテスト</button>
+</div>
+<main>
+<div id="tab-learn" class="tab-content active">
+
+<!-- 0. イヌ校長 -->
+<div class="section-card">
+  <div class="section-header sh-cosmos">🌌 ここまで来た。全部つながる瞬間</div>
+  <div class="section-body">
+    <div style="background:linear-gradient(135deg,#0369a1,#0284c7);border-radius:12px;padding:18px 20px;color:white;font-size:0.92rem;line-height:2.1;margin-bottom:14px;">
+      <div style="font-size:1.05rem;font-weight:800;color:#bef264;margin-bottom:10px;">🐶 イヌ校長より</div>
+      SP01からここまで、よく来ましたね。<br>
+      クォーク、レプトン、ゲージボソン、四つの力。<br>
+      バラバラに見えていたピースが、今日<strong style="color:#bef264">「標準模型」</strong>という一枚の表にまとまります。<br><br>
+      標準模型は、20世紀の物理学者たちが100年かけて積み上げてきた<strong style="color:#bef264">人類最高傑作の理論</strong>のひとつです。<br>
+      宇宙のほぼすべての現象を、たった17種類の素粒子と4つの力で説明してしまいます。<br><br>
+      <span style="font-size:0.85rem;opacity:0.9;">「難しいから自分には関係ない」と思っていた人ほど、<strong style="color:#bef264">ここで景色が変わります</strong>。いっしょに見ていきましょう。</span>
+    </div>
+    <div class="amber-box">
+      <div class="box-label">📌 この単元で学ぶこと</div>
+      <div style="font-size:0.9rem;line-height:2.3;">
+        ① 標準模型とは何か ― 物理学の「最高の地図」<br>
+        ② 標準模型の粒子表を読む（フェルミオン・ボソン）<br>
+        ③ 標準模型が完成するまでの歴史<br>
+        ④ 標準模型が「できること」と「できないこと」<br>
+        ⑤ 標準模型の予言した粒子たちと実験による確認<br>
+        ⑥ コラム ― 標準模型の先にあるもの（未解決問題）
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 1. 標準模型とは -->
+<div class="section-card">
+  <div class="section-header sh-blue">🗺️ 1. 標準模型とは ― 物理学の「最高の地図」</div>
+  <div class="section-body">
+    <div class="text-block">「標準模型（Standard Model）」という言葉、少し地味な名前に感じませんか。でもその中身は、宇宙の成り立ちを素粒子レベルで記述した、<strong>人類がこれまでに作った理論の中で最も精密に検証されたもの</strong>のひとつです。</div>
+
+    <div class="key-box">
+      <div class="box-label">🔑 標準模型とは何か（一言で）</div>
+      <div style="font-size:0.92rem;line-height:2.1;">
+        <strong>「すべての素粒子と、その間に働く3つの力（電磁気力・強い力・弱い力）を統一的に記述した理論」</strong><br><br>
+        地図に例えると ―― 「宇宙で起きるほぼあらゆる現象が、この地図のどこかに書いてある」という感じです。ただし重力だけは、まだこの地図に収まっていません。
+      </div>
+    </div>
+
+    <div class="text-block">標準模型は、2種類の素粒子のグループから成り立っています。</div>
+
+    <div class="two-col">
+      <div style="background:#1a0a00;border-radius:10px;padding:14px;border:2px solid #92400e;">
+        <div style="color:#fbbf24;font-weight:900;font-size:0.95rem;margin-bottom:8px;">フェルミオン</div>
+        <div style="font-size:0.82rem;color:#e2e8f0;line-height:1.9;">
+          <strong style="color:#fbbf24">物質を作る粒子</strong><br>
+          スピン = 1/2（半整数）<br>
+          クォーク（6種類）<br>
+          ＋ レプトン（6種類）<br>
+          計 <strong>12種類</strong><br>
+          ※各反粒子を含めると24種
+        </div>
+      </div>
+      <div style="background:#001a2e;border-radius:10px;padding:14px;border:2px solid #0369a1;">
+        <div style="color:#38bdf8;font-weight:900;font-size:0.95rem;margin-bottom:8px;">ボソン</div>
+        <div style="font-size:0.82rem;color:#e2e8f0;line-height:1.9;">
+          <strong style="color:#38bdf8">力を伝える粒子</strong><br>
+          スピン = 1（整数）<br>
+          光子・グルーオン（8種）<br>
+          W⁺ W⁻ Z⁰ ＋ ヒッグス粒子<br>
+          計 <strong>5種（13個）</strong><br>
+          ※重力子は標準模型の外
+        </div>
+      </div>
+    </div>
+
+    <div class="note-block">💡 <strong>「標準模型」という名前の由来</strong>：英語で Standard Model。「現在の標準的な理論」という意味で、謙虚な名前です。まだ完成形ではなく、より深い理論（大統一理論や超弦理論）への途中経過という位置づけを研究者たちが意識しています。</div>
+
+    <!-- 単元1 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq1&#39;)"><span>🖊️ 単元1 ミニテスト ― 標準模型とは</span><span class="uq-arrow" id="uq1_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq1_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. 粒子表を読む -->
+<div class="section-card">
+  <div class="section-header sh-purple">🔢 2. 標準模型の粒子表を読む</div>
+  <div class="section-body">
+    <div class="text-block">理科室や物理学の教科書でよく見かける「標準模型の表」。見た目は複雑ですが、構造はシンプルです。いっしょにひとつひとつ確認していきましょう。</div>
+
+    <!-- 標準模型の表（SVGで視覚化） -->
+    <div style="background:#060d1a;border-radius:12px;padding:16px;margin:12px 0;overflow-x:auto;">
+      <div style="color:#bef264;font-weight:800;font-size:0.85rem;margin-bottom:12px;text-align:center;">標準模型の素粒子表（17種類）</div>
+      <table class="sm-table" style="min-width:420px;">
+        <tbody><tr>
+          <td class="sm-header"></td>
+          <td class="sm-header" colspan="3" style="color:#fbbf24;font-size:0.8rem;background:#1a0a00;border-radius:6px;">◀ フェルミオン（物質粒子）</td>
+          <td class="sm-header"></td>
+          <td class="sm-header" colspan="2" style="color:#38bdf8;font-size:0.8rem;background:#001a2e;border-radius:6px;">ボソン（力の粒子）▶</td>
+        </tr>
+        <tr>
+          <td class="sm-header"></td>
+          <td class="sm-header" style="color:#fbbf24;">第1世代</td>
+          <td class="sm-header" style="color:#fbbf24;">第2世代</td>
+          <td class="sm-header" style="color:#fbbf24;">第3世代</td>
+          <td class="sm-header"></td>
+          <td class="sm-header" style="color:#38bdf8;">ゲージボソン</td>
+          <td class="sm-header" style="color:#4ade80;">スカラー</td>
+        </tr>
+        <!-- クォーク行1 -->
+        <tr>
+          <td class="sm-header" style="color:#f87171;writing-mode:horizontal-tb;font-size:0.72rem;">ク<br>ォ<br>ー<br>ク</td>
+          <td class="sm-cell sm-quark"><div class="sm-name">u</div><div class="sm-sub">アップ<br>+2/3</div></td>
+          <td class="sm-cell sm-quark"><div class="sm-name">c</div><div class="sm-sub">チャーム<br>+2/3</div></td>
+          <td class="sm-cell sm-quark"><div class="sm-name">t</div><div class="sm-sub">トップ<br>+2/3</div></td>
+          <td class="sm-header"></td>
+          <td class="sm-cell sm-boson"><div class="sm-name">γ</div><div class="sm-sub">光子<br>電磁気力</div></td>
+          <td class="sm-cell sm-higgs" rowspan="2" style="vertical-align:middle;"><div class="sm-name">H</div><div class="sm-sub">ヒッグス<br>粒子</div></td>
+        </tr>
+        <tr>
+          <td class="sm-header"></td>
+          <td class="sm-cell sm-quark"><div class="sm-name">d</div><div class="sm-sub">ダウン<br>−1/3</div></td>
+          <td class="sm-cell sm-quark"><div class="sm-name">s</div><div class="sm-sub">ストレンジ<br>−1/3</div></td>
+          <td class="sm-cell sm-quark"><div class="sm-name">b</div><div class="sm-sub">ボトム<br>−1/3</div></td>
+          <td class="sm-header"></td>
+          <td class="sm-cell sm-boson"><div class="sm-name">g</div><div class="sm-sub">グルーオン<br>強い力</div></td>
+        </tr>
+        <!-- レプトン行 -->
+        <tr>
+          <td class="sm-header" style="color:#c084fc;writing-mode:horizontal-tb;font-size:0.72rem;">レ<br>プ<br>ト<br>ン</td>
+          <td class="sm-cell sm-lepton"><div class="sm-name">e</div><div class="sm-sub">電子<br>−1</div></td>
+          <td class="sm-cell sm-lepton"><div class="sm-name">μ</div><div class="sm-sub">ミュー<br>−1</div></td>
+          <td class="sm-cell sm-lepton"><div class="sm-name">τ</div><div class="sm-sub">タウ<br>−1</div></td>
+          <td class="sm-header"></td>
+          <td class="sm-cell sm-boson"><div class="sm-name">W±</div><div class="sm-sub">Wボソン<br>弱い力</div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="sm-header"></td>
+          <td class="sm-cell sm-lepton"><div class="sm-name">νₑ</div><div class="sm-sub">電子ν<br>0</div></td>
+          <td class="sm-cell sm-lepton"><div class="sm-name">νᵤ</div><div class="sm-sub">ミューν<br>0</div></td>
+          <td class="sm-cell sm-lepton"><div class="sm-name">ντ</div><div class="sm-sub">タウν<br>0</div></td>
+          <td class="sm-header"></td>
+          <td class="sm-cell sm-boson"><div class="sm-name">Z⁰</div><div class="sm-sub">Zボソン<br>弱い力</div></td>
+          <td></td>
+        </tr>
+      </tbody></table>
+      <div style="color:#64748b;font-size:0.75rem;margin-top:8px;text-align:right;">※反粒子・グルーオン8種は省略</div>
+    </div>
+
+    <div style="font-weight:800;color:#0c4a6e;font-size:0.9rem;margin:16px 0 8px;">表の読み方</div>
+
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px;">
+      <div style="background:#1a0a00;border-radius:8px;padding:12px 14px;">
+        <div style="color:#fbbf24;font-weight:800;font-size:0.85rem;margin-bottom:4px;">🟡 クォーク（6種類）― 橙色セル</div>
+        <div style="font-size:0.83rem;color:#e2e8f0;line-height:1.8;">アップ・ダウン・チャーム・ストレンジ・トップ・ボトム。陽子・中性子の材料。3世代に分かれている。</div>
+      </div>
+      <div style="background:#0f001a;border-radius:8px;padding:12px 14px;">
+        <div style="color:#c084fc;font-weight:800;font-size:0.85rem;margin-bottom:4px;">🟣 レプトン（6種類）― 紫色セル</div>
+        <div style="font-size:0.83rem;color:#e2e8f0;line-height:1.8;">電子・ミュー・タウ・3種のニュートリノ。強い力を受けない。クォークと同じく3世代。</div>
+      </div>
+      <div style="background:#001a2e;border-radius:8px;padding:12px 14px;">
+        <div style="color:#38bdf8;font-weight:800;font-size:0.85rem;margin-bottom:4px;">🔵 ゲージボソン（4種）― 青色セル</div>
+        <div style="font-size:0.83rem;color:#e2e8f0;line-height:1.8;">光子（γ）・グルーオン（g）・W±・Z⁰。力を伝える粒子。グルーオンは実際には8種類。</div>
+      </div>
+      <div style="background:#001a0a;border-radius:8px;padding:12px 14px;">
+        <div style="color:#4ade80;font-weight:800;font-size:0.85rem;margin-bottom:4px;">🟢 ヒッグス粒子（1種）― 緑色セル</div>
+        <div style="font-size:0.83rem;color:#e2e8f0;line-height:1.8;">2012年に発見された最後のピース。他の粒子に質量を与える特別な粒子（次のSP06で詳しく学びます）。</div>
+      </div>
+    </div>
+
+    <div class="important-box">
+      <div class="box-label">⭐ 17種類でいいんです</div>
+      <div style="font-size:0.88rem;line-height:2.2;">
+        この宇宙で観測されるあらゆる物質と力は、この17種類の素粒子（と各反粒子）で説明できます。<br>
+        水も空気も、人体も星も、スマホも、すべてこの表の粒子でできています。<br>
+        <strong>「自分という存在も、この17種類の踊りだ」</strong>と思うと、少し世界の見え方が変わりませんか。
+      </div>
+    </div>
+
+    <!-- 単元2 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq2&#39;)"><span>🖊️ 単元2 ミニテスト ― 粒子表を読む</span><span class="uq-arrow" id="uq2_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq2_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. 完成までの歴史 -->
+<div class="section-card">
+  <div class="section-header sh-teal">📜 3. 標準模型が完成するまで ― 100年の物語</div>
+  <div class="section-body">
+    <div class="text-block">標準模型は一人の天才が作ったものではありません。世界中の物理学者たちが100年かけて、実験と理論を積み上げて築き上げてきたものです。</div>
+
+    <div style="position:relative;padding-left:28px;border-left:3px solid #0d9488;margin:12px 0;">
+
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:#6d28d9;position:absolute;left:-20px;">量</div>
+        <div style="background:#f5f3ff;border-radius:10px;padding:12px 14px;">
+          <div style="font-weight:900;color:#4c1d95;font-size:0.82rem;">1920〜30年代 ― 量子力学の誕生</div>
+          <div style="font-size:0.85rem;line-height:1.9;color:#3b0764;margin-top:4px;">ハイゼンベルク・シュレーディンガー・ディラックらが量子力学を確立。素粒子が「波でもあり粒子でもある」ことが明らかに。ディラックは反粒子の存在を予言。</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:#0369a1;position:absolute;left:-20px;">QED</div>
+        <div style="background:#e0f2fe;border-radius:10px;padding:12px 14px;">
+          <div style="font-weight:900;color:#0c4a6e;font-size:0.82rem;">1940〜50年代 ― 量子電磁力学（QED）完成</div>
+          <div style="font-size:0.85rem;line-height:1.9;color:#0c4a6e;margin-top:4px;">ファインマン・シュウィンガー・朝永振一郎が量子電磁力学を完成（1965年ノーベル賞）。電磁気力を量子論で精密に記述することに成功。</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:#b45309;position:absolute;left:-20px;">q</div>
+        <div style="background:#fef9c3;border-radius:10px;padding:12px 14px;">
+          <div style="font-weight:900;color:#713f12;font-size:0.82rem;">1960〜70年代 ― クォーク模型・電弱統一</div>
+          <div style="font-size:0.85rem;line-height:1.9;color:#713f12;margin-top:4px;">ゲルマンがクォークを提唱（1964年）。グラショウ・サラム・ワインバーグが電弱統一理論を発表（1967年・1979年ノーベル賞）。QCDによる強い力の量子論も完成。</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:#15803d;position:absolute;left:-20px;">WZ</div>
+        <div style="background:#ecfccb;border-radius:10px;padding:12px 14px;">
+          <div style="font-weight:900;color:#14532d;font-size:0.82rem;">1983年 ― W・Z粒子の発見（CERN）</div>
+          <div style="font-size:0.85rem;line-height:1.9;color:#14532d;margin-top:4px;">カルロ・ルビアらがCERNのスーパー陽子シンクロトロンでW・Z粒子を実験で確認。電弱統一理論の正しさが証明された。1984年ノーベル物理学賞。</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:#0284c7;position:absolute;left:-20px;">t</div>
+        <div style="background:#e0f2fe;border-radius:10px;padding:12px 14px;">
+          <div style="font-weight:900;color:#0c4a6e;font-size:0.82rem;">1995年 ― トップクォークの発見（フェルミラボ）</div>
+          <div style="font-size:0.85rem;line-height:1.9;color:#0c4a6e;margin-top:4px;">標準模型が予言したトップクォーク（6種目のクォーク）が発見される。質量は陽子の約173倍という重さ。</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:#0d9488;position:absolute;left:-20px;">ν</div>
+        <div style="background:#ccfbf1;border-radius:10px;padding:12px 14px;">
+          <div style="font-weight:900;color:#134e4a;font-size:0.82rem;">2000年 ― タウニュートリノの発見</div>
+          <div style="font-size:0.85rem;line-height:1.9;color:#134e4a;margin-top:4px;">フェルミラボのDONUT実験でタウニュートリノが発見され、12種類のフェルミオンがすべて揃う。</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:#4ade80;color:#1a2e05;position:absolute;left:-20px;">H</div>
+        <div style="background:#ecfccb;border-radius:10px;padding:12px 14px;border:2px solid #65a30d;">
+          <div style="font-weight:900;color:#14532d;font-size:0.82rem;">🎉 2012年 ― ヒッグス粒子の発見（CERN・LHC）</div>
+          <div style="font-size:0.85rem;line-height:1.9;color:#14532d;margin-top:4px;">標準模型の最後のピース、ヒッグス粒子がLHCで発見される。48年前の予言（ピーター・ヒッグスら1964年）がついに確認。2013年ノーベル物理学賞受賞。<strong>標準模型、ひとまず完成。</strong></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 単元3 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq3&#39;)"><span>🖊️ 単元3 ミニテスト ― 標準模型の歴史</span><span class="uq-arrow" id="uq3_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq3_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. できること・できないこと -->
+<div class="section-card">
+  <div class="section-header sh-amber">⚖️ 4. 標準模型が「できること」と「できないこと」</div>
+  <div class="section-body">
+    <div class="text-block">標準模型は人類史上最も精密に検証された理論ですが、万能ではありません。「できること」と「できないこと」を正直に見ていきましょう。</div>
+
+    <div style="font-weight:800;color:#0c4a6e;font-size:0.9rem;margin:14px 0 8px;">✅ 標準模型ができること</div>
+    <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:16px;">
+      <div style="background:#ecfccb;border-radius:8px;padding:11px 14px;border-left:4px solid #65a30d;font-size:0.86rem;color:#1a2e05;line-height:1.8;"><strong>① 電子の磁気モーメントを小数点以下10桁以上の精度で予言できる</strong>（実験値ともほぼ一致）。これは人類が作った理論の中で最も精密な予言です。</div>
+      <div style="background:#ecfccb;border-radius:8px;padding:11px 14px;border-left:4px solid #65a30d;font-size:0.86rem;color:#1a2e05;line-height:1.8;"><strong>② 素粒子の崩壊・散乱・反応をほぼ完璧に計算できる</strong>。粒子加速器で行われる実験のほとんどは標準模型の計算と一致しています。</div>
+      <div style="background:#ecfccb;border-radius:8px;padding:11px 14px;border-left:4px solid #65a30d;font-size:0.86rem;color:#1a2e05;line-height:1.8;"><strong>③ まだ発見されていない粒子を予言できる</strong>。W・Z粒子、トップクォーク、タウニュートリノ、ヒッグス粒子はすべて「発見前に理論が予言し、後で実験で確認された」粒子です。</div>
+    </div>
+
+    <div style="font-weight:800;color:#0c4a6e;font-size:0.9rem;margin:14px 0 8px;">❌ 標準模型ができないこと（未解決問題）</div>
+    <div style="display:flex;flex-direction:column;gap:7px;">
+      <div style="background:#fee2e2;border-radius:8px;padding:11px 14px;border-left:4px solid #ef4444;font-size:0.86rem;color:#7f1d1d;line-height:1.8;"><strong>① 重力を記述できない</strong>。電磁気力・強い力・弱い力は標準模型に入っていますが、重力だけは入っていません。</div>
+      <div style="background:#fee2e2;border-radius:8px;padding:11px 14px;border-left:4px solid #ef4444;font-size:0.86rem;color:#7f1d1d;line-height:1.8;"><strong>② ダークマターを説明できない</strong>。宇宙の質量の約27%を占めると考えられるダークマターの正体が、標準模型の粒子で説明できていません。</div>
+      <div style="background:#fee2e2;border-radius:8px;padding:11px 14px;border-left:4px solid #ef4444;font-size:0.86rem;color:#7f1d1d;line-height:1.8;"><strong>③ 反物質問題を解決できない</strong>。ビッグバン直後は物質と反物質が同量あったはずなのに、なぜ今は物質だけ残ったのか説明できません。</div>
+      <div style="background:#fee2e2;border-radius:8px;padding:11px 14px;border-left:4px solid #ef4444;font-size:0.86rem;color:#7f1d1d;line-height:1.8;"><strong>④ 「なぜ3世代なのか」「なぜ17種類なのか」を説明できない</strong>。この数字は実験から得られたものですが、理論から導けていません。</div>
+      <div style="background:#fee2e2;border-radius:8px;padding:11px 14px;border-left:4px solid #ef4444;font-size:0.86rem;color:#7f1d1d;line-height:1.8;"><strong>⑤ ニュートリノの質量が「ゼロでない」ことを自然に取り込めない</strong>（標準模型はニュートリノの質量をゼロと仮定していた）。</div>
+    </div>
+
+    <div class="note-block" style="margin-top:14px;">💡 「できないことがある」ことは標準模型の弱点ではなく、<strong>次の理論への扉</strong>です。「これだけわかったから、次はここだ」と場所を示してくれる地図としての役割を持っています。</div>
+
+    <!-- 単元4 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq4&#39;)"><span>🖊️ 単元4 ミニテスト ― 標準模型のできること・できないこと</span><span class="uq-arrow" id="uq4_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq4_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. 予言と実験 -->
+<div class="section-card">
+  <div class="section-header sh-green">🔭 5. 標準模型の予言と実験 ― 理論が現実に勝った瞬間</div>
+  <div class="section-body">
+    <div class="text-block">標準模型の偉大さのひとつは、「まだ発見されていない粒子を先に計算で予言し、後で実験が確認した」という歴史の積み重ねです。</div>
+
+    <div style="background:#0a1628;border-radius:10px;padding:14px;margin:12px 0;">
+      <div style="color:#bef264;font-weight:800;font-size:0.85rem;margin-bottom:12px;text-align:center;">予言 → 発見 の歴史</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <div style="min-width:52px;background:#7c3aed;color:white;border-radius:6px;padding:4px 6px;font-size:0.72rem;font-weight:800;text-align:center;flex-shrink:0;">1928→<br>1932</div>
+          <div style="font-size:0.84rem;color:#e2e8f0;line-height:1.8;"><strong style="color:#c084fc;">ディラックの方程式 → 陽電子（反電子）の発見</strong><br>ディラックが理論から反粒子を予言。4年後にアンダーソンが宇宙線から陽電子を発見。</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <div style="min-width:52px;background:#0369a1;color:white;border-radius:6px;padding:4px 6px;font-size:0.72rem;font-weight:800;text-align:center;flex-shrink:0;">1967→<br>1983</div>
+          <div style="font-size:0.84rem;color:#e2e8f0;line-height:1.8;"><strong style="color:#38bdf8;">電弱統一理論 → W・Z粒子の発見（CERN）</strong><br>理論が質量まで予言し、16年後にほぼぴったりの値で発見された。</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <div style="min-width:52px;background:#b45309;color:white;border-radius:6px;padding:4px 6px;font-size:0.72rem;font-weight:800;text-align:center;flex-shrink:0;">1973→<br>1995</div>
+          <div style="font-size:0.84rem;color:#e2e8f0;line-height:1.8;"><strong style="color:#fbbf24;">第3世代の予言 → トップクォークの発見</strong><br>小林・益川理論（1973）がCP対称性の破れから第3世代クォークの存在を予言。22年後に発見（小林・益川 2008年ノーベル賞）。</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <div style="min-width:52px;background:#15803d;color:white;border-radius:6px;padding:4px 6px;font-size:0.72rem;font-weight:800;text-align:center;flex-shrink:0;">1964→<br>2012</div>
+          <div style="font-size:0.84rem;color:#e2e8f0;line-height:1.8;"><strong style="color:#4ade80;">ヒッグス機構 → ヒッグス粒子の発見（LHC）</strong><br>ピーター・ヒッグスらが1964年に提唱。約48年後にCERNのLHCで発見。2013年ノーベル賞。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="amber-box">
+      <div class="box-label">🤔 なぜ「理論が先に当たる」のか</div>
+      <div style="font-size:0.87rem;line-height:2.1;">
+        数学的な対称性（ゲージ対称性・ローレンツ対称性）を出発点に組み立てられた標準模型は、「この対称性を保つためには、こういう粒子が存在するはずだ」という推論ができます。<br>
+        これは化学の周期表が「ここには未知の元素があるはず」と予言したのと同じ構造です。
+      </div>
+    </div>
+
+    <!-- 単元5 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq5&#39;)"><span>🖊️ 単元5 ミニテスト ― 予言と実験</span><span class="uq-arrow" id="uq5_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq5_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. コラム -->
+<div class="section-card">
+  <div class="section-header sh-cosmos">📖 コラム ― 標準模型の先へ ― 物理学の「次の地図」を描く人たち</div>
+  <div class="section-body">
+    <div class="text-block">標準模型は「ひとまず完成した」とはいえ、未解決問題が山積みです。世界中の物理学者が今もこれを超える理論を探し続けています。</div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;margin:12px 0;">
+
+      <div class="unsolved-card" style="background:#0f0020;border-color:#7c3aed;">
+        <div style="color:#c084fc;font-weight:800;font-size:0.88rem;margin-bottom:6px;">🔭 超対称性理論（SUSY）</div>
+        <div style="font-size:0.84rem;color:#e2e8f0;line-height:1.9;">すべての素粒子に「超対称パートナー」が存在するという理論。ダークマターの候補になりうる。LHCでまだ発見されていないが、研究は続いている。</div>
+      </div>
+
+      <div class="unsolved-card" style="background:#001a0a;border-color:#15803d;">
+        <div style="color:#4ade80;font-weight:800;font-size:0.88rem;margin-bottom:6px;">🎻 超弦理論（String Theory）</div>
+        <div style="font-size:0.84rem;color:#e2e8f0;line-height:1.9;">素粒子を「点」ではなく「弦（ひも）の振動」として捉える理論。重力を含めた4つの力すべてを統一する可能性を持つが、実験で検証する方法がまだない。</div>
+      </div>
+
+      <div class="unsolved-card" style="background:#1a0000;border-color:#ef4444;">
+        <div style="color:#f87171;font-weight:800;font-size:0.88rem;margin-bottom:6px;">🌑 ダークマター・ダークエネルギー</div>
+        <div style="font-size:0.84rem;color:#e2e8f0;line-height:1.9;">宇宙の質量の27%はダークマター、68%はダークエネルギーと推定されるが、どちらも正体不明。標準模型の粒子では説明できない「見えない宇宙」が大半を占める。</div>
+      </div>
+
+      <div class="unsolved-card" style="background:#001020;border-color:#0284c7;">
+        <div style="color:#38bdf8;font-weight:800;font-size:0.88rem;margin-bottom:6px;">⚖️ 反物質の消失問題（CP対称性の破れ）</div>
+        <div style="font-size:0.84rem;color:#e2e8f0;line-height:1.9;">ビッグバン直後は物質と反物質が同量生まれたはずなのに、現在の宇宙には物質だけがある。標準模型はこの「わずかな差」を完全には説明できていない。</div>
+      </div>
+
+    </div>
+
+    <div style="background:linear-gradient(135deg,#0369a1,#1e40af);border-radius:12px;padding:16px 18px;color:white;margin:12px 0;">
+      <div style="font-weight:800;color:#bef264;font-size:0.95rem;margin-bottom:8px;">🐶 イヌ校長の最後の言葉</div>
+      <div style="font-size:0.87rem;line-height:2.1;">
+        物理学は「わかったこと」を積み上げる学問ですが、同時に「まだわからないこと」の地図でもあります。<br><br>
+        標準模型を学んだあなたには、今、宇宙の「わかっている部分」と「謎の部分」の境界線が見えています。<br><br>
+        <strong style="color:#bef264">「自分には関係ない話」ではなく、「自分が立っている宇宙の話」。</strong><br>
+        そう感じてもらえたなら、このシリーズを作った意味があります。
+      </div>
+    </div>
+
+    <!-- 単元6 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq6&#39;)"><span>🖊️ コラム ミニテスト ― 標準模型の先へ</span><span class="uq-arrow" id="uq6_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq6_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. まとめ -->
+<div class="section-card">
+  <div class="section-header sh-green">📝 7. まとめ ― SP01〜SP05、全体像を確認しよう</div>
+  <div class="section-body">
+
+    <div style="background:#0a1628;border-radius:10px;padding:16px;margin-bottom:14px;">
+      <div style="color:#bef264;font-weight:800;font-size:0.88rem;margin-bottom:12px;text-align:center;">素粒子シリーズ SP01〜SP05 全体像</div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:0.84rem;">
+        <div style="display:flex;gap:10px;align-items:center;background:#0f172a;border-radius:7px;padding:9px 12px;">
+          <span style="background:#92400e;color:#fbbf24;font-weight:900;padding:3px 8px;border-radius:5px;font-size:0.75rem;flex-shrink:0;">SP01</span>
+          <span style="color:#e2e8f0;">クォーク ― 陽子・中性子の中身。u・d・s・c・b・t の6種類。クォーク閉じ込め。</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;background:#0f172a;border-radius:7px;padding:9px 12px;">
+          <span style="background:#4c1d95;color:#c084fc;font-weight:900;padding:3px 8px;border-radius:5px;font-size:0.75rem;flex-shrink:0;">SP02</span>
+          <span style="color:#e2e8f0;">レプトン ― 電子・ミュー・タウ＋3ニュートリノ。強い力を受けない。ニュートリノ振動。</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;background:#0f172a;border-radius:7px;padding:9px 12px;">
+          <span style="background:#0369a1;color:#38bdf8;font-weight:900;padding:3px 8px;border-radius:5px;font-size:0.75rem;flex-shrink:0;">SP03</span>
+          <span style="color:#e2e8f0;">ゲージボソン ― 光子・グルーオン・W/Z粒子。力を伝える粒子。ファインマン図。</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;background:#0f172a;border-radius:7px;padding:9px 12px;">
+          <span style="background:#15803d;color:#4ade80;font-weight:900;padding:3px 8px;border-radius:5px;font-size:0.75rem;flex-shrink:0;">SP04</span>
+          <span style="color:#e2e8f0;">四つの力 ― 電磁気力・強い力・弱い力・重力。強さ・到達距離・担う現象の比較。</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;background:#0f172a;border-radius:7px;padding:9px 12px;border:1px solid #bef264;">
+          <span style="background:#065f46;color:#bef264;font-weight:900;padding:3px 8px;border-radius:5px;font-size:0.75rem;flex-shrink:0;">SP05</span>
+          <span style="color:#bef264;font-weight:700;">標準模型 ← いまここ。17粒子・3つの力・完成の歴史・未解決問題。</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;background:#0f172a;border-radius:7px;padding:9px 12px;opacity:0.6;">
+          <span style="background:#1e3a5f;color:#64748b;font-weight:900;padding:3px 8px;border-radius:5px;font-size:0.75rem;flex-shrink:0;">SP06</span>
+          <span style="color:#64748b;">ヒッグス粒子 ― 質量の起源（次回）</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;background:#0f172a;border-radius:7px;padding:9px 12px;opacity:0.6;">
+          <span style="background:#1e3a5f;color:#64748b;font-weight:900;padding:3px 8px;border-radius:5px;font-size:0.75rem;flex-shrink:0;">SP07</span>
+          <span style="color:#64748b;">宇宙論 ― ビッグバンと素粒子（予定）</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="important-box">
+      <div class="box-label">⭐ SP05 核心まとめ</div>
+      <div style="font-size:0.88rem;line-height:2.4;">
+        ① 標準模型 ＝ フェルミオン12種（クォーク6＋レプトン6）＋ ボソン5種（ゲージ4＋ヒッグス1）<br>
+        ② 重力を除く3つの力と全素粒子を一元的に記述した「人類最高精度の理論」<br>
+        ③ 2012年のヒッグス粒子発見で「ひとまず完成」<br>
+        ④ ダークマター・反物質・重力統合など、<strong>まだわからないことが宇宙には山ほどある</strong>
+      </div>
+    </div>
+
+    <!-- 単元7 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq7&#39;)"><span>🖊️ 単元7 ミニテスト ― 標準模型のまとめ</span><span class="uq-arrow" id="uq7_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq7_body"></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /tab-learn -->
+
+<!-- FLASH -->
+<div id="tab-flash" class="tab-content">
+  <div class="section-card">
+    <div class="section-header sh-cosmos">🃏 フラッシュカード ― 標準模型の重要ポイント</div>
+    <div class="section-body">
+      <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+        <button class="fc-speed-btn active" onclick="setFcSpeed(0)" id="spbtn0">手動</button>
+        <button class="fc-speed-btn" onclick="setFcSpeed(4000)" id="spbtn1">4秒</button>
+        <button class="fc-speed-btn" onclick="setFcSpeed(2500)" id="spbtn2">2.5秒</button>
+        <button class="fc-speed-btn" onclick="setFcSpeed(1500)" id="spbtn3">1.5秒</button>
+      </div>
+      <div class="flashcard-wrap" onclick="flipFc()">
+        <div class="flashcard" id="fc_card">
+          <div class="fc-face fc-front"><div class="fc-label">おもて</div><div class="fc-main" id="fc_front">標準模型とは何か（一言で）</div><div class="fc-sub" id="fc_fsub"></div></div>
+          <div class="fc-face fc-back"><div class="fc-label">うら</div><div class="fc-main" id="fc_back">全素粒子と3つの力（重力以外）を統一的に記述した人類最高精度の理論</div><div class="fc-sub" id="fc_bsub">17種類の素粒子で宇宙のほぼすべてを説明する</div></div>
+        </div>
+      </div>
+      <div class="fc-timer-bar"><div class="fc-timer-fill" id="fc_timer" style="width:0%"></div></div>
+      <div class="fc-progress" id="fc_prog"><div class="fc-dot current"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div></div>
+      <div class="fc-nav">
+        <button class="fc-nav-btn" onclick="fcPrev()" id="fc_prevBtn" disabled="">◀ 前へ</button>
+        <span style="font-size:0.85rem;color:var(--muted);" id="fc_idx">1 / 12</span>
+        <button class="fc-nav-btn" onclick="fcNext()" id="fc_nextBtn">次へ ▶</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="tab-quiz" class="tab-content">
+  <div class="section-card">
+    <div class="section-header sh-blue">🔭 ミニテスト ― 単元別4択（全問）</div>
+    <div class="section-body">
+      <div style="margin-bottom:16px;">
+        <div style="font-size:0.82rem;font-weight:700;color:var(--muted);margin-bottom:8px;">📚 単元を選んでください</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;" id="chapterBtns">
+          <button class="ch-btn active" onclick="selectChapter(0)">📚 全問チャレンジ</button>
+          <button class="ch-btn" onclick="selectChapter(1)">1. 標準模型とは</button>
+          <button class="ch-btn" onclick="selectChapter(2)">2. 粒子表を読む</button>
+          <button class="ch-btn" onclick="selectChapter(3)">3. 歴史</button>
+          <button class="ch-btn" onclick="selectChapter(4)">4. できること</button>
+          <button class="ch-btn" onclick="selectChapter(5)">5. 予言と実験</button>
+          <button class="ch-btn" onclick="selectChapter(6)">6. コラム</button>
+          <button class="ch-btn" onclick="selectChapter(7)">7. まとめ</button>
+        </div>
+      </div>
+      <div style="font-size:0.82rem;color:var(--muted);margin-bottom:14px;" id="quizInfo">全28問に挑戦しましょう。</div>
+      <div id="quizContainer"></div>
+      <div class="quiz-result" id="quizResult">
+        <div style="font-size:0.85rem;opacity:0.8;margin-bottom:4px;">最終スコア</div>
+        <div class="quiz-result-score" id="quizScore"></div>
+        <div class="quiz-result-msg" id="quizMsg"></div>
+        <button class="btn btn-primary" onclick="resetQuiz()" style="margin-top:12px;">もう一度 ↺</button>
+      </div>
+      <div style="margin-top:14px;text-align:right;"><button class="btn btn-gray" onclick="resetQuiz()">↺ リセット</button></div>
+    </div>
+  </div>
+</div>
+</main>
+<script>
+function showTab(id){
+  document.querySelectorAll('.tab-content').forEach(function(el){el.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(el){el.classList.remove('active');});
+  document.getElementById('tab-'+id).classList.add('active');
+  ['learn','flash','quiz'].forEach(function(t,i){if(t===id)document.querySelectorAll('.tab-btn')[i].classList.add('active');});
+  if(id==='flash')renderFc();
+  if(id==='quiz'){currentChapter=0;buildQuiz();}
+}
+function launchConfetti(n){
+  var colors=['#bef264','#38bdf8','#4ade80','#f87171','#fbbf24','#c084fc'];
+  for(var i=0;i<n;i++){
+    var el=document.createElement('div');el.className='confetti-piece';
+    el.style.cssText='left:'+(20+Math.random()*60)+'vw;top:20vh;background:'+colors[Math.floor(Math.random()*colors.length)]+';animation-delay:'+(Math.random()*0.6)+'s';
+    document.body.appendChild(el);
+    setTimeout((function(e){return function(){e.remove();};}(el)),2000);
+  }
+}
+
+var uqDefs={
+  uq1:{qs:[
+    {q:'標準模型が記述する「力」はどれですか？（重力は含まれません）',opts:['重力・電磁気力・強い力','電磁気力・強い力・弱い力','電磁気力・弱い力・重力','強い力・弱い力・重力'],ans:1,exp:'標準模型は電磁気力・強い力・弱い力の3つを記述します。重力だけは量子論と統一できておらず、標準模型の外にあります。'},
+    {q:'標準模型における素粒子の2大グループはどれですか？',opts:['クォークとレプトン','フェルミオンとボソン','陽子と電子','原子と分子'],ans:1,exp:'標準模型の素粒子は「物質を作るフェルミオン（クォーク6種＋レプトン6種）」と「力を伝えるボソン（ゲージボソン4種＋ヒッグス粒子1種）」の2大グループに分かれます。'},
+    {q:'標準模型の素粒子は全部で何種類ですか？',opts:['8種類','12種類','17種類','24種類'],ans:2,exp:'標準模型の素粒子はフェルミオン12種＋ボソン5種の計17種類です（反粒子を別にカウントすると異なりますが、基本的には17種類）。'},
+    {q:'「標準模型（Standard Model）」という名前が示す意味として正しいのはどれですか？',opts:['この理論は完璧で変わらない','現時点での標準的な理論であり、より深い理論への途中経過','標準的な実験方法の模型','物理の標準テキストの名前'],ans:1,exp:'「Standard Model（標準模型）」という名前には「現在の標準的な理論」という意味があり、研究者たちはこれを最終理論ではなく、より深い理論への途中経過と捉えています。'}
+  ]},
+  uq2:{qs:[
+    {q:'標準模型の粒子表で「フェルミオン」に分類されるのはどれですか？',opts:['光子と電子','グルーオンとW粒子','クォークとレプトン','ヒッグス粒子とZ粒子'],ans:2,exp:'フェルミオンは物質を作る粒子で、クォーク（6種類）とレプトン（6種類）が含まれます。光子・グルーオン・W/Z粒子・ヒッグス粒子はボソンです。'},
+    {q:'標準模型の粒子表で「第1世代」のクォークはどれですか？',opts:['トップとボトム','チャームとストレンジ','アップとダウン','アップとストレンジ'],ans:2,exp:'第1世代のクォークはアップ（u）とダウン（d）です。普通の物質（陽子・中性子）はほぼこの2種類でできています。'},
+    {q:'標準模型でヒッグス粒子はどのグループに属しますか？',opts:['フェルミオン（物質粒子）','ゲージボソン（力の粒子）','スカラーボソン（特別な分類）','レプトン'],ans:2,exp:'ヒッグス粒子はスカラーボソン（スピン0のボソン）です。ゲージボソン（スピン1）とは異なる種類のボソンで、力を伝えるのではなく他の粒子に質量を与えます。'},
+    {q:'標準模型の粒子表で「第3世代のレプトン」はどれですか？',opts:['電子と電子ニュートリノ','ミュー粒子とミューニュートリノ','タウ粒子とタウニュートリノ','トップとボトム'],ans:2,exp:'第3世代のレプトンはタウ粒子（τ）とタウニュートリノ（ντ）です。最も重いレプトン世代です。'}
+  ]},
+  uq3:{qs:[
+    {q:'電磁気力を量子論として完成させた「量子電磁力学（QED）」でノーベル賞を受賞した日本人物理学者は誰ですか？',opts:['湯川秀樹','朝永振一郎','小林誠','益川敏英'],ans:1,exp:'朝永振一郎はファインマン・シュウィンガーとともに量子電磁力学（QED）への貢献で1965年にノーベル物理学賞を受賞しました。'},
+    {q:'W粒子とZ粒子が実験で発見されたのはいつ・どこですか？',opts:['1969年・フェルミラボ','1983年・CERN（スイス）','1995年・SLAC','2012年・LHC'],ans:1,exp:'W・Z粒子は1983年にCERN（欧州原子核研究機構）のスーパー陽子シンクロトロンでカルロ・ルビアらによって発見されました。1984年ノーベル物理学賞。'},
+    {q:'「ヒッグス粒子」が発見されたのはいつですか？',opts:['1983年','1995年','2000年','2012年'],ans:3,exp:'ヒッグス粒子は2012年にCERNのLHC（大型ハドロン衝突型加速器）で発見されました。1964年のヒッグスらの予言から約48年後です。'},
+    {q:'標準模型の第3世代クォーク（トップ・ボトム・ストレンジ）の存在を予言し、CP対称性の破れを説明した日本人物理学者は誰ですか？',opts:['湯川秀樹と朝永振一郎','小林誠と益川敏英','南部陽一郎と梶田隆章','小柴昌俊と西島和彦'],ans:1,exp:'小林誠と益川敏英は1973年に「小林・益川理論」でCP対称性の破れを説明し、第3世代クォークの存在を予言しました。2008年ノーベル物理学賞受賞。'}
+  ]},
+  uq4:{qs:[
+    {q:'標準模型が最も精密に予言した物理量として知られるのはどれですか？',opts:['陽子の質量','電子の磁気モーメント（g因子）','光の速度','ニュートリノの質量'],ans:1,exp:'電子の磁気モーメント（g因子）は標準模型により小数点以下10桁以上の精度で予言され、実験値ともほぼ一致しています。これは人類が作った理論の中で最も精密な予言です。'},
+    {q:'標準模型が「できないこと」として正しいのはどれですか？',opts:['W粒子の質量を予言すること','電子の磁気モーメントを計算すること','重力を記述すること','ヒッグス粒子の質量を予言すること'],ans:2,exp:'標準模型は重力を記述できません。電磁気力・強い力・弱い力は含まれますが、重力だけは量子論と統一できておらず標準模型の外にあります。'},
+    {q:'「ダークマター」に関して標準模型が抱える問題はどれですか？',opts:['ダークマターが重すぎて計算できない','ダークマターの正体を標準模型の粒子で説明できていない','ダークマターが多すぎて宇宙が重すぎる','ダークマターと光子が反応しすぎる'],ans:1,exp:'ダークマターは宇宙の質量の約27%を占めると推定されますが、その正体が標準模型の粒子では説明できていません。これが標準模型の大きな限界のひとつです。'},
+    {q:'「なぜ3世代なのか」「なぜ17種類なのか」について標準模型はどう答えますか？',opts:['数学的に必然と説明できる','実験から得られた事実で、理論から導けていない','重力が決めている','宇宙の対称性が必要とするから'],ans:1,exp:'17種類・3世代という数字は実験から得られたものです。なぜこの数字なのかを標準模型の理論から導くことはまだできておらず、これも未解決問題のひとつです。'}
+  ]},
+  uq5:{qs:[
+    {q:'標準模型が発見「前に」予言し、後で実験で確認された粒子はどれですか？',opts:['電子（1897年発見）','陽子（1919年発見）','ヒッグス粒子（2012年発見）','中性子（1932年発見）'],ans:2,exp:'ヒッグス粒子は1964年に理論的に予言され、2012年のLHCによる実験で確認されました。W・Z粒子・トップクォーク・タウニュートリノも同様に「予言→後で発見」のパターンです。'},
+    {q:'W・Z粒子は理論的に予言されてから実験で確認されるまで何年かかりましたか？',opts:['約5年','約10年','約16年','約48年'],ans:2,exp:'電弱統一理論は1967年に発表され、W・Z粒子は1983年にCERNで発見されました。約16年です。'},
+    {q:'「小林・益川理論」（1973年）が予言したことはどれですか？',opts:['ヒッグス粒子の存在','第3世代クォークの存在とCP対称性の破れ','W・Z粒子の質量','グルーオンの種類の数'],ans:1,exp:'小林・益川理論はCP対称性の破れを説明するために第3世代クォーク（チャーム・ストレンジ・ボトムに加えトップが確定する形で）の存在を予言しました。1995年にトップクォークが発見されました。'},
+    {q:'標準模型の予言力を「周期表」に例えた場合、どのような点が似ていますか？',opts:['どちらも元素を分類する表','どちらも「ここに未知のものがあるはず」と予言できる構造を持つ','どちらも重力を記述する','どちらも19世紀に完成した'],ans:1,exp:'周期表が「ここには未知の元素があるはず」と予言したように、標準模型も「この対称性を保つにはこういう粒子が必要だ」と未発見の粒子を予言できます。どちらも構造から未知を導く点が共通しています。'}
+  ]},
+  uq6:{qs:[
+    {q:'「超対称性理論（SUSY）」が予言するものはどれですか？',opts:['すべての素粒子に「超対称パートナー」が存在する','重力子が17種類ある','素粒子は弦の振動である','宇宙は10次元である'],ans:0,exp:'超対称性理論（SUSY）はすべての素粒子に「超対称パートナー」が存在すると予言します。ダークマターの候補にもなりうる理論ですが、LHCではまだ発見されていません。'},
+    {q:'「超弦理論（String Theory）」の基本的な考え方はどれですか？',opts:['素粒子はさらに小さい原子でできている','素粒子は点ではなく弦（ひも）の振動として捉える','素粒子は10次元の立体','すべての力は重力から生まれる'],ans:1,exp:'超弦理論は素粒子を「点」ではなく「弦（ひも）の振動」として捉え、4つの力すべてを統一できる可能性を持ちます。ただし実験的な検証方法がまだなく、研究段階の理論です。'},
+    {q:'ダークマターとダークエネルギーについて正しいのはどれですか？',opts:['どちらも標準模型で完全に説明されている','ダークマターは宇宙の約5%、ダークエネルギーは約27%を占める','ダークマターは約27%・ダークエネルギーは約68%を占め、どちらも正体不明','ダークエネルギーはヒッグス粒子と同じもの'],ans:2,exp:'ダークマターは宇宙の質量の約27%、ダークエネルギーは約68%を占めると推定されています。どちらも正体不明で、標準模型では説明できていません。通常の物質はわずか約5%です。'},
+    {q:'「CP対称性の破れ」と反物質問題の関係はどれですか？',opts:['CP対称性が破れているため光の速度が変化する','物質と反物質の振る舞いにわずかな差があるため、現在の宇宙に物質だけが残った可能性がある','CP対称性が完全に保たれているため反物質が消えた','重力がCP対称性を破った'],ans:1,exp:'ビッグバン直後は物質と反物質が同量あったはずですが、CP対称性の破れ（物質と反物質の振る舞いのわずかな差）によって物質がわずかに多く残り、現在の宇宙が生まれたと考えられています。標準模型はこの差を完全には説明できていません。'}
+  ]},
+  uq7:{qs:[
+    {q:'標準模型に含まれる素粒子の数は全部で何種類ですか？',opts:['12種類','14種類','17種類','21種類'],ans:2,exp:'標準模型の素粒子はフェルミオン12種（クォーク6＋レプトン6）＋ボソン5種（ゲージボソン4＋ヒッグス粒子1）の計17種類です。'},
+    {q:'標準模型が「ひとまず完成した」とみなされる出来事はどれですか？',opts:['W・Z粒子の発見（1983年）','トップクォークの発見（1995年）','ヒッグス粒子の発見（2012年）','ニュートリノ振動の発見（1998年）'],ans:2,exp:'2012年のヒッグス粒子発見により標準模型が予言した17種類の粒子がすべて揃い、「ひとまず完成」とみなされるようになりました。'},
+    {q:'標準模型が記述する力として正しい組み合わせはどれですか？',opts:['電磁気力・強い力・弱い力・重力','電磁気力・強い力・弱い力（重力を除く）','電磁気力・重力','強い力・弱い力・重力'],ans:1,exp:'標準模型は電磁気力・強い力・弱い力の3つを記述します。重力は標準模型に含まれず、これが標準模型の最大の「未完成」部分です。'},
+    {q:'現代物理学で標準模型が超えられない最大の壁はどれですか？',opts:['クォークが6種類しかないこと','ヒッグス粒子の質量が大きいこと','重力を量子論的に記述できないこと','電子の質量が小さすぎること'],ans:2,exp:'重力だけは量子論（標準模型）と統合できておらず、「量子重力理論」の完成が現代物理学最大の課題のひとつです。超弦理論など複数のアプローチが研究されていますが、まだ完成していません。'}
+  ]}
+};
+
+var uqState={};
+function uqBuildBody(uid){
+  var d=uqDefs[uid];var html='';
+  d.qs.forEach(function(q,i){
+    html+='<div class="uq-card" id="'+uid+'_c'+i+'"><div class="uq-num">Q'+(i+1)+' / '+d.qs.length+'</div><div class="uq-q">'+q.q+'</div><div class="uq-opts">';
+    q.opts.forEach(function(opt,j){html+='<button class="uq-opt" id="'+uid+'_o'+i+'_'+j+'" onclick="uqAnswer(\''+uid+'\','+i+','+j+')"><span class="uq-badge">'+['A','B','C','D'][j]+'</span>'+opt+'</button>';});
+    html+='</div><div class="uq-fb" id="'+uid+'_f'+i+'"></div></div>';
+  });
+  html+='<div class="uq-result" id="'+uid+'_result"><div class="uq-result-score" id="'+uid+'_score"></div><div class="uq-result-msg" id="'+uid+'_msg"></div><button class="uq-retry-btn" onclick="uqReset(\''+uid+'\')">↺ もう一度</button></div>';
+  document.getElementById(uid+'_body').innerHTML=html;
+  uqState[uid]={answered:new Array(d.qs.length).fill(false),correct:0};
+}
+function uqToggle(uid){
+  var body=document.getElementById(uid+'_body');var arrow=document.getElementById(uid+'_arrow');
+  var isOpen=body.classList.contains('open');
+  if(!isOpen&&!uqState[uid])uqBuildBody(uid);
+  body.classList.toggle('open',!isOpen);
+  arrow.style.transform=isOpen?'':'rotate(180deg)';
+}
+function uqAnswer(uid,qi,oi){
+  if(!uqState[uid]||uqState[uid].answered[qi])return;
+  uqState[uid].answered[qi]=true;
+  var q=uqDefs[uid].qs[qi];
+  var opts=document.querySelectorAll('#'+uid+'_c'+qi+' .uq-opt');
+  var fb=document.getElementById(uid+'_f'+qi);
+  opts.forEach(function(o){o.disabled=true;});
+  if(oi===q.ans){opts[oi].classList.add('correct');fb.className='uq-fb show-ok';fb.innerHTML='✅ 正解！　'+q.exp;uqState[uid].correct++;launchConfetti(6);}
+  else{opts[oi].classList.add('wrong');opts[q.ans].classList.add('correct');fb.className='uq-fb show-ng';fb.innerHTML='❌ 不正解。正解は「'+['A','B','C','D'][q.ans]+'」。'+q.exp;}
+  if(uqState[uid].answered.every(function(v){return v;}))setTimeout(function(){uqShowResult(uid);},600);
+}
+function uqShowResult(uid){
+  var s=uqState[uid];var total=uqDefs[uid].qs.length;var pct=s.correct/total;
+  var result=document.getElementById(uid+'_result');
+  result.className='uq-result '+(pct>=0.75?'pass':'retry');result.style.display='block';
+  document.getElementById(uid+'_score').textContent=s.correct+' / '+total+' 問正解';
+  var msg=pct===1?'🎉 パーフェクト！すごい！':pct>=0.75?'✨ 合格です！よくできました！':pct>=0.5?'👍 もう少し！もう一回やってみよう。':'📖 もう一度本文を読んでから挑戦しよう！';
+  document.getElementById(uid+'_msg').textContent=msg;
+  if(pct===1)launchConfetti(60);
+}
+function uqReset(uid){
+  uqState[uid]={answered:new Array(uqDefs[uid].qs.length).fill(false),correct:0};
+  document.getElementById(uid+'_result').style.display='none';
+  for(var i=0;i<uqDefs[uid].qs.length;i++){
+    document.querySelectorAll('#'+uid+'_c'+i+' .uq-opt').forEach(function(o){o.disabled=false;o.className='uq-opt';});
+    var fb=document.getElementById(uid+'_f'+i);fb.className='uq-fb';fb.innerHTML='';
+  }
+}
+
+// FLASHCARD
+var fcCards=[
+  {front:'標準模型とは何か（一言で）',back:'全素粒子と3つの力（重力以外）を統一的に記述した人類最高精度の理論',bsub:'17種類の素粒子で宇宙のほぼすべてを説明する'},
+  {front:'標準模型の「フェルミオン」に含まれる粒子は？',back:'クォーク（6種類）＋ レプトン（6種類）＝ 計12種類',bsub:'物質を作る粒子。スピン1/2（半整数）'},
+  {front:'標準模型の「ボソン」に含まれる粒子は？',back:'光子・グルーオン・W±・Z⁰（ゲージボソン4種）＋ ヒッグス粒子 ＝ 計5種',bsub:'力を伝える粒子。スピン1（ヒッグスはスピン0）'},
+  {front:'標準模型に含まれる素粒子は全部で何種類？',back:'17種類',bsub:'フェルミオン12種＋ボソン5種。反粒子を別にカウントすると異なる'},
+  {front:'2012年に発見された「最後のピース」は？',back:'ヒッグス粒子（H）',bsub:'1964年のヒッグスらの予言から約48年後にLHCで発見。2013年ノーベル賞'},
+  {front:'標準模型が記述する3つの力は？',back:'電磁気力・強い力・弱い力',bsub:'重力は標準模型の外。これが最大の「未完成」部分'},
+  {front:'量子電磁力学（QED）でノーベル賞を受賞した日本人は？',back:'朝永振一郎（1965年・ファインマン・シュウィンガーと共同）',bsub:'電磁気力を量子論で精密に記述することに成功'},
+  {front:'標準模型が「最も精密な予言」として知られるのは？',back:'電子の磁気モーメント（g因子）を小数点以下10桁以上の精度で予言',bsub:'実験値ともほぼ一致。人類が作った理論の中で最も精密'},
+  {front:'標準模型がまだ説明できていない現象を3つ言えますか？',back:'①重力の記述　②ダークマターの正体　③反物質消失問題',bsub:'他にも「なぜ3世代か」「なぜ17種類か」なども未解決'},
+  {front:'小林・益川理論（1973年）が予言したものは？',back:'CP対称性の破れと第3世代クォークの存在',bsub:'2008年ノーベル物理学賞。トップクォークは1995年に発見'},
+  {front:'「超弦理論」の基本的な考え方は？',back:'素粒子を「点」ではなく「弦（ひも）の振動」として捉える',bsub:'4つの力すべてを統一できる可能性があるが実験的検証が困難'},
+  {front:'宇宙の質量の構成は（大まかに）？',back:'通常物質 約5%　ダークマター 約27%　ダークエネルギー 約68%',bsub:'ダークマターもダークエネルギーも正体不明。標準模型では説明できない'},
+];
+var fcIdx=0,fcSpeed=0,fcTimer=null,fcFlipped=false;
+function renderFc(){
+  var c=fcCards[fcIdx];
+  document.getElementById('fc_front').textContent=c.front;
+  document.getElementById('fc_fsub').textContent=c.fsub||'';
+  document.getElementById('fc_back').textContent=c.back;
+  document.getElementById('fc_bsub').textContent=c.bsub||'';
+  var fc=document.getElementById('fc_card');fc.classList.remove('flipped');fcFlipped=false;
+  document.getElementById('fc_idx').textContent=(fcIdx+1)+' / '+fcCards.length;
+  document.getElementById('fc_prevBtn').disabled=fcIdx===0;
+  document.getElementById('fc_nextBtn').disabled=fcIdx===fcCards.length-1;
+  var prog=document.getElementById('fc_prog');
+  prog.innerHTML=fcCards.map(function(_,i){return '<div class="fc-dot'+(i===fcIdx?' current':i<fcIdx?' done':'')+'"></div>';}).join('');
+  if(fcSpeed>0)startAutoFc();
+}
+function flipFc(){var fc=document.getElementById('fc_card');fcFlipped=!fcFlipped;fc.classList.toggle('flipped',fcFlipped);}
+function fcNext(){if(fcIdx<fcCards.length-1){fcIdx++;renderFc();}}
+function fcPrev(){if(fcIdx>0){fcIdx--;renderFc();}}
+function setFcSpeed(ms){
+  fcSpeed=ms;clearTimeout(fcTimer);
+  [0,1,2,3].forEach(function(i){var b=document.getElementById('spbtn'+i);if(b)b.classList.remove('active');});
+  document.getElementById('spbtn'+[0,4000,2500,1500].indexOf(ms)).classList.add('active');
+  if(ms>0)startAutoFc();
+}
+function startAutoFc(){
+  clearTimeout(fcTimer);var fill=document.getElementById('fc_timer');
+  fill.style.transition='none';fill.style.width='0%';
+  setTimeout(function(){
+    fill.style.transition='width '+fcSpeed+'ms linear';fill.style.width='100%';
+    fcTimer=setTimeout(function(){fcIdx=(fcIdx+1)%fcCards.length;renderFc();setTimeout(function(){if(fcSpeed>0)startAutoFc();},300);},fcSpeed);
+  },50);
+}
+
+// QUIZ TAB
+var allQuizData=[
+  {ch:1,q:'標準模型が記述する「力」はどれですか？',opts:['重力・電磁気力・強い力','電磁気力・強い力・弱い力','電磁気力・弱い力・重力','強い力・弱い力・重力'],ans:1,exp:'標準模型は電磁気力・強い力・弱い力の3つを記述します。重力は含まれません。'},
+  {ch:1,q:'標準模型における素粒子の2大グループはどれですか？',opts:['クォークとレプトン','フェルミオンとボソン','陽子と電子','原子と分子'],ans:1,exp:'標準模型の素粒子はフェルミオン（物質粒子）とボソン（力の粒子）の2大グループに分かれます。'},
+  {ch:1,q:'標準模型の素粒子は全部で何種類ですか？',opts:['8種類','12種類','17種類','24種類'],ans:2,exp:'標準模型の素粒子はフェルミオン12種＋ボソン5種の計17種類です。'},
+  {ch:1,q:'「Standard Model」という名前が示す意味として正しいのはどれですか？',opts:['この理論は完璧','現時点の標準的な理論であり途中経過','標準的な実験方法','物理の標準テキスト'],ans:1,exp:'Standard Modelは「現在の標準的な理論」であり、研究者はより深い理論への途中経過と捉えています。'},
+  {ch:2,q:'標準模型でフェルミオンに分類されるのはどれですか？',opts:['光子と電子','グルーオンとW粒子','クォークとレプトン','ヒッグス粒子とZ粒子'],ans:2,exp:'フェルミオンは物質を作る粒子で、クォーク（6種類）とレプトン（6種類）が含まれます。'},
+  {ch:2,q:'標準模型で「第1世代」のクォークはどれですか？',opts:['トップとボトム','チャームとストレンジ','アップとダウン','アップとストレンジ'],ans:2,exp:'第1世代のクォークはアップ（u）とダウン（d）です。普通の物質はほぼこの2種類でできています。'},
+  {ch:2,q:'ヒッグス粒子はどのグループに属しますか？',opts:['フェルミオン','ゲージボソン','スカラーボソン','レプトン'],ans:2,exp:'ヒッグス粒子はスカラーボソン（スピン0）です。ゲージボソン（スピン1）とは異なり、力を伝えるのではなく質量を与えます。'},
+  {ch:2,q:'標準模型の「第3世代のレプトン」はどれですか？',opts:['電子と電子ニュートリノ','ミュー粒子とミューニュートリノ','タウ粒子とタウニュートリノ','トップとボトム'],ans:2,exp:'第3世代のレプトンはタウ粒子（τ）とタウニュートリノ（ντ）です。'},
+  {ch:3,q:'QEDでノーベル賞を受賞した日本人物理学者は誰ですか？',opts:['湯川秀樹','朝永振一郎','小林誠','益川敏英'],ans:1,exp:'朝永振一郎はファインマン・シュウィンガーとともに量子電磁力学（QED）で1965年にノーベル物理学賞を受賞しました。'},
+  {ch:3,q:'W粒子とZ粒子が発見されたのはいつですか？',opts:['1969年','1983年','1995年','2012年'],ans:1,exp:'W・Z粒子は1983年にCERNで発見されました。1984年ノーベル物理学賞。'},
+  {ch:3,q:'ヒッグス粒子が発見されたのはいつですか？',opts:['1983年','1995年','2000年','2012年'],ans:3,exp:'ヒッグス粒子は2012年にCERNのLHCで発見されました。1964年の予言から約48年後。'},
+  {ch:3,q:'第3世代クォークの存在を予言してノーベル賞を受賞した日本人は誰ですか？',opts:['湯川秀樹と朝永振一郎','小林誠と益川敏英','南部陽一郎と梶田隆章','小柴昌俊と西島和彦'],ans:1,exp:'小林誠と益川敏英が「小林・益川理論」で第3世代クォークを予言し、2008年ノーベル物理学賞を受賞しました。'},
+  {ch:4,q:'標準模型が最も精密に予言したのはどれですか？',opts:['陽子の質量','電子の磁気モーメント（g因子）','光の速度','ニュートリノの質量'],ans:1,exp:'電子の磁気モーメントは小数点以下10桁以上の精度で予言され実験値とほぼ一致。人類最精密の予言です。'},
+  {ch:4,q:'標準模型ができないことはどれですか？',opts:['W粒子の質量を予言','電子の磁気モーメントを計算','重力を記述','ヒッグス粒子の質量を予言'],ans:2,exp:'標準模型は重力を記述できません。電磁気力・強い力・弱い力は含まれますが重力は含まれていません。'},
+  {ch:4,q:'ダークマターについて標準模型が抱える問題はどれですか？',opts:['ダークマターが重すぎて計算できない','ダークマターの正体を標準模型の粒子で説明できていない','ダークマターが多すぎる','ダークマターと光子が反応しすぎる'],ans:1,exp:'宇宙の質量の約27%を占めるダークマターの正体が、標準模型の粒子では説明できていません。'},
+  {ch:4,q:'「なぜ3世代なのか」「なぜ17種類なのか」について標準模型はどう答えますか？',opts:['数学的に必然と説明できる','実験から得られた事実で理論から導けていない','重力が決めている','対称性が必要とするから'],ans:1,exp:'17種類・3世代という数字は実験から得られたもので、なぜこの数字なのかは理論から導けていません。'},
+  {ch:5,q:'理論で予言され後に実験で確認された粒子はどれですか？',opts:['電子（1897年発見）','陽子（1919年発見）','ヒッグス粒子（2012年発見）','中性子（1932年発見）'],ans:2,exp:'ヒッグス粒子は1964年に予言され2012年に確認されました。W・Z粒子・トップクォークも同様です。'},
+  {ch:5,q:'W・Z粒子は理論的予言から実験確認まで約何年かかりましたか？',opts:['約5年','約10年','約16年','約48年'],ans:2,exp:'電弱統一理論（1967年）からW・Z粒子発見（1983年）まで約16年です。'},
+  {ch:5,q:'「小林・益川理論」（1973年）が予言したことはどれですか？',opts:['ヒッグス粒子の存在','第3世代クォークとCP対称性の破れ','W・Z粒子の質量','グルーオンの種類'],ans:1,exp:'小林・益川理論はCP対称性の破れを説明するために第3世代クォークの存在を予言しました。'},
+  {ch:5,q:'標準模型の予言力を周期表に例えたとき、共通する点はどれですか？',opts:['どちらも元素を分類','「ここに未知のものがあるはず」と予言できる構造','どちらも重力を記述','どちらも19世紀に完成'],ans:1,exp:'周期表が未知元素の存在を予言したように、標準模型も対称性から未発見の粒子を予言できます。'},
+  {ch:6,q:'超対称性理論（SUSY）が予言するのはどれですか？',opts:['すべての素粒子に超対称パートナーが存在する','重力子が17種類ある','素粒子は弦の振動','宇宙は10次元'],ans:0,exp:'超対称性理論（SUSY）はすべての素粒子に超対称パートナーが存在すると予言します。ダークマターの候補にもなりうる理論です。'},
+  {ch:6,q:'超弦理論の基本的な考え方はどれですか？',opts:['素粒子はさらに小さい原子でできている','素粒子は点ではなく弦（ひも）の振動','素粒子は10次元の立体','すべての力は重力から生まれる'],ans:1,exp:'超弦理論は素粒子を「弦（ひも）の振動」として捉え、4つの力すべてを統一できる可能性を持ちます。'},
+  {ch:6,q:'ダークマターとダークエネルギーについて正しいのはどれですか？',opts:['どちらも標準模型で完全に説明','ダークマター5%・ダークエネルギー27%','ダークマター約27%・ダークエネルギー約68%・正体不明','ダークエネルギーはヒッグス粒子と同じ'],ans:2,exp:'ダークマターは宇宙の約27%、ダークエネルギーは約68%を占めると推定され、どちらも正体不明で標準模型では説明できていません。'},
+  {ch:6,q:'「CP対称性の破れ」と反物質問題の関係はどれですか？',opts:['CP対称性が破れると光速が変化','物質と反物質のわずかな差から現在の宇宙に物質だけが残った可能性がある','CP対称性が保たれたから反物質が消えた','重力がCP対称性を破った'],ans:1,exp:'CP対称性の破れ（物質と反物質の振る舞いのわずかな差）によって物質がわずかに多く残り、現在の宇宙が生まれたと考えられています。'},
+  {ch:7,q:'標準模型の素粒子は全部で何種類ですか？',opts:['12種類','14種類','17種類','21種類'],ans:2,exp:'標準模型の素粒子はフェルミオン12種＋ボソン5種の計17種類です。'},
+  {ch:7,q:'標準模型が「ひとまず完成した」とみなされる出来事はどれですか？',opts:['W・Z粒子の発見（1983年）','トップクォークの発見（1995年）','ヒッグス粒子の発見（2012年）','ニュートリノ振動の発見（1998年）'],ans:2,exp:'2012年のヒッグス粒子発見により標準模型の17種類がすべて揃い「ひとまず完成」とみなされるようになりました。'},
+  {ch:7,q:'標準模型が記述する力の正しい組み合わせはどれですか？',opts:['電磁気力・強い力・弱い力・重力','電磁気力・強い力・弱い力（重力除く）','電磁気力・重力','強い力・弱い力・重力'],ans:1,exp:'標準模型は電磁気力・強い力・弱い力の3つを記述します。重力は標準模型の外にあります。'},
+  {ch:7,q:'標準模型が超えられない最大の壁はどれですか？',opts:['クォークが6種類しかない','ヒッグス粒子の質量が大きい','重力を量子論的に記述できない','電子の質量が小さすぎる'],ans:2,exp:'重力だけは量子論（標準模型）と統合できておらず、「量子重力理論」の完成が現代物理学最大の課題のひとつです。'},
+];
+var currentChapter=0,activeQuizData=[],quizAnswered=[],quizCorrect=0;
+function selectChapter(ch){
+  currentChapter=ch;
+  document.querySelectorAll('#chapterBtns .ch-btn').forEach(function(b,i){b.classList.toggle('active',i===ch);});
+  buildQuiz();
+}
+function buildQuiz(){
+  activeQuizData=currentChapter===0?allQuizData.slice():allQuizData.filter(function(q){return q.ch===currentChapter;});
+  quizAnswered=activeQuizData.map(function(){return false;});quizCorrect=0;
+  document.getElementById('quizResult').style.display='none';
+  var total=activeQuizData.length;
+  document.getElementById('quizInfo').textContent=(currentChapter===0?'全'+total+'問':'単元'+currentChapter+'（'+total+'問）')+' ― 各問に解説がつきます。';
+  var container=document.getElementById('quizContainer');
+  container.innerHTML=activeQuizData.map(function(q,qi){
+    return '<div class="quiz-card" id="qc'+qi+'">'+
+      '<div style="font-size:0.72rem;font-weight:700;color:var(--primary);margin-bottom:4px;">Q'+(qi+1)+' / '+total+(currentChapter===0?' ［単元'+q.ch+'］':'')+'</div>'+
+      '<div class="quiz-q">'+q.q+'</div><div class="quiz-opts">'+
+      q.opts.map(function(opt,oi){return '<button class="quiz-opt" id="qo'+qi+'_'+oi+'" onclick="answerQuiz('+qi+','+oi+')"><span style="display:inline-block;width:22px;height:22px;border-radius:50%;background:var(--primary-light);color:var(--primary);font-weight:800;font-size:0.78rem;text-align:center;line-height:22px;margin-right:8px;flex-shrink:0;">'+['A','B','C','D'][oi]+'</span>'+opt+'</button>';}).join('')+
+      '</div><div class="quiz-feedback" id="qf'+qi+'"></div></div>';
+  }).join('');
+}
+function answerQuiz(qi,oi){
+  if(quizAnswered[qi])return;quizAnswered[qi]=true;
+  var q=activeQuizData[qi];var opts=document.querySelectorAll('#qc'+qi+' .quiz-opt');var fb=document.getElementById('qf'+qi);
+  opts.forEach(function(o){o.disabled=true;});
+  if(oi===q.ans){opts[oi].classList.add('correct');fb.className='quiz-feedback show ok';fb.innerHTML='✅ 正解です！　'+q.exp;quizCorrect++;launchConfetti(5);}
+  else{opts[oi].classList.add('wrong');opts[q.ans].classList.add('correct');fb.className='quiz-feedback show ng';fb.innerHTML='❌ 不正解。正解は「'+['A','B','C','D'][q.ans]+'：'+q.opts[q.ans]+'」。<br>'+q.exp;}
+  if(quizAnswered.every(function(v){return v;}))setTimeout(showResult,700);
+}
+function showResult(){
+  var result=document.getElementById('quizResult');result.style.display='block';
+  var total=activeQuizData.length;var pct=quizCorrect/total;
+  document.getElementById('quizScore').textContent=quizCorrect+' / '+total+' 問正解';
+  var msg=pct===1?'🎉 パーフェクト！ここまで来たこと、本当にすごい。':pct>=0.75?'✨ 合格です！SP05まで、よく来ましたね。':pct>=0.5?'👍 もう少しです！読み直してもう一回やってみよう。':'📖 一緒に学習タブを読み直しましょう。あなたなら絶対わかります。';
+  document.getElementById('quizMsg').textContent=msg;
+  if(pct===1)launchConfetti(60);
+}
+function resetQuiz(){buildQuiz();}
+document.addEventListener('DOMContentLoaded',function(){renderFc();});
+</script>
+
+
+</body></html>

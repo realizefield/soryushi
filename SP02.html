@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAMBA | 素粒子 SP02 レプトンの世界</title>
+<style>
+  :root {
+    --primary:#0284c7; --primary-dark:#0369a1; --primary-light:#e0f2fe;
+    --accent:#65a30d; --accent-light:#ecfccb;
+    --accent2:#f59e0b; --accent3:#8b5cf6;
+    --danger:#ef4444; --bg:#f0f9ff; --card:#ffffff;
+    --text:#0c4a6e; --muted:#64748b; --border:#bae6fd;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+  header{background:linear-gradient(135deg,#0c4a6e,#0284c7,#38bdf8);color:white;}
+  .header-top{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid rgba(255,255,255,0.2);}
+  .logo{font-size:1.5rem;font-weight:900;letter-spacing:2px;color:#bef264;}
+  .header-sub{font-size:0.75rem;opacity:0.85;}
+  .chapter-title-bar{padding:14px 20px;display:flex;align-items:center;gap:12px;}
+  .chapter-badge{background:#bef264;color:#1a2e05;font-weight:900;font-size:0.75rem;padding:3px 10px;border-radius:20px;}
+  .chapter-title-text{font-size:1.1rem;font-weight:700;color:white;}
+  .tab-bar{display:flex;background:white;border-bottom:3px solid var(--primary-light);overflow-x:auto;padding:0 16px;gap:4px;}
+  .tab-btn{padding:10px 16px;border:none;background:none;font-size:0.82rem;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all 0.2s;font-family:inherit;margin-bottom:-3px;}
+  .tab-btn.active{color:var(--primary);border-bottom-color:var(--primary);}
+  .tab-btn:hover{color:var(--primary);}
+  main{max-width:860px;margin:0 auto;padding:20px 16px 60px;}
+  .tab-content{display:none;} .tab-content.active{display:block;}
+  .section-card{background:var(--card);border-radius:14px;box-shadow:0 2px 12px rgba(2,132,199,0.1);margin-bottom:20px;overflow:hidden;border:1px solid #e0f2fe;}
+  .section-header{padding:13px 20px;font-weight:800;font-size:0.95rem;display:flex;align-items:center;gap:8px;}
+  .sh-blue  {background:#e0f2fe;border-left:4px solid #0284c7;color:#0c4a6e;}
+  .sh-green {background:#ecfccb;border-left:4px solid #65a30d;color:#1a2e05;}
+  .sh-amber {background:#fef9c3;border-left:4px solid #ca8a04;color:#713f12;}
+  .sh-purple{background:#ede9fe;border-left:4px solid #7c3aed;color:#3b0764;}
+  .sh-red   {background:#fee2e2;border-left:4px solid #ef4444;color:#7f1d1d;}
+  .sh-cosmos{background:#0369a1;border-left:4px solid #bef264;color:#bef264;}
+  .sh-teal  {background:#ccfbf1;border-left:4px solid #0d9488;color:#134e4a;}
+  .section-body{padding:18px 20px;}
+  .text-block{font-size:0.92rem;line-height:1.9;margin-bottom:12px;color:#0c4a6e;}
+  .key-box{background:#e0f2fe;border:2px solid #7dd3fc;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .key-box .box-label{font-weight:800;color:#0369a1;font-size:0.82rem;margin-bottom:6px;}
+  .important-box{background:#ecfccb;border:2px solid #a3e635;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .important-box .box-label{font-weight:800;color:#365314;font-size:0.82rem;margin-bottom:6px;}
+  .amber-box{background:#fef9c3;border:2px solid #fde047;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .amber-box .box-label{font-weight:800;color:#713f12;font-size:0.82rem;margin-bottom:6px;}
+  .note-block{background:#f0f9ff;border-left:3px solid #38bdf8;padding:8px 12px;border-radius:0 6px 6px 0;font-size:0.87rem;margin:8px 0;line-height:1.8;color:#0c4a6e;}
+  .warn-block{background:#fefce8;border-left:3px solid #eab308;padding:8px 12px;border-radius:0 6px 6px 0;font-size:0.87rem;margin:8px 0;line-height:1.8;color:#713f12;}
+  .btn{padding:7px 16px;border-radius:6px;border:none;font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.18s;font-family:inherit;}
+  .btn-primary{background:var(--primary);color:white;} .btn-primary:hover{background:var(--primary-dark);}
+  .btn-gray{background:#94a3b8;color:white;} .btn-gray:hover{background:#64748b;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;}
+  @media(max-width:580px){.two-col{grid-template-columns:1fr;}}
+  .fc-speed-btn{padding:5px 12px;border-radius:20px;border:2px solid var(--border);background:white;font-size:0.78rem;font-weight:700;cursor:pointer;transition:all 0.15s;font-family:inherit;color:var(--primary);}
+  .fc-speed-btn.active{background:var(--primary);color:white;border-color:var(--primary);}
+  .flashcard-wrap{perspective:1000px;width:100%;max-width:480px;margin:0 auto;height:180px;cursor:pointer;}
+  .flashcard{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);}
+  .flashcard.flipped{transform:rotateY(180deg);}
+  .fc-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;}
+  .fc-front{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;box-shadow:0 4px 16px rgba(2,132,199,0.3);}
+  .fc-back{background:linear-gradient(135deg,#365314,#65a30d);color:white;transform:rotateY(180deg);box-shadow:0 4px 16px rgba(101,163,13,0.3);}
+  .fc-label{font-size:0.72rem;opacity:0.75;margin-bottom:8px;letter-spacing:1px;}
+  .fc-main{font-size:1.05rem;font-weight:800;line-height:1.6;}
+  .fc-sub{font-size:0.78rem;opacity:0.85;margin-top:8px;line-height:1.5;}
+  .fc-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;}
+  .fc-nav-btn{padding:7px 20px;border-radius:8px;border:2px solid var(--primary);background:white;color:var(--primary);font-weight:700;font-size:0.85rem;cursor:pointer;transition:all 0.15s;font-family:inherit;}
+  .fc-nav-btn:hover{background:var(--primary);color:white;}
+  .fc-nav-btn:disabled{opacity:0.35;cursor:default;}
+  .fc-progress{display:flex;gap:4px;justify-content:center;margin-top:10px;flex-wrap:wrap;}
+  .fc-dot{width:8px;height:8px;border-radius:50%;background:#bae6fd;transition:all 0.2s;}
+  .fc-dot.done{background:var(--accent);}
+  .fc-dot.current{background:var(--primary);transform:scale(1.3);}
+  .fc-timer-bar{height:4px;background:#bae6fd;border-radius:99px;margin-top:10px;overflow:hidden;}
+  .fc-timer-fill{height:100%;background:var(--accent);border-radius:99px;transition:width linear;}
+  .quiz-card{border:2px solid #bae6fd;border-radius:10px;padding:16px;margin:12px 0;background:#f0f9ff;}
+  .quiz-q{font-weight:700;font-size:0.9rem;margin-bottom:12px;line-height:1.7;color:#0c4a6e;}
+  .quiz-opts{display:flex;flex-direction:column;gap:8px;}
+  .quiz-opt{padding:9px 14px;border:2px solid #bae6fd;border-radius:7px;cursor:pointer;font-size:0.87rem;transition:all 0.15s;background:white;font-family:inherit;text-align:left;color:#0c4a6e;}
+  .quiz-opt:hover:not(:disabled){border-color:var(--primary);background:#e0f2fe;}
+  .quiz-opt.correct{background:#ecfccb;border-color:#65a30d;color:#1a2e05;font-weight:700;}
+  .quiz-opt.wrong{background:#fee2e2;border-color:var(--danger);color:#7f1d1d;}
+  .quiz-feedback{margin-top:10px;padding:8px 12px;border-radius:6px;font-size:0.85rem;display:none;font-weight:600;line-height:1.8;}
+  .quiz-feedback.show{display:block;}
+  .quiz-feedback.ok{background:#ecfccb;color:#1a2e05;}
+  .quiz-feedback.ng{background:#fee2e2;color:#7f1d1d;}
+  .quiz-result{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;border-radius:10px;padding:16px 20px;margin-top:16px;text-align:center;display:none;}
+  .quiz-result-score{font-size:2.2rem;font-weight:900;}
+  .quiz-result-msg{font-size:0.9rem;opacity:0.9;margin-top:4px;}
+  .confetti-piece{position:fixed;width:10px;height:10px;border-radius:2px;animation:confettiFall 1.5s ease-out forwards;pointer-events:none;z-index:9999;}
+  @keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(80vh) rotate(720deg);opacity:0}}
+  .ch-btn{padding:6px 14px;border-radius:20px;border:2px solid var(--border);background:white;color:var(--muted);font-size:0.8rem;font-weight:700;cursor:pointer;transition:all 0.15s;font-family:inherit;}
+  .ch-btn.active{background:var(--primary);color:white;border-color:var(--primary);}
+  .ch-btn:hover{border-color:var(--primary);color:var(--primary);}
+  .ch-btn.active:hover{color:white;}
+  .lepton-card{border-radius:12px;padding:16px;color:white;margin-bottom:8px;}
+  .gen-badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:0.72rem;font-weight:800;margin-bottom:8px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div class="logo">GAMBA</div>
+    <div class="header-sub">江原予備校 ／ 物理・宇宙</div>
+  </div>
+  <div class="chapter-title-bar">
+    <span class="chapter-badge">SP02</span>
+    <span class="chapter-title-text">レプトンの世界 ― 電子・ニュートリノとその仲間たち</span>
+  </div>
+</header>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('learn')">📖 学習</button>
+  <button class="tab-btn" onclick="showTab('flash')">🃏 フラッシュカード</button>
+  <button class="tab-btn" onclick="showTab('quiz')">🔭 ミニテスト</button>
+</div>
+
+<main>
+
+<!-- ========== LEARN ========== -->
+<div id="tab-learn" class="tab-content active">
+
+<!-- 0. イヌ校長 -->
+<div class="section-card">
+  <div class="section-header sh-cosmos">🌌 SP02 レプトンの世界へようこそ</div>
+  <div class="section-body">
+    <div style="background:linear-gradient(135deg,#0369a1,#0284c7);border-radius:12px;padding:18px 20px;color:white;font-size:0.92rem;line-height:2;margin-bottom:14px;">
+      <div style="font-size:1.05rem;font-weight:800;color:#bef264;margin-bottom:10px;">🐶 イヌ校長より</div>
+      SP01では「物質の究極の材料＝素粒子」を学びました。<br>
+      素粒子は大きく3グループに分かれていますね。<br><br>
+      ① <strong style="color:#bef264">クォーク</strong>（SP01で学習済み）<br>
+      ② <strong style="color:#fbbf24">レプトン</strong>　← <strong style="color:#fbbf24">今回はここ！</strong><br>
+      ③ ゲージボソン（SP03以降）<br><br>
+      <span style="font-size:0.82rem;opacity:0.85;">レプトンとは何か、電子はなぜ特別なのか、幽霊のような「ニュートリノ」とは何か、順番に見ていきましょう。</span>
+    </div>
+    <div class="amber-box">
+      <div class="box-label">📌 この単元で学ぶこと</div>
+      <div style="font-size:0.9rem;line-height:2.2;">
+        ① レプトンとは何か（クォークとどう違うか）<br>
+        ② 6種類のレプトンとその3世代構造<br>
+        ③ 電子の性質（電荷・質量・役割）<br>
+        ④ ニュートリノ ― 地球を素通りする幽霊粒子<br>
+        ⑤ ミュー粒子・タウ粒子（重い版の電子）<br>
+        ⑥ 反レプトン（陽電子など）の存在
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 1. レプトンとは -->
+<div class="section-card">
+  <div class="section-header sh-blue">🔵 1. レプトンとは何か</div>
+  <div class="section-body">
+    <div class="text-block">
+      SP01で学んだように、素粒子は3つのグループに分かれています。その中の「レプトン」とはどのような粒子でしょうか。
+    </div>
+
+    <!-- クォークとの比較 -->
+    <div class="two-col" style="margin-bottom:14px;">
+      <div style="background:#fef9c3;border:2px solid #fde047;border-radius:10px;padding:14px;">
+        <div style="font-weight:800;color:#713f12;font-size:0.88rem;margin-bottom:8px;">SP01の復習 ― クォーク</div>
+        <div style="font-size:0.84rem;line-height:2;color:#78350f;">
+          ・陽子・中性子の<strong>材料</strong><br>
+          ・必ず3つ組みで存在<br>
+          ・単独では取り出せない<br>
+          ・強い力の影響を受ける<br>
+          ・6種類（u d c s t b）
+        </div>
+      </div>
+      <div style="background:#e0f2fe;border:2px solid #7dd3fc;border-radius:10px;padding:14px;">
+        <div style="font-weight:800;color:#0369a1;font-size:0.88rem;margin-bottom:8px;">今回 ― レプトン</div>
+        <div style="font-size:0.84rem;line-height:2;color:#0c4a6e;">
+          ・単独で存在できる<br>
+          ・強い力の影響を<strong>受けない</strong><br>
+          ・原子核の<strong>外</strong>を飛び回る<br>
+          ・電磁力・弱い力だけ受ける<br>
+          ・6種類（3世代×2）
+        </div>
+      </div>
+    </div>
+
+    <div class="key-box">
+      <div class="box-label">📌 レプトンの定義</div>
+      <div style="font-size:0.9rem;line-height:2;">
+        <strong>レプトン（lepton）</strong>とは、クォークと違って<strong>強い力（核力）の影響を受けない素粒子</strong>のことです。<br>
+        名前はギリシャ語の「leptos（軽い）」に由来しています。<br>
+        電子はレプトンの代表例で、私たちが最もよく知っている素粒子です。
+      </div>
+    </div>
+
+    <div class="note-block">
+      💡 クォークが「原子核の中に閉じ込められた素粒子」なのに対し、レプトンは「原子核の外の世界を自由に飛び回る素粒子」です。
+    </div>
+  </div>
+</div>
+
+<!-- 2. 6種類のレプトン -->
+<div class="section-card">
+  <div class="section-header sh-purple">⚡ 2. 6種類のレプトン ― 3つの世代</div>
+  <div class="section-body">
+    <div class="text-block">
+      レプトンは6種類あり、「荷電レプトン」と「ニュートリノ」のペアが3世代分あります。
+    </div>
+
+    <!-- 世代構造 -->
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;">
+
+      <!-- 第1世代 -->
+      <div style="background:#f0f9ff;border:2px solid #0284c7;border-radius:12px;overflow:hidden;">
+        <div style="background:#0284c7;padding:8px 16px;color:white;font-weight:800;font-size:0.85rem;display:flex;align-items:center;gap:8px;">
+          <span style="background:#bef264;color:#1a2e05;padding:1px 8px;border-radius:20px;font-size:0.75rem;">第1世代</span>
+          最も軽い・普通の物質を作る
+        </div>
+        <div style="display:flex;gap:10px;padding:14px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:140px;background:white;border:2px solid #bae6fd;border-radius:10px;padding:12px;text-align:center;">
+            <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#0369a1,#38bdf8);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.2rem;color:white;">e⁻</div>
+            <div style="font-weight:800;color:#0369a1;font-size:0.9rem;">電子</div>
+            <div style="font-size:0.78rem;color:#64748b;margin-top:4px;line-height:1.7;">電荷：<strong>−1</strong><br>質量：0.511 MeV/c²<br>原子核の周りを回る</div>
+          </div>
+          <div style="flex:1;min-width:140px;background:white;border:2px solid #bae6fd;border-radius:10px;padding:12px;text-align:center;">
+            <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#64748b,#94a3b8);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;color:white;">νe</div>
+            <div style="font-weight:800;color:#374151;font-size:0.9rem;">電子ニュートリノ</div>
+            <div style="font-size:0.78rem;color:#64748b;margin-top:4px;line-height:1.7;">電荷：<strong>0</strong><br>質量：ほぼ0<br>何でも通り抜ける</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第2世代 -->
+      <div style="background:#f5f3ff;border:2px solid #7c3aed;border-radius:12px;overflow:hidden;">
+        <div style="background:#7c3aed;padding:8px 16px;color:white;font-weight:800;font-size:0.85rem;display:flex;align-items:center;gap:8px;">
+          <span style="background:#ddd6fe;color:#3b0764;padding:1px 8px;border-radius:20px;font-size:0.75rem;">第2世代</span>
+          電子の約207倍重い
+        </div>
+        <div style="display:flex;gap:10px;padding:14px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:140px;background:white;border:2px solid #c4b5fd;border-radius:10px;padding:12px;text-align:center;">
+            <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#6d28d9,#a855f7);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;color:white;">μ⁻</div>
+            <div style="font-weight:800;color:#6d28d9;font-size:0.9rem;">ミュー粒子</div>
+            <div style="font-size:0.78rem;color:#64748b;margin-top:4px;line-height:1.7;">電荷：<strong>−1</strong><br>質量：105.7 MeV/c²<br>2.2マイクロ秒で崩壊</div>
+          </div>
+          <div style="flex:1;min-width:140px;background:white;border:2px solid #c4b5fd;border-radius:10px;padding:12px;text-align:center;">
+            <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#64748b,#94a3b8);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;color:white;">νμ</div>
+            <div style="font-weight:800;color:#374151;font-size:0.9rem;">ミューニュートリノ</div>
+            <div style="font-size:0.78rem;color:#64748b;margin-top:4px;line-height:1.7;">電荷：<strong>0</strong><br>質量：ほぼ0<br>ミュー粒子と対になる</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第3世代 -->
+      <div style="background:#fff1f2;border:2px solid #ef4444;border-radius:12px;overflow:hidden;">
+        <div style="background:#ef4444;padding:8px 16px;color:white;font-weight:800;font-size:0.85rem;display:flex;align-items:center;gap:8px;">
+          <span style="background:#fee2e2;color:#7f1d1d;padding:1px 8px;border-radius:20px;font-size:0.75rem;">第3世代</span>
+          電子の約3477倍重い
+        </div>
+        <div style="display:flex;gap:10px;padding:14px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:140px;background:white;border:2px solid #fca5a5;border-radius:10px;padding:12px;text-align:center;">
+            <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#b91c1c,#ef4444);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;color:white;">τ⁻</div>
+            <div style="font-weight:800;color:#b91c1c;font-size:0.9rem;">タウ粒子</div>
+            <div style="font-size:0.78rem;color:#64748b;margin-top:4px;line-height:1.7;">電荷：<strong>−1</strong><br>質量：1777 MeV/c²<br>0.29ピコ秒で崩壊</div>
+          </div>
+          <div style="flex:1;min-width:140px;background:white;border:2px solid #fca5a5;border-radius:10px;padding:12px;text-align:center;">
+            <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#64748b,#94a3b8);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;color:white;">ντ</div>
+            <div style="font-weight:800;color:#374151;font-size:0.9rem;">タウニュートリノ</div>
+            <div style="font-size:0.78rem;color:#64748b;margin-top:4px;line-height:1.7;">電荷：<strong>0</strong><br>質量：ほぼ0<br>タウ粒子と対になる</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="important-box">
+      <div class="box-label">📌 3世代のポイント</div>
+      <div style="font-size:0.88rem;line-height:2.1;">
+        各世代は「荷電レプトン（電荷−1）」と「ニュートリノ（電荷0）」のペアになっています。<br>
+        世代が上がるほど質量が大きくなりますが、<strong>不安定でほぼ瞬間的に崩壊</strong>します。<br>
+        私たちの身の回りの物質を作っているのは<strong>第1世代の電子だけ</strong>です。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. 電子の世界 -->
+<div class="section-card">
+  <div class="section-header sh-blue">⚡ 3. 電子 ― 私たちの生活を支える素粒子</div>
+  <div class="section-body">
+    <div class="text-block">
+      レプトンの中で最もよく知られているのが<strong>電子</strong>です。電子は私たちの生活のあらゆる場面に関わっています。
+    </div>
+
+    <!-- 電子の基本性質 -->
+    <div style="background:#e0f2fe;border:2px solid #7dd3fc;border-radius:12px;padding:16px;margin-bottom:14px;">
+      <div style="font-weight:800;color:#0369a1;font-size:0.9rem;margin-bottom:12px;">⚡ 電子の基本性質</div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:0.87rem;">
+        <div style="display:flex;align-items:center;gap:10px;background:white;border-radius:8px;padding:10px 12px;">
+          <span style="font-size:1.2rem;">🔵</span>
+          <div><strong style="color:#0369a1;">電荷</strong>　−1（マイナス1）　陽子の電荷＋1とちょうど逆</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border-radius:8px;padding:10px 12px;">
+          <span style="font-size:1.2rem;">⚖️</span>
+          <div><strong style="color:#0369a1;">質量</strong>　0.511 MeV/c²　陽子の約1/1836　非常に軽い</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border-radius:8px;padding:10px 12px;">
+          <span style="font-size:1.2rem;">🌀</span>
+          <div><strong style="color:#0369a1;">スピン</strong>　1/2（フェルミオンという仲間）　「回転」に似た量子的性質</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border-radius:8px;padding:10px 12px;">
+          <span style="font-size:1.2rem;">∞</span>
+          <div><strong style="color:#0369a1;">安定性</strong>　電子は崩壊しない。宇宙誕生以来ずっと存在し続けています</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 電子の役割3つ -->
+    <div style="font-weight:800;color:#0369a1;font-size:0.88rem;margin-bottom:10px;">電子が担っている3つの大きな役割</div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px;">
+      <div style="background:#ecfccb;border:2px solid #a3e635;border-radius:10px;padding:12px 16px;">
+        <div style="font-weight:800;color:#365314;font-size:0.87rem;margin-bottom:4px;">① 原子の構造を決める</div>
+        <div style="font-size:0.85rem;color:#1a2e05;line-height:1.9;">電子は原子核の周りを「電子雲」として存在し、その配置が原子の<strong>化学的性質</strong>を決めます。元素が18族（希ガス）で安定する理由も電子の数によります。</div>
+      </div>
+      <div style="background:#fef9c3;border:2px solid #fde047;border-radius:10px;padding:12px 16px;">
+        <div style="font-weight:800;color:#713f12;font-size:0.87rem;margin-bottom:4px;">② 電気・電流を作る</div>
+        <div style="font-size:0.85rem;color:#78350f;line-height:1.9;">金属の中で電子が自由に動き回ることで<strong>電流</strong>が生まれます。スマートフォン・パソコン・照明など、すべての電気機器は電子の流れで動いています。</div>
+      </div>
+      <div style="background:#e0f2fe;border:2px solid #7dd3fc;border-radius:10px;padding:12px 16px;">
+        <div style="font-weight:800;color:#0369a1;font-size:0.87rem;margin-bottom:4px;">③ 光を出す・吸収する</div>
+        <div style="font-size:0.85rem;color:#0c4a6e;line-height:1.9;">電子がエネルギーを受けて高い状態から低い状態に移るとき、<strong>光（光子）を放出</strong>します。太陽が光る仕組みも、蛍光灯が光る仕組みも、これが基本です。</div>
+      </div>
+    </div>
+
+    <div class="note-block">
+      💡 電子1個の電荷（1.6×10⁻¹⁹クーロン）は自然界の最小電荷単位です。これを<strong>素電荷</strong>といいます。すべての電荷はこの素電荷の整数倍になっています。
+    </div>
+  </div>
+</div>
+
+<!-- 4. ニュートリノ -->
+<div class="section-card">
+  <div class="section-header sh-teal">👻 4. ニュートリノ ― 幽霊のような素粒子</div>
+  <div class="section-body">
+    <div class="text-block">
+      ニュートリノはレプトンの中で最も不思議な存在です。「地球を1秒間に何度も通り抜けている」と言われますが、どういうことでしょうか。
+    </div>
+
+    <!-- ニュートリノの性質 -->
+    <div style="background:#ccfbf1;border:2px solid #0d9488;border-radius:12px;padding:16px;margin-bottom:14px;">
+      <div style="font-weight:800;color:#134e4a;font-size:0.9rem;margin-bottom:12px;">👻 ニュートリノの驚くべき性質</div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:0.87rem;">
+        <div style="display:flex;align-items:flex-start;gap:10px;background:white;border-radius:8px;padding:10px 12px;">
+          <span style="font-size:1.1rem;flex-shrink:0;">⚡</span>
+          <div><strong style="color:#0d9488;">電荷：0</strong>　電荷がないため、電磁力の影響をまったく受けません。</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;background:white;border-radius:8px;padding:10px 12px;">
+          <span style="font-size:1.1rem;flex-shrink:0;">⚖️</span>
+          <div><strong style="color:#0d9488;">質量：ほぼ0</strong>　電子の100万分の1以下。光速に非常に近い速度で飛びます。</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;background:white;border-radius:8px;padding:10px 12px;">
+          <span style="font-size:1.1rem;flex-shrink:0;">🌍</span>
+          <div><strong style="color:#0d9488;">弱い力だけ受ける</strong>　弱い力はとても弱く、ほぼ何でも素通りしてしまいます。</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:10px 12px;">
+          <span style="font-size:1.1rem;flex-shrink:0;">🚀</span>
+          <div><strong style="color:#065f46;">毎秒660億個が1㎝²を通過</strong>　今この瞬間も、あなたの体を太陽からのニュートリノが毎秒660億個通り抜けています！</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 通り抜けの図解 -->
+    <div style="background:#f0fdfa;border:2px solid #5eead4;border-radius:10px;padding:14px;margin-bottom:14px;">
+      <div style="font-weight:800;color:#0d9488;font-size:0.85rem;margin-bottom:10px;">🌍 地球を素通りするニュートリノ</div>
+      <svg width="100%" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg" style="max-width:400px;display:block;margin:0 auto 10px;">
+        <!-- 太陽 -->
+        <circle cx="30" cy="50" r="22" fill="#fbbf24" opacity="0.9"/>
+        <text x="30" y="46" text-anchor="middle" font-size="9" fill="#0f172a" font-family="sans-serif" font-weight="bold">太陽</text>
+        <text x="30" y="58" text-anchor="middle" font-size="8" fill="#0f172a" font-family="sans-serif">核融合</text>
+        <!-- ニュートリノ矢印 -->
+        <line x1="55" y1="44" x2="155" y2="44" stroke="#0d9488" stroke-width="2" stroke-dasharray="5,3"/>
+        <line x1="55" y1="50" x2="155" y2="50" stroke="#0d9488" stroke-width="2" stroke-dasharray="5,3"/>
+        <line x1="55" y1="56" x2="155" y2="56" stroke="#0d9488" stroke-width="2" stroke-dasharray="5,3"/>
+        <text x="105" y="38" text-anchor="middle" font-size="8" fill="#0d9488" font-family="sans-serif">ν ν ν</text>
+        <!-- 地球 -->
+        <circle cx="200" cy="50" r="35" fill="#1d4ed8" opacity="0.8"/>
+        <circle cx="200" cy="50" r="35" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+        <text x="200" y="46" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif" font-weight="bold">地球</text>
+        <text x="200" y="58" text-anchor="middle" font-size="8" fill="#bfdbfe" font-family="sans-serif">直径12756km</text>
+        <!-- 通り抜け矢印 -->
+        <line x1="165" y1="44" x2="237" y2="44" stroke="#fbbf24" stroke-width="2.5"/>
+        <line x1="165" y1="50" x2="237" y2="50" stroke="#fbbf24" stroke-width="2.5"/>
+        <line x1="165" y1="56" x2="237" y2="56" stroke="#fbbf24" stroke-width="2.5"/>
+        <polygon points="237,41 244,44 237,47" fill="#fbbf24"/>
+        <polygon points="237,47 244,50 237,53" fill="#fbbf24"/>
+        <polygon points="237,53 244,56 237,59" fill="#fbbf24"/>
+        <!-- 通過後 -->
+        <line x1="244" y1="44" x2="340" y2="44" stroke="#0d9488" stroke-width="2" stroke-dasharray="5,3"/>
+        <line x1="244" y1="50" x2="340" y2="50" stroke="#0d9488" stroke-width="2" stroke-dasharray="5,3"/>
+        <line x1="244" y1="56" x2="340" y2="56" stroke="#0d9488" stroke-width="2" stroke-dasharray="5,3"/>
+        <polygon points="340,41 347,44 340,47" fill="#0d9488"/>
+        <polygon points="340,47 347,50 340,53" fill="#0d9488"/>
+        <polygon points="340,53 347,56 340,59" fill="#0d9488"/>
+        <!-- ラベル -->
+        <text x="200" y="92" text-anchor="middle" font-size="8" fill="#0d9488" font-family="sans-serif">ニュートリノは地球をそのまま素通りする</text>
+      </svg>
+      <div style="font-size:0.84rem;color:#134e4a;line-height:1.9;">
+        ニュートリノが物質をほぼ素通りする理由は、<strong>弱い力しか受けない</strong>からです。<br>
+        弱い力が働く距離は原子核の1/1000以下ときわめて短いため、ニュートリノが原子核にぶつかる確率はほぼゼロです。<br>
+        鉛を1<strong>光年（約9.5兆km）</strong>分重ねてやっと半分が止まる計算です。
+      </div>
+    </div>
+
+    <!-- カミオカンデ -->
+    <div style="background:#fef9c3;border:2px solid #fde047;border-radius:10px;padding:14px;">
+      <div style="font-weight:800;color:#713f12;font-size:0.87rem;margin-bottom:8px;">🏆 日本のニュートリノ研究 ― スーパーカミオカンデ</div>
+      <div style="font-size:0.85rem;color:#78350f;line-height:1.9;">
+        岐阜県の山の中、地下1000mに建設された巨大な観測装置が<strong>スーパーカミオカンデ</strong>です。<br>
+        5万トンの超純水をタンクに満たし、ニュートリノが稀にぶつかった瞬間に出る微弱な光を検出します。<br>
+        2002年、ここでの研究をもとに小柴昌俊博士が<strong>ノーベル物理学賞</strong>を受賞しました。<br>
+        さらに2015年には梶田隆章博士が<strong>ニュートリノ振動の発見</strong>でノーベル賞を受賞しています。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. ミュー粒子・タウ粒子 -->
+<div class="section-card">
+  <div class="section-header sh-purple">🔮 5. ミュー粒子・タウ粒子 ― 重い版の電子</div>
+  <div class="section-body">
+    <div class="text-block">
+      電子とよく似た性質を持ちながら、はるかに重い粒子が「ミュー粒子」と「タウ粒子」です。
+    </div>
+
+    <!-- 質量比較バー -->
+    <div style="background:#f5f3ff;border:2px solid #c4b5fd;border-radius:12px;padding:16px;margin-bottom:14px;">
+      <div style="font-weight:800;color:#6d28d9;font-size:0.87rem;margin-bottom:12px;">⚖️ 質量の比較（電子を1とすると）</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <!-- 電子 -->
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
+            <span style="font-size:0.85rem;font-weight:700;color:#0369a1;">⚡ 電子（e⁻）</span>
+            <span style="font-size:0.85rem;font-weight:700;color:#0369a1;">1倍　0.511 MeV/c²</span>
+          </div>
+          <div style="background:#e2e8f0;border-radius:99px;height:14px;overflow:hidden;">
+            <div style="width:1%;min-width:6px;height:100%;background:#0284c7;border-radius:99px;"></div>
+          </div>
+        </div>
+        <!-- ミュー -->
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
+            <span style="font-size:0.85rem;font-weight:700;color:#6d28d9;">🔮 ミュー粒子（μ⁻）</span>
+            <span style="font-size:0.85rem;font-weight:700;color:#6d28d9;">約207倍　105.7 MeV/c²</span>
+          </div>
+          <div style="background:#e2e8f0;border-radius:99px;height:14px;overflow:hidden;">
+            <div style="width:6%;height:100%;background:#7c3aed;border-radius:99px;"></div>
+          </div>
+        </div>
+        <!-- タウ -->
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
+            <span style="font-size:0.85rem;font-weight:700;color:#b91c1c;">❤️ タウ粒子（τ⁻）</span>
+            <span style="font-size:0.85rem;font-weight:700;color:#b91c1c;">約3477倍　1777 MeV/c²</span>
+          </div>
+          <div style="background:#e2e8f0;border-radius:99px;height:14px;overflow:hidden;">
+            <div style="width:100%;height:100%;background:#ef4444;border-radius:99px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div style="background:#ede9fe;border:2px solid #c4b5fd;border-radius:10px;padding:14px;">
+        <div style="font-weight:800;color:#6d28d9;font-size:0.87rem;margin-bottom:6px;">🔮 ミュー粒子の発見</div>
+        <div style="font-size:0.84rem;line-height:1.9;color:#3b0764;">
+          1936年に宇宙線の中から発見されました。当初は誰も「なぜこんな粒子が必要なのか」わからず、物理学者ラビは<strong>「誰が注文したんだ？」</strong>と言ったという有名な言葉が残っています。
+        </div>
+      </div>
+      <div style="background:#fee2e2;border:2px solid #fca5a5;border-radius:10px;padding:14px;">
+        <div style="font-weight:800;color:#b91c1c;font-size:0.87rem;margin-bottom:6px;">❤️ タウ粒子の発見</div>
+        <div style="font-size:0.84rem;line-height:1.9;color:#7f1d1d;">
+          1975年に発見された最も重いレプトンです。寿命は0.29ピコ秒（0.00000000000029秒）ときわめて短く、すぐに崩壊してしまいます。
+        </div>
+      </div>
+    </div>
+
+    <div class="warn-block" style="margin-top:12px;">
+      ⚠️ ミュー粒子・タウ粒子は電子と電荷・スピンがまったく同じです。「なぜ同じ性質で質量だけ違う粒子が存在するのか」はまだ完全には解明されていません。
+    </div>
+  </div>
+</div>
+
+<!-- 6. 反レプトン -->
+<div class="section-card">
+  <div class="section-header sh-red">🔄 6. 反レプトン ― すべての粒子には反粒子がある</div>
+  <div class="section-body">
+    <div class="text-block">
+      SP01の「未解決の謎③」で学んだように、すべての粒子には「反粒子」が存在します。レプトンにも反レプトンがあります。
+    </div>
+
+    <!-- 対応表 -->
+    <div style="background:#fef2f2;border:2px solid #fca5a5;border-radius:12px;padding:16px;margin-bottom:14px;">
+      <div style="font-weight:800;color:#dc2626;font-size:0.87rem;margin-bottom:10px;">レプトンとその反粒子</div>
+      <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+        <thead>
+          <tr style="background:#dc2626;color:white;">
+            <th style="padding:8px 10px;text-align:left;">粒子</th>
+            <th style="padding:8px 10px;text-align:center;">電荷</th>
+            <th style="padding:8px 10px;text-align:left;">反粒子</th>
+            <th style="padding:8px 10px;text-align:center;">電荷</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:white;">
+            <td style="padding:8px 10px;font-weight:700;">⚡ 電子（e⁻）</td>
+            <td style="padding:8px 10px;text-align:center;font-weight:800;color:#dc2626;">−1</td>
+            <td style="padding:8px 10px;font-weight:700;color:#7c3aed;">陽電子（e⁺）</td>
+            <td style="padding:8px 10px;text-align:center;font-weight:800;color:#7c3aed;">＋1</td>
+          </tr>
+          <tr style="background:#fff1f2;">
+            <td style="padding:8px 10px;font-weight:700;">🔮 ミュー粒子（μ⁻）</td>
+            <td style="padding:8px 10px;text-align:center;font-weight:800;color:#dc2626;">−1</td>
+            <td style="padding:8px 10px;font-weight:700;color:#7c3aed;">反ミュー粒子（μ⁺）</td>
+            <td style="padding:8px 10px;text-align:center;font-weight:800;color:#7c3aed;">＋1</td>
+          </tr>
+          <tr style="background:white;">
+            <td style="padding:8px 10px;font-weight:700;">❤️ タウ粒子（τ⁻）</td>
+            <td style="padding:8px 10px;text-align:center;font-weight:800;color:#dc2626;">−1</td>
+            <td style="padding:8px 10px;font-weight:700;color:#7c3aed;">反タウ粒子（τ⁺）</td>
+            <td style="padding:8px 10px;text-align:center;font-weight:800;color:#7c3aed;">＋1</td>
+          </tr>
+          <tr style="background:#fff1f2;">
+            <td style="padding:8px 10px;font-weight:700;">👻 ニュートリノ（ν）</td>
+            <td style="padding:8px 10px;text-align:center;font-weight:800;color:#374151;">0</td>
+            <td style="padding:8px 10px;font-weight:700;color:#374151;">反ニュートリノ（ν̄）</td>
+            <td style="padding:8px 10px;text-align:center;font-weight:800;color:#374151;">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note-block">
+      💡 <strong>陽電子（e⁺）</strong>は電子の反粒子で、医療のPET検査（陽電子放射断層撮影）に使われています。がんの早期発見に役立てられている身近な反物質です。
+    </div>
+  </div>
+</div>
+
+<!-- 7. まとめ -->
+<div class="section-card">
+  <div class="section-header sh-green">📝 7. まとめ ― レプトンの全体像</div>
+  <div class="section-body">
+    <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:14px;">
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#e0f2fe;border-radius:8px;border:1px solid #7dd3fc;">
+        <span style="font-size:1.1rem;">⚡</span><span style="font-size:0.88rem;"><strong>レプトン</strong>　→　強い力を受けない素粒子。6種類（3世代×2）</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#ecfccb;border-radius:8px;border:1px solid #a3e635;">
+        <span style="font-size:1.1rem;">🔵</span><span style="font-size:0.88rem;"><strong>電子</strong>　→　電荷−1・安定・原子の化学的性質を決める・電流を作る</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#ccfbf1;border-radius:8px;border:1px solid #5eead4;">
+        <span style="font-size:1.1rem;">👻</span><span style="font-size:0.88rem;"><strong>ニュートリノ</strong>　→　電荷0・弱い力だけ受ける・物質を素通りする幽霊粒子</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#ede9fe;border-radius:8px;border:1px solid #c4b5fd;">
+        <span style="font-size:1.1rem;">🔮</span><span style="font-size:0.88rem;"><strong>ミュー・タウ粒子</strong>　→　電子の重い版。不安定ですぐ崩壊する</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fee2e2;border-radius:8px;border:1px solid #fca5a5;">
+        <span style="font-size:1.1rem;">🔄</span><span style="font-size:0.88rem;"><strong>反レプトン</strong>　→　各レプトンに対応する反粒子が存在する（陽電子など）</span>
+      </div>
+    </div>
+    <div class="key-box">
+      <div class="box-label">📌 SP01との関係</div>
+      <div style="font-size:0.88rem;line-height:2;">
+        SP01で学んだクォークは「原子核の中の素粒子」でしたが、レプトンは「原子核の外の素粒子」です。<br>
+        電子という1つのレプトンが、原子の化学的性質・電気・光の放出など、私たちの生活のほぼすべてに関わっています。
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /tab-learn -->
+
+<!-- ========== FLASH ========== -->
+<div id="tab-flash" class="tab-content">
+  <div class="section-card">
+    <div class="section-header sh-cosmos">🃏 フラッシュカード ― 重要ポイントを確認</div>
+    <div class="section-body">
+      <div style="margin-bottom:12px;">
+        <div style="font-size:0.82rem;font-weight:700;color:var(--muted);margin-bottom:8px;">⏱ 自動反転のスピード</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+          <button class="fc-speed-btn active" onclick="setSpeed(0)" id="spd0">手動</button>
+          <button class="fc-speed-btn" onclick="setSpeed(1)" id="spd1">1秒</button>
+          <button class="fc-speed-btn" onclick="setSpeed(2)" id="spd2">2秒</button>
+          <button class="fc-speed-btn" onclick="setSpeed(3)" id="spd3">3秒</button>
+        </div>
+      </div>
+      <div style="font-size:0.82rem;color:var(--muted);margin-bottom:10px;text-align:center;">カードをタップ／クリックで手動反転できます</div>
+      <div class="flashcard-wrap" onclick="flipCard()">
+        <div class="flashcard" id="flashcard">
+          <div class="fc-face fc-front">
+            <div class="fc-label">❓ おぼえよう</div>
+            <div class="fc-main" id="fc-front-text"></div>
+            <div class="fc-sub" id="fc-front-sub"></div>
+          </div>
+          <div class="fc-face fc-back">
+            <div class="fc-label">✅ 答え</div>
+            <div class="fc-main" id="fc-back-text"></div>
+            <div class="fc-sub" id="fc-back-sub"></div>
+          </div>
+        </div>
+      </div>
+      <div class="fc-timer-bar"><div class="fc-timer-fill" id="fc-timer-fill" style="width:100%"></div></div>
+      <div class="fc-progress" id="fc-progress"></div>
+      <div class="fc-nav" style="margin-top:14px;">
+        <button class="fc-nav-btn" id="fc-prev" onclick="fcMove(-1)">◀ 前へ</button>
+        <span style="font-size:0.85rem;font-weight:700;color:var(--muted);" id="fc-counter">1 / 12</span>
+        <button class="fc-nav-btn" id="fc-next" onclick="fcMove(1)">次へ ▶</button>
+      </div>
+    </div>
+  </div>
+</div><!-- /tab-flash -->
+
+<!-- ========== QUIZ ========== -->
+<div id="tab-quiz" class="tab-content">
+  <div class="section-card">
+    <div class="section-header sh-blue">🔭 ミニテスト ― 単元別4択</div>
+    <div class="section-body">
+      <div style="margin-bottom:16px;">
+        <div style="font-size:0.82rem;font-weight:700;color:var(--muted);margin-bottom:8px;">📚 単元を選んでください</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;" id="chapterBtns">
+          <button class="ch-btn active" onclick="selectChapter(0)">📜 全問チャレンジ</button>
+          <button class="ch-btn" onclick="selectChapter(1)">1. レプトンとは</button>
+          <button class="ch-btn" onclick="selectChapter(2)">2. 6種類の構造</button>
+          <button class="ch-btn" onclick="selectChapter(3)">3. 電子</button>
+          <button class="ch-btn" onclick="selectChapter(4)">4. ニュートリノ</button>
+          <button class="ch-btn" onclick="selectChapter(5)">5. ミュー・タウ</button>
+          <button class="ch-btn" onclick="selectChapter(6)">6. 反レプトン</button>
+          <button class="ch-btn" onclick="selectChapter(7)">7. まとめ</button>
+        </div>
+      </div>
+      <div style="font-size:0.82rem;color:var(--muted);margin-bottom:14px;" id="quizInfo">全28問に挑戦しましょう。</div>
+      <div id="quizContainer"></div>
+      <div class="quiz-result" id="quizResult">
+        <div style="font-size:0.85rem;opacity:0.8;margin-bottom:4px;">最終スコア</div>
+        <div class="quiz-result-score" id="quizScore"></div>
+        <div class="quiz-result-msg" id="quizMsg"></div>
+        <button class="btn btn-primary" onclick="resetQuiz()" style="margin-top:12px;">もう一度 ↺</button>
+      </div>
+      <div style="margin-top:14px;text-align:right;">
+        <button class="btn btn-gray" onclick="resetQuiz()">↺ リセット</button>
+      </div>
+    </div>
+  </div>
+</div><!-- /tab-quiz -->
+
+</main>
+
+<script>
+// ===== TAB =====
+function showTab(id){
+  document.querySelectorAll('.tab-content').forEach(function(el){el.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(el){el.classList.remove('active');});
+  document.getElementById('tab-'+id).classList.add('active');
+  var btns=document.querySelectorAll('.tab-btn');
+  var map={learn:0,flash:1,quiz:2};
+  btns[map[id]].classList.add('active');
+  if(id==='flash') initFlash();
+  if(id==='quiz'){currentChapter=0;buildQuiz();}
+}
+
+// ===== CONFETTI =====
+function launchConfetti(n){
+  var colors=['#bef264','#38bdf8','#4ade80','#f87171','#fbbf24'];
+  for(var i=0;i<n;i++){
+    var el=document.createElement('div');
+    el.className='confetti-piece';
+    el.style.cssText='left:'+(30+Math.random()*40)+'vw;top:20vh;background:'+colors[Math.floor(Math.random()*colors.length)]+';animation-delay:'+(Math.random()*0.5)+'s';
+    document.body.appendChild(el);
+    setTimeout((function(e){return function(){e.remove();};}(el)),2000);
+  }
+}
+
+// ===== FLASHCARD =====
+var fcCards=[
+  {front:'「レプトン」とは何ですか？',fsub:'',back:'強い力（核力）の影響を受けない素粒子',bsub:'クォークとは違い、単独で存在できます'},
+  {front:'レプトンは全部で何種類ありますか？',fsub:'',back:'6種類（3世代×2）',bsub:'荷電レプトン3種＋ニュートリノ3種です'},
+  {front:'第1世代のレプトンのペアは？',fsub:'',back:'電子（e⁻）と電子ニュートリノ（νe）',bsub:'普通の物質を作っているのは電子だけです'},
+  {front:'電子の電荷は？',fsub:'',back:'−1（マイナス1）',bsub:'陽子の＋1とちょうど逆の値です'},
+  {front:'電子の質量は陽子の何分の1ですか？',fsub:'',back:'約1/1836',bsub:'電子はとても軽い素粒子です（0.511 MeV/c²）'},
+  {front:'ニュートリノの電荷は？',fsub:'',back:'0（ゼロ）',bsub:'電荷がないため、電磁力の影響を受けません'},
+  {front:'ニュートリノが物質を素通りする理由は？',fsub:'',back:'弱い力しか受けず、その力の届く距離が極めて短いから',bsub:'毎秒660億個が体を通り抜けています'},
+  {front:'スーパーカミオカンデはどこにある？',fsub:'',back:'岐阜県の地下1000m',bsub:'2002年・2015年と日本人がニュートリノ研究でノーベル賞を受賞'},
+  {front:'ミュー粒子は電子の何倍重いですか？',fsub:'',back:'約207倍（105.7 MeV/c²）',bsub:'1936年に宇宙線の中から発見されました'},
+  {front:'タウ粒子の寿命はどのくらいですか？',fsub:'',back:'約0.29ピコ秒（0.00000000000029秒）',bsub:'非常に短命で、すぐに他の粒子に崩壊します'},
+  {front:'電子の反粒子は何ですか？',fsub:'',back:'陽電子（e⁺）　電荷＋1',bsub:'PET検査（がんの早期発見）に使われています'},
+  {front:'ニュートリノの反粒子は何ですか？',fsub:'',back:'反ニュートリノ（ν̄）',bsub:'電荷は0で、スピンの向きが逆になっています'},
+];
+
+var fcIndex=0,fcFlipped=false,fcSpeed=0,fcAutoTimer=null;
+
+function initFlash(){fcIndex=0;fcFlipped=false;renderCard();buildDots();}
+function renderCard(){
+  var c=fcCards[fcIndex];
+  document.getElementById('fc-front-text').textContent=c.front;
+  document.getElementById('fc-front-sub').textContent=c.fsub;
+  document.getElementById('fc-back-text').textContent=c.back;
+  document.getElementById('fc-back-sub').textContent=c.bsub;
+  document.getElementById('fc-counter').textContent=(fcIndex+1)+' / '+fcCards.length;
+  document.getElementById('fc-prev').disabled=(fcIndex===0);
+  document.getElementById('fc-next').disabled=(fcIndex===fcCards.length-1);
+  fcFlipped=false;
+  document.getElementById('flashcard').classList.remove('flipped');
+  updateDots();clearAuto();
+  if(fcSpeed>0){startTimerBar(fcSpeed*1000);fcAutoTimer=setTimeout(function(){flipCard();},fcSpeed*1000);}
+  else{document.getElementById('fc-timer-fill').style.transition='none';document.getElementById('fc-timer-fill').style.width='100%';}
+}
+function flipCard(){fcFlipped=!fcFlipped;document.getElementById('flashcard').classList.toggle('flipped',fcFlipped);clearAuto();}
+function fcMove(dir){clearAuto();fcIndex=Math.max(0,Math.min(fcCards.length-1,fcIndex+dir));renderCard();}
+function setSpeed(s){
+  fcSpeed=s;
+  document.querySelectorAll('.fc-speed-btn').forEach(function(b){b.classList.remove('active');});
+  document.getElementById('spd'+s).classList.add('active');
+  clearAuto();fcFlipped=false;document.getElementById('flashcard').classList.remove('flipped');
+  if(fcSpeed>0){startTimerBar(fcSpeed*1000);fcAutoTimer=setTimeout(function(){flipCard();},fcSpeed*1000);}
+  else{document.getElementById('fc-timer-fill').style.transition='none';document.getElementById('fc-timer-fill').style.width='100%';}
+}
+function startTimerBar(ms){
+  var f=document.getElementById('fc-timer-fill');
+  f.style.transition='none';f.style.width='100%';
+  setTimeout(function(){f.style.transition='width '+(ms/1000)+'s linear';f.style.width='0%';},30);
+}
+function clearAuto(){if(fcAutoTimer){clearTimeout(fcAutoTimer);fcAutoTimer=null;}}
+function buildDots(){
+  var p=document.getElementById('fc-progress');p.innerHTML='';
+  fcCards.forEach(function(_,i){var d=document.createElement('div');d.className='fc-dot';p.appendChild(d);});
+  updateDots();
+}
+function updateDots(){
+  document.querySelectorAll('.fc-dot').forEach(function(d,i){
+    d.className='fc-dot';
+    if(i<fcIndex)d.classList.add('done');
+    else if(i===fcIndex)d.classList.add('current');
+  });
+}
+
+// ===== QUIZ DATA（7章×4問）=====
+var allQuizData=[
+  // 章1：レプトンとは
+  {ch:1,q:'レプトンとクォークの最大の違いはどれですか？',
+   opts:['レプトンは電荷を持たない','レプトンは強い力（核力）の影響を受けない','レプトンはクォーク3つでできている','レプトンは原子核の中にある'],
+   ans:1,exp:'レプトンはクォークと違って強い力（核力）の影響を受けません。そのため原子核の中に閉じ込められず、単独で存在できます。'},
+  {ch:1,q:'「レプトン（lepton）」という名前の由来はどれですか？',
+   opts:['ギリシャ語の「重い」','ギリシャ語の「軽い」','発見者レプトン博士の名前','ラテン語の「電気」'],
+   ans:1,exp:'レプトンはギリシャ語の「leptos（軽い）」に由来します。ただし現在はミュー粒子やタウ粒子のように重いレプトンも発見されています。'},
+  {ch:1,q:'レプトンは現在何種類あることがわかっていますか？',
+   opts:['3種類','4種類','6種類','8種類'],
+   ans:2,exp:'レプトンは6種類あります。荷電レプトン（電子・ミュー粒子・タウ粒子）と、それぞれに対応するニュートリノ（電子ニュートリノ・ミューニュートリノ・タウニュートリノ）の計6種類です。'},
+  {ch:1,q:'レプトンが受ける力として正しいのはどれですか？',
+   opts:['強い力と弱い力','電磁力と強い力','電磁力と弱い力（重力も）','強い力・弱い力・電磁力すべて'],
+   ans:2,exp:'レプトンは電磁力と弱い力（および重力）の影響を受けますが、強い力（核力）の影響は受けません。これがクォークとの大きな違いです。'},
+
+  // 章2：6種類の構造
+  {ch:2,q:'第1世代のレプトンのペアとして正しいのはどれですか？',
+   opts:['電子とミュー粒子','ミュー粒子とミューニュートリノ','電子と電子ニュートリノ','タウ粒子とタウニュートリノ'],
+   ans:2,exp:'第1世代は電子（e⁻）と電子ニュートリノ（νe）のペアです。第2世代はミュー粒子とミューニュートリノ、第3世代はタウ粒子とタウニュートリノです。'},
+  {ch:2,q:'第2世代のレプトンのペアとして正しいのはどれですか？',
+   opts:['電子と電子ニュートリノ','ミュー粒子とミューニュートリノ','タウ粒子とタウニュートリノ','電子とタウニュートリノ'],
+   ans:1,exp:'第2世代はミュー粒子（μ⁻）とミューニュートリノ（νμ）のペアです。ミュー粒子は電子の約207倍の質量を持ちます。'},
+  {ch:2,q:'普通の物質（私たちの体や地球）を作っているレプトンはどれですか？',
+   opts:['第1世代の電子','第2世代のミュー粒子','第3世代のタウ粒子','3世代すべてのレプトン'],
+   ans:0,exp:'普通の物質を作っているレプトンは第1世代の電子だけです。ミュー粒子やタウ粒子は不安定ですぐに崩壊するため、日常の物質には存在しません。'},
+  {ch:2,q:'レプトンの3世代において、世代が上がるとどうなりますか？',
+   opts:['電荷が大きくなる','質量が大きくなり不安定になる','ニュートリノがなくなる','強い力を受けるようになる'],
+   ans:1,exp:'世代が上がるほど質量が大きくなります（電子→ミュー粒子→タウ粒子の順）。また重い粒子ほど不安定で、すぐに他の粒子に崩壊してしまいます。'},
+
+  // 章3：電子
+  {ch:3,q:'電子の電荷として正しいのはどれですか？',
+   opts:['＋1','0（ゼロ）','−1','−2'],
+   ans:2,exp:'電子の電荷は−1です。これは陽子の電荷＋1とちょうど逆の値です。原子では陽子と電子の数が同じため、全体として電気的に中性になります。'},
+  {ch:3,q:'電子の質量は陽子の約何分の1ですか？',
+   opts:['約1/18','約1/180','約1/1836','約1/18360'],
+   ans:2,exp:'電子の質量は陽子の約1/1836です。電子は非常に軽い素粒子で、質量は0.511 MeV/c²です。'},
+  {ch:3,q:'電子が「電流を作る」仕組みとして正しいのはどれですか？',
+   opts:['電子が核融合を起こすことで電流が生まれる','金属の中で電子が自由に動き回ることで電流が生まれる','電子がクォークに変化することで電流が生まれる','電子が光子を放出することで電流が生まれる'],
+   ans:1,exp:'金属の中では電子が原子核に束縛されずに自由に動き回っています（自由電子）。この自由電子の流れが電流です。'},
+  {ch:3,q:'「素電荷」とは何ですか？',
+   opts:['電子の質量の単位','自然界の最小電荷単位（電子1個の電荷）','陽子の電荷の2倍','原子核の電荷の合計'],
+   ans:1,exp:'素電荷とは電子1個の電荷（約1.6×10⁻¹⁹クーロン）のことです。自然界のすべての電荷はこの素電荷の整数倍になっています。'},
+
+  // 章4：ニュートリノ
+  {ch:4,q:'ニュートリノの電荷として正しいのはどれですか？',
+   opts:['＋1','−1','0（ゼロ）','＋1/2'],
+   ans:2,exp:'ニュートリノの電荷は0（ゼロ）です。電荷がないため電磁力の影響を受けず、これが物質を素通りする大きな理由のひとつです。'},
+  {ch:4,q:'ニュートリノが物質をほぼ素通りする理由として正しいのはどれですか？',
+   opts:['質量がゼロで光速で飛ぶから','弱い力しか受けず、その力の届く距離が極めて短いから','電荷がプラスで反発するから','クォークと同じ種類の粒子だから'],
+   ans:1,exp:'ニュートリノは弱い力しか受けませんが、弱い力が働く距離は原子核の1/1000以下と極めて短いため、ニュートリノが原子核とぶつかる確率はほぼゼロです。'},
+  {ch:4,q:'今この瞬間、太陽からのニュートリノはあなたの体をどのくらい通り抜けていますか？',
+   opts:['毎秒約10個','毎秒約10万個','毎秒約660億個','毎秒約1兆個'],
+   ans:2,exp:'太陽の核融合反応で大量のニュートリノが生まれています。毎秒660億個が体の1㎝²を通り抜けていますが、ほぼ何も感じません。'},
+  {ch:4,q:'スーパーカミオカンデについて正しい説明はどれですか？',
+   opts:['東京大学のキャンパス内にある粒子加速器','岐阜県の地下1000mにある5万トンの超純水を使ったニュートリノ検出装置','スイスのCERNにある大型ハドロン衝突型加速器','宇宙に打ち上げられた素粒子観測衛星'],
+   ans:1,exp:'スーパーカミオカンデは岐阜県の神岡鉱山の地下1000mに建設されたニュートリノ観測施設です。5万トンの超純水を使い、2002年・2015年と日本人研究者がノーベル賞を受賞しました。'},
+
+  // 章5：ミュー・タウ粒子
+  {ch:5,q:'ミュー粒子の質量は電子の約何倍ですか？',
+   opts:['約20倍','約207倍','約2000倍','約20000倍'],
+   ans:1,exp:'ミュー粒子の質量は電子の約207倍（105.7 MeV/c²）です。電荷は電子と同じ−1で、スピンも同じですが、なぜ質量が違うのかは未解明です。'},
+  {ch:5,q:'ミュー粒子が発見されたとき、物理学者ラビが言った有名な言葉はどれですか？',
+   opts:['「ついに見つけた！」','「誰が注文したんだ？」','「これはクォークの仲間だ」','「重い電子に違いない」'],
+   ans:1,exp:'1936年にミュー粒子が宇宙線の中で発見されたとき、物理学者ラビは「誰が注文したんだ？（Who ordered that?）」と言いました。誰もこんな粒子を予測していなかったからです。'},
+  {ch:5,q:'タウ粒子の電荷として正しいのはどれですか？',
+   opts:['0（ゼロ）','＋1','−1','−2'],
+   ans:2,exp:'タウ粒子の電荷は−1です。電子・ミュー粒子・タウ粒子はすべて電荷−1で、スピンも同じです。違うのは質量だけです。'},
+  {ch:5,q:'ミュー粒子やタウ粒子に関して「まだ解明されていないこと」はどれですか？',
+   opts:['それらが素粒子であること','なぜ電子と同じ性質で質量だけ違う粒子が存在するのか','それらに反粒子が存在すること','それらがレプトンに分類されること'],
+   ans:1,exp:'ミュー粒子・タウ粒子は電子と電荷・スピンがまったく同じですが質量だけ大きく異なります。なぜこのような「重い版」の粒子が存在するのかは、素粒子物理学の未解明な謎のひとつです。'},
+
+  // 章6：反レプトン
+  {ch:6,q:'電子の反粒子（反レプトン）は何ですか？',
+   opts:['反電子ニュートリノ','ミュー粒子','陽電子（e⁺）','反陽子'],
+   ans:2,exp:'電子の反粒子は陽電子（e⁺）です。電荷は電子と逆の＋1で、質量は電子と同じです。粒子と反粒子が出会うと消滅して光（エネルギー）になります。'},
+  {ch:6,q:'陽電子が実際に使われている医療技術はどれですか？',
+   opts:['レントゲン（X線撮影）','MRI（磁気共鳴画像診断）','PET検査（陽電子放射断層撮影）','超音波検査'],
+   ans:2,exp:'陽電子（反電子）はPET検査（Positron Emission Tomography）に使われています。がん細胞などに集まる薬剤に陽電子放出物質を付け、その位置を画像化してがんの早期発見に役立てています。'},
+  {ch:6,q:'ニュートリノの反粒子（反ニュートリノ）の電荷はいくつですか？',
+   opts:['＋1','−1','0（ゼロ）','＋1/2'],
+   ans:2,exp:'ニュートリノも反ニュートリノも電荷は0（ゼロ）です。ニュートリノと反ニュートリノの違いはスピンの向き（ヘリシティ）にあります。'},
+  {ch:6,q:'粒子と反粒子が出会うと何が起きますか？',
+   opts:['より大きな粒子に合体する','別の種類の素粒子に変わる','消滅して光（エネルギー）が生まれる','何も起きない'],
+   ans:2,exp:'粒子と反粒子が出会うと「対消滅」が起き、2つの粒子が消えて光子（エネルギー）が生まれます。これはE＝mc²の実例です。SP01の「反物質の謎」でも学びました。'},
+
+  // 章7：まとめ
+  {ch:7,q:'レプトンとクォークに共通していることはどれですか？',
+   opts:['強い力を受けること','単独では存在できないこと','素粒子（これ以上分割できない粒子）であること','必ず3つ組みで存在すること'],
+   ans:2,exp:'レプトンもクォークも「これ以上分割できない素粒子」という点で共通しています。違いは強い力を受けるかどうか、単独で存在できるかどうかです。'},
+  {ch:7,q:'私たちの身の回りの物質（体・地球・星）に含まれるレプトンはどれですか？',
+   opts:['第1世代の電子のみ','第1・2世代のレプトンすべて','6種類のレプトンすべて','ニュートリノのみ'],
+   ans:0,exp:'私たちの身の回りの物質に含まれるレプトンは第1世代の電子だけです。ミュー粒子・タウ粒子は不安定ですぐ崩壊し、ニュートリノは物質をほぼ素通りします。'},
+  {ch:7,q:'電子について誤っている説明はどれですか？',
+   opts:['電荷は−1である','原子核の周りに存在する','クォーク3つでできている','電流の正体である'],
+   ans:2,exp:'電子はクォークでできているわけではなく、それ自体が素粒子（レプトン）です。クォークでできているのは陽子と中性子です。'},
+  {ch:7,q:'ニュートリノとその他の荷電レプトンを比べたとき、ニュートリノだけが持つ特徴はどれですか？',
+   opts:['反粒子が存在する','3世代に分かれている','電荷が0で電磁力を受けない','素粒子である'],
+   ans:2,exp:'ニュートリノの最大の特徴は電荷が0（ゼロ）であることです。電荷がないため電磁力を受けず、弱い力だけで相互作用するためほぼ何でも通り抜けます。'},
+];
+
+// ===== QUIZ ENGINE =====
+var currentChapter=0, activeQuizData=[], quizAnswered=[], quizCorrect=0;
+var chapterInfo=[
+  {label:'全問チャレンジ（28問）',n:28},
+  {label:'1. レプトンとは（4問）',n:4},
+  {label:'2. 6種類の構造（4問）',n:4},
+  {label:'3. 電子（4問）',n:4},
+  {label:'4. ニュートリノ（4問）',n:4},
+  {label:'5. ミュー・タウ粒子（4問）',n:4},
+  {label:'6. 反レプトン（4問）',n:4},
+  {label:'7. まとめ（4問）',n:4},
+];
+
+function selectChapter(ch){
+  currentChapter=ch;
+  document.querySelectorAll('.ch-btn').forEach(function(b,i){b.classList.toggle('active',i===ch);});
+  buildQuiz();
+}
+
+function buildQuiz(){
+  activeQuizData=currentChapter===0?allQuizData.slice():allQuizData.filter(function(q){return q.ch===currentChapter;});
+  quizAnswered=activeQuizData.map(function(){return false;});
+  quizCorrect=0;
+  document.getElementById('quizResult').style.display='none';
+  document.getElementById('quizInfo').textContent=chapterInfo[currentChapter].label+'　― 各問に解説がつきます。';
+  var c=document.getElementById('quizContainer');
+  c.innerHTML=activeQuizData.map(function(q,qi){
+    return '<div class="quiz-card" id="qc'+qi+'">' +
+      '<div style="font-size:0.72rem;font-weight:700;color:var(--primary);margin-bottom:4px;">Q'+(qi+1)+' / '+activeQuizData.length+(currentChapter===0?' ［単元'+q.ch+'］':'')+' </div>' +
+      '<div class="quiz-q">'+q.q+'</div>' +
+      '<div class="quiz-opts">'+
+      q.opts.map(function(opt,oi){
+        return '<button class="quiz-opt" id="qo'+qi+'_'+oi+'" onclick="answerQuiz('+qi+','+oi+')">' +
+          '<span style="display:inline-block;width:22px;height:22px;border-radius:50%;background:var(--primary-light);color:var(--primary);font-weight:800;font-size:0.78rem;text-align:center;line-height:22px;margin-right:8px;flex-shrink:0;">'+['A','B','C','D'][oi]+'</span>'+opt+'</button>';
+      }).join('')+
+      '</div><div class="quiz-feedback" id="qf'+qi+'"></div></div>';
+  }).join('');
+}
+
+function answerQuiz(qi,oi){
+  if(quizAnswered[qi]) return;
+  quizAnswered[qi]=true;
+  var q=activeQuizData[qi];
+  var opts=document.querySelectorAll('#qc'+qi+' .quiz-opt');
+  var fb=document.getElementById('qf'+qi);
+  opts.forEach(function(o){o.disabled=true;});
+  if(oi===q.ans){
+    opts[oi].classList.add('correct');
+    fb.className='quiz-feedback show ok';
+    fb.innerHTML='✅ 正解です！　'+q.exp;
+    quizCorrect++;launchConfetti(5);
+  } else {
+    opts[oi].classList.add('wrong');
+    opts[q.ans].classList.add('correct');
+    fb.className='quiz-feedback show ng';
+    fb.innerHTML='❌ 不正解です。正解は「'+['A','B','C','D'][q.ans]+'：'+q.opts[q.ans]+'」。<br>'+q.exp;
+  }
+  if(quizAnswered.every(function(v){return v;})) setTimeout(showResult,700);
+}
+
+function showResult(){
+  var result=document.getElementById('quizResult');
+  result.style.display='block';
+  var total=activeQuizData.length;
+  document.getElementById('quizScore').textContent=quizCorrect+' / '+total+' 問正解';
+  var pct=quizCorrect/total;
+  var msg;
+  if(pct===1) msg='🎉 パーフェクトです！完璧に理解できています！';
+  else if(pct>=0.75) msg='✨ 合格ラインです！よくできました！';
+  else if(pct>=0.5) msg='👍 もう少しです！惜しいですね。';
+  else msg='📖 もう一度学習タブに戻って復習してみましょう！';
+  document.getElementById('quizMsg').textContent=msg;
+  if(pct===1) launchConfetti(30);
+}
+
+function resetQuiz(){buildQuiz();}
+</script>
+</body>
+</html>

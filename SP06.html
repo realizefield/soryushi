@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)file:///C:/Users/tinbu/Downloads/SP06_1.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAMBA | 素粒子 SP06 ヒッグス粒子 ― 質量の起源</title>
+<style>
+  :root{--primary:#0284c7;--primary-dark:#0369a1;--primary-light:#e0f2fe;--accent:#65a30d;--danger:#ef4444;--bg:#f0f9ff;--card:#ffffff;--text:#0c4a6e;--muted:#64748b;--border:#bae6fd;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+  header{background:linear-gradient(135deg,#0c4a6e,#0284c7,#38bdf8);color:white;}
+  .header-top{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid rgba(255,255,255,0.2);}
+  .logo{font-size:1.5rem;font-weight:900;letter-spacing:2px;color:#bef264;}
+  .header-sub{font-size:0.75rem;opacity:0.85;}
+  .chapter-title-bar{padding:14px 20px;display:flex;align-items:center;gap:12px;}
+  .chapter-badge{background:#bef264;color:#1a2e05;font-weight:900;font-size:0.75rem;padding:3px 10px;border-radius:20px;}
+  .chapter-title-text{font-size:1.1rem;font-weight:700;color:white;}
+  .tab-bar{display:flex;background:white;border-bottom:3px solid var(--primary-light);overflow-x:auto;padding:0 16px;gap:4px;}
+  .tab-btn{padding:10px 16px;border:none;background:none;font-size:0.82rem;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all 0.2s;font-family:inherit;margin-bottom:-3px;}
+  .tab-btn.active{color:var(--primary);border-bottom-color:var(--primary);}
+  .tab-btn:hover{color:var(--primary);}
+  main{max-width:860px;margin:0 auto;padding:20px 16px 60px;}
+  .tab-content{display:none;}.tab-content.active{display:block;}
+  .section-card{background:var(--card);border-radius:14px;box-shadow:0 2px 12px rgba(2,132,199,0.1);margin-bottom:20px;overflow:hidden;border:1px solid #e0f2fe;}
+  .section-header{padding:13px 20px;font-weight:800;font-size:0.95rem;display:flex;align-items:center;gap:8px;}
+  .sh-blue{background:#e0f2fe;border-left:4px solid #0284c7;color:#0c4a6e;}
+  .sh-green{background:#ecfccb;border-left:4px solid #65a30d;color:#1a2e05;}
+  .sh-amber{background:#fef9c3;border-left:4px solid #ca8a04;color:#713f12;}
+  .sh-purple{background:#ede9fe;border-left:4px solid #7c3aed;color:#3b0764;}
+  .sh-red{background:#fee2e2;border-left:4px solid #ef4444;color:#7f1d1d;}
+  .sh-cosmos{background:#0369a1;border-left:4px solid #bef264;color:#bef264;}
+  .sh-teal{background:#ccfbf1;border-left:4px solid #0d9488;color:#134e4a;}
+  .sh-higgs{background:#1a0030;border-left:4px solid #c084fc;color:#e9d5ff;}
+  .section-body{padding:18px 20px;}
+  .text-block{font-size:0.92rem;line-height:1.9;margin-bottom:12px;color:#0c4a6e;}
+  .key-box{background:#e0f2fe;border:2px solid #7dd3fc;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .key-box .box-label{font-weight:800;color:#0369a1;font-size:0.82rem;margin-bottom:6px;}
+  .important-box{background:#ecfccb;border:2px solid #a3e635;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .important-box .box-label{font-weight:800;color:#365314;font-size:0.82rem;margin-bottom:6px;}
+  .amber-box{background:#fef9c3;border:2px solid #fde047;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .amber-box .box-label{font-weight:800;color:#713f12;font-size:0.82rem;margin-bottom:6px;}
+  .higgs-box{background:#1a0030;border:2px solid #7c3aed;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .higgs-box .box-label{font-weight:800;color:#c084fc;font-size:0.82rem;margin-bottom:6px;}
+  .note-block{background:#f0f9ff;border-left:3px solid #38bdf8;padding:8px 12px;border-radius:0 6px 6px 0;font-size:0.87rem;margin:8px 0;line-height:1.8;color:#0c4a6e;}
+  .warn-block{background:#fefce8;border-left:3px solid #eab308;padding:8px 12px;border-radius:0 6px 6px 0;font-size:0.87rem;margin:8px 0;line-height:1.8;color:#713f12;}
+  .btn{padding:7px 16px;border-radius:6px;border:none;font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.18s;font-family:inherit;}
+  .btn-primary{background:var(--primary);color:white;}.btn-primary:hover{background:var(--primary-dark);}
+  .btn-gray{background:#94a3b8;color:white;}.btn-gray:hover{background:#64748b;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;}
+  @media(max-width:580px){.two-col{grid-template-columns:1fr;}}
+  /* フラッシュカード */
+  .fc-speed-btn{padding:5px 12px;border-radius:20px;border:2px solid var(--border);background:white;font-size:0.78rem;font-weight:700;cursor:pointer;transition:all 0.15s;font-family:inherit;color:var(--primary);}
+  .fc-speed-btn.active{background:var(--primary);color:white;border-color:var(--primary);}
+  .flashcard-wrap{perspective:1000px;width:100%;max-width:480px;margin:0 auto;height:180px;cursor:pointer;}
+  .flashcard{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);}
+  .flashcard.flipped{transform:rotateY(180deg);}
+  .fc-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;}
+  .fc-front{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;box-shadow:0 4px 16px rgba(2,132,199,0.3);}
+  .fc-back{background:linear-gradient(135deg,#365314,#65a30d);color:white;transform:rotateY(180deg);box-shadow:0 4px 16px rgba(101,163,13,0.3);}
+  .fc-label{font-size:0.72rem;opacity:0.75;margin-bottom:8px;letter-spacing:1px;}
+  .fc-main{font-size:1.05rem;font-weight:800;line-height:1.6;}
+  .fc-sub{font-size:0.78rem;opacity:0.85;margin-top:8px;line-height:1.5;}
+  .fc-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;}
+  .fc-nav-btn{padding:7px 20px;border-radius:8px;border:2px solid var(--primary);background:white;color:var(--primary);font-weight:700;font-size:0.85rem;cursor:pointer;transition:all 0.15s;font-family:inherit;}
+  .fc-nav-btn:hover{background:var(--primary);color:white;}
+  .fc-nav-btn:disabled{opacity:0.35;cursor:default;}
+  .fc-progress{display:flex;gap:4px;justify-content:center;margin-top:10px;flex-wrap:wrap;}
+  .fc-dot{width:8px;height:8px;border-radius:50%;background:#bae6fd;transition:all 0.2s;}
+  .fc-dot.done{background:var(--accent);}
+  .fc-dot.current{background:var(--primary);transform:scale(1.3);}
+  .fc-timer-bar{height:4px;background:#bae6fd;border-radius:99px;margin-top:10px;overflow:hidden;}
+  .fc-timer-fill{height:100%;background:var(--accent);border-radius:99px;transition:width linear;}
+  /* クイズ */
+  .quiz-card{border:2px solid #bae6fd;border-radius:10px;padding:16px;margin:12px 0;background:#f0f9ff;}
+  .quiz-q{font-weight:700;font-size:0.9rem;margin-bottom:12px;line-height:1.7;color:#0c4a6e;}
+  .quiz-opts{display:flex;flex-direction:column;gap:8px;}
+  .quiz-opt{padding:9px 14px;border:2px solid #bae6fd;border-radius:7px;cursor:pointer;font-size:0.87rem;transition:all 0.15s;background:white;font-family:inherit;text-align:left;color:#0c4a6e;}
+  .quiz-opt:hover:not(:disabled){border-color:var(--primary);background:#e0f2fe;}
+  .quiz-opt.correct{background:#ecfccb;border-color:#65a30d;color:#1a2e05;font-weight:700;}
+  .quiz-opt.wrong{background:#fee2e2;border-color:var(--danger);color:#7f1d1d;}
+  .quiz-feedback{margin-top:10px;padding:8px 12px;border-radius:6px;font-size:0.85rem;display:none;font-weight:600;line-height:1.8;}
+  .quiz-feedback.show{display:block;}
+  .quiz-feedback.ok{background:#ecfccb;color:#1a2e05;}
+  .quiz-feedback.ng{background:#fee2e2;color:#7f1d1d;}
+  .quiz-result{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;border-radius:10px;padding:16px 20px;margin-top:16px;text-align:center;display:none;}
+  .quiz-result-score{font-size:2.2rem;font-weight:900;}
+  .quiz-result-msg{font-size:0.9rem;opacity:0.9;margin-top:4px;}
+  .confetti-piece{position:fixed;width:10px;height:10px;border-radius:2px;animation:confettiFall 1.5s ease-out forwards;pointer-events:none;z-index:9999;}
+  @keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(80vh) rotate(720deg);opacity:0}}
+  .ch-btn{padding:6px 14px;border-radius:20px;border:2px solid var(--border);background:white;color:var(--muted);font-size:0.8rem;font-weight:700;cursor:pointer;transition:all 0.15s;font-family:inherit;}
+  .ch-btn.active{background:var(--primary);color:white;border-color:var(--primary);}
+  .ch-btn:hover{border-color:var(--primary);color:var(--primary);}
+  .ch-btn.active:hover{color:white;}
+  /* 折りたたみクイズ */
+  .unit-quiz-wrap{margin-top:18px;border:2px solid #7dd3fc;border-radius:10px;overflow:hidden;}
+  .unit-quiz-toggle{width:100%;background:linear-gradient(135deg,#0369a1,#0284c7);color:white;border:none;padding:11px 16px;font-size:0.88rem;font-weight:800;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;letter-spacing:0.5px;}
+  .unit-quiz-toggle:hover{filter:brightness(1.1);}
+  .uq-arrow{font-size:1rem;transition:transform 0.25s;}
+  .unit-quiz-body{display:none;padding:14px;background:#f0f9ff;}
+  .unit-quiz-body.open{display:block;}
+  .uq-card{background:white;border:2px solid #bae6fd;border-radius:9px;padding:14px;margin-bottom:10px;}
+  .uq-card:last-child{margin-bottom:0;}
+  .uq-num{font-size:0.72rem;font-weight:800;color:#0369a1;margin-bottom:4px;}
+  .uq-q{font-weight:700;font-size:0.88rem;margin-bottom:10px;line-height:1.7;color:#0c4a6e;}
+  .uq-opts{display:flex;flex-direction:column;gap:7px;}
+  .uq-opt{padding:9px 13px;border:2px solid #bae6fd;border-radius:7px;cursor:pointer;font-size:0.85rem;background:white;font-family:inherit;text-align:left;color:#0c4a6e;transition:all 0.15s;display:flex;align-items:center;gap:8px;}
+  .uq-opt:hover:not(:disabled){border-color:#0369a1;background:#e0f2fe;}
+  .uq-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#dbeafe;color:#0369a1;font-weight:800;font-size:0.75rem;flex-shrink:0;}
+  .uq-opt.correct{background:#ecfccb;border-color:#65a30d;color:#1a2e05;font-weight:700;}
+  .uq-opt.correct .uq-badge{background:#65a30d;color:white;}
+  .uq-opt.wrong{background:#fee2e2;border-color:#ef4444;color:#7f1d1d;}
+  .uq-opt.wrong .uq-badge{background:#ef4444;color:white;}
+  .uq-fb{margin-top:9px;padding:8px 12px;border-radius:6px;font-size:0.82rem;display:none;font-weight:600;line-height:1.8;}
+  .uq-fb.show-ok{display:block;background:#ecfccb;color:#1a2e05;}
+  .uq-fb.show-ng{display:block;background:#fee2e2;color:#7f1d1d;}
+  .uq-result{margin-top:12px;border-radius:9px;padding:14px 16px;text-align:center;display:none;}
+  .uq-result.pass{background:linear-gradient(135deg,#15803d,#4ade80);color:white;}
+  .uq-result.retry{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;}
+  .uq-result-score{font-size:1.8rem;font-weight:900;}
+  .uq-result-msg{font-size:0.85rem;opacity:0.92;margin-top:4px;}
+  .uq-retry-btn{margin-top:10px;padding:7px 20px;border-radius:20px;border:2px solid white;background:transparent;color:white;font-weight:800;font-size:0.82rem;cursor:pointer;font-family:inherit;}
+  /* SP06専用 */
+  .step-block{background:#f8fafc;border-radius:9px;padding:12px 14px;margin-bottom:8px;border-left:3px solid #38bdf8;font-size:0.88rem;line-height:1.9;}
+  .step-num{display:inline-block;background:#0369a1;color:white;border-radius:50%;width:22px;height:22px;text-align:center;line-height:22px;font-size:0.78rem;font-weight:900;margin-right:6px;flex-shrink:0;}
+  .person-card{border-radius:10px;padding:14px 16px;margin-bottom:10px;}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-top"><div class="logo">GAMBA</div><div class="header-sub">江原予備校 ／ 物理・宇宙</div></div>
+  <div class="chapter-title-bar">
+    <span class="chapter-badge">SP06</span>
+    <span class="chapter-title-text">素粒子への旅 ― ヒッグス粒子 ― 質量の起源</span>
+  </div>
+</header>
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab(&#39;learn&#39;)">📖 学習</button>
+  <button class="tab-btn" onclick="showTab(&#39;flash&#39;)">🃏 フラッシュカード</button>
+  <button class="tab-btn" onclick="showTab(&#39;quiz&#39;)">🔭 ミニテスト</button>
+</div>
+<main>
+<div id="tab-learn" class="tab-content active">
+
+<!-- 0. イヌ校長 -->
+<div class="section-card">
+  <div class="section-header sh-cosmos">🌌 見えないものが、世界を支えている</div>
+  <div class="section-body">
+    <div style="background:linear-gradient(135deg,#3b0764,#7c3aed);border-radius:12px;padding:18px 20px;color:white;font-size:0.92rem;line-height:2.1;margin-bottom:14px;">
+      <div style="font-size:1.05rem;font-weight:800;color:#bef264;margin-bottom:10px;">🐶 イヌ校長より</div>
+      ちょっと考えてみてください。<br>
+      「あなたはなぜ、重さがあるのでしょうか？」<br><br>
+      体重計に乗れば数字が出る。荷物を持てば重い。それは当たり前のことに思えますよね。<br>
+      でも、物理学者にとってこれは長い間<strong style="color:#bef264">「謎」</strong>でした。<br><br>
+      素粒子はなぜ質量を持つのか。質量は、どこから来るのか。<br>
+      その答えが、<strong style="color:#e9d5ff">ヒッグス粒子</strong>です。<br><br>
+      <span style="font-size:0.85rem;opacity:0.9;">48年かけて予言が証明された。目に見えない場が宇宙全体に満ちている。<br>見えないものが世界を支えているという話を、一緒に見ていきましょう。</span>
+    </div>
+    <div class="amber-box">
+      <div class="box-label">📌 この単元で学ぶこと</div>
+      <div style="font-size:0.9rem;line-height:2.3;">
+        ① 「質量」とは何か ― そもそもなぜ素粒子は重さを持つのか<br>
+        ② ヒッグス場とは ― 宇宙全体に満ちた「見えない海」<br>
+        ③ ヒッグス機構 ― 粒子が質量を得るしくみ<br>
+        ④ ヒッグス粒子の発見 ― LHCと2012年の瞬間<br>
+        ⑤ ヒッグス粒子が「神の粒子」と呼ばれる理由<br>
+        ⑥ コラム ― ピーター・ヒッグスの人生と、予言から48年の物語
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 1. 質量とは何か -->
+<div class="section-card">
+  <div class="section-header sh-blue">⚖️ 1. 「質量」とは何か ― 当たり前すぎて気づかなかった謎</div>
+  <div class="section-body">
+    <div class="text-block">「重い」「軽い」という感覚は誰にでもあります。でも物理学的に「質量とは何か」と問われると、意外と答えにくいものです。まずここを整理しましょう。</div>
+
+    <div class="key-box">
+      <div class="box-label">🔑 質量とは何か（物理の定義）</div>
+      <div style="font-size:0.9rem;line-height:2.2;">
+        <strong>「動かしにくさ（慣性）の大きさ」</strong>のことです。<br><br>
+        ・重い石は押してもなかなか動かない → 質量が大きい<br>
+        ・羽は少しの力で飛ぶ → 質量が小さい<br>
+        ・重力での「重さ」とは別の概念ですが、日常では同じように感じる<br><br>
+        <strong>素粒子の世界での「謎」：光子（フォトン）は質量がゼロ。電子は質量を持つ。なぜ？</strong>
+      </div>
+    </div>
+
+    <!-- 質量の不思議SVG -->
+    <div style="background:#0a1628;border-radius:10px;padding:14px;margin:12px 0;">
+      <div style="color:#bef264;font-weight:800;font-size:0.82rem;margin-bottom:10px;text-align:center;">素粒子の質量はバラバラ ― なぜこんなに違うのか</div>
+      <svg width="100%" height="110" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;display:block;margin:0 auto;">
+        <rect width="380" height="110" fill="#0a1628" rx="8"></rect>
+        <!-- 棒グラフ的表現（対数スケールイメージ） -->
+        <!-- 光子 -->
+        <rect x="20" y="90" width="30" height="2" rx="1" fill="#fbbf24"></rect>
+        <text x="35" y="105" text-anchor="middle" font-size="9" fill="#fbbf24" font-family="sans-serif">光子</text>
+        <text x="35" y="84" text-anchor="middle" font-size="8" fill="#fbbf24" font-family="sans-serif">ゼロ</text>
+        <!-- ニュートリノ -->
+        <rect x="65" y="88" width="30" height="4" rx="1" fill="#38bdf8"></rect>
+        <text x="80" y="105" text-anchor="middle" font-size="9" fill="#38bdf8" font-family="sans-serif">ν</text>
+        <text x="80" y="82" text-anchor="middle" font-size="8" fill="#38bdf8" font-family="sans-serif">極微</text>
+        <!-- 電子 -->
+        <rect x="110" y="75" width="30" height="17" rx="1" fill="#4ade80"></rect>
+        <text x="125" y="105" text-anchor="middle" font-size="9" fill="#4ade80" font-family="sans-serif">電子</text>
+        <text x="125" y="69" text-anchor="middle" font-size="8" fill="#4ade80" font-family="sans-serif">0.511</text>
+        <!-- ミューオン -->
+        <rect x="155" y="55" width="30" height="37" rx="1" fill="#c084fc"></rect>
+        <text x="170" y="105" text-anchor="middle" font-size="9" fill="#c084fc" font-family="sans-serif">μ</text>
+        <text x="170" y="49" text-anchor="middle" font-size="8" fill="#c084fc" font-family="sans-serif">105</text>
+        <!-- タウ -->
+        <rect x="200" y="30" width="30" height="62" rx="1" fill="#f87171"></rect>
+        <text x="215" y="105" text-anchor="middle" font-size="9" fill="#f87171" font-family="sans-serif">τ</text>
+        <text x="215" y="24" text-anchor="middle" font-size="8" fill="#f87171" font-family="sans-serif">1776</text>
+        <!-- Wボソン -->
+        <rect x="245" y="12" width="30" height="80" rx="1" fill="#a78bfa"></rect>
+        <text x="260" y="105" text-anchor="middle" font-size="9" fill="#a78bfa" font-family="sans-serif">W</text>
+        <text x="260" y="7" text-anchor="middle" font-size="8" fill="#a78bfa" font-family="sans-serif">80400</text>
+        <!-- トップクォーク -->
+        <rect x="290" y="8" width="30" height="84" rx="1" fill="#fb923c"></rect>
+        <text x="305" y="105" text-anchor="middle" font-size="9" fill="#fb923c" font-family="sans-serif">top</text>
+        <text x="305" y="3" text-anchor="middle" font-size="8" fill="#fb923c" font-family="sans-serif">173e6</text>
+        <!-- 単位 -->
+        <text x="340" y="100" font-size="8" fill="#64748b" font-family="sans-serif">MeV/c²</text>
+      </svg>
+      <div style="color:#94a3b8;font-size:0.78rem;margin-top:6px;text-align:center;">光子はゼロ。トップクォークは電子の約34万倍。なぜこんなにバラバラなのか？</div>
+    </div>
+
+    <div class="text-block">標準模型ができる前の理論では、<strong>すべての素粒子は質量ゼロのはず</strong>でした。なぜなら、理論の数学的な対称性（ゲージ対称性）を保つには、粒子に質量があってはいけなかったからです。でも実際には電子もW粒子も質量を持っている。これが大きな矛盾でした。</div>
+
+    <div class="warn-block">
+      ⚠️ <strong>1960年代の物理学の大問題</strong><br>
+      「理論の対称性を保つためには質量ゼロでなければならない」<br>
+      「でも実験では素粒子は明らかに質量を持っている」<br>
+      この矛盾を解決しないと、標準模型は完成しませんでした。
+    </div>
+
+    <!-- 単元1 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq1&#39;)"><span>🖊️ 単元1 ミニテスト ― 質量とは何か</span><span class="uq-arrow" id="uq1_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq1_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. ヒッグス場 -->
+<div class="section-card">
+  <div class="section-header sh-higgs">🌊 2. ヒッグス場 ― 宇宙全体に満ちた「見えない海」</div>
+  <div class="section-body">
+    <div class="text-block">ヒッグス粒子を理解するには、まず「<strong>ヒッグス場</strong>」を理解する必要があります。粒子より場の話が先です。</div>
+
+    <div class="higgs-box">
+      <div class="box-label">🌊 「場（フィールド）」とは何か</div>
+      <div style="font-size:0.88rem;line-height:2.1;color:#e2e8f0;">
+        物理学では「空間のすべての点に値が割り当てられたもの」を<strong style="color:#c084fc">「場」</strong>と呼びます。<br><br>
+        例：<strong style="color:#fbbf24">温度場</strong> ― 部屋の中のすべての点に「温度」という値がある<br>
+        例：<strong style="color:#38bdf8">電磁場</strong> ― 宇宙のすべての点に電磁気の状態がある<br>
+        例：<strong style="color:#c084fc">ヒッグス場</strong> ― 宇宙のすべての点に「ヒッグスの値」がある
+      </div>
+    </div>
+
+    <div class="text-block" style="margin-top:14px;">ヒッグス場の特別なところは、<strong>「宇宙が冷えるにつれて、場の値がゼロでない状態（真空期待値）に落ち着いた」</strong>点です。これを「自発的対称性の破れ」と呼びます。</div>
+
+    <!-- ヒッグス場のイメージSVG：蜂蜜の中を泳ぐたとえ -->
+    <div style="background:#0a1628;border-radius:10px;padding:14px;margin:12px 0;">
+      <div style="color:#c084fc;font-weight:800;font-size:0.85rem;margin-bottom:10px;text-align:center;">ヒッグス場のたとえ ― 蜂蜜の海を泳ぐ</div>
+      <svg width="100%" height="120" viewBox="0 0 380 120" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;display:block;margin:0 auto;">
+        <rect width="380" height="120" fill="#0a1628" rx="8"></rect>
+        <!-- 蜂蜜の海 -->
+        <rect x="10" y="30" width="360" height="80" rx="6" fill="#92400e" opacity="0.4"></rect>
+        <text x="190" y="20" text-anchor="middle" font-size="10" fill="#c084fc" font-family="sans-serif" font-weight="800">← ヒッグス場（宇宙全体に満ちている） →</text>
+        <!-- 光子（速い・抵抗なし） -->
+        <circle cx="60" cy="70" r="14" fill="#fbbf24" opacity="0.9"></circle>
+        <text x="60" y="67" text-anchor="middle" font-size="9" fill="#0f172a" font-family="sans-serif" font-weight="900">光子</text>
+        <text x="60" y="79" text-anchor="middle" font-size="8" fill="#0f172a" font-family="sans-serif">γ</text>
+        <line x1="76" y1="70" x2="108" y2="70" stroke="#fbbf24" stroke-width="2.5"></line>
+        <polygon points="108,65 118,70 108,75" fill="#fbbf24"></polygon>
+        <text x="93" y="58" text-anchor="middle" font-size="9" fill="#fbbf24" font-family="sans-serif">抵抗なし→光速</text>
+        <!-- 電子（遅い・抵抗あり） -->
+        <circle cx="220" cy="70" r="14" fill="#4ade80" opacity="0.9"></circle>
+        <text x="220" y="67" text-anchor="middle" font-size="9" fill="#0f172a" font-family="sans-serif" font-weight="900">電子</text>
+        <text x="220" y="79" text-anchor="middle" font-size="8" fill="#0f172a" font-family="sans-serif">e⁻</text>
+        <!-- ぐねぐねした矢印 -->
+        <path d="M236,70 Q248,60 258,70 Q268,80 278,70 Q288,60 298,70" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-dasharray="4,2"></path>
+        <polygon points="298,65 308,70 298,75" fill="#4ade80"></polygon>
+        <text x="272" y="58" text-anchor="middle" font-size="9" fill="#4ade80" font-family="sans-serif">抵抗を受ける→質量</text>
+        <!-- 背景のヒッグス点 -->
+        <circle cx="30" cy="45" r="3" fill="#c084fc" opacity="0.5"></circle>
+        <circle cx="80" cy="90" r="2" fill="#c084fc" opacity="0.4"></circle>
+        <circle cx="140" cy="50" r="3" fill="#c084fc" opacity="0.5"></circle>
+        <circle cx="170" cy="95" r="2" fill="#c084fc" opacity="0.4"></circle>
+        <circle cx="310" cy="45" r="3" fill="#c084fc" opacity="0.5"></circle>
+        <circle cx="350" cy="85" r="2" fill="#c084fc" opacity="0.4"></circle>
+      </svg>
+      <div style="color:#94a3b8;font-size:0.78rem;margin-top:8px;text-align:center;">ヒッグス場との相互作用が強い粒子ほど「抵抗」が大きく → 質量が大きくなる</div>
+    </div>
+
+    <div style="font-weight:800;color:#0c4a6e;font-size:0.9rem;margin:16px 0 8px;">なぜ光子は質量ゼロなのか？</div>
+    <div class="step-block">ヒッグス場と<strong>相互作用しない</strong>粒子は抵抗を受けません。光子はヒッグス場と相互作用しないため、質量がゼロのまま光速で飛べます。</div>
+    <div style="font-weight:800;color:#0c4a6e;font-size:0.9rem;margin:14px 0 8px;">なぜW粒子は重いのか？</div>
+    <div class="step-block">W粒子（弱い力の担い手）はヒッグス場と<strong>非常に強く</strong>相互作用します。そのため大きな抵抗を受け、陽子の80倍もの巨大な質量を持ちます。</div>
+
+    <div class="note-block">💡 <strong>「真空」は空っぽではない</strong><br>ヒッグス場が宇宙全体に満ちているということは、何もない「真空」でさえヒッグス場の値を持っています。私たちは今この瞬間も、ヒッグス場の海の中を泳いでいるのです。</div>
+
+    <!-- 単元2 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq2&#39;)"><span>🖊️ 単元2 ミニテスト ― ヒッグス場</span><span class="uq-arrow" id="uq2_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq2_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. ヒッグス機構 -->
+<div class="section-card">
+  <div class="section-header sh-purple">⚙️ 3. ヒッグス機構 ― 対称性が「自発的に破れる」しくみ</div>
+  <div class="section-body">
+    <div class="text-block">ヒッグス場が質量を与えるしくみを「<strong>ヒッグス機構</strong>」と呼びます。少し難しい話ですが、「谷に落ちるボール」のたとえで直感的に理解できます。</div>
+
+    <!-- メキシカンハット ポテンシャルのSVG -->
+    <div style="background:#0a1628;border-radius:10px;padding:14px;margin:12px 0;">
+      <div style="color:#c084fc;font-weight:800;font-size:0.82rem;margin-bottom:8px;text-align:center;">「メキシカンハット」ポテンシャル ― 対称性が破れるイメージ</div>
+      <svg width="100%" height="130" viewBox="0 0 380 130" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;display:block;margin:0 auto;">
+        <rect width="380" height="130" fill="#0a1628" rx="8"></rect>
+        <!-- 高温（山型） -->
+        <path d="M30,100 Q70,30 110,100" fill="none" stroke="#f87171" stroke-width="2.5"></path>
+        <circle cx="70" cy="40" r="7" fill="#fbbf24"></circle>
+        <text x="70" y="16" text-anchor="middle" font-size="9" fill="#f87171" font-family="sans-serif" font-weight="800">高温（対称）</text>
+        <text x="70" y="28" text-anchor="middle" font-size="8" fill="#94a3b8" font-family="sans-serif">頂上に安定</text>
+        <text x="70" y="110" text-anchor="middle" font-size="8" fill="#f87171" font-family="sans-serif">場の値＝0</text>
+        <!-- 矢印 -->
+        <text x="145" y="65" text-anchor="middle" font-size="18" fill="#fbbf24" font-family="sans-serif">→</text>
+        <text x="145" y="80" text-anchor="middle" font-size="8" fill="#94a3b8" font-family="sans-serif">宇宙が冷える</text>
+        <!-- 低温（谷型＝メキシカンハット断面） -->
+        <path d="M185,100 Q205,115 230,60 Q255,20 280,60 Q305,115 325,100" fill="none" stroke="#c084fc" stroke-width="2.5"></path>
+        <circle cx="242" cy="75" r="7" fill="#4ade80"></circle>
+        <text x="255" y="16" text-anchor="middle" font-size="9" fill="#c084fc" font-family="sans-serif" font-weight="800">低温（対称性の破れ）</text>
+        <text x="255" y="28" text-anchor="middle" font-size="8" fill="#94a3b8" font-family="sans-serif">谷のどこかに落ち着く</text>
+        <text x="255" y="118" text-anchor="middle" font-size="8" fill="#c084fc" font-family="sans-serif">場の値≠0（真空期待値）</text>
+        <text x="242" y="88" text-anchor="middle" font-size="7" fill="#fbbf24" font-family="sans-serif">ここ！</text>
+      </svg>
+      <div style="color:#94a3b8;font-size:0.78rem;margin-top:6px;text-align:center;">宇宙が冷えるにつれ「対称な頂上」から「谷」へ転がり落ちた ＝ 自発的対称性の破れ</div>
+    </div>
+
+    <div style="font-weight:800;color:#0c4a6e;font-size:0.9rem;margin:16px 0 8px;">順を追って理解しよう</div>
+    <div class="step-block"><span class="step-num">1</span><strong>ビッグバン直後の超高温</strong> ― すべての素粒子は質量ゼロ。ヒッグス場の値もゼロ。宇宙は完全な対称性を持っていた。</div>
+    <div class="step-block"><span class="step-num">2</span><strong>宇宙が冷える（相転移）</strong> ― 温度が下がると、ヒッグス場が「谷に落ちる」ように、ゼロでない値（真空期待値）に定まった。これが「自発的対称性の破れ」。</div>
+    <div class="step-block"><span class="step-num">3</span><strong>各粒子がヒッグス場と相互作用</strong> ― 谷に落ちたヒッグス場と相互作用する粒子は「抵抗」を受けて動きにくくなる。この動きにくさが<strong>質量</strong>として現れる。</div>
+    <div class="step-block"><span class="step-num">4</span><strong>ヒッグス粒子の誕生</strong> ― ヒッグス場が定まった「谷」のまわりで揺れる振動が、<strong>ヒッグス粒子</strong>として観測される。場の「さざ波」が粒子として見えるのです。</div>
+
+    <div class="important-box">
+      <div class="box-label">⭐ ヒッグス機構のポイント</div>
+      <div style="font-size:0.88rem;line-height:2.4;">
+        ① ヒッグス場は宇宙全体に満ちている（真空も含めて）<br>
+        ② 宇宙が冷えることで「自発的対称性の破れ」が起きた<br>
+        ③ ヒッグス場との相互作用の強さ ＝ 粒子の質量の大きさ<br>
+        ④ ヒッグス粒子は「ヒッグス場のさざ波（励起）」として現れる
+      </div>
+    </div>
+
+    <!-- 単元3 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq3&#39;)"><span>🖊️ 単元3 ミニテスト ― ヒッグス機構</span><span class="uq-arrow" id="uq3_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq3_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. ヒッグス粒子の発見 -->
+<div class="section-card">
+  <div class="section-header sh-green">🎉 4. ヒッグス粒子の発見 ― 2012年7月4日</div>
+  <div class="section-body">
+    <div class="text-block">1964年に理論的に提唱されてから、実に<strong>48年後</strong>の2012年7月4日、スイス・ジュネーブにあるCERNの大型ハドロン衝突型加速器（LHC）でヒッグス粒子が発見されました。</div>
+
+    <div style="background:#0a1628;border-radius:12px;padding:16px 18px;margin:12px 0;">
+      <div style="color:#4ade80;font-weight:800;font-size:0.95rem;margin-bottom:12px;">🏆 LHCとは ― 人類最大の実験装置</div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:0.85rem;color:#e2e8f0;line-height:1.9;">
+        <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:800;min-width:60px;">場所</span><span>スイス・フランス国境地下100m</span></div>
+        <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:800;min-width:60px;">全長</span><span>全周27km（地下に埋まった巨大なリング）</span></div>
+        <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:800;min-width:60px;">しくみ</span><span>陽子を光速近くまで加速し衝突させる。衝突のエネルギーで新しい粒子を生み出す</span></div>
+        <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:800;min-width:60px;">規模</span><span>100か国以上から約1万人の科学者・技術者が関わる。建設費約6000億円</span></div>
+        <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:800;min-width:60px;">温度</span><span>超電導磁石の冷却に液体ヘリウムを使用。宇宙空間より冷たい−271℃</span></div>
+      </div>
+    </div>
+
+    <div style="font-weight:800;color:#0c4a6e;font-size:0.9rem;margin:16px 0 8px;">発見までの道のり</div>
+    <div class="step-block"><span class="step-num">1</span><strong>2008年 LHC稼働開始</strong> ― 完成直後、機器トラブルで運転停止。修理に1年以上かかる波乱のスタート。</div>
+    <div class="step-block"><span class="step-num">2</span><strong>2011〜2012年 データ収集</strong> ― ATLASとCMSという2つの独立した検出器チームが並行して実験。互いに結果を見せずに分析を進めた。</div>
+    <div class="step-block"><span class="step-num">3</span><strong>2012年7月4日 発表</strong> ― 「ヒッグス粒子に一致する新粒子を発見した」と発表。会場に集まった物理学者たちが涙を流した。ピーター・ヒッグス本人も会場にいた。</div>
+    <div class="step-block"><span class="step-num">4</span><strong>2013年 ノーベル物理学賞</strong> ― ピーター・ヒッグスとフランソワ・アングレールが受賞。ヒッグスは受賞の知らせを「携帯電話を持っていなかったので、翌日の新聞で知った」と語った。</div>
+
+    <div class="important-box">
+      <div class="box-label">📐 どうやって「見えない」粒子を見つけたのか</div>
+      <div style="font-size:0.87rem;line-height:2.1;">
+        ヒッグス粒子自体は生まれてから約10⁻²²秒で崩壊してしまいます。直接は見えません。<br>
+        代わりに、ヒッグス粒子が崩壊してできた「娘粒子」（光子のペア、電子のペアなど）を検出器で集め、その「エネルギーの合計」がヒッグス粒子の質量（約125 GeV）と一致するかどうかで確認しました。<br><br>
+        <strong>何兆回もの衝突実験の中から、統計的に「これはたまたまではない」と証明するのに何年もかかった</strong>のです。
+      </div>
+    </div>
+
+    <!-- 単元4 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq4&#39;)"><span>🖊️ 単元4 ミニテスト ― ヒッグス粒子の発見</span><span class="uq-arrow" id="uq4_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq4_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. 「神の粒子」 -->
+<div class="section-card">
+  <div class="section-header sh-amber">✨ 5. なぜ「神の粒子」と呼ばれるのか</div>
+  <div class="section-body">
+    <div class="text-block">ヒッグス粒子は英語でよく "God Particle"（神の粒子）と呼ばれます。なぜそんな呼び名がついたのでしょう？</div>
+
+    <div class="key-box">
+      <div class="box-label">📖 「神の粒子」という名前の由来</div>
+      <div style="font-size:0.88rem;line-height:2.1;">
+        1993年、ノーベル物理学賞受賞者の<strong>レオン・レーダーマン</strong>が書いた本のタイトルが由来です。<br><br>
+        もともとのタイトル案は <strong>「Goddamn Particle（いまいましい粒子）」</strong>でした。なぜなら発見がこれほど難しく、何十年も物理学者たちを悩ませてきたからです。<br>
+        出版社に「さすがに過激すぎる」と言われ、"Goddamn" から "God" の部分だけ残して "God Particle" になった ―― というのが本当の話です。
+      </div>
+    </div>
+
+    <div class="note-block">💡 <strong>物理学者はこの名前があまり好きではない</strong><br>「神の粒子」という呼び名は、宗教的な意味合いが含まれているようで誤解を生むと、多くの物理学者が指摘しています。ピーター・ヒッグス自身も「神の粒子という名前は使わないでほしい」と述べていました。</div>
+
+    <div style="font-weight:800;color:#0c4a6e;font-size:0.9rem;margin:14px 0 8px;">ヒッグス粒子が「特別」な本当の理由</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div style="background:#fef9c3;border-radius:8px;padding:11px 14px;border-left:4px solid #ca8a04;font-size:0.86rem;color:#713f12;line-height:1.8;"><strong>① 質量の起源を説明する唯一の粒子</strong><br>私たちの体や、地球上のあらゆる物質の「重さ」の起源を説明するのはヒッグス粒子だけです。</div>
+      <div style="background:#fef9c3;border-radius:8px;padding:11px 14px;border-left:4px solid #ca8a04;font-size:0.86rem;color:#713f12;line-height:1.8;"><strong>② 標準模型を「完成」させた粒子</strong><br>17種類のうち最後に発見された粒子です。これがなければ標準模型全体の理論が崩れていました。</div>
+      <div style="background:#fef9c3;border-radius:8px;padding:11px 14px;border-left:4px solid #ca8a04;font-size:0.86rem;color:#713f12;line-height:1.8;"><strong>③ スカラーボソンという唯一無二の性質</strong><br>スピンがゼロという、他のどの素粒子とも異なる性質を持ちます。</div>
+      <div style="background:#fef9c3;border-radius:8px;padding:11px 14px;border-left:4px solid #ca8a04;font-size:0.86rem;color:#713f12;line-height:1.8;"><strong>④ 宇宙の「相転移」の痕跡</strong><br>ビッグバン後の宇宙が高温から冷えていく中で起きた「対称性の破れ」という宇宙の変化の証拠です。</div>
+    </div>
+
+    <!-- 単元5 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq5&#39;)"><span>🖊️ 単元5 ミニテスト ― 「神の粒子」</span><span class="uq-arrow" id="uq5_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq5_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. コラム：ピーター・ヒッグスの人生 -->
+<div class="section-card">
+  <div class="section-header sh-cosmos">📖 コラム ― ピーター・ヒッグスの人生と48年の物語</div>
+  <div class="section-body">
+    <div class="text-block">科学の歴史は、数字や法則だけでできているのではありません。そこには人間の話があります。ピーター・ヒッグスの物語は、「信じることをやめない」ことの意味を教えてくれます。</div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;margin:12px 0;">
+
+      <div class="person-card" style="background:#0f172a;border:1px solid #334155;">
+        <div style="color:#38bdf8;font-weight:800;font-size:0.88rem;margin-bottom:6px;">📅 1929年 ― スコットランド、エジンバラ生まれ</div>
+        <div style="font-size:0.84rem;color:#e2e8f0;line-height:1.9;">幼少期は重い気管支炎を患い、学校をよく休んでいました。その分、家で独学で物理学の本を読みふけりました。「できない環境」の中で育った人でした。</div>
+      </div>
+
+      <div class="person-card" style="background:#0f172a;border:1px solid #334155;">
+        <div style="color:#c084fc;font-weight:800;font-size:0.88rem;margin-bottom:6px;">📅 1964年 ― 35歳のとき、運命の論文</div>
+        <div style="font-size:0.84rem;color:#e2e8f0;line-height:1.9;">ヒッグスは「対称性の自発的な破れによって粒子に質量が生まれる機構」を論文にまとめました。最初に投稿した論文誌は<strong style="color:#f87171">「重要でない」と却下</strong>されました。別の論文誌に投稿し直してようやく掲載。発見前に論文が却下された天才です。</div>
+      </div>
+
+      <div class="person-card" style="background:#0f172a;border:1px solid #334155;">
+        <div style="color:#fbbf24;font-weight:800;font-size:0.88rem;margin-bottom:6px;">📅 1964〜2012年 ― 48年間、信じ続けた</div>
+        <div style="font-size:0.84rem;color:#e2e8f0;line-height:1.9;">理論を発表してから半世紀近く、ヒッグス粒子は仮説のままでした。ヒッグスは「私が生きている間に発見されるだろうか」と何度も問われ、「わからない」と答え続けました。それでも誰も否定できない理論でした。</div>
+      </div>
+
+      <div class="person-card" style="background:#0f172a;border:1px solid #65a30d;border-width:2px;">
+        <div style="color:#4ade80;font-weight:800;font-size:0.88rem;margin-bottom:6px;">📅 2012年7月4日 ― 83歳、発見の瞬間</div>
+        <div style="font-size:0.84rem;color:#e2e8f0;line-height:1.9;">CERN での発表会場にいたヒッグスは、発表が終わった後に涙を流したと言われています。「こんなに生きていられるとは思わなかった」と語りました。48年間、信じ続けた答えを、自分の目で確認できた日でした。</div>
+      </div>
+
+      <div class="person-card" style="background:#0f172a;border:1px solid #334155;">
+        <div style="color:#94a3b8;font-weight:800;font-size:0.88rem;margin-bottom:6px;">📅 2013年 ― ノーベル物理学賞受賞（84歳）</div>
+        <div style="font-size:0.84rem;color:#e2e8f0;line-height:1.9;">ヒッグスは携帯電話を持っておらず、受賞を翌日の新聞で知りました。「本当に静かな人だった」と周囲は語ります。スウェーデン王立科学アカデミーは授賞式に向かう途中のヒッグスに街角で声をかけ、受賞を伝えたと言われています。</div>
+      </div>
+
+      <div class="person-card" style="background:#0f172a;border:1px solid #334155;">
+        <div style="color:#94a3b8;font-weight:800;font-size:0.88rem;margin-bottom:6px;">📅 2024年4月8日 ― 永眠（94歳）</div>
+        <div style="font-size:0.84rem;color:#e2e8f0;line-height:1.9;">ピーター・ヒッグスはエジンバラにて94歳で亡くなりました。自分の名前が付いた粒子の発見を自分の目で見届けた、歴史に残る科学者のひとりです。</div>
+      </div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,#3b0764,#5b21b6);border-radius:12px;padding:16px 18px;color:white;margin-top:14px;">
+      <div style="font-weight:800;color:#bef264;font-size:0.92rem;margin-bottom:8px;">🐶 イヌ校長から</div>
+      <div style="font-size:0.87rem;line-height:2.1;">
+        ヒッグスの論文は最初に<strong style="color:#fbbf24">「重要でない」と却下</strong>されました。<br>
+        彼が証明したいことを証明するまでに<strong style="color:#fbbf24">48年かかりました</strong>。<br><br>
+        でも彼はやめなかった。信じることをやめなかった。<br><br>
+        学校に行けなかった時間、授業についていけなかった時間、自分を責めた時間。<br>
+        それはあなたの力が「ゼロ」だったわけではない。ヒッグス場のように、<strong style="color:#e9d5ff">見えないところで確かに存在していた</strong>のです。<br><br>
+        <strong style="color:#bef264">あなたにも、あなただけのヒッグス場がある。</strong>
+      </div>
+    </div>
+
+    <!-- 単元6 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq6&#39;)"><span>🖊️ コラム ミニテスト ― ピーター・ヒッグスと発見の歴史</span><span class="uq-arrow" id="uq6_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq6_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. まとめ -->
+<div class="section-card">
+  <div class="section-header sh-green">📝 7. まとめ ― ヒッグス粒子のすべて</div>
+  <div class="section-body">
+
+    <div style="background:#0a1628;border-radius:10px;padding:16px;margin-bottom:14px;">
+      <div style="color:#bef264;font-weight:800;font-size:0.88rem;margin-bottom:12px;text-align:center;">ヒッグス粒子 ― 基本データ</div>
+      <table style="width:100%;border-collapse:collapse;font-size:0.83rem;">
+        <tbody><tr>
+          <td style="background:#1e3a5f;color:#38bdf8;padding:8px;border:1px solid #334155;font-weight:800;width:35%;">記号</td>
+          <td style="background:#0f172a;color:#e2e8f0;padding:8px;border:1px solid #334155;">H（またはh）</td>
+        </tr>
+        <tr>
+          <td style="background:#1e3a5f;color:#38bdf8;padding:8px;border:1px solid #334155;font-weight:800;">分類</td>
+          <td style="background:#0f172a;color:#e2e8f0;padding:8px;border:1px solid #334155;">スカラーボソン（スピン＝0）</td>
+        </tr>
+        <tr>
+          <td style="background:#1e3a5f;color:#38bdf8;padding:8px;border:1px solid #334155;font-weight:800;">質量</td>
+          <td style="background:#0f172a;color:#e2e8f0;padding:8px;border:1px solid #334155;">約125.25 GeV/c²（陽子の約133倍）</td>
+        </tr>
+        <tr>
+          <td style="background:#1e3a5f;color:#38bdf8;padding:8px;border:1px solid #334155;font-weight:800;">電荷</td>
+          <td style="background:#0f172a;color:#4ade80;padding:8px;border:1px solid #334155;">0（中性）</td>
+        </tr>
+        <tr>
+          <td style="background:#1e3a5f;color:#38bdf8;padding:8px;border:1px solid #334155;font-weight:800;">寿命</td>
+          <td style="background:#0f172a;color:#e2e8f0;padding:8px;border:1px solid #334155;">約1.6 × 10⁻²²秒（非常に短命）</td>
+        </tr>
+        <tr>
+          <td style="background:#1e3a5f;color:#38bdf8;padding:8px;border:1px solid #334155;font-weight:800;">役割</td>
+          <td style="background:#0f172a;color:#c084fc;padding:8px;border:1px solid #334155;font-weight:700;">他の素粒子に質量を与える（ヒッグス機構）</td>
+        </tr>
+        <tr>
+          <td style="background:#1e3a5f;color:#38bdf8;padding:8px;border:1px solid #334155;font-weight:800;">予言</td>
+          <td style="background:#0f172a;color:#e2e8f0;padding:8px;border:1px solid #334155;">1964年（ヒッグスら複数のグループ）</td>
+        </tr>
+        <tr>
+          <td style="background:#1e3a5f;color:#38bdf8;padding:8px;border:1px solid #334155;font-weight:800;">発見</td>
+          <td style="background:#0f172a;color:#4ade80;padding:8px;border:1px solid #334155;font-weight:700;">2012年7月4日（CERN LHC）</td>
+        </tr>
+      </tbody></table>
+    </div>
+
+    <div class="important-box">
+      <div class="box-label">⭐ SP06 核心まとめ</div>
+      <div style="font-size:0.88rem;line-height:2.4;">
+        ① <strong>ヒッグス場</strong>は宇宙全体に満ちた「見えない場」。光子はヒッグス場と相互作用せず質量ゼロ。<br>
+        ② <strong>ヒッグス機構</strong>＝ヒッグス場との相互作用の強さが粒子の質量を決める。<br>
+        ③ <strong>自発的対称性の破れ</strong>＝宇宙が冷えたとき場の値がゼロでない値に落ち着いた。<br>
+        ④ <strong>ヒッグス粒子</strong>＝ヒッグス場のさざ波（励起状態）。スカラーボソン（スピン0）。<br>
+        ⑤ 2012年のLHCによる発見で<strong>標準模型が「ひとまず完成」</strong>した。<br>
+        ⑥ 次はSP07 ― ビッグバンと素粒子宇宙論。このシリーズ最終章です。
+      </div>
+    </div>
+
+    <!-- 単元7 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq7&#39;)"><span>🖊️ 単元7 ミニテスト ― ヒッグス粒子のまとめ</span><span class="uq-arrow" id="uq7_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq7_body"></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /tab-learn -->
+
+<!-- FLASH -->
+<div id="tab-flash" class="tab-content">
+  <div class="section-card">
+    <div class="section-header sh-cosmos">🃏 フラッシュカード ― ヒッグス粒子の重要ポイント</div>
+    <div class="section-body">
+      <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+        <button class="fc-speed-btn active" onclick="setFcSpeed(0)" id="spbtn0">手動</button>
+        <button class="fc-speed-btn" onclick="setFcSpeed(4000)" id="spbtn1">4秒</button>
+        <button class="fc-speed-btn" onclick="setFcSpeed(2500)" id="spbtn2">2.5秒</button>
+        <button class="fc-speed-btn" onclick="setFcSpeed(1500)" id="spbtn3">1.5秒</button>
+      </div>
+      <div class="flashcard-wrap" onclick="flipFc()">
+        <div class="flashcard" id="fc_card">
+          <div class="fc-face fc-front"><div class="fc-label">おもて</div><div class="fc-main" id="fc_front">ヒッグス粒子の役割は何ですか？</div><div class="fc-sub" id="fc_fsub"></div></div>
+          <div class="fc-face fc-back"><div class="fc-label">うら</div><div class="fc-main" id="fc_back">他の素粒子に質量を与える（ヒッグス機構）</div><div class="fc-sub" id="fc_bsub">ヒッグス場との相互作用の強さが粒子の質量を決める</div></div>
+        </div>
+      </div>
+      <div class="fc-timer-bar"><div class="fc-timer-fill" id="fc_timer" style="width:0%"></div></div>
+      <div class="fc-progress" id="fc_prog"><div class="fc-dot current"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div></div>
+      <div class="fc-nav">
+        <button class="fc-nav-btn" onclick="fcPrev()" id="fc_prevBtn" disabled="">◀ 前へ</button>
+        <span style="font-size:0.85rem;color:var(--muted);" id="fc_idx">1 / 12</span>
+        <button class="fc-nav-btn" onclick="fcNext()" id="fc_nextBtn">次へ ▶</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="tab-quiz" class="tab-content">
+  <div class="section-card">
+    <div class="section-header sh-blue">🔭 ミニテスト ― 単元別4択（全問）</div>
+    <div class="section-body">
+      <div style="margin-bottom:16px;">
+        <div style="font-size:0.82rem;font-weight:700;color:var(--muted);margin-bottom:8px;">📚 単元を選んでください</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;" id="chapterBtns">
+          <button class="ch-btn active" onclick="selectChapter(0)">📚 全問チャレンジ</button>
+          <button class="ch-btn" onclick="selectChapter(1)">1. 質量とは</button>
+          <button class="ch-btn" onclick="selectChapter(2)">2. ヒッグス場</button>
+          <button class="ch-btn" onclick="selectChapter(3)">3. ヒッグス機構</button>
+          <button class="ch-btn" onclick="selectChapter(4)">4. 発見の歴史</button>
+          <button class="ch-btn" onclick="selectChapter(5)">5. 神の粒子</button>
+          <button class="ch-btn" onclick="selectChapter(6)">6. コラム</button>
+          <button class="ch-btn" onclick="selectChapter(7)">7. まとめ</button>
+        </div>
+      </div>
+      <div style="font-size:0.82rem;color:var(--muted);margin-bottom:14px;" id="quizInfo">全28問に挑戦しましょう。</div>
+      <div id="quizContainer"></div>
+      <div class="quiz-result" id="quizResult">
+        <div style="font-size:0.85rem;opacity:0.8;margin-bottom:4px;">最終スコア</div>
+        <div class="quiz-result-score" id="quizScore"></div>
+        <div class="quiz-result-msg" id="quizMsg"></div>
+        <button class="btn btn-primary" onclick="resetQuiz()" style="margin-top:12px;">もう一度 ↺</button>
+      </div>
+      <div style="margin-top:14px;text-align:right;"><button class="btn btn-gray" onclick="resetQuiz()">↺ リセット</button></div>
+    </div>
+  </div>
+</div>
+</main>
+<script>
+function showTab(id){
+  document.querySelectorAll('.tab-content').forEach(function(el){el.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(el){el.classList.remove('active');});
+  document.getElementById('tab-'+id).classList.add('active');
+  ['learn','flash','quiz'].forEach(function(t,i){if(t===id)document.querySelectorAll('.tab-btn')[i].classList.add('active');});
+  if(id==='flash')renderFc();
+  if(id==='quiz'){currentChapter=0;buildQuiz();}
+}
+function launchConfetti(n){
+  var colors=['#bef264','#38bdf8','#4ade80','#f87171','#fbbf24','#c084fc'];
+  for(var i=0;i<n;i++){
+    var el=document.createElement('div');el.className='confetti-piece';
+    el.style.cssText='left:'+(20+Math.random()*60)+'vw;top:20vh;background:'+colors[Math.floor(Math.random()*colors.length)]+';animation-delay:'+(Math.random()*0.6)+'s';
+    document.body.appendChild(el);
+    setTimeout((function(e){return function(){e.remove();};}(el)),2000);
+  }
+}
+
+var uqDefs={
+  uq1:{qs:[
+    {q:'物理学において「質量」はどのように定義されますか？',opts:['重力による引力の強さ','動かしにくさ（慣性）の大きさ','エネルギーの貯蔵量','電荷の大きさ'],ans:1,exp:'質量とは「動かしにくさ（慣性）の大きさ」のことです。重い石は押してもなかなか動かない、それが質量が大きいということです。重力での「重さ」とは別概念ですが日常では同じように感じます。'},
+    {q:'光子（フォトン）の質量はどれですか？',opts:['陽子と同じ','電子と同じ','ゼロ（0）','非常に大きい'],ans:2,exp:'光子の質量はゼロです。ヒッグス場と相互作用しないため質量を得ることができず、光速で飛ぶことができます。'},
+    {q:'1960年代の物理学の大問題として正しいのはどれですか？',opts:['光の速度が測れなかった','理論では素粒子は質量ゼロのはずなのに実験では質量を持っていた','クォークが6種類あると証明できなかった','電子が見つからなかった'],ans:1,exp:'標準模型の理論的な対称性（ゲージ対称性）を保つには素粒子は質量ゼロでなければならないのに、実験では電子もW粒子も明らかに質量を持っていました。この矛盾を解くのがヒッグス機構です。'},
+    {q:'素粒子の質量が粒子によって大きくバラバラなのはなぜですか？',opts:['電荷の大きさで質量が決まる','ヒッグス場との相互作用の強さが粒子によって異なるから','原子核の大きさが違うから','スピンの向きで質量が変わるから'],ans:1,exp:'各素粒子とヒッグス場との相互作用（結びつき）の強さが異なるため、得られる質量も異なります。光子はヒッグス場と相互作用しないため質量ゼロ、トップクォークは非常に強く相互作用するため電子の約34万倍の質量を持ちます。'}
+  ]},
+  uq2:{qs:[
+    {q:'「ヒッグス場」とはどのようなものですか？',opts:['原子核の中にある特別な物質','宇宙全体のすべての点に満ちている場（フィールド）','光子が集まってできた雲','電子が作り出す磁場'],ans:1,exp:'ヒッグス場は宇宙のすべての点に値が割り当てられた「場」です。温度場が部屋全体に温度の値を持つように、ヒッグス場は宇宙の真空も含めてすべての場所に満ちています。'},
+    {q:'ヒッグス場の中を進む「電子」と「光子」の違いはどれですか？',opts:['電子はヒッグス場と相互作用して質量を持つが、光子は相互作用せず質量ゼロ','光子はヒッグス場と強く相互作用して重い','どちらもヒッグス場と同じように相互作用する','電子はヒッグス場を無視して光速で進む'],ans:0,exp:'電子はヒッグス場と相互作用して「抵抗」を受けるため質量を持ちます。光子はヒッグス場と相互作用しないため抵抗がなく、質量ゼロのまま光速で進めます。'},
+    {q:'「真空（何もない空間）」のヒッグス場はどのような状態ですか？',opts:['ヒッグス場の値はゼロ','ヒッグス場は真空には存在しない','ゼロでない値（真空期待値）を持ち、場に満ちている','温度によって毎回変わる'],ans:2,exp:'宇宙が冷えるにつれてヒッグス場はゼロでない値（真空期待値）に落ち着きました。そのため「真空」でもヒッグス場はゼロではなく、私たちは常にヒッグス場の海の中にいます。'},
+    {q:'ヒッグス場と相互作用する強さが大きい粒子ほどどうなりますか？',opts:['電荷が大きくなる','速度が光速に近づく','質量が大きくなる','スピンが変わる'],ans:2,exp:'ヒッグス場との相互作用が強いほど受ける「抵抗」が大きく、質量が大きくなります。トップクォークはヒッグス場との相互作用が最も強い素粒子の一つで、電子の約34万倍もの質量を持ちます。'}
+  ]},
+  uq3:{qs:[
+    {q:'「ヒッグス機構」とは何ですか？',opts:['ヒッグス粒子が他の粒子に吸収される現象','ヒッグス場との相互作用によって粒子が質量を得るしくみ','ヒッグス粒子が光を曲げるしくみ','ヒッグス場が消えることで粒子が軽くなるしくみ'],ans:1,exp:'ヒッグス機構とは「ヒッグス場との相互作用によって素粒子が質量を得るしくみ」のことです。1964年にヒッグスらが提唱し、標準模型の質量の問題を解決しました。'},
+    {q:'「自発的対称性の破れ」を「谷に落ちるボール」で例えると、「谷」に対応するのは何ですか？',opts:['高温の宇宙（ビッグバン直後）','ヒッグス場がゼロでない値（真空期待値）に安定した状態','光子が飛び回る状態','クォークが閉じ込められた状態'],ans:1,exp:'メキシカンハットポテンシャルの「谷」は、宇宙が冷えてヒッグス場がゼロでない値に落ち着いた安定状態に対応します。「山の頂上」はビッグバン直後の高温・対称な状態です。'},
+    {q:'ヒッグス粒子は何として理解できますか？',opts:['ヒッグス場の中を動く電子','ヒッグス場のさざ波（励起状態）として観測される粒子','ヒッグス場が消えた場所にできる空洞','光子がヒッグス場に吸収されたもの'],ans:1,exp:'ヒッグス粒子は「ヒッグス場の励起状態（さざ波）」として観測されます。場に波を立てると粒子として見える、という量子場理論の基本的な考え方です。'},
+    {q:'ビッグバン直後の超高温宇宙では素粒子の質量はどうでしたか？',opts:['現在より100倍重かった','すべてゼロだった','現在と同じだった','電子だけゼロだった'],ans:1,exp:'ビッグバン直後の超高温では、ヒッグス場の値がゼロでした。ヒッグス場との相互作用がないため、すべての素粒子が質量ゼロでした。宇宙が冷えて「自発的対称性の破れ」が起きることで素粒子が質量を持つようになりました。'}
+  ]},
+  uq4:{qs:[
+    {q:'ヒッグス粒子はどこで・いつ発見されましたか？',opts:['フェルミラボ（アメリカ）・1995年','CERN（スイス）のLHCで2012年7月4日','SPring-8（日本）・2010年','SLAC（アメリカ）・2008年'],ans:1,exp:'ヒッグス粒子は2012年7月4日にCERN（欧州原子核研究機構）の大型ハドロン衝突型加速器（LHC）で発見されました。1964年の予言から約48年後です。'},
+    {q:'LHC（大型ハドロン衝突型加速器）はどれくらいの大きさですか？',opts:['全長100m程度の小型装置','全周27kmの地下リング型加速器','東京ドームくらいの球形装置','新幹線1両分くらいの大きさ'],ans:1,exp:'LHCはスイスとフランスの国境地下100mに建設された全周27kmの巨大なリング型加速器です。建設費は約6000億円で、100か国以上の科学者・技術者が関わっています。'},
+    {q:'LHCでヒッグス粒子を「発見した」とはどういう意味ですか？',opts:['ヒッグス粒子を目で見ることができた','ヒッグス粒子が崩壊してできた娘粒子のエネルギー合計からヒッグス粒子の質量と一致することを統計的に確認した','ヒッグス粒子を取り出してビンに入れた','ヒッグス場が光る様子を観測した'],ans:1,exp:'ヒッグス粒子は生まれた直後（約10⁻²²秒）に崩壊するため直接は見えません。崩壊でできた娘粒子のエネルギーの合計がヒッグス粒子の質量（約125 GeV）と一致することを、何兆回もの衝突実験から統計的に証明しました。'},
+    {q:'ヒッグス粒子の発見でノーベル物理学賞を受賞したのは誰ですか？（2013年）',opts:['レオン・レーダーマンとスティーブン・ワインバーグ','ピーター・ヒッグスとフランソワ・アングレール','ゲルマンとツワイク','小林誠と益川敏英'],ans:1,exp:'2013年のノーベル物理学賞は、ヒッグス機構を提唱した「ピーター・ヒッグス」と「フランソワ・アングレール」が受賞しました。（1964年のロバート・ブラウトは2011年に他界しており受賞できませんでした）'}
+  ]},
+  uq5:{qs:[
+    {q:'「神の粒子（God Particle）」という名前の本当の由来はどれですか？',opts:['ヒッグス自身が神に例えたから','ノーベル賞受賞者レーダーマンが「いまいましい粒子（Goddamn Particle）」と呼ぼうとしたが出版社に修正されたから','CERNの物理学者が神に感謝して名付けたから','宗教団体がヒッグス粒子を神の証拠と主張したから'],ans:1,exp:'「神の粒子」はレオン・レーダーマンの著書タイトルに由来します。元のタイトルは「Goddamn Particle（いまいましい粒子）」でしたが出版社に直されました。発見の難しさに悩んだ物理学者たちの嘆きが由来です。'},
+    {q:'ピーター・ヒッグス自身はこの「神の粒子」という呼び名をどう思っていましたか？',opts:['とても気に入っていた','自分の名誉と思っていた','この名前は使わないでほしいと述べていた','宗教的な意味合いを込めて自分で提案した'],ans:2,exp:'ピーター・ヒッグスは「神の粒子という名前は使わないでほしい」と述べていました。宗教的な誤解を生む呼び名として多くの物理学者が好まない言葉です。'},
+    {q:'ヒッグス粒子がスカラーボソンと呼ばれる理由はどれですか？',opts:['質量がスカラー（数値）だから','スピンが0（整数ではなくゼロ）という他の素粒子とは異なる性質を持つから','スカラー社という企業が発見したから','ヒッグス場がスカラーという種類の場だから'],ans:1,exp:'ヒッグス粒子はスピン＝0という性質を持ち、これを「スカラーボソン」と分類します。他のゲージボソン（光子・グルーオン・W/Z粒子）はすべてスピン1です。スカラーボソンは標準模型の中でヒッグス粒子だけです。'},
+    {q:'ヒッグス粒子が「標準模型を完成させた」と言われる理由はどれですか？',opts:['ヒッグス粒子が最も重い素粒子だから','17種類のうち最後に予言・発見された粒子で、これがなければ標準模型の質量の説明が崩れていたから','ヒッグス粒子が重力を説明するから','ヒッグス粒子がダークマターの正体だから'],ans:1,exp:'ヒッグス粒子は標準模型が予言した17種類の中で最後に発見された粒子です。また質量の起源（ヒッグス機構）を実験で確認することができ、標準模型全体の理論的な整合性が確かめられました。'}
+  ]},
+  uq6:{qs:[
+    {q:'ピーター・ヒッグスが1964年に提唱した理論で、最初に起きたことはどれですか？',opts:['すぐに世界中で認められた','最初に投稿した論文誌に「重要でない」と却下された','ノーベル賞委員会から即座に連絡が来た','CERNがすぐに実験を開始した'],ans:1,exp:'ヒッグスが最初に投稿した論文誌は「物理学的に重要でない」として掲載を拒否しました。別の論文誌に投稿し直してようやく掲載されました。歴史に残る大発見も、最初は門前払いだったのです。'},
+    {q:'ヒッグス粒子の発見（2012年）からノーベル賞受賞（2013年）のとき、ヒッグスは何歳でしたか？',opts:['約60歳','約70歳','約84歳','約94歳'],ans:2,exp:'ピーター・ヒッグスは1929年生まれで、2013年のノーベル賞受賞時は84歳でした。1964年に論文を発表してから49年後の受賞です。'},
+    {q:'ヒッグスがノーベル賞受賞の知らせをいつ知ったか、というエピソードはどれですか？',opts:['リアルタイムで受賞スピーチを行った','携帯電話を持っていなかったため翌日の新聞で知った','インターネットで自分で調べて知った','授賞式の当日まで知らなかった'],ans:1,exp:'ヒッグスは携帯電話を持っておらず、2013年のノーベル物理学賞受賞を翌日の新聞で知りました。「本当に静かな人だった」と周囲は語っています。'},
+    {q:'ピーター・ヒッグスが亡くなったのはいつですか？',opts:['2012年（ヒッグス粒子発見の年）','2013年（ノーベル賞受賞の年）','2024年4月（94歳）','1999年'],ans:2,exp:'ピーター・ヒッグスは2024年4月8日にエジンバラにて94歳で亡くなりました。自分の名前が付いた粒子の発見（2012年）を自分の目で確認してから亡くなりました。'}
+  ]},
+  uq7:{qs:[
+    {q:'ヒッグス粒子のスピンはいくつですか？',opts:['1/2','1','0','2'],ans:2,exp:'ヒッグス粒子のスピンは0です。これを「スカラーボソン」と呼びます。他のゲージボソン（光子・グルーオン・W/Z粒子）はすべてスピン1で、フェルミオンはスピン1/2です。'},
+    {q:'ヒッグス粒子の質量はどのくらいですか？',opts:['約0.511 MeV（電子と同じ）','約938 MeV（陽子と同じ）','約125 GeV（陽子の約133倍）','約173 GeV（トップクォークと同じ）'],ans:2,exp:'ヒッグス粒子の質量は約125.25 GeV/c²で、陽子の約133倍です。発見前は正確な値が不明でしたが、LHCの実験で精密に測定されました。'},
+    {q:'ヒッグス粒子の寿命はどのくらいですか？',opts:['数百年','数秒','約1.6 × 10⁻²²秒（非常に短命）','ほぼ安定（寿命なし）'],ans:2,exp:'ヒッグス粒子の寿命は約1.6 × 10⁻²²秒という非常に短い時間です。生まれた瞬間にすぐ他の粒子に崩壊します。だから直接検出できず、崩壊産物から存在を確認します。'},
+    {q:'ヒッグス粒子が発見されたことで何が確認されましたか？',opts:['重力の量子論が完成した','ダークマターの正体がわかった','ヒッグス機構（質量の起源）が実験で証明され、標準模型がひとまず完成した','素粒子が17種類より多くあることがわかった'],ans:2,exp:'ヒッグス粒子の発見により「ヒッグス機構（素粒子が質量を得るしくみ）」が実験で証明されました。これで標準模型が予言した17種類がすべて揃い「ひとまず完成」とみなされるようになりました。'}
+  ]}
+};
+
+var uqState={};
+function uqBuildBody(uid){
+  var d=uqDefs[uid];var html='';
+  d.qs.forEach(function(q,i){
+    html+='<div class="uq-card" id="'+uid+'_c'+i+'"><div class="uq-num">Q'+(i+1)+' / '+d.qs.length+'</div><div class="uq-q">'+q.q+'</div><div class="uq-opts">';
+    q.opts.forEach(function(opt,j){html+='<button class="uq-opt" id="'+uid+'_o'+i+'_'+j+'" onclick="uqAnswer(\''+uid+'\','+i+','+j+')"><span class="uq-badge">'+['A','B','C','D'][j]+'</span>'+opt+'</button>';});
+    html+='</div><div class="uq-fb" id="'+uid+'_f'+i+'"></div></div>';
+  });
+  html+='<div class="uq-result" id="'+uid+'_result"><div class="uq-result-score" id="'+uid+'_score"></div><div class="uq-result-msg" id="'+uid+'_msg"></div><button class="uq-retry-btn" onclick="uqReset(\''+uid+'\')">↺ もう一度</button></div>';
+  document.getElementById(uid+'_body').innerHTML=html;
+  uqState[uid]={answered:new Array(d.qs.length).fill(false),correct:0};
+}
+function uqToggle(uid){
+  var body=document.getElementById(uid+'_body');var arrow=document.getElementById(uid+'_arrow');
+  var isOpen=body.classList.contains('open');
+  if(!isOpen&&!uqState[uid])uqBuildBody(uid);
+  body.classList.toggle('open',!isOpen);
+  arrow.style.transform=isOpen?'':'rotate(180deg)';
+}
+function uqAnswer(uid,qi,oi){
+  if(!uqState[uid]||uqState[uid].answered[qi])return;
+  uqState[uid].answered[qi]=true;
+  var q=uqDefs[uid].qs[qi];
+  var opts=document.querySelectorAll('#'+uid+'_c'+qi+' .uq-opt');
+  var fb=document.getElementById(uid+'_f'+qi);
+  opts.forEach(function(o){o.disabled=true;});
+  if(oi===q.ans){opts[oi].classList.add('correct');fb.className='uq-fb show-ok';fb.innerHTML='✅ 正解！　'+q.exp;uqState[uid].correct++;launchConfetti(6);}
+  else{opts[oi].classList.add('wrong');opts[q.ans].classList.add('correct');fb.className='uq-fb show-ng';fb.innerHTML='❌ 不正解。正解は「'+['A','B','C','D'][q.ans]+'」。'+q.exp;}
+  if(uqState[uid].answered.every(function(v){return v;}))setTimeout(function(){uqShowResult(uid);},600);
+}
+function uqShowResult(uid){
+  var s=uqState[uid];var total=uqDefs[uid].qs.length;var pct=s.correct/total;
+  var result=document.getElementById(uid+'_result');
+  result.className='uq-result '+(pct>=0.75?'pass':'retry');result.style.display='block';
+  document.getElementById(uid+'_score').textContent=s.correct+' / '+total+' 問正解';
+  var msg=pct===1?'🎉 パーフェクト！ヒッグスも喜んでいる！':pct>=0.75?'✨ 合格です！よくできました！':pct>=0.5?'👍 もう少し！読み直してもう一回やってみよう。':'📖 もう一度本文をゆっくり読んでから挑戦しよう。必ずわかる。';
+  document.getElementById(uid+'_msg').textContent=msg;
+  if(pct===1)launchConfetti(60);
+}
+function uqReset(uid){
+  uqState[uid]={answered:new Array(uqDefs[uid].qs.length).fill(false),correct:0};
+  document.getElementById(uid+'_result').style.display='none';
+  for(var i=0;i<uqDefs[uid].qs.length;i++){
+    document.querySelectorAll('#'+uid+'_c'+i+' .uq-opt').forEach(function(o){o.disabled=false;o.className='uq-opt';});
+    var fb=document.getElementById(uid+'_f'+i);fb.className='uq-fb';fb.innerHTML='';
+  }
+}
+
+// FLASHCARD
+var fcCards=[
+  {front:'ヒッグス粒子の役割は何ですか？',back:'他の素粒子に質量を与える（ヒッグス機構）',bsub:'ヒッグス場との相互作用の強さが粒子の質量を決める'},
+  {front:'「ヒッグス場」とはどのようなものですか？',back:'宇宙全体のすべての点に満ちた「場（フィールド）」',bsub:'真空でもゼロでない値（真空期待値）を持つ。私たちは常にヒッグス場の中にいる'},
+  {front:'なぜ光子は質量ゼロなのか？',back:'光子はヒッグス場と相互作用しないから',bsub:'相互作用がない→抵抗がない→質量ゼロ→光速で飛べる'},
+  {front:'ヒッグス場と相互作用が強い粒子ほどどうなる？',back:'質量が大きくなる',bsub:'トップクォーク（最重）は電子の約34万倍の質量。相互作用が最も強い'},
+  {front:'「自発的対称性の破れ」とは何ですか？',back:'宇宙が冷えるにつれてヒッグス場がゼロでない値に落ち着いた現象',bsub:'メキシカンハットの「谷に落ちるボール」で説明される'},
+  {front:'ヒッグス粒子を「物理的に」何として理解できますか？',back:'ヒッグス場の励起状態（さざ波）として観測される粒子',bsub:'場の振動が粒子として見える、という量子場理論の考え方'},
+  {front:'ヒッグス粒子が発見されたのはいつ・どこですか？',back:'2012年7月4日・CERN（スイス）のLHC',bsub:'1964年の予言から48年後。ピーター・ヒッグス本人も発表会場にいた'},
+  {front:'ヒッグス粒子の質量はどのくらいですか？',back:'約125 GeV/c²（陽子の約133倍）',bsub:'スピン＝0のスカラーボソン。寿命は約10⁻²²秒'},
+  {front:'「神の粒子（God Particle）」という名前の本当の由来は？',back:'レーダーマンが「いまいましい粒子（Goddamn Particle）」と書いたが出版社に修正された',bsub:'ヒッグス自身はこの呼び名を好まなかった'},
+  {front:'ヒッグス粒子の発見でノーベル賞を受賞したのは？',back:'ピーター・ヒッグスとフランソワ・アングレール（2013年）',bsub:'ヒッグスは受賞を携帯電話を持っていなかったため翌日の新聞で知った'},
+  {front:'LHCとはどのような装置ですか？',back:'スイス・フランス地下100mに建設された全周27kmのリング型加速器',bsub:'陽子を光速近くまで加速し衝突させて新粒子を生み出す'},
+  {front:'ヒッグス粒子が発見されたことで何が証明されましたか？',back:'ヒッグス機構（質量の起源）が実証され標準模型がひとまず完成',bsub:'17種類の素粒子がすべて発見されたことになった'},
+];
+var fcIdx=0,fcSpeed=0,fcTimer=null,fcFlipped=false;
+function renderFc(){
+  var c=fcCards[fcIdx];
+  document.getElementById('fc_front').textContent=c.front;
+  document.getElementById('fc_fsub').textContent=c.fsub||'';
+  document.getElementById('fc_back').textContent=c.back;
+  document.getElementById('fc_bsub').textContent=c.bsub||'';
+  var fc=document.getElementById('fc_card');fc.classList.remove('flipped');fcFlipped=false;
+  document.getElementById('fc_idx').textContent=(fcIdx+1)+' / '+fcCards.length;
+  document.getElementById('fc_prevBtn').disabled=fcIdx===0;
+  document.getElementById('fc_nextBtn').disabled=fcIdx===fcCards.length-1;
+  var prog=document.getElementById('fc_prog');
+  prog.innerHTML=fcCards.map(function(_,i){return '<div class="fc-dot'+(i===fcIdx?' current':i<fcIdx?' done':'')+'"></div>';}).join('');
+  if(fcSpeed>0)startAutoFc();
+}
+function flipFc(){var fc=document.getElementById('fc_card');fcFlipped=!fcFlipped;fc.classList.toggle('flipped',fcFlipped);}
+function fcNext(){if(fcIdx<fcCards.length-1){fcIdx++;renderFc();}}
+function fcPrev(){if(fcIdx>0){fcIdx--;renderFc();}}
+function setFcSpeed(ms){
+  fcSpeed=ms;clearTimeout(fcTimer);
+  [0,1,2,3].forEach(function(i){var b=document.getElementById('spbtn'+i);if(b)b.classList.remove('active');});
+  document.getElementById('spbtn'+[0,4000,2500,1500].indexOf(ms)).classList.add('active');
+  if(ms>0)startAutoFc();
+}
+function startAutoFc(){
+  clearTimeout(fcTimer);var fill=document.getElementById('fc_timer');
+  fill.style.transition='none';fill.style.width='0%';
+  setTimeout(function(){
+    fill.style.transition='width '+fcSpeed+'ms linear';fill.style.width='100%';
+    fcTimer=setTimeout(function(){fcIdx=(fcIdx+1)%fcCards.length;renderFc();setTimeout(function(){if(fcSpeed>0)startAutoFc();},300);},fcSpeed);
+  },50);
+}
+
+// QUIZ TAB
+var allQuizData=[
+  {ch:1,q:'物理学における「質量」の定義はどれですか？',opts:['重力による引力の強さ','動かしにくさ（慣性）の大きさ','エネルギーの貯蔵量','電荷の大きさ'],ans:1,exp:'質量とは動かしにくさ（慣性）の大きさです。'},
+  {ch:1,q:'光子（フォトン）の質量はどれですか？',opts:['陽子と同じ','電子と同じ','ゼロ（0）','非常に大きい'],ans:2,exp:'光子の質量はゼロです。ヒッグス場と相互作用しないため質量を得られず光速で飛びます。'},
+  {ch:1,q:'1960年代の物理学の大問題として正しいのはどれですか？',opts:['光の速度が測れなかった','理論では素粒子は質量ゼロのはずなのに実験では質量を持っていた','クォークが6種類あると証明できなかった','電子が見つからなかった'],ans:1,exp:'標準模型の理論的対称性を保つには素粒子は質量ゼロのはずなのに、実験では電子もW粒子も質量を持っていました。この矛盾をヒッグス機構が解決しました。'},
+  {ch:1,q:'素粒子の質量がバラバラな理由はどれですか？',opts:['電荷の大きさで決まる','ヒッグス場との相互作用の強さが粒子によって異なるから','原子核の大きさが違うから','スピンの向きで変わるから'],ans:1,exp:'各素粒子とヒッグス場との相互作用の強さが異なるため、得られる質量も異なります。'},
+  {ch:2,q:'ヒッグス場とはどのようなものですか？',opts:['原子核の中にある特別な物質','宇宙全体のすべての点に満ちている場','光子が集まってできた雲','電子が作り出す磁場'],ans:1,exp:'ヒッグス場は宇宙のすべての点に満ちた「場（フィールド）」です。真空でもゼロでない値を持ちます。'},
+  {ch:2,q:'ヒッグス場の中での電子と光子の違いはどれですか？',opts:['電子はヒッグス場と相互作用して質量を持つが光子は相互作用せず質量ゼロ','光子はヒッグス場と強く相互作用して重い','どちらも同じように相互作用する','電子はヒッグス場を無視して光速で進む'],ans:0,exp:'電子はヒッグス場と相互作用して質量を持ちます。光子はヒッグス場と相互作用しないため質量ゼロで光速で進みます。'},
+  {ch:2,q:'真空のヒッグス場はどのような状態ですか？',opts:['ヒッグス場の値はゼロ','ヒッグス場は真空には存在しない','ゼロでない値（真空期待値）を持つ','温度によって毎回変わる'],ans:2,exp:'宇宙が冷えるにつれてヒッグス場はゼロでない値（真空期待値）に落ち着きました。真空でも私たちはヒッグス場の海の中にいます。'},
+  {ch:2,q:'ヒッグス場との相互作用が強い粒子ほどどうなりますか？',opts:['電荷が大きくなる','光速に近づく','質量が大きくなる','スピンが変わる'],ans:2,exp:'ヒッグス場との相互作用が強いほど受ける抵抗が大きく、質量が大きくなります。'},
+  {ch:3,q:'ヒッグス機構とは何ですか？',opts:['ヒッグス粒子が他の粒子に吸収される現象','ヒッグス場との相互作用によって粒子が質量を得るしくみ','ヒッグス粒子が光を曲げるしくみ','ヒッグス場が消えることで粒子が軽くなるしくみ'],ans:1,exp:'ヒッグス機構とはヒッグス場との相互作用によって素粒子が質量を得るしくみです。'},
+  {ch:3,q:'「自発的対称性の破れ」を谷に落ちるボールで例えたとき「谷」に対応するのはどれですか？',opts:['ビッグバン直後の高温の宇宙','ヒッグス場がゼロでない値に安定した状態','光子が飛び回る状態','クォークが閉じ込められた状態'],ans:1,exp:'「谷」はヒッグス場が安定したゼロでない値（真空期待値）に対応します。「頂上」はビッグバン直後の対称な状態です。'},
+  {ch:3,q:'ヒッグス粒子は何として理解できますか？',opts:['ヒッグス場の中を動く電子','ヒッグス場のさざ波（励起状態）','ヒッグス場が消えた空洞','光子がヒッグス場に吸収されたもの'],ans:1,exp:'ヒッグス粒子は「ヒッグス場の励起状態（さざ波）」として観測される粒子です。'},
+  {ch:3,q:'ビッグバン直後の素粒子の質量はどうでしたか？',opts:['現在より100倍重かった','すべてゼロだった','現在と同じだった','電子だけゼロだった'],ans:1,exp:'ビッグバン直後はヒッグス場の値がゼロだったため、すべての素粒子の質量がゼロでした。'},
+  {ch:4,q:'ヒッグス粒子はどこで・いつ発見されましたか？',opts:['フェルミラボ・1995年','CERN（スイス）のLHCで2012年7月4日','SPring-8（日本）・2010年','SLAC（アメリカ）・2008年'],ans:1,exp:'ヒッグス粒子は2012年7月4日にCERNのLHCで発見されました。'},
+  {ch:4,q:'LHCはどのくらいの大きさですか？',opts:['全長100mの小型装置','全周27kmの地下リング型加速器','東京ドームくらいの球形','新幹線1両分くらい'],ans:1,exp:'LHCはスイスとフランスの国境地下100mに建設された全周27kmの巨大リング型加速器です。'},
+  {ch:4,q:'LHCでヒッグス粒子を「発見した」とはどういう意味ですか？',opts:['目で見た','崩壊でできた娘粒子のエネルギー合計からヒッグス粒子の質量と一致することを統計的に確認した','取り出してビンに入れた','場が光る様子を観測した'],ans:1,exp:'ヒッグス粒子は約10⁻²²秒で崩壊するため直接は見えません。崩壊産物のエネルギーから統計的に確認しました。'},
+  {ch:4,q:'ヒッグス粒子の発見でノーベル賞を受賞したのは誰ですか？（2013年）',opts:['レーダーマンとワインバーグ','ピーター・ヒッグスとフランソワ・アングレール','ゲルマンとツワイク','小林誠と益川敏英'],ans:1,exp:'2013年のノーベル物理学賞はピーター・ヒッグスとフランソワ・アングレールが受賞しました。'},
+  {ch:5,q:'「神の粒子（God Particle）」という名前の本当の由来はどれですか？',opts:['ヒッグス自身が名付けた','レーダーマンが「いまいましい粒子（Goddamn Particle）」と書いたが出版社に修正された','CERNの物理学者が神に感謝した','宗教団体が主張した'],ans:1,exp:'「いまいましい粒子（Goddamn Particle）」という名前が出版社に修正されて「God Particle」になりました。'},
+  {ch:5,q:'ヒッグス自身はこの「神の粒子」という呼び名をどう思っていましたか？',opts:['とても気に入っていた','自分の名誉と思った','この名前は使わないでほしいと述べていた','自分で提案した'],ans:2,exp:'ピーター・ヒッグス自身は「神の粒子という名前は使わないでほしい」と述べていました。'},
+  {ch:5,q:'ヒッグス粒子がスカラーボソンと呼ばれる理由はどれですか？',opts:['質量がスカラーだから','スピンが0という他の素粒子とは異なる性質を持つから','スカラー社が発見したから','ヒッグス場がスカラーという種類だから'],ans:1,exp:'ヒッグス粒子はスピン＝0という他のどの素粒子とも異なる性質を持ち、スカラーボソンと呼ばれます。'},
+  {ch:5,q:'ヒッグス粒子が「標準模型を完成させた」と言われる理由はどれですか？',opts:['最も重い素粒子だから','17種類の最後の発見で質量の起源が実証されたから','重力を説明したから','ダークマターの正体だから'],ans:1,exp:'ヒッグス粒子は17種類の中で最後に発見された粒子で、これによりヒッグス機構（質量の起源）が実証され標準模型が完成しました。'},
+  {ch:6,q:'ヒッグスが1964年の論文で最初に起きたことはどれですか？',opts:['すぐ世界中で認められた','最初に投稿した論文誌に「重要でない」と却下された','ノーベル賞委員会から即座に連絡が来た','CERNがすぐに実験を開始した'],ans:1,exp:'ヒッグスが最初に投稿した論文誌は「物理学的に重要でない」として掲載を拒否しました。'},
+  {ch:6,q:'ノーベル賞受賞（2013年）のときヒッグスは何歳でしたか？',opts:['約60歳','約70歳','約84歳','約94歳'],ans:2,exp:'ヒッグスは1929年生まれで、2013年の受賞時は84歳でした。'},
+  {ch:6,q:'ヒッグスがノーベル賞受賞を知ったのはいつですか？',opts:['リアルタイムで受賞スピーチを行った','携帯電話を持っていなかったため翌日の新聞で知った','インターネットで自分で調べた','授賞式の当日まで知らなかった'],ans:1,exp:'ヒッグスは携帯電話を持っておらず、ノーベル賞受賞を翌日の新聞で知りました。'},
+  {ch:6,q:'ピーター・ヒッグスが亡くなったのはいつですか？',opts:['2012年（発見の年）','2013年（受賞の年）','2024年4月（94歳）','1999年'],ans:2,exp:'ピーター・ヒッグスは2024年4月8日にエジンバラにて94歳で亡くなりました。'},
+  {ch:7,q:'ヒッグス粒子のスピンはいくつですか？',opts:['1/2','1','0','2'],ans:2,exp:'ヒッグス粒子のスピンは0で「スカラーボソン」と呼ばれます。他のゲージボソンはすべてスピン1です。'},
+  {ch:7,q:'ヒッグス粒子の質量はどのくらいですか？',opts:['約0.511 MeV（電子と同じ）','約938 MeV（陽子と同じ）','約125 GeV（陽子の約133倍）','約173 GeV（トップクォークと同じ）'],ans:2,exp:'ヒッグス粒子の質量は約125.25 GeV/c²（陽子の約133倍）です。'},
+  {ch:7,q:'ヒッグス粒子の寿命はどのくらいですか？',opts:['数百年','数秒','約1.6 × 10⁻²²秒（非常に短命）','ほぼ安定'],ans:2,exp:'ヒッグス粒子の寿命は約1.6 × 10⁻²²秒という非常に短い時間です。'},
+  {ch:7,q:'ヒッグス粒子の発見で何が確認されましたか？',opts:['重力の量子論が完成','ダークマターの正体がわかった','ヒッグス機構が実証され標準模型がひとまず完成','素粒子が17種類より多いとわかった'],ans:2,exp:'ヒッグス粒子の発見でヒッグス機構（質量の起源）が実証され、標準模型の17種類がすべて揃い「ひとまず完成」とみなされるようになりました。'},
+];
+var currentChapter=0,activeQuizData=[],quizAnswered=[],quizCorrect=0;
+function selectChapter(ch){
+  currentChapter=ch;
+  document.querySelectorAll('#chapterBtns .ch-btn').forEach(function(b,i){b.classList.toggle('active',i===ch);});
+  buildQuiz();
+}
+function buildQuiz(){
+  activeQuizData=currentChapter===0?allQuizData.slice():allQuizData.filter(function(q){return q.ch===currentChapter;});
+  quizAnswered=activeQuizData.map(function(){return false;});quizCorrect=0;
+  document.getElementById('quizResult').style.display='none';
+  var total=activeQuizData.length;
+  document.getElementById('quizInfo').textContent=(currentChapter===0?'全'+total+'問':'単元'+currentChapter+'（'+total+'問）')+' ― 各問に解説がつきます。';
+  var container=document.getElementById('quizContainer');
+  container.innerHTML=activeQuizData.map(function(q,qi){
+    return '<div class="quiz-card" id="qc'+qi+'">'+
+      '<div style="font-size:0.72rem;font-weight:700;color:var(--primary);margin-bottom:4px;">Q'+(qi+1)+' / '+total+(currentChapter===0?' ［単元'+q.ch+'］':'')+'</div>'+
+      '<div class="quiz-q">'+q.q+'</div><div class="quiz-opts">'+
+      q.opts.map(function(opt,oi){return '<button class="quiz-opt" id="qo'+qi+'_'+oi+'" onclick="answerQuiz('+qi+','+oi+')"><span style="display:inline-block;width:22px;height:22px;border-radius:50%;background:var(--primary-light);color:var(--primary);font-weight:800;font-size:0.78rem;text-align:center;line-height:22px;margin-right:8px;flex-shrink:0;">'+['A','B','C','D'][oi]+'</span>'+opt+'</button>';}).join('')+
+      '</div><div class="quiz-feedback" id="qf'+qi+'"></div></div>';
+  }).join('');
+}
+function answerQuiz(qi,oi){
+  if(quizAnswered[qi])return;quizAnswered[qi]=true;
+  var q=activeQuizData[qi];var opts=document.querySelectorAll('#qc'+qi+' .quiz-opt');var fb=document.getElementById('qf'+qi);
+  opts.forEach(function(o){o.disabled=true;});
+  if(oi===q.ans){opts[oi].classList.add('correct');fb.className='quiz-feedback show ok';fb.innerHTML='✅ 正解です！　'+q.exp;quizCorrect++;launchConfetti(5);}
+  else{opts[oi].classList.add('wrong');opts[q.ans].classList.add('correct');fb.className='quiz-feedback show ng';fb.innerHTML='❌ 不正解。正解は「'+['A','B','C','D'][q.ans]+'：'+q.opts[q.ans]+'」。<br>'+q.exp;}
+  if(quizAnswered.every(function(v){return v;}))setTimeout(showResult,700);
+}
+function showResult(){
+  var result=document.getElementById('quizResult');result.style.display='block';
+  var total=activeQuizData.length;var pct=quizCorrect/total;
+  document.getElementById('quizScore').textContent=quizCorrect+' / '+total+' 問正解';
+  var msg=pct===1?'🎉 パーフェクト！SP01からここまで、本当によく来ました。':pct>=0.75?'✨ 合格です！ヒッグスもこんなに早くわかるとは思わなかった！':pct>=0.5?'👍 もう少しです。諦めずもう一回やってみよう。':'📖 ヒッグスの論文も最初は却下された。あなたもここで諦めなくていい。';
+  document.getElementById('quizMsg').textContent=msg;
+  if(pct===1)launchConfetti(60);
+}
+function resetQuiz(){buildQuiz();}
+document.addEventListener('DOMContentLoaded',function(){renderFc();});
+</script>
+
+
+</body></html>

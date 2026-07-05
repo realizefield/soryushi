@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)file:///C:/Users/tinbu/Downloads/SP04.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAMBA | 素粒子 SP04 四つの力 ― 宇宙を動かす4つのルール</title>
+<style>
+  :root{--primary:#0284c7;--primary-dark:#0369a1;--primary-light:#e0f2fe;--accent:#65a30d;--danger:#ef4444;--bg:#f0f9ff;--card:#ffffff;--text:#0c4a6e;--muted:#64748b;--border:#bae6fd;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+  header{background:linear-gradient(135deg,#0c4a6e,#0284c7,#38bdf8);color:white;}
+  .header-top{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid rgba(255,255,255,0.2);}
+  .logo{font-size:1.5rem;font-weight:900;letter-spacing:2px;color:#bef264;}
+  .header-sub{font-size:0.75rem;opacity:0.85;}
+  .chapter-title-bar{padding:14px 20px;display:flex;align-items:center;gap:12px;}
+  .chapter-badge{background:#bef264;color:#1a2e05;font-weight:900;font-size:0.75rem;padding:3px 10px;border-radius:20px;}
+  .chapter-title-text{font-size:1.1rem;font-weight:700;color:white;}
+  .tab-bar{display:flex;background:white;border-bottom:3px solid var(--primary-light);overflow-x:auto;padding:0 16px;gap:4px;}
+  .tab-btn{padding:10px 16px;border:none;background:none;font-size:0.82rem;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all 0.2s;font-family:inherit;margin-bottom:-3px;}
+  .tab-btn.active{color:var(--primary);border-bottom-color:var(--primary);}
+  .tab-btn:hover{color:var(--primary);}
+  main{max-width:860px;margin:0 auto;padding:20px 16px 60px;}
+  .tab-content{display:none;}.tab-content.active{display:block;}
+  .section-card{background:var(--card);border-radius:14px;box-shadow:0 2px 12px rgba(2,132,199,0.1);margin-bottom:20px;overflow:hidden;border:1px solid #e0f2fe;}
+  .section-header{padding:13px 20px;font-weight:800;font-size:0.95rem;display:flex;align-items:center;gap:8px;}
+  .sh-blue{background:#e0f2fe;border-left:4px solid #0284c7;color:#0c4a6e;}
+  .sh-green{background:#ecfccb;border-left:4px solid #65a30d;color:#1a2e05;}
+  .sh-amber{background:#fef9c3;border-left:4px solid #ca8a04;color:#713f12;}
+  .sh-purple{background:#ede9fe;border-left:4px solid #7c3aed;color:#3b0764;}
+  .sh-red{background:#fee2e2;border-left:4px solid #ef4444;color:#7f1d1d;}
+  .sh-cosmos{background:#0369a1;border-left:4px solid #bef264;color:#bef264;}
+  .sh-teal{background:#ccfbf1;border-left:4px solid #0d9488;color:#134e4a;}
+  .sh-orange{background:#fff7ed;border-left:4px solid #f97316;color:#7c2d12;}
+  .section-body{padding:18px 20px;}
+  .text-block{font-size:0.92rem;line-height:1.9;margin-bottom:12px;color:#0c4a6e;}
+  .key-box{background:#e0f2fe;border:2px solid #7dd3fc;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .key-box .box-label{font-weight:800;color:#0369a1;font-size:0.82rem;margin-bottom:6px;}
+  .important-box{background:#ecfccb;border:2px solid #a3e635;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .important-box .box-label{font-weight:800;color:#365314;font-size:0.82rem;margin-bottom:6px;}
+  .amber-box{background:#fef9c3;border:2px solid #fde047;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .amber-box .box-label{font-weight:800;color:#713f12;font-size:0.82rem;margin-bottom:6px;}
+  .note-block{background:#f0f9ff;border-left:3px solid #38bdf8;padding:8px 12px;border-radius:0 6px 6px 0;font-size:0.87rem;margin:8px 0;line-height:1.8;color:#0c4a6e;}
+  .warn-block{background:#fefce8;border-left:3px solid #eab308;padding:8px 12px;border-radius:0 6px 6px 0;font-size:0.87rem;margin:8px 0;line-height:1.8;color:#713f12;}
+  .btn{padding:7px 16px;border-radius:6px;border:none;font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.18s;font-family:inherit;}
+  .btn-primary{background:var(--primary);color:white;}.btn-primary:hover{background:var(--primary-dark);}
+  .btn-gray{background:#94a3b8;color:white;}.btn-gray:hover{background:#64748b;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;}
+  @media(max-width:580px){.two-col{grid-template-columns:1fr;}}
+  /* フラッシュカード */
+  .fc-speed-btn{padding:5px 12px;border-radius:20px;border:2px solid var(--border);background:white;font-size:0.78rem;font-weight:700;cursor:pointer;transition:all 0.15s;font-family:inherit;color:var(--primary);}
+  .fc-speed-btn.active{background:var(--primary);color:white;border-color:var(--primary);}
+  .flashcard-wrap{perspective:1000px;width:100%;max-width:480px;margin:0 auto;height:180px;cursor:pointer;}
+  .flashcard{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);}
+  .flashcard.flipped{transform:rotateY(180deg);}
+  .fc-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;}
+  .fc-front{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;box-shadow:0 4px 16px rgba(2,132,199,0.3);}
+  .fc-back{background:linear-gradient(135deg,#365314,#65a30d);color:white;transform:rotateY(180deg);box-shadow:0 4px 16px rgba(101,163,13,0.3);}
+  .fc-label{font-size:0.72rem;opacity:0.75;margin-bottom:8px;letter-spacing:1px;}
+  .fc-main{font-size:1.05rem;font-weight:800;line-height:1.6;}
+  .fc-sub{font-size:0.78rem;opacity:0.85;margin-top:8px;line-height:1.5;}
+  .fc-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;}
+  .fc-nav-btn{padding:7px 20px;border-radius:8px;border:2px solid var(--primary);background:white;color:var(--primary);font-weight:700;font-size:0.85rem;cursor:pointer;transition:all 0.15s;font-family:inherit;}
+  .fc-nav-btn:hover{background:var(--primary);color:white;}
+  .fc-nav-btn:disabled{opacity:0.35;cursor:default;}
+  .fc-progress{display:flex;gap:4px;justify-content:center;margin-top:10px;flex-wrap:wrap;}
+  .fc-dot{width:8px;height:8px;border-radius:50%;background:#bae6fd;transition:all 0.2s;}
+  .fc-dot.done{background:var(--accent);}
+  .fc-dot.current{background:var(--primary);transform:scale(1.3);}
+  .fc-timer-bar{height:4px;background:#bae6fd;border-radius:99px;margin-top:10px;overflow:hidden;}
+  .fc-timer-fill{height:100%;background:var(--accent);border-radius:99px;transition:width linear;}
+  /* クイズ */
+  .quiz-card{border:2px solid #bae6fd;border-radius:10px;padding:16px;margin:12px 0;background:#f0f9ff;}
+  .quiz-q{font-weight:700;font-size:0.9rem;margin-bottom:12px;line-height:1.7;color:#0c4a6e;}
+  .quiz-opts{display:flex;flex-direction:column;gap:8px;}
+  .quiz-opt{padding:9px 14px;border:2px solid #bae6fd;border-radius:7px;cursor:pointer;font-size:0.87rem;transition:all 0.15s;background:white;font-family:inherit;text-align:left;color:#0c4a6e;}
+  .quiz-opt:hover:not(:disabled){border-color:var(--primary);background:#e0f2fe;}
+  .quiz-opt.correct{background:#ecfccb;border-color:#65a30d;color:#1a2e05;font-weight:700;}
+  .quiz-opt.wrong{background:#fee2e2;border-color:var(--danger);color:#7f1d1d;}
+  .quiz-feedback{margin-top:10px;padding:8px 12px;border-radius:6px;font-size:0.85rem;display:none;font-weight:600;line-height:1.8;}
+  .quiz-feedback.show{display:block;}
+  .quiz-feedback.ok{background:#ecfccb;color:#1a2e05;}
+  .quiz-feedback.ng{background:#fee2e2;color:#7f1d1d;}
+  .quiz-result{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;border-radius:10px;padding:16px 20px;margin-top:16px;text-align:center;display:none;}
+  .quiz-result-score{font-size:2.2rem;font-weight:900;}
+  .quiz-result-msg{font-size:0.9rem;opacity:0.9;margin-top:4px;}
+  .confetti-piece{position:fixed;width:10px;height:10px;border-radius:2px;animation:confettiFall 1.5s ease-out forwards;pointer-events:none;z-index:9999;}
+  @keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(80vh) rotate(720deg);opacity:0}}
+  .ch-btn{padding:6px 14px;border-radius:20px;border:2px solid var(--border);background:white;color:var(--muted);font-size:0.8rem;font-weight:700;cursor:pointer;transition:all 0.15s;font-family:inherit;}
+  .ch-btn.active{background:var(--primary);color:white;border-color:var(--primary);}
+  .ch-btn:hover{border-color:var(--primary);color:var(--primary);}
+  .ch-btn.active:hover{color:white;}
+  /* 単元別折りたたみクイズ */
+  .unit-quiz-wrap{margin-top:18px;border:2px solid #7dd3fc;border-radius:10px;overflow:hidden;}
+  .unit-quiz-toggle{width:100%;background:linear-gradient(135deg,#0369a1,#0284c7);color:white;border:none;padding:11px 16px;font-size:0.88rem;font-weight:800;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;letter-spacing:0.5px;}
+  .unit-quiz-toggle:hover{filter:brightness(1.1);}
+  .uq-arrow{font-size:1rem;transition:transform 0.25s;}
+  .unit-quiz-body{display:none;padding:14px;background:#f0f9ff;}
+  .unit-quiz-body.open{display:block;}
+  .uq-card{background:white;border:2px solid #bae6fd;border-radius:9px;padding:14px;margin-bottom:10px;}
+  .uq-card:last-child{margin-bottom:0;}
+  .uq-num{font-size:0.72rem;font-weight:800;color:#0369a1;margin-bottom:4px;}
+  .uq-q{font-weight:700;font-size:0.88rem;margin-bottom:10px;line-height:1.7;color:#0c4a6e;}
+  .uq-opts{display:flex;flex-direction:column;gap:7px;}
+  .uq-opt{padding:9px 13px;border:2px solid #bae6fd;border-radius:7px;cursor:pointer;font-size:0.85rem;background:white;font-family:inherit;text-align:left;color:#0c4a6e;transition:all 0.15s;display:flex;align-items:center;gap:8px;}
+  .uq-opt:hover:not(:disabled){border-color:#0369a1;background:#e0f2fe;}
+  .uq-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#dbeafe;color:#0369a1;font-weight:800;font-size:0.75rem;flex-shrink:0;}
+  .uq-opt.correct{background:#ecfccb;border-color:#65a30d;color:#1a2e05;font-weight:700;}
+  .uq-opt.correct .uq-badge{background:#65a30d;color:white;}
+  .uq-opt.wrong{background:#fee2e2;border-color:#ef4444;color:#7f1d1d;}
+  .uq-opt.wrong .uq-badge{background:#ef4444;color:white;}
+  .uq-fb{margin-top:9px;padding:8px 12px;border-radius:6px;font-size:0.82rem;display:none;font-weight:600;line-height:1.8;}
+  .uq-fb.show-ok{display:block;background:#ecfccb;color:#1a2e05;}
+  .uq-fb.show-ng{display:block;background:#fee2e2;color:#7f1d1d;}
+  .uq-result{margin-top:12px;border-radius:9px;padding:14px 16px;text-align:center;display:none;}
+  .uq-result.pass{background:linear-gradient(135deg,#15803d,#4ade80);color:white;}
+  .uq-result.retry{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;}
+  .uq-result-score{font-size:1.8rem;font-weight:900;}
+  .uq-result-msg{font-size:0.85rem;opacity:0.92;margin-top:4px;}
+  .uq-retry-btn{margin-top:10px;padding:7px 20px;border-radius:20px;border:2px solid white;background:transparent;color:white;font-weight:800;font-size:0.82rem;cursor:pointer;font-family:inherit;}
+  /* SP04専用：力カラーバー */
+  .force-bar{border-radius:10px;padding:15px 18px;margin-bottom:10px;border-left:6px solid;}
+  .force-em   {background:#fffbeb;border-color:#f59e0b;}
+  .force-strong{background:#fef2f2;border-color:#ef4444;}
+  .force-weak {background:#f5f3ff;border-color:#7c3aed;}
+  .force-grav {background:#f0fdf4;border-color:#16a34a;}
+  .force-title{font-weight:900;font-size:0.95rem;margin-bottom:4px;}
+  .step-block{background:#f8fafc;border-radius:9px;padding:12px 14px;margin-bottom:8px;border-left:3px solid #38bdf8;font-size:0.88rem;line-height:1.9;}
+  .step-num{display:inline-block;background:#0369a1;color:white;border-radius:50%;width:22px;height:22px;text-align:center;line-height:22px;font-size:0.78rem;font-weight:900;margin-right:6px;flex-shrink:0;}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-top"><div class="logo">GAMBA</div><div class="header-sub">江原予備校 ／ 物理・宇宙</div></div>
+  <div class="chapter-title-bar">
+    <span class="chapter-badge">SP04</span>
+    <span class="chapter-title-text">素粒子への旅 ― 四つの力 ― 宇宙を動かす4つのルール</span>
+  </div>
+</header>
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab(&#39;learn&#39;)">📖 学習</button>
+  <button class="tab-btn" onclick="showTab(&#39;flash&#39;)">🃏 フラッシュカード</button>
+  <button class="tab-btn" onclick="showTab(&#39;quiz&#39;)">🔭 ミニテスト</button>
+</div>
+<main>
+
+<!-- ===== LEARN ===== -->
+<div id="tab-learn" class="tab-content active">
+
+<!-- 0. イヌ校長 -->
+<div class="section-card">
+  <div class="section-header sh-cosmos">🌍 宇宙には「たった4つのルール」しかない</div>
+  <div class="section-body">
+    <div style="background:linear-gradient(135deg,#0369a1,#0284c7);border-radius:12px;padding:18px 20px;color:white;font-size:0.92rem;line-height:2;margin-bottom:14px;">
+      <div style="font-size:1.05rem;font-weight:800;color:#bef264;margin-bottom:10px;">🐶 イヌ校長より</div>
+      物が落ちる。磁石がくっつく。原子核がバラバラにならない。太陽が輝く。<br><br>
+      これらはぜんぶ「違う現象」に見えますよね。でも実は、宇宙で起きる<strong style="color:#bef264">あらゆる現象は、たった4種類の「力」</strong>で説明できます。<br><br>
+      今日は、世界中の物理学者が長い時間をかけて見つけ出した<br>
+      <strong style="color:#bef264">「宇宙の4つのルール」</strong>をいっしょに確認しましょう。<br><br>
+      <span style="font-size:0.85rem;opacity:0.9;">SP03でゲージボソン（力を伝える粒子）を学びました。今回はその「力」そのものをもっとくわしく見ていきます。</span>
+    </div>
+    <div class="amber-box">
+      <div class="box-label">📌 この単元で学ぶこと</div>
+      <div style="font-size:0.9rem;line-height:2.3;">
+        ① 電磁気力 ― 光・電気・磁石・化学結合を支える力<br>
+        ② 強い力 ― 原子核を一つにまとめる最強の力<br>
+        ③ 弱い力 ― 原子を「変身」させる力・太陽を輝かせる<br>
+        ④ 重力 ― 最も身近で、最も謎の多い力<br>
+        ⑤ 4つの力の比較・それぞれが担う「スケール」<br>
+        ⑥ コラム ― もし4つの力が少しでも違ったら、宇宙はどうなっていたか
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 1. 電磁気力 -->
+<div class="section-card">
+  <div class="section-header sh-amber">⚡ 1. 電磁気力 ― 光・電気・磁石・化学を支える力</div>
+  <div class="section-body">
+
+    <div class="text-block">「電磁気力」という言葉は難しく聞こえますが、実は私たちが毎日触れている力です。電気と磁気は、もともと別々の力だと思われていましたが、19世紀にマクスウェルが「同じ力の2つの顔」だと証明しました。</div>
+
+    <div class="force-bar force-em">
+      <div class="force-title" style="color:#92400e;">⚡ 電磁気力（Electromagnetic Force）</div>
+      <div style="font-size:0.85rem;line-height:2;color:#78350f;">
+        担い手：<strong>光子（γ）</strong>　到達距離：<strong>無限大</strong>　強さ：強い力の約1/137
+      </div>
+    </div>
+
+    <div style="font-weight:800;color:#0c4a6e;font-size:0.9rem;margin:14px 0 8px;">📋 電磁気力が起こす身近な現象</div>
+    <div class="step-block"><span class="step-num">1</span><strong>電気</strong> ― コンセントから流れる電気、スマホの充電、雷。すべて電子が動くことで起きます。電子を動かす力が電磁気力です。</div>
+    <div class="step-block"><span class="step-num">2</span><strong>磁石</strong> ― 磁石が鉄を引き寄せる、方位磁針が北を向く。これも電磁気力（電子のスピンが揃うことによる現象）です。</div>
+    <div class="step-block"><span class="step-num">3</span><strong>光</strong> ― 目に見える光、電波、X線、ガンマ線。これらはすべて電磁波＝光子の流れです。</div>
+    <div class="step-block"><span class="step-num">4</span><strong>化学結合</strong> ― 水（H₂O）の水素と酸素が結びついているのは電磁気力です。生き物の体の化学反応も、薬の効き方も、電磁気力が支配しています。</div>
+    <div class="step-block"><span class="step-num">5</span><strong>物が手に乗る</strong> ― 机に手を置くと手が机をすり抜けない。これも分子同士の電磁気力（反発）のおかげです。</div>
+
+    <div class="key-box">
+      <div class="box-label">🔑 電磁気力のポイント</div>
+      <div style="font-size:0.88rem;line-height:2.2;">
+        ・<strong>電荷を持つ粒子の間</strong>にだけ働く（中性の粒子には直接は働かない）<br>
+        ・<strong>引力にも斥力にもなる</strong>（＋と−は引き合い、同符号は反発）<br>
+        ・到達距離は<strong>無限大</strong>（遠くなるほど弱まるが、ゼロにはならない）<br>
+        ・私たちが日常で感じる力のほぼすべては電磁気力か重力
+      </div>
+    </div>
+
+    <!-- 電磁気力のSVG -->
+    <div style="background:#0a1628;border-radius:10px;padding:14px;margin:12px 0;">
+      <div style="color:#fbbf24;font-weight:800;font-size:0.82rem;margin-bottom:8px;text-align:center;">電荷の引力・斥力のイメージ</div>
+      <svg width="100%" height="80" viewBox="0 0 360 80" xmlns="http://www.w3.org/2000/svg" style="max-width:360px;display:block;margin:0 auto;">
+        <rect width="360" height="80" fill="#0a1628" rx="8"></rect>
+        <!-- 引力ペア -->
+        <circle cx="60" cy="36" r="18" fill="#3b82f6"></circle>
+        <text x="60" y="41" text-anchor="middle" font-size="14" fill="white" font-family="sans-serif" font-weight="900">+</text>
+        <line x1="80" y1="36" x2="108" y2="36" stroke="#4ade80" stroke-width="2.5"></line>
+        <text x="95" y="30" text-anchor="middle" font-size="9" fill="#4ade80" font-family="sans-serif">引力</text>
+        <circle cx="128" cy="36" r="18" fill="#ef4444"></circle>
+        <text x="128" y="41" text-anchor="middle" font-size="14" fill="white" font-family="sans-serif" font-weight="900">−</text>
+        <text x="95" y="68" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="sans-serif">異符号 → 引き合う</text>
+        <!-- 斥力ペア -->
+        <circle cx="230" cy="36" r="18" fill="#3b82f6"></circle>
+        <text x="230" y="41" text-anchor="middle" font-size="14" fill="white" font-family="sans-serif" font-weight="900">+</text>
+        <line x1="250" y1="28" x2="280" y2="22" stroke="#f87171" stroke-width="2" stroke-dasharray="4,3"></line>
+        <line x1="250" y1="44" x2="280" y2="50" stroke="#f87171" stroke-width="2" stroke-dasharray="4,3"></line>
+        <line x1="278" y1="28" x2="308" y2="22" stroke="#f87171" stroke-width="2" stroke-dasharray="4,3"></line>
+        <line x1="278" y1="44" x2="308" y2="50" stroke="#f87171" stroke-width="2" stroke-dasharray="4,3"></line>
+        <text x="268" y="30" text-anchor="middle" font-size="9" fill="#f87171" font-family="sans-serif">斥力</text>
+        <circle cx="298" cy="36" r="18" fill="#3b82f6"></circle>
+        <text x="298" y="41" text-anchor="middle" font-size="14" fill="white" font-family="sans-serif" font-weight="900">+</text>
+        <text x="268" y="68" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="sans-serif">同符号 → 反発する</text>
+      </svg>
+    </div>
+
+    <!-- 単元1 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq1&#39;)"><span>🖊️ 単元1 ミニテスト ― 電磁気力</span><span class="uq-arrow" id="uq1_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq1_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. 強い力 -->
+<div class="section-card">
+  <div class="section-header sh-red">🔴 2. 強い力 ― 原子核を一つにまとめる最強の接着剤</div>
+  <div class="section-body">
+    <div class="text-block">陽子はプラスの電荷を持っています。同じ電荷同士は電磁気力で激しく反発するはずです。それなのになぜ、陽子がいくつも集まって原子核を作れるのでしょう？</div>
+
+    <div style="background:#fef2f2;border:2px solid #fca5a5;border-radius:10px;padding:14px;margin:12px 0;">
+      <div style="font-weight:800;color:#dc2626;font-size:0.88rem;margin-bottom:6px;">🤔 不思議に思いませんか？</div>
+      <div style="font-size:0.87rem;line-height:1.9;color:#7f1d1d;">
+        ヘリウム原子核には陽子が2個あります。<br>
+        陽子はそれぞれ+1の電荷を持ち、電磁気力で強く反発します。<br>
+        なのに、ヘリウム原子核はバラバラにならず安定しています。<br>
+        <strong>反発する力に打ち勝つ、もっと強い引力があるはずです。</strong>
+      </div>
+    </div>
+
+    <div class="force-bar force-strong">
+      <div class="force-title" style="color:#991b1b;">🔴 強い力（Strong Force）</div>
+      <div style="font-size:0.85rem;line-height:2;color:#7f1d1d;">
+        担い手：<strong>グルーオン（g）</strong>　到達距離：約<strong>10⁻¹⁵m</strong>（陽子の大きさ）　強さ：4つの力の中で最強
+      </div>
+    </div>
+
+    <div style="font-weight:800;color:#0c4a6e;font-size:0.9rem;margin:14px 0 8px;">強い力の特徴</div>
+    <div class="step-block"><span class="step-num">1</span><strong>クォークを結びつける</strong> ― 陽子の中の3つのクォークを「グルーオン」がつなぎとめています。離れようとすると、逆に力が強まる（磁石を引っ張るほど引力が増すイメージ）。</div>
+    <div class="step-block"><span class="step-num">2</span><strong>陽子・中性子を束ねる</strong> ― 強い力は陽子と中性子の間でも働き、原子核全体をまとめます（この場合は「核力」とも呼ばれます）。</div>
+    <div class="step-block"><span class="step-num">3</span><strong>到達距離がきわめて短い</strong> ― 強い力が届くのはおよそ10⁻¹⁵mまで（約1フェムトメートル）。これは陽子1個の大きさとほぼ同じです。だから原子核の外には出てこられません。</div>
+    <div class="step-block"><span class="step-num">4</span><strong>核融合・核分裂のエネルギー源</strong> ― 原子力発電や核爆弾のエネルギーは、強い力による結合エネルギーが解放されたものです。太陽が輝くのも核融合による強い力の解放です。</div>
+
+    <div class="important-box">
+      <div class="box-label">⭐ 「最強の力」なのになぜ目に見えないのか</div>
+      <div style="font-size:0.88rem;line-height:2.2;">
+        強い力は到達距離がきわめて短いため、原子核の外には出てこられません。<br>
+        私たちの日常スケールでは電磁気力や重力しか感じられないのはそのためです。<br>
+        しかし<strong>原子核の内側では</strong>、電磁気力の反発を圧倒する最強の力として働いています。
+      </div>
+    </div>
+
+    <!-- 単元2 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq2&#39;)"><span>🖊️ 単元2 ミニテスト ― 強い力</span><span class="uq-arrow" id="uq2_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq2_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. 弱い力 -->
+<div class="section-card">
+  <div class="section-header sh-purple">🟣 3. 弱い力 ― 原子を「変身」させる不思議な力</div>
+  <div class="section-body">
+    <div class="text-block">「弱い力」は名前のとおり弱い力ですが、この力がなければ太陽は輝かず、宇宙に炭素も酸素も存在しませんでした。「変身」の力とも言えるユニークな力です。</div>
+
+    <div class="force-bar force-weak">
+      <div class="force-title" style="color:#4c1d95;">🟣 弱い力（Weak Force）</div>
+      <div style="font-size:0.85rem;line-height:2;color:#4c1d95;">
+        担い手：<strong>W⁺・W⁻・Z⁰ボソン</strong>　到達距離：約<strong>10⁻¹⁸m</strong>（電磁気力の10億分の1）　特徴：粒子を「変身」させる
+      </div>
+    </div>
+
+    <div class="key-box">
+      <div class="box-label">🔑 弱い力の最大の特徴 ―「粒子の種類を変える」</div>
+      <div style="font-size:0.88rem;line-height:2.2;">
+        電磁気力や強い力は粒子を動かしたり結びつけたりしますが、粒子の種類は変えません。<br>
+        弱い力だけが<strong>「クォークの種類」や「レプトンの種類」を変える</strong>ことができます。<br>
+        たとえば「ダウンクォーク → アップクォーク」の変換 = β崩壊（放射線の正体）。
+      </div>
+    </div>
+
+    <div style="font-weight:800;color:#0c4a6e;font-size:0.9rem;margin:14px 0 8px;">弱い力が起こす現象</div>
+    <div class="step-block"><span class="step-num">1</span><strong>β崩壊（放射線）</strong> ― 中性子がアップクォーク・電子・反ニュートリノに変わる反応。原子力発電所の放射線や、医療用放射性同位元素もこの仕組みを使っています。</div>
+    <div class="step-block"><span class="step-num">2</span><strong>太陽の核融合</strong> ― 太陽の中では陽子（水素原子核）同士が融合して重水素になる反応があります。このとき陽子の一方がβ崩壊して中性子になる必要があり、<strong>弱い力がなければ太陽は燃えられません</strong>。</div>
+    <div class="step-block"><span class="step-num">3</span><strong>ニュートリノの生成</strong> ― β崩壊のたびにニュートリノが生まれます。今この瞬間も太陽の核融合から大量のニュートリノが地球に降り注いでいます（SP02で学びましたね）。</div>
+    <div class="step-block"><span class="step-num">4</span><strong>元素の誕生</strong> ― 宇宙最初期に水素・ヘリウムしかなかった状態から、弱い力による崩壊が連鎖し、より重い元素が生まれる道が開けました。</div>
+
+    <div class="note-block">
+      💡 弱い力は「弱い」というより「到達距離が極端に短い」のが特徴です。<br>
+      W・Z粒子（担い手）がとても重く短命なため、ほぼ点のような場所でしか作用しません。<br>
+      「弱い」というのは、同じ距離での強さが電磁気力より弱いという意味です。
+    </div>
+
+    <!-- 弱い力SVG（β崩壊の変身） -->
+    <div style="background:#1a0030;border-radius:10px;padding:14px;margin:12px 0;text-align:center;">
+      <div style="color:#c084fc;font-weight:800;font-size:0.82rem;margin-bottom:8px;">弱い力による「変身」― β崩壊のイメージ</div>
+      <svg width="100%" height="80" viewBox="0 0 380 80" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;display:block;margin:0 auto;">
+        <rect width="380" height="80" fill="#1a0030" rx="8"></rect>
+        <!-- 中性子 -->
+        <rect x="10" y="20" width="65" height="40" rx="8" fill="#1e3a5f"></rect>
+        <text x="42" y="38" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="sans-serif">中性子</text>
+        <text x="42" y="53" text-anchor="middle" font-size="9" fill="#38bdf8" font-family="sans-serif">UDD</text>
+        <!-- W- -->
+        <defs><marker id="arrw" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#a78bfa"></path></marker></defs>
+        <line x1="76" y1="40" x2="124" y2="40" stroke="#a78bfa" stroke-width="2.5" marker-end="url(#arrw)"></line>
+        <text x="100" y="33" text-anchor="middle" font-size="9" fill="#a78bfa" font-family="sans-serif" font-weight="800">W⁻放出</text>
+        <!-- 陽子 -->
+        <rect x="126" y="20" width="65" height="40" rx="8" fill="#0d4429"></rect>
+        <text x="158" y="38" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="sans-serif">陽子</text>
+        <text x="158" y="53" text-anchor="middle" font-size="9" fill="#4ade80" font-family="sans-serif">UUD</text>
+        <!-- W- 崩壊 -->
+        <defs><marker id="arry2" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#fbbf24"></path></marker></defs>
+        <text x="230" y="22" text-anchor="middle" font-size="9" fill="#c084fc" font-family="sans-serif">W⁻が崩壊</text>
+        <line x1="210" y1="40" x2="252" y2="22" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arry2)"></line>
+        <line x1="210" y1="40" x2="252" y2="58" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arry2)"></line>
+        <text x="308" y="22" font-size="10" fill="#fbbf24" font-family="sans-serif" font-weight="800">電子 e⁻</text>
+        <text x="296" y="62" font-size="10" fill="#38bdf8" font-family="sans-serif" font-weight="800">反νₑ</text>
+      </svg>
+      <div style="color:#94a3b8;font-size:0.78rem;margin-top:6px;">D クォークが W⁻ を放出して U クォークに「変身」する</div>
+    </div>
+
+    <!-- 単元3 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq3&#39;)"><span>🖊️ 単元3 ミニテスト ― 弱い力</span><span class="uq-arrow" id="uq3_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq3_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. 重力 -->
+<div class="section-card">
+  <div class="section-header sh-teal">🌍 4. 重力 ― 最も身近で、最も謎の多い力</div>
+  <div class="section-body">
+    <div class="text-block">重力は私たちが最も身近に感じる力です。しかし4つの力の中で唯一、素粒子物理学（標準模型）と相性が悪く、最も謎の多い力でもあります。</div>
+
+    <div class="force-bar force-grav">
+      <div class="force-title" style="color:#14532d;">🌍 重力（Gravitational Force）</div>
+      <div style="font-size:0.85rem;line-height:2;color:#14532d;">
+        担い手：<strong>重力子（グラビトン・未発見）</strong>　到達距離：<strong>無限大</strong>　強さ：他の力に比べて圧倒的に弱い
+      </div>
+    </div>
+
+    <div style="font-weight:800;color:#0c4a6e;font-size:0.9rem;margin:14px 0 8px;">重力の特徴</div>
+    <div class="step-block"><span class="step-num">1</span><strong>すべての質量を持つ物に働く</strong> ― 電磁気力は電荷のある粒子にしか働きませんが、重力は<strong>質量を持つすべての物</strong>に働きます。光子も（エネルギー＝等価質量があるため）重力を受けます。</div>
+    <div class="step-block"><span class="step-num">2</span><strong>引力のみ（斥力がない）</strong> ― 電磁気力は引力にも斥力にもなりますが、重力は常に<strong>引き合う方向</strong>だけです。</div>
+    <div class="step-block"><span class="step-num">3</span><strong>宇宙規模の支配者</strong> ― 素粒子スケールでは圧倒的に弱いですが、宇宙・銀河・惑星の動きはすべて重力が支配しています。「小さいスケールでは無視できるが、大きいスケールでは絶対的」な力です。</div>
+    <div class="step-block"><span class="step-num">4</span><strong>時空を曲げる</strong> ― アインシュタインの一般相対性理論によると、重力は「力」ではなく「時空の曲がり」として理解されます。質量が大きいほど周囲の時空を深くゆがめ、その曲がりに沿って物体が動きます。</div>
+
+    <!-- 重力のスケールSVG -->
+    <div style="background:#0a1628;border-radius:10px;padding:14px;margin:12px 0;">
+      <div style="color:#bef264;font-weight:800;font-size:0.82rem;margin-bottom:10px;text-align:center;">重力が「弱い」のに宇宙を支配できる理由</div>
+      <svg width="100%" height="100" viewBox="0 0 380 100" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;display:block;margin:0 auto;">
+        <rect width="380" height="100" fill="#0a1628" rx="8"></rect>
+        <!-- 素粒子スケール -->
+        <rect x="10" y="15" width="160" height="60" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"></rect>
+        <text x="90" y="35" text-anchor="middle" font-size="11" fill="#38bdf8" font-family="sans-serif" font-weight="800">素粒子スケール</text>
+        <text x="90" y="52" text-anchor="middle" font-size="10" fill="#f87171" font-family="sans-serif">重力 ≈ 10⁻³⁸×強い力</text>
+        <text x="90" y="68" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="sans-serif">ほぼ無視できる</text>
+        <!-- 宇宙スケール -->
+        <rect x="210" y="15" width="160" height="60" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"></rect>
+        <text x="290" y="35" text-anchor="middle" font-size="11" fill="#4ade80" font-family="sans-serif" font-weight="800">宇宙スケール</text>
+        <text x="290" y="52" text-anchor="middle" font-size="10" fill="#4ade80" font-family="sans-serif">銀河・星・惑星</text>
+        <text x="290" y="68" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="sans-serif">重力が全支配</text>
+        <!-- 矢印 -->
+        <text x="190" y="55" text-anchor="middle" font-size="14" fill="#fbbf24" font-family="sans-serif">→</text>
+        <text x="190" y="42" text-anchor="middle" font-size="8" fill="#94a3b8" font-family="sans-serif">スケール</text>
+        <text x="190" y="70" text-anchor="middle" font-size="8" fill="#94a3b8" font-family="sans-serif">拡大</text>
+      </svg>
+      <div style="color:#94a3b8;font-size:0.8rem;margin-top:8px;text-align:center;">電磁気力は大きなスケールでは正負が打ち消し合うが、重力には「負」がなく常に引力として積み上がる</div>
+    </div>
+
+    <div class="warn-block">
+      ⚠️ <strong>重力だけが「量子論」と仲良くできない</strong><br>
+      電磁気力・強い力・弱い力は「量子場理論」として統一的に記述できます（標準模型）。<br>
+      しかし重力だけは量子論と組み合わせると計算が破綻します。<br>
+      これが現代物理学最大の未解決問題のひとつです。
+    </div>
+
+    <!-- 単元4 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq4&#39;)"><span>🖊️ 単元4 ミニテスト ― 重力</span><span class="uq-arrow" id="uq4_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq4_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. 4つの力の比較 -->
+<div class="section-card">
+  <div class="section-header sh-blue">📊 5. 4つの力を並べて比べる</div>
+  <div class="section-body">
+    <div class="text-block">4つの力を一度に並べると、それぞれの「役割分担」がくっきり見えてきます。</div>
+
+    <!-- 比較表 -->
+    <div style="background:#0a1628;border-radius:10px;padding:14px;overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.82rem;min-width:500px;">
+        <tbody><tr>
+          <th style="background:#1e3a5f;color:#38bdf8;padding:9px;border:1px solid #334155;text-align:center;">力の名前</th>
+          <th style="background:#1e3a5f;color:#38bdf8;padding:9px;border:1px solid #334155;text-align:center;">担い手</th>
+          <th style="background:#1e3a5f;color:#38bdf8;padding:9px;border:1px solid #334155;text-align:center;">相対的な強さ</th>
+          <th style="background:#1e3a5f;color:#38bdf8;padding:9px;border:1px solid #334155;text-align:center;">到達距離</th>
+          <th style="background:#1e3a5f;color:#38bdf8;padding:9px;border:1px solid #334155;text-align:center;">担う現象</th>
+        </tr>
+        <tr>
+          <td style="background:#1c0f00;color:#fbbf24;padding:8px;border:1px solid #1e3a5f;text-align:center;font-weight:800;">強い力</td>
+          <td style="background:#1c0f00;color:#e2e8f0;padding:8px;border:1px solid #1e3a5f;text-align:center;">グルーオン</td>
+          <td style="background:#1c0f00;padding:8px;border:1px solid #1e3a5f;text-align:center;"><span style="color:#f87171;font-weight:800;">1（最強）</span></td>
+          <td style="background:#1c0f00;color:#f87171;padding:8px;border:1px solid #1e3a5f;text-align:center;">〜10⁻¹⁵m</td>
+          <td style="background:#1c0f00;color:#94a3b8;padding:8px;border:1px solid #1e3a5f;text-align:center;">原子核・核融合</td>
+        </tr>
+        <tr>
+          <td style="background:#0f172a;color:#fbbf24;padding:8px;border:1px solid #1e3a5f;text-align:center;font-weight:800;">電磁気力</td>
+          <td style="background:#0f172a;color:#e2e8f0;padding:8px;border:1px solid #1e3a5f;text-align:center;">光子</td>
+          <td style="background:#0f172a;padding:8px;border:1px solid #1e3a5f;text-align:center;"><span style="color:#fbbf24;font-weight:800;">1/137</span></td>
+          <td style="background:#0f172a;color:#4ade80;padding:8px;border:1px solid #1e3a5f;text-align:center;">∞（無限大）</td>
+          <td style="background:#0f172a;color:#94a3b8;padding:8px;border:1px solid #1e3a5f;text-align:center;">光・電気・化学</td>
+        </tr>
+        <tr>
+          <td style="background:#1a0030;color:#c084fc;padding:8px;border:1px solid #1e3a5f;text-align:center;font-weight:800;">弱い力</td>
+          <td style="background:#1a0030;color:#e2e8f0;padding:8px;border:1px solid #1e3a5f;text-align:center;">W・Z粒子</td>
+          <td style="background:#1a0030;padding:8px;border:1px solid #1e3a5f;text-align:center;"><span style="color:#c084fc;font-weight:800;">10⁻⁶</span></td>
+          <td style="background:#1a0030;color:#f87171;padding:8px;border:1px solid #1e3a5f;text-align:center;">〜10⁻¹⁸m</td>
+          <td style="background:#1a0030;color:#94a3b8;padding:8px;border:1px solid #1e3a5f;text-align:center;">β崩壊・太陽核融合</td>
+        </tr>
+        <tr>
+          <td style="background:#0f172a;color:#2dd4bf;padding:8px;border:1px solid #1e3a5f;text-align:center;font-weight:800;">重力</td>
+          <td style="background:#0f172a;color:#64748b;padding:8px;border:1px solid #1e3a5f;text-align:center;">重力子（未発見）</td>
+          <td style="background:#0f172a;padding:8px;border:1px solid #1e3a5f;text-align:center;"><span style="color:#64748b;font-weight:800;">10⁻³⁸</span></td>
+          <td style="background:#0f172a;color:#4ade80;padding:8px;border:1px solid #1e3a5f;text-align:center;">∞（無限大）</td>
+          <td style="background:#0f172a;color:#94a3b8;padding:8px;border:1px solid #1e3a5f;text-align:center;">天体・宇宙の構造</td>
+        </tr>
+      </tbody></table>
+    </div>
+
+    <!-- スケール棒グラフ的なビジュアル -->
+    <div style="margin:14px 0;">
+      <div style="font-weight:800;color:#0c4a6e;font-size:0.87rem;margin-bottom:8px;">力の強さイメージ（強い力を1とした場合）</div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="min-width:70px;font-size:0.78rem;font-weight:700;color:#dc2626;">強い力</div>
+          <div style="height:20px;width:100%;background:#ef4444;border-radius:4px;display:flex;align-items:center;padding:0 8px;"><span style="font-size:0.75rem;color:white;font-weight:800;">1（基準）</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="min-width:70px;font-size:0.78rem;font-weight:700;color:#ca8a04;">電磁気力</div>
+          <div style="height:20px;width:73%;background:#f59e0b;border-radius:4px;display:flex;align-items:center;padding:0 8px;"><span style="font-size:0.75rem;color:white;font-weight:800;">約1/137</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="min-width:70px;font-size:0.78rem;font-weight:700;color:#7c3aed;">弱い力</div>
+          <div style="height:20px;width:10%;background:#7c3aed;border-radius:4px;"></div>
+          <span style="font-size:0.75rem;color:#7c3aed;font-weight:800;">〜10⁻⁶</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="min-width:70px;font-size:0.78rem;font-weight:700;color:#0d9488;">重力</div>
+          <div style="height:20px;width:2px;background:#0d9488;border-radius:4px;"></div>
+          <span style="font-size:0.75rem;color:#0d9488;font-weight:800;">〜10⁻³⁸（グラフに表せないほど弱い）</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-block">💡 <strong>「到達距離が無限」</strong>なのは電磁気力と重力の2つだけです。だから遠く離れた星同士でも引力（重力）を感じ合えるし、はるか宇宙の電波（光子）が地球まで届きます。</div>
+
+    <!-- 単元5 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq5&#39;)"><span>🖊️ 単元5 ミニテスト ― 4つの力の比較</span><span class="uq-arrow" id="uq5_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq5_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. コラム -->
+<div class="section-card">
+  <div class="section-header sh-cosmos">📖 コラム ― 「もしも」の宇宙 ― 力が少しでも違ったら</div>
+  <div class="section-body">
+    <div class="text-block">物理学者たちは「もし4つの力の強さが少し違っていたら？」と想像することがあります。その答えは、私たちの存在がいかにギリギリのバランスの上にあるかを教えてくれます。</div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;margin:12px 0;">
+
+      <div style="background:#0a1628;border-radius:10px;padding:14px;border-left:4px solid #ef4444;">
+        <div style="color:#f87171;font-weight:800;font-size:0.88rem;margin-bottom:6px;">🔴 もし強い力がもう少し弱かったら…</div>
+        <div style="font-size:0.85rem;color:#e2e8f0;line-height:1.9;">陽子と中性子が原子核にまとまれず、水素しか存在しない宇宙になっていたでしょう。炭素も酸素も生まれず、生命は存在できません。</div>
+      </div>
+
+      <div style="background:#0a1628;border-radius:10px;padding:14px;border-left:4px solid #fbbf24;">
+        <div style="color:#fbbf24;font-weight:800;font-size:0.88rem;margin-bottom:6px;">⚡ もし電磁気力がもう少し強かったら…</div>
+        <div style="font-size:0.85rem;color:#e2e8f0;line-height:1.9;">陽子同士の反発が強まり、より重い原子核（炭素・酸素・鉄など）が生まれにくくなります。同じく生命の材料が揃わない宇宙です。</div>
+      </div>
+
+      <div style="background:#0a1628;border-radius:10px;padding:14px;border-left:4px solid #a78bfa;">
+        <div style="color:#c084fc;font-weight:800;font-size:0.88rem;margin-bottom:6px;">🟣 もし弱い力がなかったら…</div>
+        <div style="font-size:0.85rem;color:#e2e8f0;line-height:1.9;">β崩壊が起きないため、太陽の核融合が止まります。また宇宙初期に中性子と陽子の比率が変わり、現在とまったく異なる元素組成になっていたでしょう。</div>
+      </div>
+
+      <div style="background:#0a1628;border-radius:10px;padding:14px;border-left:4px solid #2dd4bf;">
+        <div style="color:#2dd4bf;font-weight:800;font-size:0.88rem;margin-bottom:6px;">🌍 もし重力がもう少し強かったら…</div>
+        <div style="font-size:0.85rem;color:#e2e8f0;line-height:1.9;">宇宙は誕生後すぐに重力で潰れてしまい、星や銀河が生まれる前に「大崩壊」を迎えていたかもしれません。逆に弱すぎると物質が集まらず星も誕生しません。</div>
+      </div>
+    </div>
+
+    <div class="important-box">
+      <div class="box-label">🌌 「人間原理」という考え方</div>
+      <div style="font-size:0.87rem;line-height:2.1;">
+        4つの力のバランスが「生命が誕生できる」ほぼ唯一の組み合わせに見えることを<br>
+        「<strong>微調整問題（ファインチューニング）</strong>」と呼びます。<br><br>
+        なぜこのバランスなのかは、まだ答えが出ていない深い問いです。<br>
+        「無数の宇宙の中でたまたまこの宇宙が生命を生んだ（人間原理）」という考え方も物理学者の間で議論されています。
+      </div>
+    </div>
+
+    <!-- 単元6 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq6&#39;)"><span>🖊️ コラム ミニテスト ― もしもの宇宙</span><span class="uq-arrow" id="uq6_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq6_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. まとめ -->
+<div class="section-card">
+  <div class="section-header sh-green">📝 7. まとめ ― 四つの力と宇宙の成り立ち</div>
+  <div class="section-body">
+
+    <div style="background:#0a1628;border-radius:10px;padding:16px;margin-bottom:14px;">
+      <div style="color:#bef264;font-weight:800;font-size:0.88rem;margin-bottom:12px;text-align:center;">四つの力 ― 宇宙の役割分担</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <div style="min-width:28px;height:28px;border-radius:50%;background:#ef4444;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:900;color:white;flex-shrink:0;">強</div>
+          <div style="font-size:0.85rem;color:#e2e8f0;line-height:1.9;"><strong style="color:#f87171;">強い力</strong> ― クォークと原子核をまとめる。核融合・核分裂のエネルギー源。最強だが届く距離が短い。</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <div style="min-width:28px;height:28px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:900;color:white;flex-shrink:0;">電</div>
+          <div style="font-size:0.85rem;color:#e2e8f0;line-height:1.9;"><strong style="color:#fbbf24;">電磁気力</strong> ― 光・電気・磁石・化学・生命を支える。私たちの日常のほぼすべてに関わる。</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <div style="min-width:28px;height:28px;border-radius:50%;background:#7c3aed;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:900;color:white;flex-shrink:0;">弱</div>
+          <div style="font-size:0.85rem;color:#e2e8f0;line-height:1.9;"><strong style="color:#c084fc;">弱い力</strong> ― 粒子を「変身」させる。β崩壊・太陽の核融合・ニュートリノ生成の原因。</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <div style="min-width:28px;height:28px;border-radius:50%;background:#0d9488;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:900;color:white;flex-shrink:0;">重</div>
+          <div style="font-size:0.85rem;color:#e2e8f0;line-height:1.9;"><strong style="color:#2dd4bf;">重力</strong> ― 星・銀河・宇宙の大構造を作る。素粒子スケールでは無視できるほど弱いが、宇宙スケールでは支配的。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="important-box">
+      <div class="box-label">⭐ SP01〜SP04の「素粒子と力」の全体像</div>
+      <div style="font-size:0.88rem;line-height:2.4;">
+        <strong>SP01</strong> クォーク ― 物質の最深部<br>
+        <strong>SP02</strong> レプトン ― 電子とニュートリノの仲間<br>
+        <strong>SP03</strong> ゲージボソン ― 力を運ぶ粒子<br>
+        <strong>SP04</strong> 四つの力 ― 電磁気力・強い力・弱い力・重力<br>
+        <span style="color:#65a30d;font-weight:700;">→ 次のSP05で「標準模型」として全体像をまとめます！</span>
+      </div>
+    </div>
+
+    <!-- 単元7 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq7&#39;)"><span>🖊️ 単元7 ミニテスト ― 四つの力のまとめ</span><span class="uq-arrow" id="uq7_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq7_body"></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /tab-learn -->
+
+<!-- ===== FLASH ===== -->
+<div id="tab-flash" class="tab-content">
+  <div class="section-card">
+    <div class="section-header sh-cosmos">🃏 フラッシュカード ― 四つの力の重要ポイント</div>
+    <div class="section-body">
+      <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+        <button class="fc-speed-btn active" onclick="setFcSpeed(0)" id="spbtn0">手動</button>
+        <button class="fc-speed-btn" onclick="setFcSpeed(4000)" id="spbtn1">4秒</button>
+        <button class="fc-speed-btn" onclick="setFcSpeed(2500)" id="spbtn2">2.5秒</button>
+        <button class="fc-speed-btn" onclick="setFcSpeed(1500)" id="spbtn3">1.5秒</button>
+      </div>
+      <div class="flashcard-wrap" onclick="flipFc()">
+        <div class="flashcard" id="fc_card">
+          <div class="fc-face fc-front"><div class="fc-label">おもて</div><div class="fc-main" id="fc_front">電磁気力の担い手は？</div><div class="fc-sub" id="fc_fsub"></div></div>
+          <div class="fc-face fc-back"><div class="fc-label">うら</div><div class="fc-main" id="fc_back">光子（フォトン・γ）</div><div class="fc-sub" id="fc_bsub">到達距離：無限大　日常のほぼすべての現象に関わる</div></div>
+        </div>
+      </div>
+      <div class="fc-timer-bar"><div class="fc-timer-fill" id="fc_timer" style="width:0%"></div></div>
+      <div class="fc-progress" id="fc_prog"><div class="fc-dot current"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div></div>
+      <div class="fc-nav">
+        <button class="fc-nav-btn" onclick="fcPrev()" id="fc_prevBtn" disabled="">◀ 前へ</button>
+        <span style="font-size:0.85rem;color:var(--muted);" id="fc_idx">1 / 12</span>
+        <button class="fc-nav-btn" onclick="fcNext()" id="fc_nextBtn">次へ ▶</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== QUIZ ===== -->
+<div id="tab-quiz" class="tab-content">
+  <div class="section-card">
+    <div class="section-header sh-blue">🔭 ミニテスト ― 単元別4択（全問）</div>
+    <div class="section-body">
+      <div style="margin-bottom:16px;">
+        <div style="font-size:0.82rem;font-weight:700;color:var(--muted);margin-bottom:8px;">📚 単元を選んでください</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;" id="chapterBtns">
+          <button class="ch-btn active" onclick="selectChapter(0)">📚 全問チャレンジ</button>
+          <button class="ch-btn" onclick="selectChapter(1)">1. 電磁気力</button>
+          <button class="ch-btn" onclick="selectChapter(2)">2. 強い力</button>
+          <button class="ch-btn" onclick="selectChapter(3)">3. 弱い力</button>
+          <button class="ch-btn" onclick="selectChapter(4)">4. 重力</button>
+          <button class="ch-btn" onclick="selectChapter(5)">5. 力の比較</button>
+          <button class="ch-btn" onclick="selectChapter(6)">6. コラム</button>
+          <button class="ch-btn" onclick="selectChapter(7)">7. まとめ</button>
+        </div>
+      </div>
+      <div style="font-size:0.82rem;color:var(--muted);margin-bottom:14px;" id="quizInfo">全28問に挑戦しましょう。</div>
+      <div id="quizContainer"></div>
+      <div class="quiz-result" id="quizResult">
+        <div style="font-size:0.85rem;opacity:0.8;margin-bottom:4px;">最終スコア</div>
+        <div class="quiz-result-score" id="quizScore"></div>
+        <div class="quiz-result-msg" id="quizMsg"></div>
+        <button class="btn btn-primary" onclick="resetQuiz()" style="margin-top:12px;">もう一度 ↺</button>
+      </div>
+      <div style="margin-top:14px;text-align:right;"><button class="btn btn-gray" onclick="resetQuiz()">↺ リセット</button></div>
+    </div>
+  </div>
+</div>
+
+</main>
+<script>
+function showTab(id){
+  document.querySelectorAll('.tab-content').forEach(function(el){el.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(el){el.classList.remove('active');});
+  document.getElementById('tab-'+id).classList.add('active');
+  ['learn','flash','quiz'].forEach(function(t,i){if(t===id)document.querySelectorAll('.tab-btn')[i].classList.add('active');});
+  if(id==='flash')renderFc();
+  if(id==='quiz'){currentChapter=0;buildQuiz();}
+}
+
+function launchConfetti(n){
+  var colors=['#bef264','#38bdf8','#4ade80','#f87171','#fbbf24','#c084fc'];
+  for(var i=0;i<n;i++){
+    var el=document.createElement('div');el.className='confetti-piece';
+    el.style.cssText='left:'+(20+Math.random()*60)+'vw;top:20vh;background:'+colors[Math.floor(Math.random()*colors.length)]+';animation-delay:'+(Math.random()*0.6)+'s';
+    document.body.appendChild(el);
+    setTimeout((function(e){return function(){e.remove();};}(el)),2000);
+  }
+}
+
+// ===== 単元別クイズデータ =====
+var uqDefs={
+  uq1:{qs:[
+    {q:'電磁気力を伝えるゲージボソン（担い手）はどれですか？',opts:['グルーオン','W・Z粒子','光子（フォトン）','重力子'],ans:2,exp:'電磁気力の担い手は光子（γ）です。電荷を持つ粒子の間で光子が交換されることで電磁気力が生まれます。'},
+    {q:'電磁気力について正しい説明はどれですか？',opts:['引力のみで斥力は生じない','電荷を持たない粒子の間でも働く','到達距離は無限大','到達距離は10⁻¹⁵m程度'],ans:2,exp:'電磁気力の到達距離は無限大です。遠くなるほど弱まりますが、ゼロにはなりません。また引力にも斥力にもなります。'},
+    {q:'電磁気力が関係しない現象はどれですか？',opts:['スマホの充電','磁石が鉄を引きつける','光が窓を通る','りんごが木から落ちる'],ans:3,exp:'りんごが落ちるのは重力です。充電・磁石・光はすべて電磁気力（または光子）に関わります。'},
+    {q:'机に手を置いても手が机をすり抜けない理由はどれですか？',opts:['重力が手を引きつけるから','分子同士の電磁気力（反発）があるから','強い力が働いているから','真空の力があるから'],ans:1,exp:'固体が固体をすり抜けないのは、分子・原子レベルで電磁気力（電子の反発）が働いているためです。重力は関係ありません。'}
+  ]},
+  uq2:{qs:[
+    {q:'強い力の担い手（ゲージボソン）はどれですか？',opts:['光子（γ）','グルーオン（g）','W⁻ボソン','Z⁰ボソン'],ans:1,exp:'強い力の担い手はグルーオン（g）です。クォーク間で交換され、色荷を伝えます。'},
+    {q:'強い力の到達距離はどのくらいですか？',opts:['無限大','太陽と地球の距離程度','原子半径程度（10⁻¹⁰m）','陽子の大きさ程度（10⁻¹⁵m）'],ans:3,exp:'強い力の到達距離は約10⁻¹⁵m（フェムトメートル）で、陽子1個の大きさとほぼ同じです。だから原子核の外に出てきません。'},
+    {q:'同じ電荷を持つ陽子が複数集まって原子核を作れる理由はどれですか？',opts:['電磁気力が引力になるから','弱い力が反発を打ち消すから','強い力が電磁気力の反発に打ち勝つから','重力が陽子を引き寄せるから'],ans:2,exp:'強い力は電磁気力の約137倍の強さで、陽子同士の電磁気的な反発に打ち勝って原子核を一つにまとめます。'},
+    {q:'原子力発電や太陽が輝くエネルギーの根源はどれですか？',opts:['電磁気力による化学エネルギー','弱い力による変換エネルギー','強い力による核結合エネルギー','重力によるポテンシャルエネルギー'],ans:2,exp:'原子力発電（核分裂）も太陽の輝き（核融合）も、強い力による核結合エネルギーが解放されたものです。'}
+  ]},
+  uq3:{qs:[
+    {q:'弱い力の最大の特徴はどれですか？',opts:['最も強い力である','粒子の種類（フレーバー）を変える','到達距離が無限大','電荷を伝える'],ans:1,exp:'弱い力の最大の特徴は「粒子の種類を変える」ことです。ダウンクォーク→アップクォークのような変換が起きます。他の力は粒子の種類を変えません。'},
+    {q:'β崩壊（放射線）に関わる力はどれですか？',opts:['電磁気力','強い力','弱い力','重力'],ans:2,exp:'β崩壊は弱い力によって起こります。中性子がW⁻ボソンを放出し、陽子・電子・反ニュートリノに変わる反応です。'},
+    {q:'弱い力がなければどうなりますか？',opts:['原子核がバラバラになる','太陽の核融合が止まる','電子が原子核に落ちる','重力が消える'],ans:1,exp:'太陽の核融合では陽子がβ崩壊して中性子になる過程が必要です。弱い力がなければこの過程が起きず、太陽は核融合できなくなります。'},
+    {q:'弱い力の到達距離が非常に短い理由はどれですか？',opts:['グルーオンが重いから','W・Z粒子の質量が非常に大きいから','光子がないから','重力が弱いから'],ans:1,exp:'弱い力の担い手であるW・Z粒子は陽子の80〜90倍以上の巨大な質量を持ちます。重い粒子は生まれにくく短命なため、ごく短い距離しか伝わりません。'}
+  ]},
+  uq4:{qs:[
+    {q:'重力と電磁気力に共通する特徴はどれですか？',opts:['到達距離が有限である','引力のみ発生する','到達距離が無限大','担い手が発見されている'],ans:2,exp:'重力と電磁気力はどちらも到達距離が無限大です。遠くなるほど弱まりますが、ゼロにはなりません。強い力・弱い力は到達距離が有限です。'},
+    {q:'重力が電磁気力と異なる点はどれですか？',opts:['遠くなるほど弱まる','担い手がある','引力のみで斥力がない','質量のある物に働く'],ans:2,exp:'重力は常に引力のみです。電磁気力は引力にも斥力にもなります。重力に「負」がない（反重力がない）ため、宇宙スケールでは積み上がって支配的になります。'},
+    {q:'素粒子スケールで重力がほぼ無視できる理由はどれですか？',opts:['重力は電荷のない粒子に働かないから','重力は強い力の約10⁻³⁸倍と圧倒的に弱いから','重力は原子核内でのみ働くから','素粒子は質量がゼロだから'],ans:1,exp:'重力は強い力の約10⁻³⁸倍という圧倒的に弱い力です。素粒子同士の間では無視できるほど弱く、標準模型では扱われていません。'},
+    {q:'現代物理学で重力が「特別な存在」とされる理由はどれですか？',opts:['最も強い力だから','重力だけが引力と斥力を持つから','重力だけが標準模型（量子論）と統一できていないから','重力子が最初に発見されたから'],ans:2,exp:'電磁気力・強い力・弱い力は標準模型（量子場理論）で統一的に記述されていますが、重力だけは量子論と組み合わせると計算が破綻します。これが現代物理学最大の未解決問題のひとつです。'}
+  ]},
+  uq5:{qs:[
+    {q:'4つの力を強い順に正しく並べたのはどれですか？',opts:['重力＞電磁気力＞弱い力＞強い力','強い力＞電磁気力＞弱い力＞重力','電磁気力＞強い力＞重力＞弱い力','弱い力＞強い力＞重力＞電磁気力'],ans:1,exp:'強い力＞電磁気力＞弱い力＞重力の順です。強い力を1とすると、電磁気力は約1/137、弱い力は約10⁻⁶、重力は約10⁻³⁸です。'},
+    {q:'到達距離が「無限大」なのはどれですか？',opts:['強い力のみ','弱い力のみ','電磁気力と重力','強い力と弱い力'],ans:2,exp:'到達距離が無限大なのは電磁気力と重力の2つです。強い力（〜10⁻¹⁵m）と弱い力（〜10⁻¹⁸m）は到達距離が有限です。'},
+    {q:'宇宙の大構造（銀河・惑星の軌道など）を主に支配する力はどれですか？',opts:['強い力','電磁気力','弱い力','重力'],ans:3,exp:'宇宙の大構造（銀河・星・惑星の動き）は重力が支配しています。電磁気力は大きなスケールでは正負が打ち消し合い、強い力・弱い力は到達距離が短いため。'},
+    {q:'日常生活（化学・生命・電気・光）を主に支配する力はどれですか？',opts:['強い力','電磁気力','弱い力','重力'],ans:1,exp:'化学結合・生命活動・電気・磁石・光 ―― これらはすべて電磁気力が支配しています。私たちの日常の大部分を電磁気力が担っています。'}
+  ]},
+  uq6:{qs:[
+    {q:'もし強い力が少し弱かったら宇宙はどうなっていたと考えられますか？',opts:['重力が強まる','炭素や酸素などの元素が生まれず生命が存在できない','電磁気力が強まる','弱い力が代わりに働く'],ans:1,exp:'強い力が弱まると原子核がまとまれず、水素しか存在しない宇宙になります。炭素・酸素などの材料がなければ生命は誕生できません。'},
+    {q:'もし弱い力がなかったら太陽はどうなっていたと考えられますか？',opts:['より明るく輝く','核融合に必要なβ崩壊が起きず、太陽は燃えられない','核分裂が起きて爆発する','重力が代わりに核融合を起こす'],ans:1,exp:'太陽の核融合には陽子がβ崩壊で中性子になる過程が必要です。弱い力がなければこのプロセスが止まり、太陽は核融合できなくなります。'},
+    {q:'4つの力の強さのバランスが生命誕生に絶妙に合っている問題を何と呼びますか？',opts:['ダークマター問題','微調整問題（ファインチューニング）','標準模型の問題','クォーク閉じ込め問題'],ans:1,exp:'4つの力の強さが「生命が誕生できる」ほぼ唯一の組み合わせに見えることを「微調整問題（ファインチューニング）」と呼びます。なぜこのバランスなのかはまだわかっていません。'},
+    {q:'「人間原理」とはどのような考え方ですか？',opts:['人間が物理法則を作った','無数の宇宙の中でたまたまこの宇宙が生命を生んだと考える','人間だけが宇宙の力を感じられる','4つの力は人間のために調整された'],ans:1,exp:'人間原理とは「無数の宇宙（マルチバース）の中で、生命が観測できるのはたまたまこのような条件を持つ宇宙だけだ」という考え方です。哲学的な問いと絡む深いテーマです。'}
+  ]},
+  uq7:{qs:[
+    {q:'次のうち「粒子の種類を変える」ことができる力はどれですか？',opts:['電磁気力','強い力','弱い力','重力'],ans:2,exp:'弱い力だけが粒子の種類（フレーバー）を変えることができます。ダウンクォーク→アップクォーク、電子ニュートリノの生成など。'},
+    {q:'原子核が安定して存在できる理由として正しいのはどれですか？',opts:['重力が陽子を引きつけるから','弱い力が電磁気力を打ち消すから','強い力が陽子同士の電磁気的反発に打ち勝つから','電磁気力が引力になるから'],ans:2,exp:'同じ電荷を持つ陽子は電磁気力で反発しますが、それを圧倒する強い力（グルーオンによる核力）が陽子・中性子を結びつけ原子核を安定させます。'},
+    {q:'素粒子スケールでは無視できるが、宇宙スケールでは支配的になる力はどれですか？',opts:['強い力','電磁気力','弱い力','重力'],ans:3,exp:'重力は素粒子スケールでは圧倒的に弱く（強い力の約10⁻³⁸倍）無視できますが、正負の打ち消しがないため宇宙・銀河・星のスケールでは積み上がって支配的になります。'},
+    {q:'「電磁気力と弱い力は同じ力の2つの顔」と示したのはどれですか？',opts:['ニュートンの万有引力の法則','マクスウェルの方程式','電弱統一理論（グラショウ・サラム・ワインバーグ）','アインシュタインの一般相対性理論'],ans:2,exp:'1967年に発表された電弱統一理論は、高エネルギーでは電磁気力と弱い力が1つの「電弱力」になることを示しました。グラショウ・サラム・ワインバーグが1979年にノーベル物理学賞を受賞。'}
+  ]}
+};
+
+var uqState={};
+function uqBuildBody(uid){
+  var d=uqDefs[uid];var html='';
+  d.qs.forEach(function(q,i){
+    html+='<div class="uq-card" id="'+uid+'_c'+i+'"><div class="uq-num">Q'+(i+1)+' / '+d.qs.length+'</div><div class="uq-q">'+q.q+'</div><div class="uq-opts">';
+    q.opts.forEach(function(opt,j){html+='<button class="uq-opt" id="'+uid+'_o'+i+'_'+j+'" onclick="uqAnswer(\''+uid+'\','+i+','+j+')"><span class="uq-badge">'+['A','B','C','D'][j]+'</span>'+opt+'</button>';});
+    html+='</div><div class="uq-fb" id="'+uid+'_f'+i+'"></div></div>';
+  });
+  html+='<div class="uq-result" id="'+uid+'_result"><div class="uq-result-score" id="'+uid+'_score"></div><div class="uq-result-msg" id="'+uid+'_msg"></div><button class="uq-retry-btn" onclick="uqReset(\''+uid+'\')">↺ もう一度</button></div>';
+  document.getElementById(uid+'_body').innerHTML=html;
+  uqState[uid]={answered:new Array(d.qs.length).fill(false),correct:0};
+}
+function uqToggle(uid){
+  var body=document.getElementById(uid+'_body');var arrow=document.getElementById(uid+'_arrow');
+  var isOpen=body.classList.contains('open');
+  if(!isOpen&&!uqState[uid])uqBuildBody(uid);
+  body.classList.toggle('open',!isOpen);
+  arrow.style.transform=isOpen?'':'rotate(180deg)';
+}
+function uqAnswer(uid,qi,oi){
+  if(!uqState[uid]||uqState[uid].answered[qi])return;
+  uqState[uid].answered[qi]=true;
+  var q=uqDefs[uid].qs[qi];
+  var opts=document.querySelectorAll('#'+uid+'_c'+qi+' .uq-opt');
+  var fb=document.getElementById(uid+'_f'+qi);
+  opts.forEach(function(o){o.disabled=true;});
+  if(oi===q.ans){opts[oi].classList.add('correct');fb.className='uq-fb show-ok';fb.innerHTML='✅ 正解！　'+q.exp;uqState[uid].correct++;launchConfetti(6);}
+  else{opts[oi].classList.add('wrong');opts[q.ans].classList.add('correct');fb.className='uq-fb show-ng';fb.innerHTML='❌ 不正解。正解は「'+['A','B','C','D'][q.ans]+'」。'+q.exp;}
+  if(uqState[uid].answered.every(function(v){return v;}))setTimeout(function(){uqShowResult(uid);},600);
+}
+function uqShowResult(uid){
+  var s=uqState[uid];var total=uqDefs[uid].qs.length;var pct=s.correct/total;
+  var result=document.getElementById(uid+'_result');
+  result.className='uq-result '+(pct>=0.75?'pass':'retry');result.style.display='block';
+  document.getElementById(uid+'_score').textContent=s.correct+' / '+total+' 問正解';
+  var msg=pct===1?'🎉 パーフェクト！すばらしいです！':pct>=0.75?'✨ 合格です！よくできました！':pct>=0.5?'👍 もう少し！もう一回やってみよう。':'📖 もう一度本文を読んでから挑戦してみよう！';
+  document.getElementById(uid+'_msg').textContent=msg;
+  if(pct===1)launchConfetti(60);
+}
+function uqReset(uid){
+  uqState[uid]={answered:new Array(uqDefs[uid].qs.length).fill(false),correct:0};
+  document.getElementById(uid+'_result').style.display='none';
+  for(var i=0;i<uqDefs[uid].qs.length;i++){
+    document.querySelectorAll('#'+uid+'_c'+i+' .uq-opt').forEach(function(o){o.disabled=false;o.className='uq-opt';});
+    var fb=document.getElementById(uid+'_f'+i);fb.className='uq-fb';fb.innerHTML='';
+  }
+}
+
+// ===== FLASHCARD =====
+var fcCards=[
+  {front:'電磁気力の担い手は？',back:'光子（フォトン・γ）',bsub:'到達距離：無限大　日常のほぼすべての現象に関わる'},
+  {front:'電磁気力が起こす身近な現象を3つ言えますか？',back:'電気・磁石・光（電磁波）・化学結合 など',bsub:'物が手に乗るのも電磁気力（分子の反発）'},
+  {front:'強い力の担い手は？',back:'グルーオン（g）― 8種類ある',bsub:'到達距離：〜10⁻¹⁵m（陽子の大きさ）'},
+  {front:'陽子が複数あるのに原子核がバラバラにならない理由は？',back:'強い力が電磁気的な反発（陽子同士）に打ち勝つから',bsub:'強い力は4つの力の中で最強'},
+  {front:'弱い力だけが持つ特別な能力は？',back:'粒子の種類（フレーバー）を変えること',bsub:'ダウンクォーク→アップクォークなど。β崩壊の原因'},
+  {front:'弱い力の担い手は？',back:'W⁺・W⁻・Z⁰ボソン（3種類）',bsub:'質量が陽子の80〜90倍と巨大 → 到達距離が極短い'},
+  {front:'太陽が輝けるのに弱い力が関係する理由は？',back:'陽子がβ崩壊して中性子になる過程に弱い力が必要',bsub:'弱い力がなければ太陽の核融合は止まる'},
+  {front:'重力が他の3つの力と異なる点を2つ言えますか？',back:'① 引力のみ（斥力がない）　② 標準模型に組み込めていない',bsub:'質量を持つすべての物に働く。担い手（重力子）は未発見'},
+  {front:'4つの力の強さを強い順に言えますか？',back:'強い力 ＞ 電磁気力 ＞ 弱い力 ＞ 重力',bsub:'重力は強い力の約10⁻³⁸倍という圧倒的な弱さ'},
+  {front:'到達距離が無限大の力はどれ？',back:'電磁気力と重力の2つ',bsub:'強い力（10⁻¹⁵m）・弱い力（10⁻¹⁸m）は有限'},
+  {front:'宇宙の大構造（銀河・惑星）を支配する力は？',back:'重力',bsub:'電磁気力は正負が打ち消し合うため宇宙規模では主役になれない'},
+  {front:'「電磁気力と弱い力は同じ力」と示した理論は？',back:'電弱統一理論（グラショウ・サラム・ワインバーグ、1979年ノーベル賞）',bsub:'高エネルギーでは1つの「電弱力」になる'},
+];
+var fcIdx=0,fcSpeed=0,fcTimer=null,fcFlipped=false;
+function renderFc(){
+  var c=fcCards[fcIdx];
+  document.getElementById('fc_front').textContent=c.front;
+  document.getElementById('fc_fsub').textContent=c.fsub||'';
+  document.getElementById('fc_back').textContent=c.back;
+  document.getElementById('fc_bsub').textContent=c.bsub||'';
+  var fc=document.getElementById('fc_card');fc.classList.remove('flipped');fcFlipped=false;
+  document.getElementById('fc_idx').textContent=(fcIdx+1)+' / '+fcCards.length;
+  document.getElementById('fc_prevBtn').disabled=fcIdx===0;
+  document.getElementById('fc_nextBtn').disabled=fcIdx===fcCards.length-1;
+  var prog=document.getElementById('fc_prog');
+  prog.innerHTML=fcCards.map(function(_,i){return '<div class="fc-dot'+(i===fcIdx?' current':i<fcIdx?' done':'')+'"></div>';}).join('');
+  if(fcSpeed>0)startAutoFc();
+}
+function flipFc(){var fc=document.getElementById('fc_card');fcFlipped=!fcFlipped;fc.classList.toggle('flipped',fcFlipped);}
+function fcNext(){if(fcIdx<fcCards.length-1){fcIdx++;renderFc();}}
+function fcPrev(){if(fcIdx>0){fcIdx--;renderFc();}}
+function setFcSpeed(ms){
+  fcSpeed=ms;clearTimeout(fcTimer);
+  [0,1,2,3].forEach(function(i){var b=document.getElementById('spbtn'+i);if(b)b.classList.remove('active');});
+  document.getElementById('spbtn'+[0,4000,2500,1500].indexOf(ms)).classList.add('active');
+  if(ms>0)startAutoFc();
+}
+function startAutoFc(){
+  clearTimeout(fcTimer);
+  var fill=document.getElementById('fc_timer');fill.style.transition='none';fill.style.width='0%';
+  setTimeout(function(){
+    fill.style.transition='width '+fcSpeed+'ms linear';fill.style.width='100%';
+    fcTimer=setTimeout(function(){fcIdx=(fcIdx+1)%fcCards.length;renderFc();setTimeout(function(){if(fcSpeed>0)startAutoFc();},300);},fcSpeed);
+  },50);
+}
+
+// ===== QUIZ TAB =====
+var allQuizData=[
+  {ch:1,q:'電磁気力の担い手はどれですか？',opts:['グルーオン','W・Z粒子','光子（γ）','重力子'],ans:2,exp:'電磁気力の担い手は光子（γ）です。'},
+  {ch:1,q:'電磁気力の到達距離はどれですか？',opts:['10⁻¹⁸m','10⁻¹⁵m','10⁻¹⁰m','無限大'],ans:3,exp:'電磁気力の到達距離は無限大です。遠くなるほど弱まりますがゼロにはなりません。'},
+  {ch:1,q:'電磁気力が関係しない現象はどれですか？',opts:['スマホの充電','磁石が鉄を引く','光が進む','りんごが落ちる'],ans:3,exp:'りんごが落ちるのは重力です。充電・磁石・光はすべて電磁気力に関係します。'},
+  {ch:1,q:'机に手が乗っても手がすり抜けない理由はどれですか？',opts:['重力が手を引くから','分子の電磁気的反発があるから','強い力が働くから','真空の力があるから'],ans:1,exp:'固体が固体をすり抜けないのは分子・原子レベルで電磁気力（電子の反発）が働いているためです。'},
+  {ch:2,q:'強い力の担い手はどれですか？',opts:['光子（γ）','グルーオン（g）','W⁻ボソン','Z⁰ボソン'],ans:1,exp:'強い力の担い手はグルーオン（g）です。'},
+  {ch:2,q:'強い力の到達距離はどのくらいですか？',opts:['無限大','太陽と地球の距離','原子の大きさ','陽子の大きさ（10⁻¹⁵m）'],ans:3,exp:'強い力の到達距離は約10⁻¹⁵m（フェムトメートル）で、陽子1個の大きさとほぼ同じです。'},
+  {ch:2,q:'陽子が複数あっても原子核がバラバラにならない理由はどれですか？',opts:['電磁気力が引力になるから','弱い力が反発を打ち消すから','強い力が電磁気力の反発に打ち勝つから','重力が陽子を引き寄せるから'],ans:2,exp:'強い力は電磁気力の約137倍の強さで、陽子同士の電磁気的な反発に打ち勝って原子核をまとめます。'},
+  {ch:2,q:'原子力発電や太陽が輝くエネルギーの根源はどれですか？',opts:['電磁気力','弱い力','強い力（核結合エネルギー）','重力'],ans:2,exp:'原子力発電（核分裂）も太陽（核融合）も、強い力による核結合エネルギーが解放されたものです。'},
+  {ch:3,q:'弱い力の最大の特徴はどれですか？',opts:['最も強い力','粒子の種類を変える','到達距離が無限大','電荷を伝える'],ans:1,exp:'弱い力だけが粒子の種類（フレーバー）を変えることができます。'},
+  {ch:3,q:'β崩壊に関わる力はどれですか？',opts:['電磁気力','強い力','弱い力','重力'],ans:2,exp:'β崩壊は弱い力によって起こります。中性子がW⁻ボソンを放出し陽子・電子・反ニュートリノになる反応です。'},
+  {ch:3,q:'弱い力がなければどうなりますか？',opts:['原子核がバラバラになる','太陽の核融合が止まる','電子が原子核に落ちる','重力が消える'],ans:1,exp:'太陽の核融合には陽子がβ崩壊する過程が必要です。弱い力がなければ太陽は核融合できません。'},
+  {ch:3,q:'弱い力の到達距離が短い理由はどれですか？',opts:['グルーオンが重いから','W・Z粒子の質量が非常に大きいから','光子がないから','重力が弱いから'],ans:1,exp:'W・Z粒子は陽子の80〜90倍以上の巨大な質量を持つため、短命で遠くまで伝わりません。'},
+  {ch:4,q:'重力と電磁気力に共通する特徴はどれですか？',opts:['到達距離が有限','引力のみ発生','到達距離が無限大','担い手が発見されている'],ans:2,exp:'重力と電磁気力はどちらも到達距離が無限大です。'},
+  {ch:4,q:'重力が電磁気力と異なる点はどれですか？',opts:['遠くなるほど弱まる','担い手がある','引力のみで斥力がない','質量のある物に働く'],ans:2,exp:'重力は常に引力のみです。電磁気力は引力にも斥力にもなります。'},
+  {ch:4,q:'素粒子スケールで重力がほぼ無視できる理由はどれですか？',opts:['重力は電荷がない粒子に働かない','重力は強い力の約10⁻³⁸倍と圧倒的に弱い','重力は原子核内でのみ働く','素粒子は質量がゼロ'],ans:1,exp:'重力は強い力の約10⁻³⁸倍という圧倒的な弱さです。素粒子同士の間では無視できます。'},
+  {ch:4,q:'重力が「特別な存在」とされる理由はどれですか？',opts:['最も強い力だから','引力と斥力を持つから','標準模型（量子論）と統一できていないから','重力子が最初に発見されたから'],ans:2,exp:'電磁気力・強い力・弱い力は標準模型で記述されますが、重力だけは量子論と統一できていません。'},
+  {ch:5,q:'4つの力を強い順に並べたのはどれですか？',opts:['重力＞電磁気力＞弱い力＞強い力','強い力＞電磁気力＞弱い力＞重力','電磁気力＞強い力＞重力＞弱い力','弱い力＞強い力＞重力＞電磁気力'],ans:1,exp:'強い力＞電磁気力＞弱い力＞重力の順です。'},
+  {ch:5,q:'到達距離が無限大なのはどれですか？',opts:['強い力のみ','弱い力のみ','電磁気力と重力','強い力と弱い力'],ans:2,exp:'到達距離が無限大なのは電磁気力と重力の2つです。'},
+  {ch:5,q:'宇宙の大構造を主に支配する力はどれですか？',opts:['強い力','電磁気力','弱い力','重力'],ans:3,exp:'宇宙・銀河・星・惑星の動きは重力が支配しています。'},
+  {ch:5,q:'日常生活（化学・電気・光）を主に支配する力はどれですか？',opts:['強い力','電磁気力','弱い力','重力'],ans:1,exp:'化学・電気・磁石・光はすべて電磁気力が支配しています。'},
+  {ch:6,q:'もし強い力が少し弱かったら宇宙はどうなりますか？',opts:['重力が強まる','炭素や酸素が生まれず生命が存在できない','電磁気力が強まる','弱い力が代わりに働く'],ans:1,exp:'強い力が弱まると原子核がまとまれず、水素しか存在しない宇宙になり生命は誕生できません。'},
+  {ch:6,q:'もし弱い力がなかったら太陽はどうなりますか？',opts:['より明るく輝く','β崩壊が起きず太陽は核融合できない','核分裂が起きて爆発する','重力が代わりに核融合を起こす'],ans:1,exp:'太陽の核融合には陽子がβ崩壊で中性子になる過程が必要です。弱い力がなければ太陽は燃えられません。'},
+  {ch:6,q:'4つの力のバランスが生命誕生に絶妙に合っている問題を何と呼びますか？',opts:['ダークマター問題','微調整問題（ファインチューニング）','標準模型の問題','クォーク閉じ込め問題'],ans:1,exp:'4つの力の強さが生命が誕生できるほぼ唯一の組み合わせに見えることを「微調整問題」と呼びます。'},
+  {ch:6,q:'「人間原理」とはどのような考え方ですか？',opts:['人間が物理法則を作った','無数の宇宙の中でたまたまこの宇宙が生命を生んだと考える','人間だけが宇宙の力を感じられる','4つの力は人間のために調整された'],ans:1,exp:'人間原理は「無数の宇宙の中で、生命が観測できるのはこのような条件を持つ宇宙だけだ」という考え方です。'},
+  {ch:7,q:'「粒子の種類を変える」ことができる力はどれですか？',opts:['電磁気力','強い力','弱い力','重力'],ans:2,exp:'弱い力だけが粒子の種類（フレーバー）を変えることができます。β崩壊の原因です。'},
+  {ch:7,q:'原子核が安定して存在できる理由として正しいのはどれですか？',opts:['重力が陽子を引く','弱い力が電磁気力を打ち消す','強い力が電磁気的反発に打ち勝つ','電磁気力が引力になる'],ans:2,exp:'強い力（グルーオンによる核力）が陽子同士の電磁気的な反発に打ち勝って原子核をまとめます。'},
+  {ch:7,q:'素粒子スケールでは無視できるが宇宙スケールで支配的な力はどれですか？',opts:['強い力','電磁気力','弱い力','重力'],ans:3,exp:'重力は素粒子スケールでは無視できるほど弱いですが、正負の打ち消しがなく積み上がるため宇宙スケールでは支配的になります。'},
+  {ch:7,q:'電磁気力と弱い力を統一した理論はどれですか？',opts:['ニュートンの万有引力','マクスウェルの方程式','電弱統一理論','アインシュタインの一般相対性理論'],ans:2,exp:'電弱統一理論（グラショウ・サラム・ワインバーグ）は電磁気力と弱い力が高エネルギーでは1つの力であることを示しました（1979年ノーベル賞）。'},
+];
+var currentChapter=0,activeQuizData=[],quizAnswered=[],quizCorrect=0;
+function selectChapter(ch){
+  currentChapter=ch;
+  document.querySelectorAll('#chapterBtns .ch-btn').forEach(function(b,i){b.classList.toggle('active',i===ch);});
+  buildQuiz();
+}
+function buildQuiz(){
+  activeQuizData=currentChapter===0?allQuizData.slice():allQuizData.filter(function(q){return q.ch===currentChapter;});
+  quizAnswered=activeQuizData.map(function(){return false;});quizCorrect=0;
+  document.getElementById('quizResult').style.display='none';
+  var total=activeQuizData.length;
+  document.getElementById('quizInfo').textContent=(currentChapter===0?'全'+total+'問':'単元'+currentChapter+'（'+total+'問）')+' ― 各問に解説がつきます。';
+  var container=document.getElementById('quizContainer');
+  container.innerHTML=activeQuizData.map(function(q,qi){
+    return '<div class="quiz-card" id="qc'+qi+'">'+
+      '<div style="font-size:0.72rem;font-weight:700;color:var(--primary);margin-bottom:4px;">Q'+(qi+1)+' / '+total+(currentChapter===0?' ［単元'+q.ch+'］':'')+'</div>'+
+      '<div class="quiz-q">'+q.q+'</div><div class="quiz-opts">'+
+      q.opts.map(function(opt,oi){return '<button class="quiz-opt" id="qo'+qi+'_'+oi+'" onclick="answerQuiz('+qi+','+oi+')"><span style="display:inline-block;width:22px;height:22px;border-radius:50%;background:var(--primary-light);color:var(--primary);font-weight:800;font-size:0.78rem;text-align:center;line-height:22px;margin-right:8px;flex-shrink:0;">'+['A','B','C','D'][oi]+'</span>'+opt+'</button>';}).join('')+
+      '</div><div class="quiz-feedback" id="qf'+qi+'"></div></div>';
+  }).join('');
+}
+function answerQuiz(qi,oi){
+  if(quizAnswered[qi])return;quizAnswered[qi]=true;
+  var q=activeQuizData[qi];var opts=document.querySelectorAll('#qc'+qi+' .quiz-opt');var fb=document.getElementById('qf'+qi);
+  opts.forEach(function(o){o.disabled=true;});
+  if(oi===q.ans){opts[oi].classList.add('correct');fb.className='quiz-feedback show ok';fb.innerHTML='✅ 正解です！　'+q.exp;quizCorrect++;launchConfetti(5);}
+  else{opts[oi].classList.add('wrong');opts[q.ans].classList.add('correct');fb.className='quiz-feedback show ng';fb.innerHTML='❌ 不正解。正解は「'+['A','B','C','D'][q.ans]+'：'+q.opts[q.ans]+'」。<br>'+q.exp;}
+  if(quizAnswered.every(function(v){return v;}))setTimeout(showResult,700);
+}
+function showResult(){
+  var result=document.getElementById('quizResult');result.style.display='block';
+  var total=activeQuizData.length;var pct=quizCorrect/total;
+  document.getElementById('quizScore').textContent=quizCorrect+' / '+total+' 問正解';
+  var msg=pct===1?'🎉 パーフェクトです！完璧に理解できています！':pct>=0.75?'✨ 合格です！よくできました！':pct>=0.5?'👍 もう少しです！もう一回やってみよう。':'📖 もう一度学習タブに戻って読んでから挑戦してみよう！';
+  document.getElementById('quizMsg').textContent=msg;
+  if(pct===1)launchConfetti(50);
+}
+function resetQuiz(){buildQuiz();}
+document.addEventListener('DOMContentLoaded',function(){renderFc();});
+</script>
+
+
+</body></html>

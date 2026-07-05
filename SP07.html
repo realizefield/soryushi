@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)file:///C:/Users/tinbu/Downloads/SP07.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAMBA | 素粒子 SP07 宇宙論 ― ビッグバンと素粒子、138億年の旅</title>
+<style>
+  :root{--primary:#0284c7;--primary-dark:#0369a1;--primary-light:#e0f2fe;--accent:#65a30d;--danger:#ef4444;--bg:#f0f9ff;--card:#ffffff;--text:#0c4a6e;--muted:#64748b;--border:#bae6fd;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+  header{background:linear-gradient(135deg,#0c4a6e,#0284c7,#38bdf8);color:white;}
+  .header-top{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid rgba(255,255,255,0.2);}
+  .logo{font-size:1.5rem;font-weight:900;letter-spacing:2px;color:#bef264;}
+  .header-sub{font-size:0.75rem;opacity:0.85;}
+  .chapter-title-bar{padding:14px 20px;display:flex;align-items:center;gap:12px;}
+  .chapter-badge{background:#bef264;color:#1a2e05;font-weight:900;font-size:0.75rem;padding:3px 10px;border-radius:20px;}
+  .chapter-title-text{font-size:1.1rem;font-weight:700;color:white;}
+  .tab-bar{display:flex;background:white;border-bottom:3px solid var(--primary-light);overflow-x:auto;padding:0 16px;gap:4px;}
+  .tab-btn{padding:10px 16px;border:none;background:none;font-size:0.82rem;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all 0.2s;font-family:inherit;margin-bottom:-3px;}
+  .tab-btn.active{color:var(--primary);border-bottom-color:var(--primary);}
+  .tab-btn:hover{color:var(--primary);}
+  main{max-width:860px;margin:0 auto;padding:20px 16px 60px;}
+  .tab-content{display:none;}.tab-content.active{display:block;}
+  .section-card{background:var(--card);border-radius:14px;box-shadow:0 2px 12px rgba(2,132,199,0.1);margin-bottom:20px;overflow:hidden;border:1px solid #e0f2fe;}
+  .section-header{padding:13px 20px;font-weight:800;font-size:0.95rem;display:flex;align-items:center;gap:8px;}
+  .sh-blue{background:#e0f2fe;border-left:4px solid #0284c7;color:#0c4a6e;}
+  .sh-green{background:#ecfccb;border-left:4px solid #65a30d;color:#1a2e05;}
+  .sh-amber{background:#fef9c3;border-left:4px solid #ca8a04;color:#713f12;}
+  .sh-purple{background:#ede9fe;border-left:4px solid #7c3aed;color:#3b0764;}
+  .sh-red{background:#fee2e2;border-left:4px solid #ef4444;color:#7f1d1d;}
+  .sh-cosmos{background:#0369a1;border-left:4px solid #bef264;color:#bef264;}
+  .sh-teal{background:#ccfbf1;border-left:4px solid #0d9488;color:#134e4a;}
+  .sh-night{background:#06091a;border-left:4px solid #818cf8;color:#c7d2fe;}
+  .section-body{padding:18px 20px;}
+  .text-block{font-size:0.92rem;line-height:1.9;margin-bottom:12px;color:#0c4a6e;}
+  .key-box{background:#e0f2fe;border:2px solid #7dd3fc;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .key-box .box-label{font-weight:800;color:#0369a1;font-size:0.82rem;margin-bottom:6px;}
+  .important-box{background:#ecfccb;border:2px solid #a3e635;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .important-box .box-label{font-weight:800;color:#365314;font-size:0.82rem;margin-bottom:6px;}
+  .amber-box{background:#fef9c3;border:2px solid #fde047;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .amber-box .box-label{font-weight:800;color:#713f12;font-size:0.82rem;margin-bottom:6px;}
+  .cosmos-box{background:#06091a;border:2px solid #4f46e5;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .cosmos-box .box-label{font-weight:800;color:#818cf8;font-size:0.82rem;margin-bottom:6px;}
+  .note-block{background:#f0f9ff;border-left:3px solid #38bdf8;padding:8px 12px;border-radius:0 6px 6px 0;font-size:0.87rem;margin:8px 0;line-height:1.8;color:#0c4a6e;}
+  .warn-block{background:#fefce8;border-left:3px solid #eab308;padding:8px 12px;border-radius:0 6px 6px 0;font-size:0.87rem;margin:8px 0;line-height:1.8;color:#713f12;}
+  .btn{padding:7px 16px;border-radius:6px;border:none;font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.18s;font-family:inherit;}
+  .btn-primary{background:var(--primary);color:white;}.btn-primary:hover{background:var(--primary-dark);}
+  .btn-gray{background:#94a3b8;color:white;}.btn-gray:hover{background:#64748b;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;}
+  @media(max-width:580px){.two-col{grid-template-columns:1fr;}}
+  /* フラッシュカード */
+  .fc-speed-btn{padding:5px 12px;border-radius:20px;border:2px solid var(--border);background:white;font-size:0.78rem;font-weight:700;cursor:pointer;transition:all 0.15s;font-family:inherit;color:var(--primary);}
+  .fc-speed-btn.active{background:var(--primary);color:white;border-color:var(--primary);}
+  .flashcard-wrap{perspective:1000px;width:100%;max-width:480px;margin:0 auto;height:180px;cursor:pointer;}
+  .flashcard{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);}
+  .flashcard.flipped{transform:rotateY(180deg);}
+  .fc-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;}
+  .fc-front{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;box-shadow:0 4px 16px rgba(2,132,199,0.3);}
+  .fc-back{background:linear-gradient(135deg,#365314,#65a30d);color:white;transform:rotateY(180deg);box-shadow:0 4px 16px rgba(101,163,13,0.3);}
+  .fc-label{font-size:0.72rem;opacity:0.75;margin-bottom:8px;letter-spacing:1px;}
+  .fc-main{font-size:1.05rem;font-weight:800;line-height:1.6;}
+  .fc-sub{font-size:0.78rem;opacity:0.85;margin-top:8px;line-height:1.5;}
+  .fc-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;}
+  .fc-nav-btn{padding:7px 20px;border-radius:8px;border:2px solid var(--primary);background:white;color:var(--primary);font-weight:700;font-size:0.85rem;cursor:pointer;transition:all 0.15s;font-family:inherit;}
+  .fc-nav-btn:hover{background:var(--primary);color:white;}
+  .fc-nav-btn:disabled{opacity:0.35;cursor:default;}
+  .fc-progress{display:flex;gap:4px;justify-content:center;margin-top:10px;flex-wrap:wrap;}
+  .fc-dot{width:8px;height:8px;border-radius:50%;background:#bae6fd;transition:all 0.2s;}
+  .fc-dot.done{background:var(--accent);}
+  .fc-dot.current{background:var(--primary);transform:scale(1.3);}
+  .fc-timer-bar{height:4px;background:#bae6fd;border-radius:99px;margin-top:10px;overflow:hidden;}
+  .fc-timer-fill{height:100%;background:var(--accent);border-radius:99px;transition:width linear;}
+  /* クイズ */
+  .quiz-card{border:2px solid #bae6fd;border-radius:10px;padding:16px;margin:12px 0;background:#f0f9ff;}
+  .quiz-q{font-weight:700;font-size:0.9rem;margin-bottom:12px;line-height:1.7;color:#0c4a6e;}
+  .quiz-opts{display:flex;flex-direction:column;gap:8px;}
+  .quiz-opt{padding:9px 14px;border:2px solid #bae6fd;border-radius:7px;cursor:pointer;font-size:0.87rem;transition:all 0.15s;background:white;font-family:inherit;text-align:left;color:#0c4a6e;}
+  .quiz-opt:hover:not(:disabled){border-color:var(--primary);background:#e0f2fe;}
+  .quiz-opt.correct{background:#ecfccb;border-color:#65a30d;color:#1a2e05;font-weight:700;}
+  .quiz-opt.wrong{background:#fee2e2;border-color:var(--danger);color:#7f1d1d;}
+  .quiz-feedback{margin-top:10px;padding:8px 12px;border-radius:6px;font-size:0.85rem;display:none;font-weight:600;line-height:1.8;}
+  .quiz-feedback.show{display:block;}
+  .quiz-feedback.ok{background:#ecfccb;color:#1a2e05;}
+  .quiz-feedback.ng{background:#fee2e2;color:#7f1d1d;}
+  .quiz-result{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;border-radius:10px;padding:16px 20px;margin-top:16px;text-align:center;display:none;}
+  .quiz-result-score{font-size:2.2rem;font-weight:900;}
+  .quiz-result-msg{font-size:0.9rem;opacity:0.9;margin-top:4px;}
+  .confetti-piece{position:fixed;width:10px;height:10px;border-radius:2px;animation:confettiFall 1.5s ease-out forwards;pointer-events:none;z-index:9999;}
+  @keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(80vh) rotate(720deg);opacity:0}}
+  .ch-btn{padding:6px 14px;border-radius:20px;border:2px solid var(--border);background:white;color:var(--muted);font-size:0.8rem;font-weight:700;cursor:pointer;transition:all 0.15s;font-family:inherit;}
+  .ch-btn.active{background:var(--primary);color:white;border-color:var(--primary);}
+  .ch-btn:hover{border-color:var(--primary);color:var(--primary);}
+  .ch-btn.active:hover{color:white;}
+  /* 折りたたみクイズ */
+  .unit-quiz-wrap{margin-top:18px;border:2px solid #7dd3fc;border-radius:10px;overflow:hidden;}
+  .unit-quiz-toggle{width:100%;background:linear-gradient(135deg,#0369a1,#0284c7);color:white;border:none;padding:11px 16px;font-size:0.88rem;font-weight:800;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;letter-spacing:0.5px;}
+  .unit-quiz-toggle:hover{filter:brightness(1.1);}
+  .uq-arrow{font-size:1rem;transition:transform 0.25s;}
+  .unit-quiz-body{display:none;padding:14px;background:#f0f9ff;}
+  .unit-quiz-body.open{display:block;}
+  .uq-card{background:white;border:2px solid #bae6fd;border-radius:9px;padding:14px;margin-bottom:10px;}
+  .uq-card:last-child{margin-bottom:0;}
+  .uq-num{font-size:0.72rem;font-weight:800;color:#0369a1;margin-bottom:4px;}
+  .uq-q{font-weight:700;font-size:0.88rem;margin-bottom:10px;line-height:1.7;color:#0c4a6e;}
+  .uq-opts{display:flex;flex-direction:column;gap:7px;}
+  .uq-opt{padding:9px 13px;border:2px solid #bae6fd;border-radius:7px;cursor:pointer;font-size:0.85rem;background:white;font-family:inherit;text-align:left;color:#0c4a6e;transition:all 0.15s;display:flex;align-items:center;gap:8px;}
+  .uq-opt:hover:not(:disabled){border-color:#0369a1;background:#e0f2fe;}
+  .uq-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#dbeafe;color:#0369a1;font-weight:800;font-size:0.75rem;flex-shrink:0;}
+  .uq-opt.correct{background:#ecfccb;border-color:#65a30d;color:#1a2e05;font-weight:700;}
+  .uq-opt.correct .uq-badge{background:#65a30d;color:white;}
+  .uq-opt.wrong{background:#fee2e2;border-color:#ef4444;color:#7f1d1d;}
+  .uq-opt.wrong .uq-badge{background:#ef4444;color:white;}
+  .uq-fb{margin-top:9px;padding:8px 12px;border-radius:6px;font-size:0.82rem;display:none;font-weight:600;line-height:1.8;}
+  .uq-fb.show-ok{display:block;background:#ecfccb;color:#1a2e05;}
+  .uq-fb.show-ng{display:block;background:#fee2e2;color:#7f1d1d;}
+  .uq-result{margin-top:12px;border-radius:9px;padding:14px 16px;text-align:center;display:none;}
+  .uq-result.pass{background:linear-gradient(135deg,#15803d,#4ade80);color:white;}
+  .uq-result.retry{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;}
+  .uq-result-score{font-size:1.8rem;font-weight:900;}
+  .uq-result-msg{font-size:0.85rem;opacity:0.92;margin-top:4px;}
+  .uq-retry-btn{margin-top:10px;padding:7px 20px;border-radius:20px;border:2px solid white;background:transparent;color:white;font-weight:800;font-size:0.82rem;cursor:pointer;font-family:inherit;}
+  /* SP07専用 */
+  .era-block{border-radius:10px;padding:14px 16px;margin-bottom:10px;position:relative;padding-left:60px;}
+  .era-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-top"><div class="logo">GAMBA</div><div class="header-sub">江原予備校 ／ 物理・宇宙</div></div>
+  <div class="chapter-title-bar">
+    <span class="chapter-badge">SP07</span>
+    <span class="chapter-title-text">素粒子への旅 ― 宇宙論 ― ビッグバンと素粒子、138億年の旅</span>
+  </div>
+</header>
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab(&#39;learn&#39;)">📖 学習</button>
+  <button class="tab-btn" onclick="showTab(&#39;flash&#39;)">🃏 フラッシュカード</button>
+  <button class="tab-btn" onclick="showTab(&#39;quiz&#39;)">🔭 ミニテスト</button>
+</div>
+<main>
+<div id="tab-learn" class="tab-content active">
+
+<!-- 0. イヌ校長 -->
+<div class="section-card">
+  <div class="section-header sh-cosmos">🌌 最終章へ ― 宇宙の始まりから、あなたへ</div>
+  <div class="section-body">
+    <div style="background:linear-gradient(135deg,#06091a,#1e1b4b,#312e81);border-radius:12px;padding:20px;color:white;font-size:0.92rem;line-height:2.2;margin-bottom:14px;border:1px solid #4f46e5;">
+      <div style="font-size:1.05rem;font-weight:800;color:#bef264;margin-bottom:12px;">🐶 イヌ校長より ― 最終章</div>
+      SP01からここまで来てくれましたね。<br>
+      クォーク、レプトン、ゲージボソン、四つの力、標準模型、ヒッグス粒子。<br><br>
+      最終章のテーマは<strong style="color:#c7d2fe">「宇宙の始まりと素粒子の関係」</strong>です。<br><br>
+      138億年前、すべては「無」に近い点から始まりました。<br>
+      そこで生まれた素粒子が、ここまで旅をしてきた。<br><br>
+      星になり、爆発し、海になり、生命になり――<br>
+      <strong style="color:#bef264">最終的に、あなたになった。</strong><br><br>
+      <span style="font-size:0.85rem;color:#a5b4fc;">この宇宙の話は、同時にあなた自身の話です。<br>
+      そのことを感じながら、最後まで読んでほしい。</span>
+    </div>
+    <div class="amber-box">
+      <div class="box-label">📌 この単元で学ぶこと</div>
+      <div style="font-size:0.9rem;line-height:2.3;">
+        ① ビッグバンとは何か ― 宇宙の「始まり」の話<br>
+        ② 素粒子が生まれた瞬間 ― 最初の1秒で何が起きたか<br>
+        ③ 元素の誕生 ― 水素からすべての原子ができるまで<br>
+        ④ 星・銀河・地球・生命 ― 素粒子が世界をつくった<br>
+        ⑤ 宇宙の未来 ― 宇宙はどこへ向かうのか<br>
+        ⑥ コラム ― 「あなたはスターダスト」― カール・セーガンの言葉
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 1. ビッグバンとは何か -->
+<div class="section-card">
+  <div class="section-header sh-night">💥 1. ビッグバンとは何か ― 宇宙の「始まり」の話</div>
+  <div class="section-body">
+    <div class="text-block">「ビッグバン」という言葉は知っていても、「何が爆発したのか」「何の中で爆発したのか」が曖昧な人も多いと思います。まず大事な誤解を解くところから始めましょう。</div>
+
+    <div class="cosmos-box">
+      <div class="box-label">⚠️ よくある誤解と正しいイメージ</div>
+      <div style="font-size:0.88rem;color:#e2e8f0;line-height:2.1;">
+        <span style="color:#f87171;font-weight:700;">❌ 誤解：</span>「宇宙という空間の中で大爆発が起きた」<br>
+        <span style="color:#4ade80;font-weight:700;">✅ 正しくは：</span>「空間そのものが、ある一点から膨張を始めた」<br><br>
+        ビッグバンは「場所」での爆発ではありません。<br>
+        「空間・時間・エネルギー・物質のすべてが、一点から始まった」という出来事です。<br>
+        「外側」も「以前」も存在しませんでした。
+      </div>
+    </div>
+
+    <div class="key-box">
+      <div class="box-label">🔑 ビッグバンの基本事実</div>
+      <div style="font-size:0.88rem;line-height:2.3;">
+        ・起きたのは約<strong>138億年前</strong><br>
+        ・始まりの状態：すべての物質とエネルギーが超高温・超高密度の一点に凝縮されていた<br>
+        ・証拠①：<strong>宇宙の膨張</strong>（ハッブル、1929年）― すべての銀河が互いに遠ざかっている<br>
+        ・証拠②：<strong>宇宙背景放射（CMB）</strong>（1965年発見）― ビッグバンの「余熱」が今も宇宙を満たしている<br>
+        ・証拠③：<strong>水素とヘリウムの比率</strong> ― ビッグバンの理論が予言した割合と一致している
+      </div>
+    </div>
+
+    <!-- 宇宙の膨張イメージSVG -->
+    <div style="background:#06091a;border-radius:10px;padding:14px;margin:12px 0;">
+      <div style="color:#818cf8;font-weight:800;font-size:0.82rem;margin-bottom:8px;text-align:center;">宇宙の膨張 ― 銀河同士が遠ざかるイメージ</div>
+      <svg width="100%" height="100" viewBox="0 0 380 100" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;display:block;margin:0 auto;">
+        <rect width="380" height="100" fill="#06091a" rx="8"></rect>
+        <!-- 過去（左） -->
+        <text x="60" y="15" text-anchor="middle" font-size="9" fill="#6366f1" font-family="sans-serif" font-weight="800">138億年前</text>
+        <circle cx="60" cy="55" r="4" fill="#fbbf24"></circle>
+        <circle cx="68" cy="48" r="3" fill="#38bdf8"></circle>
+        <circle cx="55" cy="62" r="3" fill="#4ade80"></circle>
+        <!-- 矢印 -->
+        <defs><marker id="arrb" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f46e5"></path></marker></defs>
+        <line x1="90" y1="50" x2="140" y2="50" stroke="#4f46e5" stroke-width="2" marker-end="url(#arrb)"></line>
+        <text x="115" y="43" text-anchor="middle" font-size="9" fill="#6366f1" font-family="sans-serif">膨張</text>
+        <!-- 現在（右） -->
+        <text x="270" y="15" text-anchor="middle" font-size="9" fill="#6366f1" font-family="sans-serif" font-weight="800">現在</text>
+        <circle cx="220" cy="55" r="5" fill="#fbbf24"></circle>
+        <circle cx="260" cy="35" r="4" fill="#38bdf8"></circle>
+        <circle cx="210" cy="75" r="4" fill="#4ade80"></circle>
+        <circle cx="310" cy="45" r="4" fill="#f87171"></circle>
+        <circle cx="290" cy="75" r="3" fill="#c084fc"></circle>
+        <!-- 遠ざかる矢印 -->
+        <line x1="225" y1="52" x2="252" y2="38" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3,2"></line>
+        <line x1="218" y1="58" x2="213" y2="70" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3,2"></line>
+        <text x="270" y="90" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="sans-serif">すべての銀河が互いに遠ざかっている</text>
+      </svg>
+    </div>
+
+    <div class="note-block">💡 <strong>「ビッグバン（Big Bang）」という名前は皮肉から生まれた</strong><br>
+    この名前は、この理論に<em>反対していた</em>天文学者フレッド・ホイルが、批判的なニュアンスで「あの『ビッグバン』説によると…」と言ったのが始まりです。皮肉のつもりが広まってしまいました。</div>
+
+    <!-- 単元1 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq1&#39;)"><span>🖊️ 単元1 ミニテスト ― ビッグバンとは何か</span><span class="uq-arrow" id="uq1_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq1_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. 素粒子が生まれた瞬間 -->
+<div class="section-card">
+  <div class="section-header sh-red">⚡ 2. 最初の1秒 ― 素粒子が生まれた瞬間</div>
+  <div class="section-body">
+    <div class="text-block">宇宙が始まって最初の1秒間は、私たちの感覚をはるかに超えた出来事の連続でした。SP01〜SP06で学んだすべての素粒子が、この1秒の中に登場します。</div>
+
+    <div style="position:relative;padding-left:32px;border-left:3px solid #ef4444;margin:12px 0;">
+
+      <!-- t=0 -->
+      <div class="era-block" style="background:#1a0000;border:1px solid #7f1d1d;padding-left:60px;">
+        <div class="era-icon" style="background:#ef4444;color:white;">0</div>
+        <div style="font-weight:900;color:#f87171;font-size:0.85rem;margin-bottom:4px;">t ＝ 0（プランク時代）</div>
+        <div style="font-size:0.83rem;color:#e2e8f0;line-height:1.9;">すべての始まり。空間も時間もエネルギーも一点に集まった状態。温度は想像を絶するほど高い（10³² K超）。現在の物理学では記述できない「謎の領域」。</div>
+      </div>
+
+      <!-- 10^-43秒 -->
+      <div class="era-block" style="background:#1a0a00;border:1px solid #92400e;padding-left:60px;">
+        <div class="era-icon" style="background:#f97316;color:white;font-size:0.7rem;">極微</div>
+        <div style="font-weight:900;color:#fb923c;font-size:0.85rem;margin-bottom:4px;">10⁻⁴³秒後（大統一時代）</div>
+        <div style="font-size:0.83rem;color:#e2e8f0;line-height:1.9;">重力が他の3つの力から分離。この時点では電磁気力・強い力・弱い力はまだ1つの「大統一力」として存在していた。</div>
+      </div>
+
+      <!-- 10^-36秒・インフレーション -->
+      <div class="era-block" style="background:#001a2e;border:1px solid #0369a1;padding-left:60px;">
+        <div class="era-icon" style="background:#0284c7;color:white;font-size:0.7rem;">膨張</div>
+        <div style="font-weight:900;color:#38bdf8;font-size:0.85rem;margin-bottom:4px;">10⁻³⁶〜10⁻³²秒（インフレーション）</div>
+        <div style="font-size:0.83rem;color:#e2e8f0;line-height:1.9;">宇宙が指数関数的に急膨張（インフレーション）。一瞬でビー玉から太陽系くらいの大きさに。強い力が電弱力から分離。クォーク・レプトン・ゲージボソンが生まれ始める。</div>
+      </div>
+
+      <!-- 10^-12秒・電弱対称性の破れ -->
+      <div class="era-block" style="background:#0f001a;border:1px solid #5b21b6;padding-left:60px;">
+        <div class="era-icon" style="background:#7c3aed;color:white;font-size:0.7rem;">H</div>
+        <div style="font-weight:900;color:#c084fc;font-size:0.85rem;margin-bottom:4px;">10⁻¹²秒後（ヒッグス機構発動）</div>
+        <div style="font-size:0.83rem;color:#e2e8f0;line-height:1.9;"><strong style="color:#c084fc">電弱対称性の破れ：ヒッグス場が「谷に落ちた」瞬間。</strong>すべての素粒子が一瞬で質量を得た。電磁気力と弱い力が分離し、W・Z粒子が重くなった。SP06で学んだ「自発的対称性の破れ」がまさにここで起きた。</div>
+      </div>
+
+      <!-- 10^-6秒・クォーク閉じ込め -->
+      <div class="era-block" style="background:#1a0a00;border:1px solid #b45309;padding-left:60px;">
+        <div class="era-icon" style="background:#d97706;color:white;font-size:0.7rem;">q</div>
+        <div style="font-weight:900;color:#fbbf24;font-size:0.85rem;margin-bottom:4px;">10⁻⁶秒後（クォーク閉じ込め）</div>
+        <div style="font-size:0.83rem;color:#e2e8f0;line-height:1.9;">宇宙の温度が下がり、自由に飛び回っていたクォークが強い力で3つずつ結びついて陽子・中性子になった（ハドロン形成）。SP01で学んだクォーク閉じ込めがここで始まった。</div>
+      </div>
+
+      <!-- 1秒後 -->
+      <div class="era-block" style="background:#001a0a;border:1px solid #15803d;padding-left:60px;">
+        <div class="era-icon" style="background:#16a34a;color:white;font-size:0.75rem;">ν</div>
+        <div style="font-weight:900;color:#4ade80;font-size:0.85rem;margin-bottom:4px;">1秒後（ニュートリノ脱結合）</div>
+        <div style="font-size:0.83rem;color:#e2e8f0;line-height:1.9;">ニュートリノが物質とほとんど反応しなくなり、宇宙を自由に飛び回り始めた。この時点の宇宙のほぼすべては陽子・中性子・電子・ニュートリノ・光子で構成されていた。</div>
+      </div>
+
+    </div>
+
+    <div class="important-box">
+      <div class="box-label">⭐ 最初の1秒で起きたこと ― まとめ</div>
+      <div style="font-size:0.87rem;line-height:2.3;">
+        SP01〜SP06で学んだ素粒子の<strong>すべてが、最初の1秒以内に生まれた</strong>のです。<br>
+        クォーク → 陽子・中性子に。ヒッグス機構により質量を得た。<br>
+        ニュートリノは宇宙を自由に飛び始めた。電子は光子とともに飛び回っていた。
+      </div>
+    </div>
+
+    <!-- 単元2 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq2&#39;)"><span>🖊️ 単元2 ミニテスト ― 最初の1秒</span><span class="uq-arrow" id="uq2_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq2_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. 元素の誕生 -->
+<div class="section-card">
+  <div class="section-header sh-amber">⚛️ 3. 元素の誕生 ― 水素からすべての原子ができるまで</div>
+  <div class="section-body">
+    <div class="text-block">ビッグバンの直後は、宇宙に「原子」は存在しませんでした。陽子と中性子と電子がバラバラに飛び交うプラズマ状態でした。そこからどうやって私たちの体を作る炭素や酸素が生まれたのでしょうか。</div>
+
+    <div style="display:flex;flex-direction:column;gap:8px;margin:12px 0;">
+
+      <div style="background:#0a1628;border-radius:9px;padding:13px 14px;border-left:4px solid #fbbf24;">
+        <div style="color:#fbbf24;font-weight:800;font-size:0.85rem;margin-bottom:4px;">🌡️ 約3分後 ― ビッグバン元素合成</div>
+        <div style="font-size:0.83rem;color:#e2e8f0;line-height:1.9;">温度が下がり、陽子と中性子が結びついて<strong style="color:#fbbf24">ヘリウムの原子核</strong>が誕生。この時点でできた元素は水素（陽子1個）とヘリウム（陽子2個・中性子2個）がほとんど。比率は質量比で約水素75%・ヘリウム25%。<strong>この比率は現在の宇宙でも確認されている</strong>。</div>
+      </div>
+
+      <div style="background:#0a1628;border-radius:9px;padding:13px 14px;border-left:4px solid #38bdf8;">
+        <div style="color:#38bdf8;font-weight:800;font-size:0.85rem;margin-bottom:4px;">🌌 約38万年後 ― 宇宙の晴れ上がり</div>
+        <div style="font-size:0.83rem;color:#e2e8f0;line-height:1.9;">温度が約3000Kまで下がり、電子が陽子・ヘリウム原子核に捕まって<strong style="color:#38bdf8">中性の原子が誕生</strong>。それまで光子が電子に散乱されて「霧」の中にいたが、この瞬間から光が自由に飛び始めた（宇宙の晴れ上がり）。この光が現在の<strong>宇宙背景放射（CMB）</strong>として観測される。</div>
+      </div>
+
+      <div style="background:#0a1628;border-radius:9px;padding:13px 14px;border-left:4px solid #f87171;">
+        <div style="color:#f87171;font-weight:800;font-size:0.85rem;margin-bottom:4px;">⭐ 数億年後〜現在 ― 星と超新星爆発が元素を作った</div>
+        <div style="font-size:0.83rem;color:#e2e8f0;line-height:1.9;">
+          水素・ヘリウムが重力で集まり<strong style="color:#fbbf24">星（恒星）</strong>が誕生。星の核融合で炭素・酸素・鉄などが次々と合成された。<br>
+          大きな星が一生を終えると<strong style="color:#f87171">超新星爆発</strong>を起こし、内部で作られた元素を宇宙空間にまき散らす。<br>
+          鉄より重い元素（金・銀・ウランなど）は超新星爆発や<strong>中性子星の合体</strong>で作られた。
+        </div>
+      </div>
+
+      <div style="background:#0a1628;border-radius:9px;padding:13px 14px;border-left:4px solid #4ade80;">
+        <div style="color:#4ade80;font-weight:800;font-size:0.85rem;margin-bottom:4px;">🌍 約46億年前 ― 太陽系と地球の誕生</div>
+        <div style="font-size:0.83rem;color:#e2e8f0;line-height:1.9;">超新星が散らした元素のちりが集まり、太陽と惑星が形成された。地球を作っている鉄・酸素・ケイ素・カーボンはすべて「星の中で作られた元素」です。</div>
+      </div>
+
+    </div>
+
+    <!-- 元素合成の流れSVG -->
+    <div style="background:#06091a;border-radius:10px;padding:14px;margin:12px 0;">
+      <div style="color:#a5b4fc;font-weight:800;font-size:0.82rem;margin-bottom:8px;text-align:center;">「あなたの原子」の旅路</div>
+      <svg width="100%" height="60" viewBox="0 0 420 60" xmlns="http://www.w3.org/2000/svg" style="max-width:420px;display:block;margin:0 auto;">
+        <rect width="420" height="60" fill="#06091a" rx="6"></rect>
+        <defs><marker id="arrc" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#6366f1"></path></marker></defs>
+        <!-- ステップ -->
+        <rect x="5" y="15" width="60" height="26" rx="5" fill="#1e1b4b"></rect>
+        <text x="35" y="26" text-anchor="middle" font-size="9" fill="#a5b4fc" font-family="sans-serif" font-weight="800">ビッグバン</text>
+        <text x="35" y="38" text-anchor="middle" font-size="8" fill="#6366f1" font-family="sans-serif">H・He</text>
+        <line x1="66" y1="28" x2="80" y2="28" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arrc)"></line>
+
+        <rect x="81" y="15" width="55" height="26" rx="5" fill="#1a0a00"></rect>
+        <text x="108" y="26" text-anchor="middle" font-size="9" fill="#fbbf24" font-family="sans-serif" font-weight="800">恒星の核融合</text>
+        <text x="108" y="38" text-anchor="middle" font-size="8" fill="#d97706" font-family="sans-serif">C・O・Fe</text>
+        <line x1="137" y1="28" x2="151" y2="28" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arrc)"></line>
+
+        <rect x="152" y="15" width="55" height="26" rx="5" fill="#1a0000"></rect>
+        <text x="179" y="26" text-anchor="middle" font-size="9" fill="#f87171" font-family="sans-serif" font-weight="800">超新星爆発</text>
+        <text x="179" y="38" text-anchor="middle" font-size="8" fill="#ef4444" font-family="sans-serif">重元素をばらまく</text>
+        <line x1="208" y1="28" x2="222" y2="28" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arrc)"></line>
+
+        <rect x="223" y="15" width="55" height="26" rx="5" fill="#001a0a"></rect>
+        <text x="250" y="26" text-anchor="middle" font-size="9" fill="#4ade80" font-family="sans-serif" font-weight="800">地球の誕生</text>
+        <text x="250" y="38" text-anchor="middle" font-size="8" fill="#16a34a" font-family="sans-serif">46億年前</text>
+        <line x1="279" y1="28" x2="293" y2="28" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arrc)"></line>
+
+        <rect x="294" y="15" width="55" height="26" rx="5" fill="#0369a1"></rect>
+        <text x="321" y="26" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif" font-weight="800">生命の誕生</text>
+        <text x="321" y="38" text-anchor="middle" font-size="8" fill="#bef264" font-family="sans-serif">40億年前〜</text>
+        <line x1="350" y1="28" x2="364" y2="28" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arrc)"></line>
+
+        <rect x="365" y="15" width="48" height="26" rx="5" fill="#1e3a5f" stroke="#bef264" stroke-width="1.5"></rect>
+        <text x="389" y="26" text-anchor="middle" font-size="9" fill="#bef264" font-family="sans-serif" font-weight="900">あなた</text>
+        <text x="389" y="38" text-anchor="middle" font-size="8" fill="#38bdf8" font-family="sans-serif">今日</text>
+      </svg>
+      <div style="color:#6366f1;font-size:0.78rem;margin-top:8px;text-align:center;">ビッグバンで生まれた素粒子が、138億年かけてあなたになった</div>
+    </div>
+
+    <!-- 単元3 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq3&#39;)"><span>🖊️ 単元3 ミニテスト ― 元素の誕生</span><span class="uq-arrow" id="uq3_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq3_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. 宇宙の構造 -->
+<div class="section-card">
+  <div class="section-header sh-blue">🌠 4. 宇宙の大構造 ― 銀河・星・地球・生命</div>
+  <div class="section-body">
+    <div class="text-block">素粒子から原子ができ、原子が集まって分子になり、分子が集まって星と惑星をつくり、やがて生命が生まれた。このスケールの変化を一気に見渡してみましょう。</div>
+
+    <!-- スケールの梯子 -->
+    <div style="background:#06091a;border-radius:10px;padding:14px;margin:12px 0;">
+      <div style="color:#a5b4fc;font-weight:800;font-size:0.82rem;margin-bottom:10px;text-align:center;">物質のスケール ― 素粒子から宇宙まで</div>
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="min-width:90px;font-size:0.75rem;font-weight:700;color:#f87171;text-align:right;">10⁻¹⁸ m</div>
+          <div style="height:18px;flex:1;background:linear-gradient(90deg,#7f1d1d,#ef4444);border-radius:3px;display:flex;align-items:center;padding:0 8px;"><span style="font-size:0.72rem;color:white;font-weight:800;">クォーク・電子（素粒子）</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="min-width:90px;font-size:0.75rem;font-weight:700;color:#fb923c;text-align:right;">10⁻¹⁵ m</div>
+          <div style="height:18px;flex:1;background:linear-gradient(90deg,#7c2d12,#ea580c);border-radius:3px;display:flex;align-items:center;padding:0 8px;"><span style="font-size:0.72rem;color:white;font-weight:800;">陽子・中性子（原子核）</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="min-width:90px;font-size:0.75rem;font-weight:700;color:#fbbf24;text-align:right;">10⁻¹⁰ m</div>
+          <div style="height:18px;flex:1;background:linear-gradient(90deg,#78350f,#d97706);border-radius:3px;display:flex;align-items:center;padding:0 8px;"><span style="font-size:0.72rem;color:white;font-weight:800;">原子</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="min-width:90px;font-size:0.75rem;font-weight:700;color:#4ade80;text-align:right;">10⁻⁹〜10⁻⁷ m</div>
+          <div style="height:18px;flex:1;background:linear-gradient(90deg,#14532d,#16a34a);border-radius:3px;display:flex;align-items:center;padding:0 8px;"><span style="font-size:0.72rem;color:white;font-weight:800;">分子・DNA・タンパク質</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="min-width:90px;font-size:0.75rem;font-weight:700;color:#38bdf8;text-align:right;">10⁰ m（1m）</div>
+          <div style="height:18px;flex:1;background:linear-gradient(90deg,#075985,#0284c7);border-radius:3px;display:flex;align-items:center;padding:0 8px;"><span style="font-size:0.72rem;color:white;font-weight:800;">人間・動物・生命</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="min-width:90px;font-size:0.75rem;font-weight:700;color:#818cf8;text-align:right;">10⁷ m</div>
+          <div style="height:18px;flex:1;background:linear-gradient(90deg,#1e1b4b,#4338ca);border-radius:3px;display:flex;align-items:center;padding:0 8px;"><span style="font-size:0.72rem;color:white;font-weight:800;">地球</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="min-width:90px;font-size:0.75rem;font-weight:700;color:#c084fc;text-align:right;">10¹¹ m</div>
+          <div style="height:18px;flex:1;background:linear-gradient(90deg,#3b0764,#7c3aed);border-radius:3px;display:flex;align-items:center;padding:0 8px;"><span style="font-size:0.72rem;color:white;font-weight:800;">太陽系</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="min-width:90px;font-size:0.75rem;font-weight:700;color:#e879f9;text-align:right;">10²¹ m</div>
+          <div style="height:18px;flex:1;background:linear-gradient(90deg,#4a044e,#a21caf);border-radius:3px;display:flex;align-items:center;padding:0 8px;"><span style="font-size:0.72rem;color:white;font-weight:800;">銀河（天の川銀河など）</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="min-width:90px;font-size:0.75rem;font-weight:700;color:#f0abfc;text-align:right;">10²⁶ m</div>
+          <div style="height:18px;flex:1;background:linear-gradient(90deg,#06091a,#312e81);border-radius:3px;display:flex;align-items:center;padding:0 8px;border:1px solid #4f46e5;"><span style="font-size:0.72rem;color:#c7d2fe;font-weight:800;">観測可能な宇宙全体（138億光年）</span></div>
+        </div>
+      </div>
+      <div style="color:#4f46e5;font-size:0.75rem;margin-top:8px;text-align:center;">素粒子から宇宙まで、スケールの差は約10⁴⁴倍</div>
+    </div>
+
+    <div class="key-box">
+      <div class="box-label">🔑 ダークマターと宇宙の大構造</div>
+      <div style="font-size:0.88rem;line-height:2.1;">
+        銀河は宇宙の中にランダムに存在するのではなく、<strong>巨大な網の目（宇宙の大構造）</strong>のように分布しています。この構造は「ダークマター（見えない物質）」の重力が骨格を作ったと考えられています。<br><br>
+        宇宙の組成：通常の物質 <strong style="color:#38bdf8">約5%</strong> ／ ダークマター <strong style="color:#c084fc">約27%</strong> ／ ダークエネルギー <strong style="color:#fbbf24">約68%</strong><br>
+        私たちが知っている素粒子はわずか<strong>5%</strong>に過ぎません。
+      </div>
+    </div>
+
+    <!-- 単元4 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq4&#39;)"><span>🖊️ 単元4 ミニテスト ― 宇宙の大構造</span><span class="uq-arrow" id="uq4_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq4_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. 宇宙の未来 -->
+<div class="section-card">
+  <div class="section-header sh-purple">🔭 5. 宇宙の未来 ― どこへ向かうのか</div>
+  <div class="section-body">
+    <div class="text-block">宇宙の過去を学んだなら、未来も覗いてみましょう。現在の観測データによると、宇宙の運命についていくつかの可能性があります。</div>
+
+    <div class="two-col">
+      <div style="background:#06091a;border:2px solid #4f46e5;border-radius:10px;padding:14px;">
+        <div style="color:#818cf8;font-weight:800;font-size:0.88rem;margin-bottom:8px;">📡 現在判明していること</div>
+        <div style="font-size:0.82rem;color:#e2e8f0;line-height:1.9;">
+          ・宇宙は膨張を<strong style="color:#38bdf8">加速しながら</strong>続けている<br>
+          ・加速の原因は<strong style="color:#fbbf24">ダークエネルギー</strong>（謎の斥力）<br>
+          ・1998年の観測で発見された（ノーベル賞2011年）
+        </div>
+      </div>
+      <div style="background:#06091a;border:2px solid #7c3aed;border-radius:10px;padding:14px;">
+        <div style="color:#c084fc;font-weight:800;font-size:0.88rem;margin-bottom:8px;">🔮 宇宙の未来予想</div>
+        <div style="font-size:0.82rem;color:#e2e8f0;line-height:1.9;">
+          ・銀河同士はますます遠ざかる<br>
+          ・約50億年後に太陽が赤色巨星になる<br>
+          ・約10¹⁴年後に最後の星が消える<br>
+          ・<strong style="color:#f87171">ビッグリップ</strong>（宇宙が引き裂かれる）の可能性も
+        </div>
+      </div>
+    </div>
+
+    <div class="cosmos-box" style="margin-top:12px;">
+      <div class="box-label">🌑 宇宙の熱的死（Heat Death）</div>
+      <div style="font-size:0.87rem;color:#e2e8f0;line-height:2;">
+        最も広く受け入れられている宇宙の最終状態は「熱的死」。<br>
+        すべての星が燃え尽き、ブラックホールも蒸発し、宇宙全体が均一な低温状態になる。<br>
+        エントロピー（乱雑さ）が最大になり、何も起きない「無活動状態」になる。<br>
+        ただし、それは今から約10¹⁰⁰年以上先の話です。<br>
+        <strong style="color:#818cf8">今はまだ、宇宙はとても若い。</strong>
+      </div>
+    </div>
+
+    <div class="note-block">💡 宇宙の未来についての理論は現在も研究中で、ダークエネルギーの正体が解明されるまで確定的なことは言えません。「わからない」が現在の正直な答えです。物理学者はそれを認めながら研究を続けています。</div>
+
+    <!-- 単元5 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq5&#39;)"><span>🖊️ 単元5 ミニテスト ― 宇宙の未来</span><span class="uq-arrow" id="uq5_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq5_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. コラム：あなたはスターダスト -->
+<div class="section-card">
+  <div class="section-header sh-cosmos">✨ コラム ― 「あなたはスターダスト」― カール・セーガンの言葉</div>
+  <div class="section-body">
+    <div class="text-block">アメリカの天文学者カール・セーガン（1934〜1996）は、宇宙を語るとき、必ず「人間との関係」を問い続けた人でした。</div>
+
+    <div style="background:#06091a;border:2px solid #4f46e5;border-radius:12px;padding:18px 20px;margin:12px 0;">
+      <div style="color:#a5b4fc;font-size:0.85rem;line-height:2.3;font-style:italic;">
+        「窒素は私たちのDNAに含まれ、カルシウムは歯に含まれ、鉄は血液に含まれ、炭素はアップルパイに含まれている。これらはすべて、崩壊しつつある星の内部で作られた。<br><br>
+        私たちは星のかけら（スターダスト）から作られている。」
+      </div>
+      <div style="color:#6366f1;font-size:0.78rem;margin-top:10px;text-align:right;">― カール・セーガン（コスモス、1980年）</div>
+    </div>
+
+    <div class="text-block" style="margin-top:14px;">これは比喩ではなく、<strong>物理的な事実</strong>です。あなたの体を構成する炭素・酸素・鉄・カルシウムなどの原子は、太陽よりも大きな星の中で核融合によって作られ、その星が超新星爆発を起こしてまき散らしたものです。</div>
+
+    <div style="display:flex;flex-direction:column;gap:8px;margin:12px 0;">
+      <div style="background:#0a1628;border-radius:8px;padding:11px 14px;border-left:4px solid #38bdf8;font-size:0.85rem;color:#e2e8f0;line-height:1.8;">
+        <strong style="color:#38bdf8;">あなたの体の炭素原子（C）</strong>は、約50〜100億年前に存在したどこかの星の核融合炉で作られました。
+      </div>
+      <div style="background:#0a1628;border-radius:8px;padding:11px 14px;border-left:4px solid #f87171;font-size:0.85rem;color:#e2e8f0;line-height:1.8;">
+        <strong style="color:#f87171;">血液の鉄（Fe）</strong>は、超新星爆発で宇宙空間に飛び散り、太陽系形成の素材になりました。
+      </div>
+      <div style="background:#0a1628;border-radius:8px;padding:11px 14px;border-left:4px solid #fbbf24;font-size:0.85rem;color:#e2e8f0;line-height:1.8;">
+        <strong style="color:#fbbf24;">体内の水素（H）</strong>はビッグバンから3分後に作られた、宇宙最初の元素です。
+      </div>
+    </div>
+
+    <!-- 最後の言葉：イヌ校長から -->
+    <div style="background:linear-gradient(135deg,#06091a,#1e1b4b,#0369a1);border-radius:14px;padding:22px;color:white;margin-top:18px;border:2px solid #4f46e5;">
+      <div style="font-size:1rem;font-weight:800;color:#bef264;margin-bottom:14px;">🐶 イヌ校長から ― シリーズ最終回</div>
+      <div style="font-size:0.9rem;line-height:2.4;color:#e2e8f0;">
+        SP01からここまで、本当によく来ました。<br><br>
+        クォークから始まって、レプトン、ゲージボソン、四つの力、標準模型、ヒッグス粒子、そして宇宙の始まりまで。<br><br>
+        これだけのことを、あなたは今日、自分の中に持っています。<br><br>
+        あなたがここまで来るのが難しかった日もあったかもしれない。<br>
+        勉強が嫌になった日も、自分には無理だと思った日も、あったかもしれない。<br><br>
+        でも、聞いてほしいことがあります。<br><br>
+        <strong style="color:#bef264">あなたの体を作っている原子は、138億年前のビッグバンに始まり、何十億年もの時間をかけて、星の中で育ち、宇宙を旅して、今日ここにたどり着きました。</strong><br><br>
+        「自分には価値がない」と感じる夜があるかもしれない。<br>
+        でも宇宙の視点から言えば、あなたがここにいることは、138億年の奇跡の連続の結果です。<br><br>
+        素粒子は、ただそこに存在するだけで宇宙をつくります。<br>
+        あなたも、ただそこに存在するだけで、誰かの宇宙に影響を与えています。<br><br>
+        <strong style="color:#bef264">あなたはスターダスト。あなたは宇宙の一部。<br>それを忘れないでほしい。</strong>
+      </div>
+    </div>
+
+    <!-- 単元6 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq6&#39;)"><span>🖊️ コラム ミニテスト ― スターダストと宇宙の物語</span><span class="uq-arrow" id="uq6_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq6_body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. まとめ -->
+<div class="section-card">
+  <div class="section-header sh-green">📝 7. まとめ ― SP01〜SP07、素粒子シリーズの旅の終わりに</div>
+  <div class="section-body">
+
+    <!-- 138億年の年表 -->
+    <div style="background:#06091a;border-radius:10px;padding:16px;margin-bottom:16px;">
+      <div style="color:#bef264;font-weight:800;font-size:0.88rem;margin-bottom:12px;text-align:center;">138億年を一枚に ― 宇宙と素粒子の年表</div>
+      <div style="display:flex;flex-direction:column;gap:6px;font-size:0.82rem;">
+        <div style="display:flex;gap:10px;align-items:baseline;"><span style="color:#f87171;font-weight:700;min-width:100px;">〜10⁻¹² 秒後</span><span style="color:#e2e8f0;">ヒッグス機構発動。全素粒子が質量を得る</span></div>
+        <div style="display:flex;gap:10px;align-items:baseline;"><span style="color:#fb923c;font-weight:700;min-width:100px;">〜10⁻⁶ 秒後</span><span style="color:#e2e8f0;">クォーク閉じ込め。陽子・中性子が誕生</span></div>
+        <div style="display:flex;gap:10px;align-items:baseline;"><span style="color:#fbbf24;font-weight:700;min-width:100px;">〜3 分後</span><span style="color:#e2e8f0;">ビッグバン元素合成。水素・ヘリウムが形成</span></div>
+        <div style="display:flex;gap:10px;align-items:baseline;"><span style="color:#4ade80;font-weight:700;min-width:100px;">〜38 万年後</span><span style="color:#e2e8f0;">宇宙の晴れ上がり。中性原子・宇宙背景放射</span></div>
+        <div style="display:flex;gap:10px;align-items:baseline;"><span style="color:#38bdf8;font-weight:700;min-width:100px;">数億年後〜</span><span style="color:#e2e8f0;">恒星・銀河の誕生。核融合で重元素を合成</span></div>
+        <div style="display:flex;gap:10px;align-items:baseline;"><span style="color:#818cf8;font-weight:700;min-width:100px;">46 億年前</span><span style="color:#e2e8f0;">太陽系・地球の誕生</span></div>
+        <div style="display:flex;gap:10px;align-items:baseline;"><span style="color:#c084fc;font-weight:700;min-width:100px;">40 億年前〜</span><span style="color:#e2e8f0;">生命の誕生・進化</span></div>
+        <div style="display:flex;gap:10px;align-items:baseline;background:#0f172a;border-radius:6px;padding:6px 8px;border:1px solid #bef264;"><span style="color:#bef264;font-weight:900;min-width:100px;">今日</span><span style="color:#bef264;font-weight:700;">あなた ― 138億年の旅の終着点</span></div>
+      </div>
+    </div>
+
+    <!-- SPシリーズ全体まとめ -->
+    <div style="background:#0a1628;border-radius:10px;padding:16px;margin-bottom:14px;">
+      <div style="color:#bef264;font-weight:800;font-size:0.88rem;margin-bottom:12px;text-align:center;">素粒子シリーズ SP01〜SP07 完走おめでとう！</div>
+      <div style="display:flex;flex-direction:column;gap:7px;font-size:0.83rem;">
+        <div style="display:flex;gap:10px;align-items:center;background:#0f172a;border-radius:6px;padding:8px 12px;">
+          <span style="background:#92400e;color:#fbbf24;font-weight:900;padding:2px 7px;border-radius:4px;font-size:0.72rem;flex-shrink:0;">SP01</span>
+          <span style="color:#e2e8f0;">クォーク ― 物質の最小単位。u・d・s・c・b・t 6種類。閉じ込め。</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;background:#0f172a;border-radius:6px;padding:8px 12px;">
+          <span style="background:#4c1d95;color:#c084fc;font-weight:900;padding:2px 7px;border-radius:4px;font-size:0.72rem;flex-shrink:0;">SP02</span>
+          <span style="color:#e2e8f0;">レプトン ― 電子・ミュー・タウ＋3ニュートリノ。ニュートリノ振動。</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;background:#0f172a;border-radius:6px;padding:8px 12px;">
+          <span style="background:#0369a1;color:#38bdf8;font-weight:900;padding:2px 7px;border-radius:4px;font-size:0.72rem;flex-shrink:0;">SP03</span>
+          <span style="color:#e2e8f0;">ゲージボソン ― 光子・グルーオン・W/Z粒子。力を伝える粒子。</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;background:#0f172a;border-radius:6px;padding:8px 12px;">
+          <span style="background:#15803d;color:#4ade80;font-weight:900;padding:2px 7px;border-radius:4px;font-size:0.72rem;flex-shrink:0;">SP04</span>
+          <span style="color:#e2e8f0;">四つの力 ― 電磁気力・強い力・弱い力・重力。日常と宇宙を動かす。</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;background:#0f172a;border-radius:6px;padding:8px 12px;">
+          <span style="background:#065f46;color:#bef264;font-weight:900;padding:2px 7px;border-radius:4px;font-size:0.72rem;flex-shrink:0;">SP05</span>
+          <span style="color:#e2e8f0;">標準模型 ― 17種類の素粒子。人類最高精度の理論。2012年完成。</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;background:#0f172a;border-radius:6px;padding:8px 12px;">
+          <span style="background:#3b0764;color:#e9d5ff;font-weight:900;padding:2px 7px;border-radius:4px;font-size:0.72rem;flex-shrink:0;">SP06</span>
+          <span style="color:#e2e8f0;">ヒッグス粒子 ― 質量の起源。ヒッグス場・ヒッグス機構・48年の予言。</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;background:#0f172a;border-radius:6px;padding:8px 12px;border:1px solid #bef264;">
+          <span style="background:#1e3a5f;color:#bef264;font-weight:900;padding:2px 7px;border-radius:4px;font-size:0.72rem;flex-shrink:0;">SP07</span>
+          <span style="color:#bef264;font-weight:700;">宇宙論 ← ここ。ビッグバンから現在へ。あなたは宇宙の旅の結実。</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="important-box">
+      <div class="box-label">⭐ SP07 核心まとめ</div>
+      <div style="font-size:0.88rem;line-height:2.4;">
+        ① <strong>ビッグバン</strong>は爆発ではなく「空間そのものの膨張の始まり」（138億年前）<br>
+        ② 最初の<strong>1秒以内</strong>にすべての素粒子が生まれ、質量を得た<br>
+        ③ <strong>約3分後</strong>に水素・ヘリウム原子核が形成（ビッグバン元素合成）<br>
+        ④ <strong>約38万年後</strong>に中性原子誕生・宇宙の晴れ上がり・宇宙背景放射<br>
+        ⑤ 星の核融合と<strong>超新星爆発</strong>がC・O・Feなどの重元素を作った<br>
+        ⑥ 宇宙は<strong>加速膨張</strong>を続けている（ダークエネルギーが原因・謎）<br>
+        ⑦ あなたの体の原子は星が作り、宇宙を旅してたどり着いた ―― <strong>あなたはスターダスト</strong>
+      </div>
+    </div>
+
+    <!-- 単元7 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq7&#39;)"><span>🖊️ 単元7 ミニテスト ― 宇宙論のまとめ</span><span class="uq-arrow" id="uq7_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq7_body"></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /tab-learn -->
+
+<!-- FLASH -->
+<div id="tab-flash" class="tab-content">
+  <div class="section-card">
+    <div class="section-header sh-cosmos">🃏 フラッシュカード ― 宇宙論の重要ポイント</div>
+    <div class="section-body">
+      <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+        <button class="fc-speed-btn active" onclick="setFcSpeed(0)" id="spbtn0">手動</button>
+        <button class="fc-speed-btn" onclick="setFcSpeed(4000)" id="spbtn1">4秒</button>
+        <button class="fc-speed-btn" onclick="setFcSpeed(2500)" id="spbtn2">2.5秒</button>
+        <button class="fc-speed-btn" onclick="setFcSpeed(1500)" id="spbtn3">1.5秒</button>
+      </div>
+      <div class="flashcard-wrap" onclick="flipFc()">
+        <div class="flashcard" id="fc_card">
+          <div class="fc-face fc-front"><div class="fc-label">おもて</div><div class="fc-main" id="fc_front">ビッグバンとはどのような出来事ですか？</div><div class="fc-sub" id="fc_fsub"></div></div>
+          <div class="fc-face fc-back"><div class="fc-label">うら</div><div class="fc-main" id="fc_back">空間・時間・エネルギーのすべてが一点から始まった（約138億年前）</div><div class="fc-sub" id="fc_bsub">「宇宙の中での爆発」ではない。外側も以前も存在しなかった</div></div>
+        </div>
+      </div>
+      <div class="fc-timer-bar"><div class="fc-timer-fill" id="fc_timer" style="width:0%"></div></div>
+      <div class="fc-progress" id="fc_prog"><div class="fc-dot current"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div></div>
+      <div class="fc-nav">
+        <button class="fc-nav-btn" onclick="fcPrev()" id="fc_prevBtn" disabled="">◀ 前へ</button>
+        <span style="font-size:0.85rem;color:var(--muted);" id="fc_idx">1 / 12</span>
+        <button class="fc-nav-btn" onclick="fcNext()" id="fc_nextBtn">次へ ▶</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="tab-quiz" class="tab-content">
+  <div class="section-card">
+    <div class="section-header sh-blue">🔭 ミニテスト ― 単元別4択（全問）</div>
+    <div class="section-body">
+      <div style="margin-bottom:16px;">
+        <div style="font-size:0.82rem;font-weight:700;color:var(--muted);margin-bottom:8px;">📚 単元を選んでください</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;" id="chapterBtns">
+          <button class="ch-btn active" onclick="selectChapter(0)">📚 全問チャレンジ</button>
+          <button class="ch-btn" onclick="selectChapter(1)">1. ビッグバン</button>
+          <button class="ch-btn" onclick="selectChapter(2)">2. 最初の1秒</button>
+          <button class="ch-btn" onclick="selectChapter(3)">3. 元素の誕生</button>
+          <button class="ch-btn" onclick="selectChapter(4)">4. 宇宙の構造</button>
+          <button class="ch-btn" onclick="selectChapter(5)">5. 宇宙の未来</button>
+          <button class="ch-btn" onclick="selectChapter(6)">6. コラム</button>
+          <button class="ch-btn" onclick="selectChapter(7)">7. まとめ</button>
+        </div>
+      </div>
+      <div style="font-size:0.82rem;color:var(--muted);margin-bottom:14px;" id="quizInfo">全28問に挑戦しましょう。</div>
+      <div id="quizContainer"></div>
+      <div class="quiz-result" id="quizResult">
+        <div style="font-size:0.85rem;opacity:0.8;margin-bottom:4px;">最終スコア</div>
+        <div class="quiz-result-score" id="quizScore"></div>
+        <div class="quiz-result-msg" id="quizMsg"></div>
+        <button class="btn btn-primary" onclick="resetQuiz()" style="margin-top:12px;">もう一度 ↺</button>
+      </div>
+      <div style="margin-top:14px;text-align:right;"><button class="btn btn-gray" onclick="resetQuiz()">↺ リセット</button></div>
+    </div>
+  </div>
+</div>
+</main>
+<script>
+function showTab(id){
+  document.querySelectorAll('.tab-content').forEach(function(el){el.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(el){el.classList.remove('active');});
+  document.getElementById('tab-'+id).classList.add('active');
+  ['learn','flash','quiz'].forEach(function(t,i){if(t===id)document.querySelectorAll('.tab-btn')[i].classList.add('active');});
+  if(id==='flash')renderFc();
+  if(id==='quiz'){currentChapter=0;buildQuiz();}
+}
+function launchConfetti(n){
+  var colors=['#bef264','#38bdf8','#4ade80','#f87171','#fbbf24','#c084fc','#818cf8'];
+  for(var i=0;i<n;i++){
+    var el=document.createElement('div');el.className='confetti-piece';
+    el.style.cssText='left:'+(10+Math.random()*80)+'vw;top:15vh;background:'+colors[Math.floor(Math.random()*colors.length)]+';animation-delay:'+(Math.random()*0.8)+'s';
+    document.body.appendChild(el);
+    setTimeout((function(e){return function(){e.remove();};}(el)),2500);
+  }
+}
+
+var uqDefs={
+  uq1:{qs:[
+    {q:'ビッグバンについて正しい説明はどれですか？',opts:['宇宙という空間の中で大爆発が起きた','空間・時間・エネルギーのすべてが一点から始まった膨張','別の宇宙から何かが飛び込んできた','星が集まって爆発した'],ans:1,exp:'ビッグバンは「宇宙の中での爆発」ではなく、「空間・時間・エネルギーそのものが一点から始まった」出来事です。「外側」も「以前」も存在しませんでした。'},
+    {q:'宇宙の膨張を初めて観測で示した科学者は誰ですか？（1929年）',opts:['アインシュタイン','ハッブル','ビッグバン','カール・セーガン'],ans:1,exp:'エドウィン・ハッブルは1929年に、すべての銀河が互いに遠ざかっていることを観測で示しました。これが宇宙膨張の発見であり、ビッグバン理論の重要な証拠のひとつです。'},
+    {q:'「宇宙背景放射（CMB）」とは何ですか？',opts:['地球が放出する電磁波','ビッグバンの余熱が今も宇宙を満たしている電磁波','太陽から来る放射線','銀河から発生する背景ノイズ'],ans:1,exp:'宇宙背景放射（CMB）はビッグバンの「余熱」が現在も宇宙全体を均一に満たしている電磁波です。1965年に偶然発見され、ビッグバン理論の強力な証拠となりました。'},
+    {q:'「ビッグバン（Big Bang）」という名前の由来はどれですか？',opts:['最初に提唱した学者が喜んでつけた','反対していた天文学者が批判的に「あの大きな爆発（Big Bang）説は…」と言ったのが広まった','宇宙が本当に大きな音を出したから','CERN（SERN）の研究者がつけた'],ans:1,exp:'「ビッグバン」という名前は、この理論に反対していたフレッド・ホイルが皮肉を込めて使ったのが広まったものです。皮肉が名称になったという珍しいケースです。'}
+  ]},
+  uq2:{qs:[
+    {q:'宇宙が始まってから「ヒッグス機構が発動し素粒子が質量を得た」のはいつですか？',opts:['138億年前のはるか昔','ビッグバン後約10⁻¹²秒以内','ビッグバン後約3分','ビッグバン後約38万年'],ans:1,exp:'電弱対称性の破れ（ヒッグス機構の発動）はビッグバン後約10⁻¹²秒以内に起きたと考えられています。この瞬間にすべての素粒子が質量を得ました。'},
+    {q:'自由に飛び回っていたクォークが陽子・中性子になったのはいつですか？',opts:['ビッグバン直後（0秒）','ビッグバン後約10⁻⁶秒（1マイクロ秒）頃','ビッグバン後約3分','ビッグバン後38万年'],ans:1,exp:'ビッグバン後約10⁻⁶秒（1マイクロ秒）頃、宇宙の温度が下がり自由に飛び回っていたクォークが強い力でまとまり、陽子・中性子が形成されました（クォーク閉じ込め・ハドロン形成）。'},
+    {q:'「インフレーション」とは何ですか？',opts:['ビッグバン後の宇宙の急激な冷却','ビッグバン後ごく短い時間（10⁻³⁶〜10⁻³²秒）に起きた宇宙の指数関数的な急膨張','宇宙が収縮する現象','クォークが膨らむ現象'],ans:1,exp:'インフレーションはビッグバン後10⁻³⁶〜10⁻³²秒という極めて短い時間に、宇宙がビー玉から太陽系ほどの大きさまで指数関数的に急膨張した現象です。現在の宇宙の大規模構造の種を作ったと考えられています。'},
+    {q:'ビッグバン直後の宇宙では4つの力はどのような状態でしたか？',opts:['最初からバラバラだった','1つの統一された力だったと考えられている','重力だけが存在していた','電磁気力と重力の2つだけだった'],ans:1,exp:'ビッグバン直後の超高温では、現在の4つの力（重力・電磁気力・強い力・弱い力）は1つの統一された力だったと考えられています。宇宙が冷えるにつれて力が分離していきました。'}
+  ]},
+  uq3:{qs:[
+    {q:'「ビッグバン元素合成」で主に作られた元素はどれですか？',opts:['炭素と酸素','金と銀','水素とヘリウム','鉄とニッケル'],ans:2,exp:'ビッグバン後約3分に起きたビッグバン元素合成では、水素（陽子1個）とヘリウム（陽子2・中性子2）がほぼすべてを占めます。質量比で水素約75%・ヘリウム約25%のこの比率は現在も観測で確認されています。'},
+    {q:'「宇宙の晴れ上がり」はビッグバンから何年後に起きましたか？',opts:['3分後','1万年後','約38万年後','1億年後'],ans:2,exp:'ビッグバン後約38万年に、温度が約3000Kまで下がり電子が原子核に捕まって中性原子が誕生しました（宇宙の晴れ上がり）。この瞬間から光が自由に進めるようになり、その光が宇宙背景放射として現在も観測されます。'},
+    {q:'炭素・酸素・鉄などの「重い元素」はどこで作られましたか？',opts:['ビッグバンの直後に作られた','恒星の核融合と超新星爆発で作られた','地球の内部で作られた','宇宙背景放射から作られた'],ans:1,exp:'水素・ヘリウムより重い元素（炭素・酸素・鉄など）は恒星の中の核融合で作られ、超新星爆発によって宇宙空間に散布されました。金・銀・ウランなどは超新星爆発や中性子星の合体で作られます。'},
+    {q:'あなたの体の「炭素原子」はどこから来たのですか？',opts:['地球が最初から持っていた','ビッグバンで直接作られた','50〜100億年前の星の核融合炉で作られた','宇宙の外から来た'],ans:2,exp:'体を作る炭素原子は、太陽系が形成される前に存在していた恒星の核融合で作られ、超新星爆発で宇宙空間に散らばり、太陽系の形成素材になりました。約50〜100億年前のどこかの星が起源です。'}
+  ]},
+  uq4:{qs:[
+    {q:'現在の宇宙の組成（質量・エネルギー比率）で最も割合が大きいのはどれですか？',opts:['通常の物質（素粒子）約5%','ダークマター約27%','ダークエネルギー約68%','光子（電磁波）'],ans:2,exp:'宇宙の組成はダークエネルギー約68%が最大です。次にダークマター約27%、私たちが知っている通常の物質はわずか約5%に過ぎません。'},
+    {q:'銀河が宇宙の中に「網の目（大規模構造）」のように分布している理由として有力なのはどれですか？',opts:['電磁気力が銀河を整列させた','ダークマターの重力が骨格を作った','ヒッグス場が銀河を引き寄せた','弱い力が銀河を形成した'],ans:1,exp:'銀河の大規模構造（宇宙の網の目）は、目には見えないダークマターの重力が骨格を作り、その重力に引き寄せられて通常の物質が集まった結果と考えられています。'},
+    {q:'素粒子（クォーク・電子など）のサイズ（10⁻¹⁸m）と観測可能な宇宙全体（10²⁶m）の大きさの差はどのくらいですか？',opts:['約100倍','約1万倍','約1億倍','約10⁴⁴倍'],ans:3,exp:'素粒子のスケール（10⁻¹⁸m）から観測可能な宇宙（10²⁶m）まで、スケールの差は約10⁴⁴倍です。この巨大な範囲をすべて物理学は一つの理論体系（標準模型＋相対性理論）で記述しようとしています。'},
+    {q:'宇宙背景放射（CMB）が重要な理由はどれですか？',opts:['地球の気温を保っているから','ビッグバンの余熱として現在も観測でき、宇宙の初期状態を教えてくれるから','ダークマターの正体だから','太陽からのエネルギーだから'],ans:1,exp:'宇宙背景放射（CMB）はビッグバンの余熱が現在も宇宙全体を満たしている電磁波です。1965年に発見され、ビッグバン理論の強力な証拠になりました。CMBの微細な温度ゆらぎから宇宙の初期状態を精密に調べることができます。'}
+  ]},
+  uq5:{qs:[
+    {q:'現在の宇宙の膨張はどのような状態ですか？',opts:['速度が一定で膨張している','膨張は止まって安定している','加速しながら膨張している','収縮に転じている'],ans:2,exp:'1998年の観測により、宇宙の膨張は加速していることが判明しました。この加速の原因はダークエネルギー（謎の斥力）と考えられています。この発見により2011年にノーベル物理学賞が授与されました。'},
+    {q:'「宇宙の熱的死」とはどのような状態を指しますか？',opts:['宇宙が高温に戻って崩壊する','すべての星が燃え尽き均一な低温・低活動状態になる','宇宙が急激に収縮して潰れる','温度が急上昇して全粒子が消える'],ans:1,exp:'宇宙の熱的死は、すべての星が燃え尽きブラックホールも蒸発して、宇宙全体が均一な低温・低エントロピー最大状態になることです。ただしそれは今から10¹⁰⁰年以上先の話です。'},
+    {q:'宇宙の加速膨張の原因として考えられているのはどれですか？',opts:['ヒッグス場の膨張','ダークエネルギー（謎の斥力）','重力の反転','ニュートリノの圧力'],ans:1,exp:'宇宙の加速膨張の原因はダークエネルギーという謎の力（斥力）と考えられていますが、その正体はまだ解明されていません。宇宙のエネルギーの約68%を占めるとされる最大の謎のひとつです。'},
+    {q:'「太陽が赤色巨星になる」のはいつ頃と予測されていますか？',opts:['約500万年後','約5000万年後','約50億年後','約5000億年後'],ans:2,exp:'太陽は約50億年後に水素燃料が尽きて膨らみ始め、赤色巨星になると予測されています。その頃には地球の軌道付近まで膨張するとされています。ただし人類や生命にとっては十分すぎるほど先の話です。'}
+  ]},
+  uq6:{qs:[
+    {q:'カール・セーガンの言葉「私たちはスターダスト（星のかけら）から作られている」とはどういう意味ですか？',opts:['私たちは星が大好きという意味','体を作る炭素・鉄・酸素などは星の核融合と超新星爆発で作られた物理的な事実','星に祈れば力が得られるという比喩','人間は宇宙人だという意味'],ans:1,exp:'「スターダスト」は比喩ではなく物理的な事実です。あなたの体を作る炭素・鉄・カルシウム・酸素などは、太陽よりも大きな星の中で核融合によって作られ、超新星爆発で宇宙にばらまかれた原子です。'},
+    {q:'あなたの血液の中の鉄（Fe）の起源はどれですか？',opts:['地球が最初から持っていた','ビッグバン直後に作られた','超新星爆発で宇宙に散布された鉄が太陽系形成の素材になった','宇宙背景放射から作られた'],ans:2,exp:'鉄は恒星の核融合の最終産物で、恒星内で作られた後に超新星爆発によって宇宙空間に散布されました。その鉄が太陽系形成の素材となり、地球の内部や生命体の血液に含まれるようになりました。'},
+    {q:'体内の水素（H）原子の起源はどれですか？',opts:['地球の地殻から来た','ビッグバン後約3分に作られた最初の元素','超新星爆発で作られた','太陽から来た'],ans:1,exp:'体内の水素はビッグバン後約3分の「ビッグバン元素合成」で作られた、宇宙最初の元素です。約138億年前のビッグバンの産物がそのままあなたの体の中にあります。'},
+    {q:'カール・セーガンが宇宙を語るとき特に大切にしていたテーマはどれですか？',opts:['宇宙の危険性と人類への警告','人間と宇宙の関係・人類がいかに小さいかとともにいかに偉大かという視点','宇宙人の存在証明','ロケット技術の発展'],ans:1,exp:'カール・セーガンは宇宙を語るとき常に「人間との関係」を問い続けました。「私たちは宇宙の塵（スターダスト）でできているが、その塵が宇宙を知ろうとしている」という逆説的な偉大さを伝え続けた人です。'}
+  ]},
+  uq7:{qs:[
+    {q:'ビッグバンは今から約何年前に起きたとされていますか？',opts:['約46億年前（地球の誕生と同じ頃）','約100億年前','約138億年前','約200億年前'],ans:2,exp:'現在の最新の観測データによるとビッグバンは約138億年前に起きたとされています。宇宙背景放射（CMB）の観測などから精密に推定されています。'},
+    {q:'ビッグバン後約38万年後に何が起きましたか？',opts:['最初の星が誕生した','クォーク閉じ込めが起きた','宇宙の晴れ上がり（中性原子の誕生・光が自由に進めるようになった）','太陽系が誕生した'],ans:2,exp:'ビッグバン後約38万年後に温度が下がって電子が原子核に捕まり中性原子が誕生しました（宇宙の晴れ上がり）。それまで「霧の中」にあった光が自由に進めるようになり、その光が現在の宇宙背景放射として観測されます。'},
+    {q:'現在の宇宙膨張について正しいのはどれですか？',opts:['一定速度で膨張','減速しながら膨張','加速しながら膨張','膨張は停止している'],ans:2,exp:'1998年の観測で宇宙の膨張は加速していることが判明しました。原因はダークエネルギー（謎の斥力）です。2011年ノーベル物理学賞。'},
+    {q:'「あなたはスターダスト」という言葉が意味する物理的な事実はどれですか？',opts:['人間は星が好き','あなたの体を作る原子は星の核融合と超新星爆発で作られた','人間は星から生まれた宇宙人','体は光でできている'],ans:1,exp:'あなたの体の炭素・酸素・鉄などは恒星の核融合と超新星爆発で作られ、宇宙を旅して地球に届き、生命の材料になりました。これは比喩ではなく物理的な事実です。'}
+  ]}
+};
+
+var uqState={};
+function uqBuildBody(uid){
+  var d=uqDefs[uid];var html='';
+  d.qs.forEach(function(q,i){
+    html+='<div class="uq-card" id="'+uid+'_c'+i+'"><div class="uq-num">Q'+(i+1)+' / '+d.qs.length+'</div><div class="uq-q">'+q.q+'</div><div class="uq-opts">';
+    q.opts.forEach(function(opt,j){html+='<button class="uq-opt" id="'+uid+'_o'+i+'_'+j+'" onclick="uqAnswer(\''+uid+'\','+i+','+j+')"><span class="uq-badge">'+['A','B','C','D'][j]+'</span>'+opt+'</button>';});
+    html+='</div><div class="uq-fb" id="'+uid+'_f'+i+'"></div></div>';
+  });
+  html+='<div class="uq-result" id="'+uid+'_result"><div class="uq-result-score" id="'+uid+'_score"></div><div class="uq-result-msg" id="'+uid+'_msg"></div><button class="uq-retry-btn" onclick="uqReset(\''+uid+'\')">↺ もう一度</button></div>';
+  document.getElementById(uid+'_body').innerHTML=html;
+  uqState[uid]={answered:new Array(d.qs.length).fill(false),correct:0};
+}
+function uqToggle(uid){
+  var body=document.getElementById(uid+'_body');var arrow=document.getElementById(uid+'_arrow');
+  var isOpen=body.classList.contains('open');
+  if(!isOpen&&!uqState[uid])uqBuildBody(uid);
+  body.classList.toggle('open',!isOpen);
+  arrow.style.transform=isOpen?'':'rotate(180deg)';
+}
+function uqAnswer(uid,qi,oi){
+  if(!uqState[uid]||uqState[uid].answered[qi])return;
+  uqState[uid].answered[qi]=true;
+  var q=uqDefs[uid].qs[qi];
+  var opts=document.querySelectorAll('#'+uid+'_c'+qi+' .uq-opt');
+  var fb=document.getElementById(uid+'_f'+qi);
+  opts.forEach(function(o){o.disabled=true;});
+  if(oi===q.ans){opts[oi].classList.add('correct');fb.className='uq-fb show-ok';fb.innerHTML='✅ 正解！　'+q.exp;uqState[uid].correct++;launchConfetti(6);}
+  else{opts[oi].classList.add('wrong');opts[q.ans].classList.add('correct');fb.className='uq-fb show-ng';fb.innerHTML='❌ 不正解。正解は「'+['A','B','C','D'][q.ans]+'」。'+q.exp;}
+  if(uqState[uid].answered.every(function(v){return v;}))setTimeout(function(){uqShowResult(uid);},600);
+}
+function uqShowResult(uid){
+  var s=uqState[uid];var total=uqDefs[uid].qs.length;var pct=s.correct/total;
+  var result=document.getElementById(uid+'_result');
+  result.className='uq-result '+(pct>=0.75?'pass':'retry');result.style.display='block';
+  document.getElementById(uid+'_score').textContent=s.correct+' / '+total+' 問正解';
+  var msg=pct===1?'🎉 パーフェクト！宇宙もあなたを祝福している！':pct>=0.75?'✨ 合格！SP07まで来たあなたはもう素粒子シリーズを修了しました。':pct>=0.5?'👍 もう少し！あとひと息。':' 📖 もう一度ゆっくり読んでみよう。宇宙は138億年待ってくれた。あなたを待てない理由はない。';
+  document.getElementById(uid+'_msg').textContent=msg;
+  if(pct===1)launchConfetti(80);
+}
+function uqReset(uid){
+  uqState[uid]={answered:new Array(uqDefs[uid].qs.length).fill(false),correct:0};
+  document.getElementById(uid+'_result').style.display='none';
+  for(var i=0;i<uqDefs[uid].qs.length;i++){
+    document.querySelectorAll('#'+uid+'_c'+i+' .uq-opt').forEach(function(o){o.disabled=false;o.className='uq-opt';});
+    var fb=document.getElementById(uid+'_f'+i);fb.className='uq-fb';fb.innerHTML='';
+  }
+}
+
+// FLASHCARD
+var fcCards=[
+  {front:'ビッグバンとはどのような出来事ですか？',back:'空間・時間・エネルギーのすべてが一点から始まった（約138億年前）',bsub:'「宇宙の中での爆発」ではない。外側も以前も存在しなかった'},
+  {front:'ビッグバンの証拠を2つ言えますか？',back:'①宇宙の膨張（銀河が遠ざかる）②宇宙背景放射（CMB）',bsub:'③ビッグバン元素合成（水素75%・ヘリウム25%の比率）も証拠'},
+  {front:'ヒッグス機構が発動した（素粒子が質量を得た）のはいつですか？',back:'ビッグバン後約10⁻¹²秒以内',bsub:'電弱対称性の破れ。SP06で学んだ「谷に落ちる瞬間」'},
+  {front:'クォークが陽子・中性子になったのはいつですか？',back:'ビッグバン後約10⁻⁶秒（1マイクロ秒）頃',bsub:'SP01で学んだクォーク閉じ込めがここで始まった'},
+  {front:'「ビッグバン元素合成」で作られた主な元素は？',back:'水素（約75%）とヘリウム（約25%）',bsub:'ビッグバン後約3分。炭素・酸素は後の星の核融合で作られた'},
+  {front:'「宇宙の晴れ上がり」とは何ですか？',back:'ビッグバン後38万年、電子が原子核に捕まり中性原子が生まれ光が自由に進めるようになった',bsub:'その光が現在の宇宙背景放射（CMB）として観測される'},
+  {front:'炭素・酸素・鉄などの重い元素はどこで作られましたか？',back:'恒星の核融合炉の中、そして超新星爆発で宇宙に散布された',bsub:'金・銀・ウランは中性子星の合体でも作られる'},
+  {front:'現在の宇宙の組成（大まかな比率）は？',back:'通常の物質 約5% ／ ダークマター 約27% ／ ダークエネルギー 約68%',bsub:'私たちが知っている素粒子はわずか5%'},
+  {front:'現在の宇宙の膨張はどのような状態ですか？',back:'加速しながら膨張している（原因：ダークエネルギー）',bsub:'1998年発見。2011年ノーベル物理学賞'},
+  {front:'「宇宙の熱的死」とはどのような状態ですか？',back:'すべての星が燃え尽き宇宙全体が低温・均一状態になること',bsub:'今から10¹⁰⁰年以上先。今はまだ宇宙は若い'},
+  {front:'「あなたはスターダスト」とはどういう意味ですか？',back:'体を作る炭素・鉄・酸素などは星の核融合と超新星爆発で作られた物理的事実',bsub:'カール・セーガンの言葉。比喩ではなく物理的な事実'},
+  {front:'あなたの体の水素はいつ作られましたか？',back:'ビッグバン後約3分、約138億年前',bsub:'あなたの体の中にビッグバンの直後に作られた原子がある'},
+];
+var fcIdx=0,fcSpeed=0,fcTimer=null,fcFlipped=false;
+function renderFc(){
+  var c=fcCards[fcIdx];
+  document.getElementById('fc_front').textContent=c.front;
+  document.getElementById('fc_fsub').textContent=c.fsub||'';
+  document.getElementById('fc_back').textContent=c.back;
+  document.getElementById('fc_bsub').textContent=c.bsub||'';
+  var fc=document.getElementById('fc_card');fc.classList.remove('flipped');fcFlipped=false;
+  document.getElementById('fc_idx').textContent=(fcIdx+1)+' / '+fcCards.length;
+  document.getElementById('fc_prevBtn').disabled=fcIdx===0;
+  document.getElementById('fc_nextBtn').disabled=fcIdx===fcCards.length-1;
+  var prog=document.getElementById('fc_prog');
+  prog.innerHTML=fcCards.map(function(_,i){return '<div class="fc-dot'+(i===fcIdx?' current':i<fcIdx?' done':'')+'"></div>';}).join('');
+  if(fcSpeed>0)startAutoFc();
+}
+function flipFc(){var fc=document.getElementById('fc_card');fcFlipped=!fcFlipped;fc.classList.toggle('flipped',fcFlipped);}
+function fcNext(){if(fcIdx<fcCards.length-1){fcIdx++;renderFc();}}
+function fcPrev(){if(fcIdx>0){fcIdx--;renderFc();}}
+function setFcSpeed(ms){
+  fcSpeed=ms;clearTimeout(fcTimer);
+  [0,1,2,3].forEach(function(i){var b=document.getElementById('spbtn'+i);if(b)b.classList.remove('active');});
+  document.getElementById('spbtn'+[0,4000,2500,1500].indexOf(ms)).classList.add('active');
+  if(ms>0)startAutoFc();
+}
+function startAutoFc(){
+  clearTimeout(fcTimer);var fill=document.getElementById('fc_timer');
+  fill.style.transition='none';fill.style.width='0%';
+  setTimeout(function(){
+    fill.style.transition='width '+fcSpeed+'ms linear';fill.style.width='100%';
+    fcTimer=setTimeout(function(){fcIdx=(fcIdx+1)%fcCards.length;renderFc();setTimeout(function(){if(fcSpeed>0)startAutoFc();},300);},fcSpeed);
+  },50);
+}
+
+// QUIZ TAB
+var allQuizData=[
+  {ch:1,q:'ビッグバンについて正しい説明はどれですか？',opts:['宇宙空間の中での大爆発','空間・時間・エネルギーのすべてが一点から始まった膨張','別の宇宙から飛び込んできた','星が集まって爆発した'],ans:1,exp:'ビッグバンは「宇宙の外での爆発」ではなく、空間・時間・エネルギーのすべてが一点から始まった出来事です。'},
+  {ch:1,q:'宇宙の膨張を観測で示した科学者は誰ですか？（1929年）',opts:['アインシュタイン','ハッブル','ビッグバン','カール・セーガン'],ans:1,exp:'エドウィン・ハッブルが1929年に銀河が互いに遠ざかっていることを観測で示しました。'},
+  {ch:1,q:'「宇宙背景放射（CMB）」とは何ですか？',opts:['地球が放出する電磁波','ビッグバンの余熱が今も宇宙を満たしている電磁波','太陽から来る放射線','銀河から発生するノイズ'],ans:1,exp:'宇宙背景放射（CMB）はビッグバンの余熱が現在も宇宙全体を均一に満たしている電磁波です。1965年に発見されました。'},
+  {ch:1,q:'「ビッグバン（Big Bang）」という名前の由来はどれですか？',opts:['最初に提唱した学者が命名','反対していた天文学者が皮肉で使った言葉が広まった','宇宙が大きな音を出した','CERNの研究者がつけた'],ans:1,exp:'「ビッグバン」は理論に反対していたフレッド・ホイルが皮肉を込めて使ったのが広まりました。'},
+  {ch:2,q:'ヒッグス機構が発動し素粒子が質量を得たのはいつですか？',opts:['138億年前のはるか昔','ビッグバン後約10⁻¹²秒以内','ビッグバン後約3分','ビッグバン後約38万年'],ans:1,exp:'電弱対称性の破れ（ヒッグス機構）はビッグバン後約10⁻¹²秒以内に起きました。'},
+  {ch:2,q:'クォークが陽子・中性子になったのはいつですか？',opts:['ビッグバン直後','ビッグバン後約10⁻⁶秒頃','ビッグバン後約3分','ビッグバン後38万年'],ans:1,exp:'ビッグバン後約10⁻⁶秒頃、クォークが強い力で結びついて陽子・中性子が形成されました。'},
+  {ch:2,q:'「インフレーション」とは何ですか？',opts:['ビッグバン後の宇宙の冷却','ビッグバン後ごく短い時間の宇宙の指数関数的な急膨張','宇宙が収縮する現象','クォークが膨らむ現象'],ans:1,exp:'インフレーションはビッグバン後10⁻³⁶〜10⁻³²秒という極短時間に宇宙が指数関数的に急膨張した現象です。'},
+  {ch:2,q:'ビッグバン直後の4つの力はどのような状態でしたか？',opts:['最初からバラバラだった','1つの統一された力だった','重力だけだった','電磁気力と重力の2つだった'],ans:1,exp:'ビッグバン直後の超高温では4つの力は1つの統一された力だったと考えられています。'},
+  {ch:3,q:'「ビッグバン元素合成」で主に作られた元素はどれですか？',opts:['炭素と酸素','金と銀','水素とヘリウム','鉄とニッケル'],ans:2,exp:'ビッグバン後約3分の元素合成では水素（約75%）とヘリウム（約25%）がほぼすべてを占めます。'},
+  {ch:3,q:'「宇宙の晴れ上がり」はビッグバンから何年後ですか？',opts:['3分後','1万年後','約38万年後','1億年後'],ans:2,exp:'ビッグバン後約38万年に中性原子が誕生し光が自由に進めるようになりました（宇宙の晴れ上がり）。'},
+  {ch:3,q:'炭素・酸素・鉄などの重い元素はどこで作られましたか？',opts:['ビッグバン直後','恒星の核融合と超新星爆発で','地球の内部で','宇宙背景放射から'],ans:1,exp:'重い元素は恒星の核融合で作られ、超新星爆発によって宇宙に散布されました。'},
+  {ch:3,q:'あなたの体の「炭素原子」はどこから来ましたか？',opts:['地球が最初から持っていた','ビッグバンで直接作られた','50〜100億年前の星の核融合炉で作られた','宇宙の外から来た'],ans:2,exp:'炭素は恒星の核融合で作られ超新星爆発で宇宙に散らばり、太陽系形成の素材になりました。'},
+  {ch:4,q:'宇宙の組成で最も割合が大きいのはどれですか？',opts:['通常の物質約5%','ダークマター約27%','ダークエネルギー約68%','光子'],ans:2,exp:'ダークエネルギーが約68%で最大です。通常の物質はわずか約5%です。'},
+  {ch:4,q:'銀河の大規模構造（宇宙の網の目）の骨格を作ったと考えられているのはどれですか？',opts:['電磁気力','ダークマターの重力','ヒッグス場','弱い力'],ans:1,exp:'ダークマターの重力が宇宙の大規模構造の骨格を作り、そこに通常の物質が引き寄せられたと考えられています。'},
+  {ch:4,q:'素粒子サイズから宇宙全体まで、スケールの差はどのくらいですか？',opts:['約100倍','約1万倍','約1億倍','約10⁴⁴倍'],ans:3,exp:'素粒子（10⁻¹⁸m）から観測可能な宇宙（10²⁶m）まで約10⁴⁴倍のスケール差があります。'},
+  {ch:4,q:'宇宙背景放射（CMB）が重要な理由はどれですか？',opts:['地球の気温を保つ','ビッグバンの余熱として宇宙の初期状態を教えてくれる','ダークマターの正体','太陽からのエネルギー'],ans:1,exp:'CMBはビッグバンの余熱で、その微細な温度ゆらぎから宇宙の初期状態を精密に調べられます。'},
+  {ch:5,q:'現在の宇宙の膨張はどのような状態ですか？',opts:['一定速度','減速しながら','加速しながら','停止している'],ans:2,exp:'1998年の観測で宇宙の膨張は加速していることが判明しました。原因はダークエネルギーです。'},
+  {ch:5,q:'「宇宙の熱的死」とはどのような状態ですか？',opts:['高温に戻って崩壊','すべての星が燃え尽き均一な低温状態になる','急激に収縮して潰れる','温度が急上昇する'],ans:1,exp:'熱的死はすべての星が燃え尽きブラックホールも蒸発して均一な低温・最高エントロピー状態になることです。'},
+  {ch:5,q:'宇宙の加速膨張の原因として考えられているのはどれですか？',opts:['ヒッグス場の膨張','ダークエネルギー','重力の反転','ニュートリノの圧力'],ans:1,exp:'宇宙の加速膨張の原因はダークエネルギー（謎の斥力）と考えられていますが正体は未解明です。'},
+  {ch:5,q:'太陽が赤色巨星になるのはいつ頃と予測されていますか？',opts:['約500万年後','約5000万年後','約50億年後','約5000億年後'],ans:2,exp:'太陽は約50億年後に水素燃料が尽きて赤色巨星になると予測されています。'},
+  {ch:6,q:'カール・セーガンの「私たちはスターダストから作られている」とはどういう意味ですか？',opts:['私たちは星が大好き','体を作る炭素・鉄などは星の核融合と超新星爆発で作られた物理的事実','星に祈れば力が得られる','人間は宇宙人'],ans:1,exp:'スターダストは比喩ではなく物理的事実です。体の炭素・鉄・カルシウムなどは星の内部で作られた原子です。'},
+  {ch:6,q:'血液の鉄（Fe）の起源はどれですか？',opts:['地球が最初から持っていた','ビッグバン直後に作られた','超新星爆発で宇宙に散布された鉄が太陽系の素材になった','宇宙背景放射から作られた'],ans:2,exp:'鉄は恒星の核融合の最終産物で、超新星爆発で宇宙に散布され、太陽系・地球・生命体の材料になりました。'},
+  {ch:6,q:'体内の水素（H）はいつ作られましたか？',opts:['地球の地殻から','ビッグバン後約3分に作られた最初の元素','超新星爆発で','太陽から来た'],ans:1,exp:'体内の水素はビッグバン後約3分の元素合成で作られた宇宙最初の元素で、138億年前のビッグバンの産物です。'},
+  {ch:6,q:'カール・セーガンが宇宙を語るとき大切にしたテーマはどれですか？',opts:['宇宙の危険性','人間と宇宙の関係・塵から宇宙を知ろうとする逆説的な偉大さ','宇宙人の証明','ロケット技術'],ans:1,exp:'セーガンは「人間は宇宙の塵（スターダスト）でできているが、その塵が宇宙を知ろうとしている」という逆説的な偉大さを伝え続けました。'},
+  {ch:7,q:'ビッグバンは今から約何年前ですか？',opts:['約46億年前','約100億年前','約138億年前','約200億年前'],ans:2,exp:'現在の最新観測データによるとビッグバンは約138億年前です。'},
+  {ch:7,q:'ビッグバン後約38万年後に何が起きましたか？',opts:['最初の星が誕生','クォーク閉じ込めが起きた','宇宙の晴れ上がり（中性原子誕生・光が自由に進めるようになった）','太陽系が誕生'],ans:2,exp:'ビッグバン後約38万年に宇宙の晴れ上がりが起き、その光が現在の宇宙背景放射として観測されます。'},
+  {ch:7,q:'現在の宇宙膨張について正しいのはどれですか？',opts:['一定速度','減速しながら','加速しながら','停止している'],ans:2,exp:'1998年の観測で宇宙の膨張は加速していることが判明しました（ダークエネルギーが原因）。'},
+  {ch:7,q:'「あなたはスターダスト」という言葉の物理的な意味はどれですか？',opts:['人間は星が好き','体を作る原子は星の核融合と超新星爆発で作られた','人間は星から生まれた宇宙人','体は光でできている'],ans:1,exp:'体の炭素・酸素・鉄などは恒星の核融合と超新星爆発で作られ、宇宙を旅して地球に届き生命の材料になりました。'},
+];
+var currentChapter=0,activeQuizData=[],quizAnswered=[],quizCorrect=0;
+function selectChapter(ch){
+  currentChapter=ch;
+  document.querySelectorAll('#chapterBtns .ch-btn').forEach(function(b,i){b.classList.toggle('active',i===ch);});
+  buildQuiz();
+}
+function buildQuiz(){
+  activeQuizData=currentChapter===0?allQuizData.slice():allQuizData.filter(function(q){return q.ch===currentChapter;});
+  quizAnswered=activeQuizData.map(function(){return false;});quizCorrect=0;
+  document.getElementById('quizResult').style.display='none';
+  var total=activeQuizData.length;
+  document.getElementById('quizInfo').textContent=(currentChapter===0?'全'+total+'問':'単元'+currentChapter+'（'+total+'問）')+' ― 各問に解説がつきます。';
+  var container=document.getElementById('quizContainer');
+  container.innerHTML=activeQuizData.map(function(q,qi){
+    return '<div class="quiz-card" id="qc'+qi+'">'+
+      '<div style="font-size:0.72rem;font-weight:700;color:var(--primary);margin-bottom:4px;">Q'+(qi+1)+' / '+total+(currentChapter===0?' ［単元'+q.ch+'］':'')+'</div>'+
+      '<div class="quiz-q">'+q.q+'</div><div class="quiz-opts">'+
+      q.opts.map(function(opt,oi){return '<button class="quiz-opt" id="qo'+qi+'_'+oi+'" onclick="answerQuiz('+qi+','+oi+')"><span style="display:inline-block;width:22px;height:22px;border-radius:50%;background:var(--primary-light);color:var(--primary);font-weight:800;font-size:0.78rem;text-align:center;line-height:22px;margin-right:8px;flex-shrink:0;">'+['A','B','C','D'][oi]+'</span>'+opt+'</button>';}).join('')+
+      '</div><div class="quiz-feedback" id="qf'+qi+'"></div></div>';
+  }).join('');
+}
+function answerQuiz(qi,oi){
+  if(quizAnswered[qi])return;quizAnswered[qi]=true;
+  var q=activeQuizData[qi];var opts=document.querySelectorAll('#qc'+qi+' .quiz-opt');var fb=document.getElementById('qf'+qi);
+  opts.forEach(function(o){o.disabled=true;});
+  if(oi===q.ans){opts[oi].classList.add('correct');fb.className='quiz-feedback show ok';fb.innerHTML='✅ 正解です！　'+q.exp;quizCorrect++;launchConfetti(5);}
+  else{opts[oi].classList.add('wrong');opts[q.ans].classList.add('correct');fb.className='quiz-feedback show ng';fb.innerHTML='❌ 不正解。正解は「'+['A','B','C','D'][q.ans]+'：'+q.opts[q.ans]+'」。<br>'+q.exp;}
+  if(quizAnswered.every(function(v){return v;}))setTimeout(showResult,700);
+}
+function showResult(){
+  var result=document.getElementById('quizResult');result.style.display='block';
+  var total=activeQuizData.length;var pct=quizCorrect/total;
+  document.getElementById('quizScore').textContent=quizCorrect+' / '+total+' 問正解';
+  var msg;
+  if(pct===1) msg='🎉🌟 パーフェクト！SP01から完走して、全問正解。あなたは宇宙を知った。本当におめでとう。';
+  else if(pct>=0.75) msg='✨ 合格！SP07まで来たあなたは、もう素粒子シリーズを修了しました。';
+  else if(pct>=0.5) msg='👍 もう少し！宇宙は138億年待った。あなたを待てない理由はない。';
+  else msg='📖 もう一度ゆっくり読んでみよう。あなたにはこれを理解する力が絶対にある。';
+  document.getElementById('quizMsg').textContent=msg;
+  if(pct===1)launchConfetti(100);
+}
+function resetQuiz(){buildQuiz();}
+document.addEventListener('DOMContentLoaded',function(){renderFc();});
+</script>
+
+
+</body></html>

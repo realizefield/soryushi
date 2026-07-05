@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)file:///C:/Users/tinbu/Downloads/SP03.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAMBA | 素粒子 SP03 ゲージボソン ― 力を伝える粒子たち</title>
+<style>
+  :root{--primary:#0284c7;--primary-dark:#0369a1;--primary-light:#e0f2fe;--accent:#65a30d;--accent-light:#ecfccb;--danger:#ef4444;--bg:#f0f9ff;--card:#ffffff;--text:#0c4a6e;--muted:#64748b;--border:#bae6fd;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+  header{background:linear-gradient(135deg,#0c4a6e,#0284c7,#38bdf8);color:white;}
+  .header-top{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid rgba(255,255,255,0.2);}
+  .logo{font-size:1.5rem;font-weight:900;letter-spacing:2px;color:#bef264;}
+  .header-sub{font-size:0.75rem;opacity:0.85;}
+  .chapter-title-bar{padding:14px 20px;display:flex;align-items:center;gap:12px;}
+  .chapter-badge{background:#bef264;color:#1a2e05;font-weight:900;font-size:0.75rem;padding:3px 10px;border-radius:20px;}
+  .chapter-title-text{font-size:1.1rem;font-weight:700;color:white;}
+  .tab-bar{display:flex;background:white;border-bottom:3px solid var(--primary-light);overflow-x:auto;padding:0 16px;gap:4px;}
+  .tab-btn{padding:10px 16px;border:none;background:none;font-size:0.82rem;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all 0.2s;font-family:inherit;margin-bottom:-3px;}
+  .tab-btn.active{color:var(--primary);border-bottom-color:var(--primary);}
+  .tab-btn:hover{color:var(--primary);}
+  main{max-width:860px;margin:0 auto;padding:20px 16px 60px;}
+  .tab-content{display:none;}.tab-content.active{display:block;}
+  .section-card{background:var(--card);border-radius:14px;box-shadow:0 2px 12px rgba(2,132,199,0.1);margin-bottom:20px;overflow:hidden;border:1px solid #e0f2fe;}
+  .section-header{padding:13px 20px;font-weight:800;font-size:0.95rem;display:flex;align-items:center;gap:8px;}
+  .sh-blue{background:#e0f2fe;border-left:4px solid #0284c7;color:#0c4a6e;}
+  .sh-green{background:#ecfccb;border-left:4px solid #65a30d;color:#1a2e05;}
+  .sh-amber{background:#fef9c3;border-left:4px solid #ca8a04;color:#713f12;}
+  .sh-purple{background:#ede9fe;border-left:4px solid #7c3aed;color:#3b0764;}
+  .sh-red{background:#fee2e2;border-left:4px solid #ef4444;color:#7f1d1d;}
+  .sh-cosmos{background:#0369a1;border-left:4px solid #bef264;color:#bef264;}
+  .sh-teal{background:#ccfbf1;border-left:4px solid #0d9488;color:#134e4a;}
+  .sh-gold{background:#fef3c7;border-left:4px solid #f59e0b;color:#78350f;}
+  .section-body{padding:18px 20px;}
+  .text-block{font-size:0.92rem;line-height:1.9;margin-bottom:12px;color:#0c4a6e;}
+  .key-box{background:#e0f2fe;border:2px solid #7dd3fc;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .key-box .box-label{font-weight:800;color:#0369a1;font-size:0.82rem;margin-bottom:6px;}
+  .important-box{background:#ecfccb;border:2px solid #a3e635;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .important-box .box-label{font-weight:800;color:#365314;font-size:0.82rem;margin-bottom:6px;}
+  .amber-box{background:#fef9c3;border:2px solid #fde047;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .amber-box .box-label{font-weight:800;color:#713f12;font-size:0.82rem;margin-bottom:6px;}
+  .note-block{background:#f0f9ff;border-left:3px solid #38bdf8;padding:8px 12px;border-radius:0 6px 6px 0;font-size:0.87rem;margin:8px 0;line-height:1.8;color:#0c4a6e;}
+  .warn-block{background:#fefce8;border-left:3px solid #eab308;padding:8px 12px;border-radius:0 6px 6px 0;font-size:0.87rem;margin:8px 0;line-height:1.8;color:#713f12;}
+  .btn{padding:7px 16px;border-radius:6px;border:none;font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.18s;font-family:inherit;}
+  .btn-primary{background:var(--primary);color:white;}.btn-primary:hover{background:var(--primary-dark);}
+  .btn-gray{background:#94a3b8;color:white;}.btn-gray:hover{background:#64748b;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;}
+  @media(max-width:580px){.two-col{grid-template-columns:1fr;}}
+  /* フラッシュカード */
+  .fc-speed-btn{padding:5px 12px;border-radius:20px;border:2px solid var(--border);background:white;font-size:0.78rem;font-weight:700;cursor:pointer;transition:all 0.15s;font-family:inherit;color:var(--primary);}
+  .fc-speed-btn.active{background:var(--primary);color:white;border-color:var(--primary);}
+  .flashcard-wrap{perspective:1000px;width:100%;max-width:480px;margin:0 auto;height:180px;cursor:pointer;}
+  .flashcard{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);}
+  .flashcard.flipped{transform:rotateY(180deg);}
+  .fc-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;}
+  .fc-front{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;box-shadow:0 4px 16px rgba(2,132,199,0.3);}
+  .fc-back{background:linear-gradient(135deg,#365314,#65a30d);color:white;transform:rotateY(180deg);box-shadow:0 4px 16px rgba(101,163,13,0.3);}
+  .fc-label{font-size:0.72rem;opacity:0.75;margin-bottom:8px;letter-spacing:1px;}
+  .fc-main{font-size:1.05rem;font-weight:800;line-height:1.6;}
+  .fc-sub{font-size:0.78rem;opacity:0.85;margin-top:8px;line-height:1.5;}
+  .fc-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;}
+  .fc-nav-btn{padding:7px 20px;border-radius:8px;border:2px solid var(--primary);background:white;color:var(--primary);font-weight:700;font-size:0.85rem;cursor:pointer;transition:all 0.15s;font-family:inherit;}
+  .fc-nav-btn:hover{background:var(--primary);color:white;}
+  .fc-nav-btn:disabled{opacity:0.35;cursor:default;}
+  .fc-progress{display:flex;gap:4px;justify-content:center;margin-top:10px;flex-wrap:wrap;}
+  .fc-dot{width:8px;height:8px;border-radius:50%;background:#bae6fd;transition:all 0.2s;}
+  .fc-dot.done{background:var(--accent);}
+  .fc-dot.current{background:var(--primary);transform:scale(1.3);}
+  .fc-timer-bar{height:4px;background:#bae6fd;border-radius:99px;margin-top:10px;overflow:hidden;}
+  .fc-timer-fill{height:100%;background:var(--accent);border-radius:99px;transition:width linear;}
+  /* クイズ */
+  .quiz-card{border:2px solid #bae6fd;border-radius:10px;padding:16px;margin:12px 0;background:#f0f9ff;}
+  .quiz-q{font-weight:700;font-size:0.9rem;margin-bottom:12px;line-height:1.7;color:#0c4a6e;}
+  .quiz-opts{display:flex;flex-direction:column;gap:8px;}
+  .quiz-opt{padding:9px 14px;border:2px solid #bae6fd;border-radius:7px;cursor:pointer;font-size:0.87rem;transition:all 0.15s;background:white;font-family:inherit;text-align:left;color:#0c4a6e;}
+  .quiz-opt:hover:not(:disabled){border-color:var(--primary);background:#e0f2fe;}
+  .quiz-opt.correct{background:#ecfccb;border-color:#65a30d;color:#1a2e05;font-weight:700;}
+  .quiz-opt.wrong{background:#fee2e2;border-color:var(--danger);color:#7f1d1d;}
+  .quiz-feedback{margin-top:10px;padding:8px 12px;border-radius:6px;font-size:0.85rem;display:none;font-weight:600;line-height:1.8;}
+  .quiz-feedback.show{display:block;}
+  .quiz-feedback.ok{background:#ecfccb;color:#1a2e05;}
+  .quiz-feedback.ng{background:#fee2e2;color:#7f1d1d;}
+  .quiz-result{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;border-radius:10px;padding:16px 20px;margin-top:16px;text-align:center;display:none;}
+  .quiz-result-score{font-size:2.2rem;font-weight:900;}
+  .quiz-result-msg{font-size:0.9rem;opacity:0.9;margin-top:4px;}
+  .confetti-piece{position:fixed;width:10px;height:10px;border-radius:2px;animation:confettiFall 1.5s ease-out forwards;pointer-events:none;z-index:9999;}
+  @keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(80vh) rotate(720deg);opacity:0}}
+  .ch-btn{padding:6px 14px;border-radius:20px;border:2px solid var(--border);background:white;color:var(--muted);font-size:0.8rem;font-weight:700;cursor:pointer;transition:all 0.15s;font-family:inherit;}
+  .ch-btn.active{background:var(--primary);color:white;border-color:var(--primary);}
+  .ch-btn:hover{border-color:var(--primary);color:var(--primary);}
+  .ch-btn.active:hover{color:white;}
+  /* 単元別折りたたみクイズ */
+  .unit-quiz-wrap{margin-top:18px;border:2px solid #7dd3fc;border-radius:10px;overflow:hidden;}
+  .unit-quiz-toggle{width:100%;background:linear-gradient(135deg,#0369a1,#0284c7);color:white;border:none;padding:11px 16px;font-size:0.88rem;font-weight:800;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;letter-spacing:0.5px;}
+  .unit-quiz-toggle:hover{filter:brightness(1.1);}
+  .unit-quiz-toggle .uq-arrow{font-size:1rem;transition:transform 0.25s;}
+  .unit-quiz-body{display:none;padding:14px;background:#f0f9ff;}
+  .unit-quiz-body.open{display:block;}
+  .uq-card{background:white;border:2px solid #bae6fd;border-radius:9px;padding:14px;margin-bottom:10px;}
+  .uq-card:last-child{margin-bottom:0;}
+  .uq-num{font-size:0.72rem;font-weight:800;color:#0369a1;margin-bottom:4px;}
+  .uq-q{font-weight:700;font-size:0.88rem;margin-bottom:10px;line-height:1.7;color:#0c4a6e;}
+  .uq-opts{display:flex;flex-direction:column;gap:7px;}
+  .uq-opt{padding:9px 13px;border:2px solid #bae6fd;border-radius:7px;cursor:pointer;font-size:0.85rem;background:white;font-family:inherit;text-align:left;color:#0c4a6e;transition:all 0.15s;display:flex;align-items:center;gap:8px;}
+  .uq-opt:hover:not(:disabled){border-color:#0369a1;background:#e0f2fe;}
+  .uq-opt .uq-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#dbeafe;color:#0369a1;font-weight:800;font-size:0.75rem;flex-shrink:0;}
+  .uq-opt.correct{background:#ecfccb;border-color:#65a30d;color:#1a2e05;font-weight:700;}
+  .uq-opt.correct .uq-badge{background:#65a30d;color:white;}
+  .uq-opt.wrong{background:#fee2e2;border-color:#ef4444;color:#7f1d1d;}
+  .uq-opt.wrong .uq-badge{background:#ef4444;color:white;}
+  .uq-fb{margin-top:9px;padding:8px 12px;border-radius:6px;font-size:0.82rem;display:none;font-weight:600;line-height:1.8;}
+  .uq-fb.show-ok{display:block;background:#ecfccb;color:#1a2e05;}
+  .uq-fb.show-ng{display:block;background:#fee2e2;color:#7f1d1d;}
+  .uq-result{margin-top:12px;border-radius:9px;padding:14px 16px;text-align:center;display:none;}
+  .uq-result.pass{background:linear-gradient(135deg,#15803d,#4ade80);color:white;}
+  .uq-result.retry{background:linear-gradient(135deg,#0369a1,#38bdf8);color:white;}
+  .uq-result-score{font-size:1.8rem;font-weight:900;}
+  .uq-result-msg{font-size:0.85rem;opacity:0.92;margin-top:4px;}
+  .uq-retry-btn{margin-top:10px;padding:7px 20px;border-radius:20px;border:2px solid white;background:transparent;color:white;font-weight:800;font-size:0.82rem;cursor:pointer;font-family:inherit;}
+  /* SP03 専用：力カード */
+  .force-card{border-radius:12px;padding:16px;margin-bottom:12px;border:2px solid;}
+  .boson-row{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:9px;margin-bottom:8px;}
+  .boson-icon{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1rem;flex-shrink:0;}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-top"><div class="logo">GAMBA</div><div class="header-sub">江原予備校 ／ 物理・宇宙</div></div>
+  <div class="chapter-title-bar">
+    <span class="chapter-badge">SP03</span>
+    <span class="chapter-title-text">素粒子への旅 ― ゲージボソン ― 力を伝える粒子たち</span>
+  </div>
+</header>
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab(&#39;learn&#39;)">📖 学習</button>
+  <button class="tab-btn" onclick="showTab(&#39;flash&#39;)">🃏 フラッシュカード</button>
+  <button class="tab-btn" onclick="showTab(&#39;quiz&#39;)">🔭 ミニテスト</button>
+</div>
+<main>
+
+<!-- ===== LEARN ===== -->
+<div id="tab-learn" class="tab-content active">
+
+<!-- 0. イヌ校長 -->
+<div class="section-card">
+  <div class="section-header sh-cosmos">⚡ 力ってなんだろう ― 素粒子が伝える「力」の話</div>
+  <div class="section-body">
+    <div style="background:linear-gradient(135deg,#0369a1,#0284c7);border-radius:12px;padding:18px 20px;color:white;font-size:0.92rem;line-height:2;margin-bottom:14px;">
+      <div style="font-size:1.05rem;font-weight:800;color:#bef264;margin-bottom:10px;">🐶 イヌ校長より</div>
+      SP01でクォーク、SP02でレプトンを学びました。どちらも「物質を作る粒子」でしたね。<br><br>
+      でも物質の粒子が集まっただけでは世界はできません。粒子と粒子を<strong style="color:#bef264">「結びつける力」</strong>が必要です。<br>
+      今回学ぶ<strong style="color:#bef264">ゲージボソン</strong>は、その「力を伝える粒子」です。<br><br>
+      磁石が鉄を引きつける。原子核がバラバラにならない。放射線が出る。<br>
+      これらはすべて、目には見えない粒子が飛び交うことで起きているのです。
+    </div>
+    <div class="amber-box">
+      <div class="box-label">📌 この単元で学ぶこと</div>
+      <div style="font-size:0.9rem;line-height:2.2;">
+        ① ゲージボソンとは何か（力を伝えるしくみ）<br>
+        ② 光子（フォトン）― 電磁気力の担い手<br>
+        ③ グルーオン ― 強い力の担い手<br>
+        ④ W粒子・Z粒子 ― 弱い力の担い手<br>
+        ⑤ 重力子（グラビトン）― 謎の粒子<br>
+        ⑥ コラム ― ファインマン図と力の統一という夢
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 1. ゲージボソンとは -->
+<div class="section-card">
+  <div class="section-header sh-blue">💫 1. ゲージボソンとは ― 力を「粒子」が伝える</div>
+  <div class="section-body">
+    <div class="text-block">
+      「力」ってどうやって伝わるんでしょうか。日常の感覚では、磁石を近づけると「なんとなく引き合う」と感じますよね。でも物理の世界では、力は<strong>粒子のやりとり</strong>で生まれます。
+    </div>
+
+    <div class="key-box">
+      <div class="box-label">🔑 力が伝わるしくみ ― キャッチボールのたとえ</div>
+      <div style="font-size:0.9rem;line-height:2.1;">
+        ２人の人がボートに乗ってボールを投げ合うと、反動でボートが離れていきます。<br>
+        素粒子の世界でも同じで、粒子Aと粒子Bが<strong>「力を運ぶ粒子（ゲージボソン）」</strong>を交換することで互いに力を感じます。
+      </div>
+    </div>
+
+    <!-- SVG：力の伝達イメージ -->
+    <svg width="100%" height="110" viewBox="0 0 400 110" xmlns="http://www.w3.org/2000/svg" style="max-width:400px;display:block;margin:12px auto;">
+      <rect width="400" height="110" fill="#0a1628" rx="10"></rect>
+      <!-- 粒子A -->
+      <circle cx="60" cy="55" r="26" fill="#0369a1"></circle>
+      <text x="60" y="50" text-anchor="middle" font-size="12" fill="white" font-family="sans-serif" font-weight="900">粒子</text>
+      <text x="60" y="66" text-anchor="middle" font-size="12" fill="#38bdf8" font-family="sans-serif" font-weight="900">A</text>
+      <!-- 粒子B -->
+      <circle cx="340" cy="55" r="26" fill="#15803d"></circle>
+      <text x="340" y="50" text-anchor="middle" font-size="12" fill="white" font-family="sans-serif" font-weight="900">粒子</text>
+      <text x="340" y="66" text-anchor="middle" font-size="12" fill="#4ade80" font-family="sans-serif" font-weight="900">B</text>
+      <!-- ゲージボソン矢印 -->
+      <defs>
+        <marker id="arr3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#fbbf24"></path></marker>
+      </defs>
+      <line x1="90" y1="55" x2="308" y2="55" stroke="#fbbf24" stroke-width="2.5" marker-end="url(#arr3)" stroke-dasharray="8,4"></line>
+      <!-- ボソンラベル -->
+      <rect x="155" y="34" width="90" height="22" rx="5" fill="#78350f"></rect>
+      <text x="200" y="49" text-anchor="middle" font-size="11" fill="#fbbf24" font-family="sans-serif" font-weight="800">ゲージボソン</text>
+      <text x="200" y="85" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="sans-serif">「力を運ぶ粒子」を交換 → 力が生まれる</text>
+    </svg>
+
+    <div class="text-block" style="margin-top:14px;">
+      素粒子の世界では<strong>4種類の「力」</strong>があり、それぞれを伝える専用のゲージボソンが存在します。
+    </div>
+
+    <!-- 4つの力と対応ボソン早見 -->
+    <div style="background:#0a1628;border-radius:10px;padding:14px;margin:12px 0;">
+      <div style="color:#bef264;font-weight:800;font-size:0.85rem;margin-bottom:10px;text-align:center;">4つの力とゲージボソン</div>
+      <table style="width:100%;border-collapse:collapse;font-size:0.83rem;">
+        <tbody><tr>
+          <th style="background:#1e3a5f;color:#38bdf8;padding:8px;text-align:center;border:1px solid #334155;">力の種類</th>
+          <th style="background:#1e3a5f;color:#38bdf8;padding:8px;text-align:center;border:1px solid #334155;">担い手（ゲージボソン）</th>
+          <th style="background:#1e3a5f;color:#38bdf8;padding:8px;text-align:center;border:1px solid #334155;">到達距離</th>
+          <th style="background:#1e3a5f;color:#38bdf8;padding:8px;text-align:center;border:1px solid #334155;">身近な例</th>
+        </tr>
+        <tr>
+          <td style="background:#0f172a;color:#fbbf24;padding:8px;border:1px solid #1e3a5f;font-weight:800;text-align:center;">電磁気力</td>
+          <td style="background:#0f172a;color:#e2e8f0;padding:8px;border:1px solid #1e3a5f;text-align:center;">光子（γ）</td>
+          <td style="background:#0f172a;color:#4ade80;padding:8px;border:1px solid #1e3a5f;text-align:center;">∞（無限）</td>
+          <td style="background:#0f172a;color:#94a3b8;padding:8px;border:1px solid #1e3a5f;text-align:center;">磁石・電気・光</td>
+        </tr>
+        <tr>
+          <td style="background:#111827;color:#f87171;padding:8px;border:1px solid #1e3a5f;font-weight:800;text-align:center;">強い力</td>
+          <td style="background:#111827;color:#e2e8f0;padding:8px;border:1px solid #1e3a5f;text-align:center;">グルーオン（g）</td>
+          <td style="background:#111827;color:#f87171;padding:8px;border:1px solid #1e3a5f;text-align:center;">〜10⁻¹⁵m</td>
+          <td style="background:#111827;color:#94a3b8;padding:8px;border:1px solid #1e3a5f;text-align:center;">原子核を束ねる</td>
+        </tr>
+        <tr>
+          <td style="background:#0f172a;color:#c084fc;padding:8px;border:1px solid #1e3a5f;font-weight:800;text-align:center;">弱い力</td>
+          <td style="background:#0f172a;color:#e2e8f0;padding:8px;border:1px solid #1e3a5f;text-align:center;">W⁺ W⁻ Z⁰</td>
+          <td style="background:#0f172a;color:#f87171;padding:8px;border:1px solid #1e3a5f;text-align:center;">〜10⁻¹⁸m</td>
+          <td style="background:#0f172a;color:#94a3b8;padding:8px;border:1px solid #1e3a5f;text-align:center;">β崩壊・放射線</td>
+        </tr>
+        <tr>
+          <td style="background:#111827;color:#94a3b8;padding:8px;border:1px solid #1e3a5f;font-weight:800;text-align:center;">重力</td>
+          <td style="background:#111827;color:#64748b;padding:8px;border:1px solid #1e3a5f;text-align:center;">重力子（？未発見）</td>
+          <td style="background:#111827;color:#4ade80;padding:8px;border:1px solid #1e3a5f;text-align:center;">∞（無限）</td>
+          <td style="background:#111827;color:#94a3b8;padding:8px;border:1px solid #1e3a5f;text-align:center;">りんごが落ちる</td>
+        </tr>
+      </tbody></table>
+    </div>
+
+    <div class="note-block">💡 <strong>ゲージボソン</strong>は「物質粒子（クォーク・レプトン）」とは別グループです。物質粒子がフェルミオン（スピン1/2）なのに対し、ゲージボソンはスピン1（整数スピン）をもつという違いがあります。</div>
+
+    <!-- 単元1 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq1&#39;)"><span>🖊️ 単元1 ミニテスト ― ゲージボソンとは何か</span><span class="uq-arrow" id="uq1_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq1_body" data-uid="uq1"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. 光子 -->
+<div class="section-card">
+  <div class="section-header sh-gold">☀️ 2. 光子（フォトン）― 光と電気を動かす粒子</div>
+  <div class="section-body">
+    <div class="text-block">「光」は波でもあり粒子でもある、というのを聞いたことがあるかもしれません。その「粒子としての光」が<strong>光子（フォトン）</strong>です。光子は電磁気力を伝えるゲージボソンです。</div>
+
+    <div style="background:#0a1628;border-radius:10px;padding:14px;margin:12px 0;">
+      <div class="boson-row" style="background:#1a1000;border:1px solid #78350f;">
+        <div class="boson-icon" style="background:#fbbf24;color:#0f172a;">γ</div>
+        <div>
+          <div style="color:#fbbf24;font-weight:800;font-size:0.95rem;">光子（Photon）― 記号：γ（ガンマ）</div>
+          <div style="color:#94a3b8;font-size:0.78rem;margin-top:2px;">質量：ゼロ　電荷：ゼロ　速度：光速（秒速約30万km）</div>
+        </div>
+      </div>
+      <div style="font-size:0.85rem;color:#e2e8f0;line-height:2;padding:0 4px;">
+        ・光子は<strong style="color:#fbbf24">質量ゼロ</strong>だから光速で飛べる。距離の限界なし（無限に届く）<br>
+        ・電荷を帯びた粒子（電子・陽子など）の間を行き来して<strong style="color:#fbbf24">電磁気力</strong>を伝える<br>
+        ・目に見える「光」も、電子レンジの「電波」も、レントゲンの「X線」も、すべて光子！<br>
+        ・光子そのものは電荷をもたないため、光子同士は直接反応しない
+      </div>
+    </div>
+
+    <div class="important-box">
+      <div class="box-label">🌈 電磁波は全部「光子」</div>
+      <div style="font-size:0.85rem;line-height:2.2;">
+        電波・赤外線・可視光・紫外線・X線・ガンマ線 ―― これらはすべて光子の流れです。<br>
+        エネルギーが低い光子 → 電波 &nbsp; / &nbsp; エネルギーが高い光子 → ガンマ線<br>
+        <strong>光子のエネルギー ＝ 振動数 × プランク定数（E＝hν）</strong>
+      </div>
+    </div>
+
+    <div class="amber-box">
+      <div class="box-label">💡 電子と陽子はなぜ引き合う？</div>
+      <div style="font-size:0.87rem;line-height:2;">
+        電子（−1）と陽子（+1）が引き合うとき、目には見えないけれど<strong>光子が飛び交っています</strong>。<br>
+        「光が見える」のとは別に、常にこうした「仮想光子」が力を運んでいます。<br>
+        化学結合（共有結合・イオン結合）もすべて電磁気力 ＝ 光子のやりとりです。
+      </div>
+    </div>
+
+    <!-- 単元2 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq2&#39;)"><span>🖊️ 単元2 ミニテスト ― 光子（フォトン）</span><span class="uq-arrow" id="uq2_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq2_body" data-uid="uq2"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. グルーオン -->
+<div class="section-card">
+  <div class="section-header sh-red">🔴 3. グルーオン ― 原子核を束ねる最強の力</div>
+  <div class="section-body">
+    <div class="text-block">陽子の中にはクォークが3つあります。なぜバラバラにならないのでしょう？ それは<strong>グルーオン</strong>（glue＝接着剤の粒子）が強力な力でクォークを結びつけているからです。</div>
+
+    <div style="background:#0a1628;border-radius:10px;padding:14px;margin:12px 0;">
+      <div class="boson-row" style="background:#2d0000;border:1px solid #7f1d1d;">
+        <div class="boson-icon" style="background:#ef4444;color:white;">g</div>
+        <div>
+          <div style="color:#f87171;font-weight:800;font-size:0.95rem;">グルーオン（Gluon）― 記号：g</div>
+          <div style="color:#94a3b8;font-size:0.78rem;margin-top:2px;">質量：ゼロ　電荷：ゼロ（ただし「色荷」を持つ）　種類：8種類</div>
+        </div>
+      </div>
+      <div style="font-size:0.85rem;color:#e2e8f0;line-height:2;padding:0 4px;">
+        ・クォークが持つ<strong style="color:#f87171">「色荷（カラーチャージ）」</strong>を仲介して強い力を伝える<br>
+        ・到達距離は約10⁻¹⁵メートル（原子核の大きさくらい）と非常に短い<br>
+        ・強い力は4つの力の中で<strong style="color:#f87171">最も強い</strong>（電磁気力の約100倍）<br>
+        ・グルーオン自身も色荷を持つため、グルーオン同士でも相互作用する
+      </div>
+    </div>
+
+    <div class="key-box">
+      <div class="box-label">🔑 「色荷（カラーチャージ）」とは？</div>
+      <div style="font-size:0.88rem;line-height:2.1;">
+        クォークは「赤・青・緑」の3種類の<strong>色荷</strong>を持っています（目で見える「色」とは無関係です！）。<br>
+        陽子・中性子の中では「赤＋青＋緑」が合わさって<strong>「白」（色なし）</strong>になります。<br>
+        自然界は「色が白（無色）になった状態」しか単独では存在できないというルールがあり、これが<strong>クォークの閉じ込め</strong>の理由です。
+      </div>
+    </div>
+
+    <!-- 色荷SVG図 -->
+    <svg width="100%" height="130" viewBox="0 0 380 130" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;display:block;margin:12px auto;">
+      <rect width="380" height="130" fill="#0a1628" rx="10"></rect>
+      <!-- 陽子の輪郭 -->
+      <circle cx="190" cy="65" r="50" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="6,3"></circle>
+      <text x="190" y="16" text-anchor="middle" font-size="11" fill="#94a3b8" font-family="sans-serif">陽子（UUD）の中</text>
+      <!-- 3つのクォーク -->
+      <circle cx="190" cy="30" r="18" fill="#ef4444" opacity="0.85"></circle>
+      <text x="190" y="26" text-anchor="middle" font-size="10" fill="white" font-family="sans-serif" font-weight="900">U</text>
+      <text x="190" y="40" text-anchor="middle" font-size="9" fill="#fca5a5" font-family="sans-serif">赤</text>
+      <circle cx="155" cy="85" r="18" fill="#22c55e" opacity="0.85"></circle>
+      <text x="155" y="81" text-anchor="middle" font-size="10" fill="white" font-family="sans-serif" font-weight="900">U</text>
+      <text x="155" y="95" text-anchor="middle" font-size="9" fill="#bbf7d0" font-family="sans-serif">緑</text>
+      <circle cx="225" cy="85" r="18" fill="#3b82f6" opacity="0.85"></circle>
+      <text x="225" y="81" text-anchor="middle" font-size="10" fill="white" font-family="sans-serif" font-weight="900">D</text>
+      <text x="225" y="95" text-anchor="middle" font-size="9" fill="#bfdbfe" font-family="sans-serif">青</text>
+      <!-- グルーオン線 -->
+      <path d="M190,48 Q172,67 155,68" fill="none" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5,3"></path>
+      <path d="M190,48 Q208,67 225,68" fill="none" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5,3"></path>
+      <path d="M173,85 Q190,100 207,85" fill="none" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5,3"></path>
+      <text x="320" y="55" text-anchor="middle" font-size="10" fill="#fbbf24" font-family="sans-serif" font-weight="800">グル</text>
+      <text x="320" y="68" text-anchor="middle" font-size="10" fill="#fbbf24" font-family="sans-serif" font-weight="800">ーオン</text>
+      <text x="320" y="82" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="sans-serif">（破線）</text>
+      <text x="190" y="120" text-anchor="middle" font-size="10" fill="#4ade80" font-family="sans-serif">赤＋緑＋青 ＝ 白（無色）→ 安定！</text>
+    </svg>
+
+    <div class="note-block">💡 グルーオンが非常に強い力を持つのに、なぜ原子核の外に出てこないのか？ 「色荷を持つグルーオン自身がグルーオンと相互作用する」という自己作用があり、距離が離れるほど力が弱まらず（むしろ強まる）、クォークを外に出せなくなります。これが<strong>閉じ込め（コンファインメント）</strong>の正体です。</div>
+
+    <!-- 単元3 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq3&#39;)"><span>🖊️ 単元3 ミニテスト ― グルーオン</span><span class="uq-arrow" id="uq3_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq3_body" data-uid="uq3"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. ウィークボソン -->
+<div class="section-card">
+  <div class="section-header sh-purple">🟣 4. W粒子・Z粒子 ― 弱い力と崩壊のしくみ</div>
+  <div class="section-body">
+    <div class="text-block">「弱い力（弱い相互作用）」は、中性子がβ崩壊するときや、太陽の核融合を支えるときに働く力です。担い手はW粒子とZ粒子の3種類です。</div>
+
+    <div style="background:#0a1628;border-radius:10px;padding:14px;margin:12px 0;">
+      <!-- W+ -->
+      <div class="boson-row" style="background:#1a0025;border:1px solid #5b21b6;margin-bottom:8px;">
+        <div class="boson-icon" style="background:#a78bfa;color:#1a0025;">W⁺</div>
+        <div>
+          <div style="color:#c4b5fd;font-weight:800;font-size:0.92rem;">W⁺ボソン（W-plus）</div>
+          <div style="color:#94a3b8;font-size:0.78rem;margin-top:2px;">質量：80.4 GeV/c²（陽子の約86倍！）　電荷：＋1</div>
+        </div>
+      </div>
+      <!-- W- -->
+      <div class="boson-row" style="background:#1a0025;border:1px solid #5b21b6;margin-bottom:8px;">
+        <div class="boson-icon" style="background:#7c3aed;color:white;">W⁻</div>
+        <div>
+          <div style="color:#c4b5fd;font-weight:800;font-size:0.92rem;">W⁻ボソン（W-minus）</div>
+          <div style="color:#94a3b8;font-size:0.78rem;margin-top:2px;">質量：80.4 GeV/c²　電荷：−1　W⁺の反粒子</div>
+        </div>
+      </div>
+      <!-- Z0 -->
+      <div class="boson-row" style="background:#1a0025;border:1px solid #5b21b6;">
+        <div class="boson-icon" style="background:#4c1d95;color:white;">Z⁰</div>
+        <div>
+          <div style="color:#c4b5fd;font-weight:800;font-size:0.92rem;">Z⁰ボソン（Z-zero）</div>
+          <div style="color:#94a3b8;font-size:0.78rem;margin-top:2px;">質量：91.2 GeV/c²（陽子の約98倍）　電荷：0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="key-box">
+      <div class="box-label">🔑 W・Z粒子が「重い」理由 ― ヒッグス機構</div>
+      <div style="font-size:0.88rem;line-height:2.1;">
+        光子やグルーオンは質量ゼロですが、W・Z粒子は陽子の80〜90倍もの巨大な質量を持ちます。<br>
+        これは<strong>ヒッグス粒子（SP06で学ぶ）</strong>との相互作用で質量を得ているためです。<br>
+        質量が大きい → 生まれにくい → 到達距離がきわめて短い（10⁻¹⁸m）
+      </div>
+    </div>
+
+    <!-- β崩壊のしくみ -->
+    <div style="background:#f5f3ff;border:2px solid #c4b5fd;border-radius:10px;padding:14px;margin:12px 0;">
+      <div style="font-weight:800;color:#5b21b6;font-size:0.87rem;margin-bottom:10px;">📝 β崩壊のしくみ（W⁻ボソンが活躍）</div>
+      <svg width="100%" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg" style="max-width:400px;display:block;margin:0 auto 8px;">
+        <rect width="400" height="100" fill="#0f0020" rx="8"></rect>
+        <!-- 中性子 -->
+        <rect x="20" y="30" width="72" height="40" rx="8" fill="#1e3a5f"></rect>
+        <text x="56" y="48" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="sans-serif">中性子</text>
+        <text x="56" y="63" text-anchor="middle" font-size="10" fill="#38bdf8" font-family="sans-serif">（UDD）</text>
+        <!-- 矢印 -->
+        <defs><marker id="arrp" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#a78bfa"></path></marker></defs>
+        <line x1="93" y1="50" x2="140" y2="50" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrp)"></line>
+        <text x="118" y="44" text-anchor="middle" font-size="9" fill="#a78bfa" font-family="sans-serif">W⁻</text>
+        <!-- 陽子 -->
+        <rect x="142" y="30" width="72" height="40" rx="8" fill="#0d4429"></rect>
+        <text x="178" y="48" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="sans-serif">陽子</text>
+        <text x="178" y="63" text-anchor="middle" font-size="10" fill="#4ade80" font-family="sans-serif">（UUD）</text>
+        <!-- W- → e + ν -->
+        <defs><marker id="arry" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#fbbf24"></path></marker></defs>
+        <text x="240" y="35" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="sans-serif">W⁻が崩壊↓</text>
+        <line x1="240" y1="50" x2="285" y2="30" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arry)"></line>
+        <line x1="240" y1="50" x2="285" y2="70" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arry)"></line>
+        <text x="310" y="32" font-size="10" fill="#fbbf24" font-family="sans-serif" font-weight="800">電子 e⁻</text>
+        <text x="295" y="72" font-size="10" fill="#38bdf8" font-family="sans-serif" font-weight="800">反νₑ</text>
+      </svg>
+      <div style="font-size:0.83rem;color:#5b21b6;line-height:2;">
+        ① ダウンクォーク（D）が <strong>W⁻ボソン</strong>を放出してアップクォーク（U）に変わる<br>
+        ② W⁻ボソンが即座に崩壊して <strong>電子（e⁻）</strong>と<strong>反電子ニュートリノ</strong>を生む<br>
+        → 中性子（UDD）が陽子（UUD）に変わる ＝ β崩壊！
+      </div>
+    </div>
+
+    <!-- 単元4 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq4&#39;)"><span>🖊️ 単元4 ミニテスト ― W粒子・Z粒子</span><span class="uq-arrow" id="uq4_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq4_body" data-uid="uq4"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. 重力子 -->
+<div class="section-card">
+  <div class="section-header sh-teal">🌌 5. 重力子（グラビトン）― 未発見の粒子</div>
+  <div class="section-body">
+    <div class="text-block">りんごが木から落ちる。地球が太陽の周りを回る。月の引力が潮を起こす。日常で最も身近な「重力」ですが、その担い手となる<strong>重力子（グラビトン）</strong>はまだ発見されていません。</div>
+
+    <div style="background:#0a1628;border-radius:10px;padding:14px;margin:12px 0;">
+      <div class="boson-row" style="background:#001a1a;border:1px solid #0d9488;">
+        <div class="boson-icon" style="background:#0d9488;color:white;font-size:0.8rem;">G?</div>
+        <div>
+          <div style="color:#2dd4bf;font-weight:800;font-size:0.95rem;">重力子（Graviton）― 予測上の粒子</div>
+          <div style="color:#94a3b8;font-size:0.78rem;margin-top:2px;">質量：ゼロ（予測）　電荷：ゼロ　スピン：2（予測）　未発見</div>
+        </div>
+      </div>
+      <div style="font-size:0.85rem;color:#e2e8f0;line-height:2;padding:8px 4px 0;">
+        ・理論的には存在するはずだが、重力は他の3つの力に比べて<strong style="color:#2dd4bf">圧倒的に弱い</strong><br>
+        ・重力は現在、アインシュタインの<strong style="color:#fbbf24">一般相対性理論</strong>（時空のゆがみ）で説明されている<br>
+        ・量子論と一般相対性理論を統一する「<strong style="color:#2dd4bf">量子重力理論</strong>」は現在も未完成<br>
+        ・重力子を素粒子として記述できれば理論の統一に大きく近づく
+      </div>
+    </div>
+
+    <div class="warn-block">
+      ⚠️ <strong>重力は特別な存在</strong><br>
+      電磁気力・強い力・弱い力の3つは標準模型でうまく記述できます。しかし重力だけは標準模型に組み込めておらず、物理学最大の未解決問題のひとつです。
+    </div>
+
+    <div class="important-box">
+      <div class="box-label">📊 4つの力の強さ比較（大まかな目安）</div>
+      <div style="font-size:0.85rem;line-height:2.2;">
+        強い力 ≈ <strong>1</strong>（基準）<br>
+        電磁気力 ≈ <strong>1/137</strong>（強い力の約100分の1）<br>
+        弱い力 ≈ <strong>10⁻⁶</strong>（電磁気力のさらに100万分の1）<br>
+        重力 ≈ <strong>10⁻³⁸</strong>（信じられないほど弱い！）<br>
+        <span style="color:#65a30d;font-weight:700;">なぜ重力だけこれほど弱いのかも未解決の謎です。</span>
+      </div>
+    </div>
+
+    <!-- 単元5 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq5&#39;)"><span>🖊️ 単元5 ミニテスト ― 重力子（グラビトン）</span><span class="uq-arrow" id="uq5_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq5_body" data-uid="uq5"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. コラム -->
+<div class="section-card">
+  <div class="section-header sh-cosmos">📖 コラム ― ファインマン図と「力の統一」という夢</div>
+  <div class="section-body">
+    <div class="text-block">素粒子の相互作用を絵で描く方法と、物理学者たちが長年追い続けてきた「夢」についてご紹介します。</div>
+
+    <div style="background:linear-gradient(135deg,#0369a1,#1e40af);border-radius:12px;padding:16px 18px;color:white;margin:12px 0;">
+      <div style="font-weight:800;color:#bef264;font-size:0.95rem;margin-bottom:8px;">🎨 ファインマン図（Feynman Diagram）とは</div>
+      <div style="font-size:0.87rem;line-height:2;">
+        物理学者リチャード・ファインマンが考案した、<strong style="color:#38bdf8">素粒子の相互作用を視覚化する図</strong>です。<br>
+        直線や曲線の種類で粒子の種類を表し、頂点でどの粒子が相互作用したかを示します。<br><br>
+        ノーベル物理学賞を受賞（1965年）したファインマンは、「難しいことをわかりやすく伝える」達人としても知られ、<em>「教えられなければ本当に理解していない」</em>と言い続けた科学者です。
+      </div>
+    </div>
+
+    <!-- ファインマン図SVG（電子間の電磁気力） -->
+    <div style="background:#0a1628;border-radius:10px;padding:14px;margin:12px 0;text-align:center;">
+      <div style="color:#bef264;font-weight:800;font-size:0.82rem;margin-bottom:10px;">ファインマン図の例：電子2つが反発する（電磁気力）</div>
+      <svg width="100%" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" style="max-width:300px;display:block;margin:0 auto;">
+        <rect width="300" height="120" fill="#0a1628" rx="8"></rect>
+        <!-- 時間軸 -->
+        <text x="148" y="112" text-anchor="middle" font-size="9" fill="#475569" font-family="sans-serif">─── 時間 ───▶</text>
+        <!-- 電子A -->
+        <line x1="30" y1="90" x2="110" y2="60" stroke="#38bdf8" stroke-width="2"></line>
+        <line x1="110" y1="60" x2="190" y2="30" stroke="#38bdf8" stroke-width="2"></line>
+        <text x="22" y="94" font-size="10" fill="#38bdf8" font-family="sans-serif" font-weight="900">e⁻</text>
+        <text x="192" y="30" font-size="10" fill="#38bdf8" font-family="sans-serif" font-weight="900">e⁻</text>
+        <!-- 電子B -->
+        <line x1="30" y1="30" x2="110" y2="60" stroke="#4ade80" stroke-width="2"></line>
+        <line x1="110" y1="60" x2="190" y2="90" stroke="#4ade80" stroke-width="2"></line>
+        <text x="22" y="30" font-size="10" fill="#4ade80" font-family="sans-serif" font-weight="900">e⁻</text>
+        <text x="192" y="94" font-size="10" fill="#4ade80" font-family="sans-serif" font-weight="900">e⁻</text>
+        <!-- 光子（仮想） -->
+        <path d="M110,60 Q150,45 190,60" fill="none" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5,3"></path>
+        <text x="150" y="44" text-anchor="middle" font-size="10" fill="#fbbf24" font-family="sans-serif" font-weight="800">γ（光子）</text>
+      </svg>
+      <div style="color:#94a3b8;font-size:0.78rem;margin-top:6px;">電子が光子を交換 → 電磁気力（反発力）が生まれる</div>
+    </div>
+
+    <div class="amber-box">
+      <div class="box-label">🌟 力の統一という夢</div>
+      <div style="font-size:0.87rem;line-height:2.1;">
+        「4つの力はもともと1つの力だったのでは？」――これが物理学者たちの長年の夢です。<br><br>
+        ✅ <strong>電弱統一理論（1967年）</strong>：電磁気力と弱い力は高エネルギーでは1つの力。<br>
+          グラショウ・サラム・ワインバーグが提唱。1979年ノーベル物理学賞受賞。<br><br>
+        🔄 <strong>大統一理論（GUT）</strong>：強い力も加えた統一理論。現在も研究中。<br><br>
+        ❓ <strong>超統一理論（TOE）</strong>：重力まで含めた究極の統一理論。まだ未完成。
+      </div>
+    </div>
+
+    <!-- 単元6 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq6&#39;)"><span>🖊️ コラム ミニテスト ― ファインマン図と力の統一</span><span class="uq-arrow" id="uq6_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq6_body" data-uid="uq6"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. まとめ -->
+<div class="section-card">
+  <div class="section-header sh-green">📝 7. まとめ ― ゲージボソン全体像</div>
+  <div class="section-body">
+    <div style="background:#0a1628;border-radius:10px;padding:14px;margin-bottom:14px;">
+      <div style="color:#bef264;font-weight:800;font-size:0.88rem;margin-bottom:10px;text-align:center;">ゲージボソン まとめ表</div>
+      <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
+        <tbody><tr>
+          <th style="background:#0369a1;color:white;padding:8px;text-align:center;border:1px solid #1e3a5f;">名称</th>
+          <th style="background:#0369a1;color:white;padding:8px;text-align:center;border:1px solid #1e3a5f;">記号</th>
+          <th style="background:#0369a1;color:white;padding:8px;text-align:center;border:1px solid #1e3a5f;">担う力</th>
+          <th style="background:#0369a1;color:white;padding:8px;text-align:center;border:1px solid #1e3a5f;">質量</th>
+          <th style="background:#0369a1;color:white;padding:8px;text-align:center;border:1px solid #1e3a5f;">電荷</th>
+        </tr>
+        <tr><td style="background:#0f172a;color:#fbbf24;padding:7px;border:1px solid #1e3a5f;text-align:center;font-weight:800;">光子</td><td style="background:#0f172a;color:#e2e8f0;padding:7px;border:1px solid #1e3a5f;text-align:center;">γ</td><td style="background:#0f172a;color:#e2e8f0;padding:7px;border:1px solid #1e3a5f;text-align:center;">電磁気力</td><td style="background:#0f172a;color:#4ade80;padding:7px;border:1px solid #1e3a5f;text-align:center;">0</td><td style="background:#0f172a;color:#4ade80;padding:7px;border:1px solid #1e3a5f;text-align:center;">0</td></tr>
+        <tr><td style="background:#111827;color:#f87171;padding:7px;border:1px solid #1e3a5f;text-align:center;font-weight:800;">グルーオン</td><td style="background:#111827;color:#e2e8f0;padding:7px;border:1px solid #1e3a5f;text-align:center;">g（8種）</td><td style="background:#111827;color:#e2e8f0;padding:7px;border:1px solid #1e3a5f;text-align:center;">強い力</td><td style="background:#111827;color:#4ade80;padding:7px;border:1px solid #1e3a5f;text-align:center;">0</td><td style="background:#111827;color:#4ade80;padding:7px;border:1px solid #1e3a5f;text-align:center;">0</td></tr>
+        <tr><td style="background:#0f172a;color:#c084fc;padding:7px;border:1px solid #1e3a5f;text-align:center;font-weight:800;">W⁺ W⁻</td><td style="background:#0f172a;color:#e2e8f0;padding:7px;border:1px solid #1e3a5f;text-align:center;">W±</td><td style="background:#0f172a;color:#e2e8f0;padding:7px;border:1px solid #1e3a5f;text-align:center;">弱い力</td><td style="background:#0f172a;color:#f87171;padding:7px;border:1px solid #1e3a5f;text-align:center;">80.4 GeV</td><td style="background:#0f172a;color:#e2e8f0;padding:7px;border:1px solid #1e3a5f;text-align:center;">±1</td></tr>
+        <tr><td style="background:#111827;color:#c084fc;padding:7px;border:1px solid #1e3a5f;text-align:center;font-weight:800;">Z⁰ボソン</td><td style="background:#111827;color:#e2e8f0;padding:7px;border:1px solid #1e3a5f;text-align:center;">Z⁰</td><td style="background:#111827;color:#e2e8f0;padding:7px;border:1px solid #1e3a5f;text-align:center;">弱い力</td><td style="background:#111827;color:#f87171;padding:7px;border:1px solid #1e3a5f;text-align:center;">91.2 GeV</td><td style="background:#111827;color:#4ade80;padding:7px;border:1px solid #1e3a5f;text-align:center;">0</td></tr>
+        <tr><td style="background:#0f172a;color:#2dd4bf;padding:7px;border:1px solid #1e3a5f;text-align:center;font-weight:800;">重力子</td><td style="background:#0f172a;color:#64748b;padding:7px;border:1px solid #1e3a5f;text-align:center;">G（？）</td><td style="background:#0f172a;color:#e2e8f0;padding:7px;border:1px solid #1e3a5f;text-align:center;">重力</td><td style="background:#0f172a;color:#4ade80;padding:7px;border:1px solid #1e3a5f;text-align:center;">0（予測）</td><td style="background:#0f172a;color:#4ade80;padding:7px;border:1px solid #1e3a5f;text-align:center;">0</td></tr>
+      </tbody></table>
+    </div>
+    <div class="important-box">
+      <div class="box-label">⭐ ここが核心！</div>
+      <div style="font-size:0.88rem;line-height:2.4;">
+        ① 力は「粒子のやりとり」で伝わる。その粒子が<strong>ゲージボソン</strong><br>
+        ② <strong>光子</strong>→ 電磁気力（質量ゼロ・無限到達）<br>
+        ③ <strong>グルーオン</strong>→ 強い力（色荷を運ぶ・8種類）<br>
+        ④ <strong>W・Z粒子</strong>→ 弱い力（質量が巨大・β崩壊の原因）<br>
+        ⑤ <strong>重力子</strong>→ 重力（まだ未発見・標準模型の外）
+      </div>
+    </div>
+    <!-- 単元7 クイズ -->
+    <div class="unit-quiz-wrap">
+      <button class="unit-quiz-toggle" onclick="uqToggle(&#39;uq7&#39;)"><span>🖊️ 単元7 ミニテスト ― ゲージボソンのまとめ</span><span class="uq-arrow" id="uq7_arrow">▼</span></button>
+      <div class="unit-quiz-body" id="uq7_body" data-uid="uq7"></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /tab-learn -->
+
+<!-- ===== FLASH ===== -->
+<div id="tab-flash" class="tab-content">
+  <div class="section-card">
+    <div class="section-header sh-cosmos">🃏 フラッシュカード ― ゲージボソンの重要ポイント</div>
+    <div class="section-body">
+      <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+        <button class="fc-speed-btn active" onclick="setFcSpeed(0)" id="spbtn0">手動</button>
+        <button class="fc-speed-btn" onclick="setFcSpeed(4000)" id="spbtn1">4秒</button>
+        <button class="fc-speed-btn" onclick="setFcSpeed(2500)" id="spbtn2">2.5秒</button>
+        <button class="fc-speed-btn" onclick="setFcSpeed(1500)" id="spbtn3">1.5秒</button>
+      </div>
+      <div class="flashcard-wrap" onclick="flipFc()">
+        <div class="flashcard" id="fc_card">
+          <div class="fc-face fc-front"><div class="fc-label">おもて</div><div class="fc-main" id="fc_front">ゲージボソンとは何か？</div><div class="fc-sub" id="fc_fsub"></div></div>
+          <div class="fc-face fc-back"><div class="fc-label">うら</div><div class="fc-main" id="fc_back">力を伝える粒子</div><div class="fc-sub" id="fc_bsub">電磁気力・強い力・弱い力のそれぞれに担い手がいる</div></div>
+        </div>
+      </div>
+      <div class="fc-timer-bar"><div class="fc-timer-fill" id="fc_timer" style="width:0%"></div></div>
+      <div class="fc-progress" id="fc_prog"><div class="fc-dot current"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div><div class="fc-dot"></div></div>
+      <div class="fc-nav">
+        <button class="fc-nav-btn" onclick="fcPrev()" id="fc_prevBtn" disabled="">◀ 前へ</button>
+        <span style="font-size:0.85rem;color:var(--muted);" id="fc_idx">1 / 12</span>
+        <button class="fc-nav-btn" onclick="fcNext()" id="fc_nextBtn">次へ ▶</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== QUIZ ===== -->
+<div id="tab-quiz" class="tab-content">
+  <div class="section-card">
+    <div class="section-header sh-blue">🔭 ミニテスト ― 単元別4択（全問）</div>
+    <div class="section-body">
+      <div style="margin-bottom:16px;">
+        <div style="font-size:0.82rem;font-weight:700;color:var(--muted);margin-bottom:8px;">📚 単元を選んでください</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;" id="chapterBtns">
+          <button class="ch-btn active" onclick="selectChapter(0)">📚 全問チャレンジ</button>
+          <button class="ch-btn" onclick="selectChapter(1)">1. ゲージボソンとは</button>
+          <button class="ch-btn" onclick="selectChapter(2)">2. 光子</button>
+          <button class="ch-btn" onclick="selectChapter(3)">3. グルーオン</button>
+          <button class="ch-btn" onclick="selectChapter(4)">4. W・Z粒子</button>
+          <button class="ch-btn" onclick="selectChapter(5)">5. 重力子</button>
+          <button class="ch-btn" onclick="selectChapter(6)">6. コラム</button>
+          <button class="ch-btn" onclick="selectChapter(7)">7. まとめ</button>
+        </div>
+      </div>
+      <div style="font-size:0.82rem;color:var(--muted);margin-bottom:14px;" id="quizInfo">全28問に挑戦しましょう。</div>
+      <div id="quizContainer"></div>
+      <div class="quiz-result" id="quizResult">
+        <div style="font-size:0.85rem;opacity:0.8;margin-bottom:4px;">最終スコア</div>
+        <div class="quiz-result-score" id="quizScore"></div>
+        <div class="quiz-result-msg" id="quizMsg"></div>
+        <button class="btn btn-primary" onclick="resetQuiz()" style="margin-top:12px;">もう一度 ↺</button>
+      </div>
+      <div style="margin-top:14px;text-align:right;"><button class="btn btn-gray" onclick="resetQuiz()">↺ リセット</button></div>
+    </div>
+  </div>
+</div>
+
+</main>
+<script>
+// TAB
+function showTab(id){
+  document.querySelectorAll('.tab-content').forEach(function(el){el.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(el){el.classList.remove('active');});
+  document.getElementById('tab-'+id).classList.add('active');
+  ['learn','flash','quiz'].forEach(function(t,i){if(t===id)document.querySelectorAll('.tab-btn')[i].classList.add('active');});
+  if(id==='flash')renderFc();
+  if(id==='quiz'){currentChapter=0;buildQuiz();}
+}
+
+// CONFETTI
+function launchConfetti(n){
+  var colors=['#bef264','#38bdf8','#4ade80','#f87171','#fbbf24','#c084fc'];
+  for(var i=0;i<n;i++){
+    var el=document.createElement('div');el.className='confetti-piece';
+    el.style.cssText='left:'+(20+Math.random()*60)+'vw;top:20vh;background:'+colors[Math.floor(Math.random()*colors.length)]+';animation-delay:'+(Math.random()*0.6)+'s';
+    document.body.appendChild(el);
+    setTimeout((function(e){return function(){e.remove();};}(el)),2000);
+  }
+}
+
+// ===== 単元別クイズデータ =====
+var uqDefs={
+  uq1:{qs:[
+    {q:'ゲージボソンとはどのような粒子ですか？',opts:['物質を作る粒子','力を伝える粒子','反物質を作る粒子','エネルギーを貯める粒子'],ans:1,exp:'ゲージボソンは「力を伝える粒子」です。クォークやレプトンが「物質を作る粒子（フェルミオン）」であるのに対し、ゲージボソンは粒子間を行き来することで電磁気力・強い力・弱い力を伝えます。'},
+    {q:'素粒子の世界で「力が伝わるしくみ」はどれですか？',opts:['粒子が引っ張り合う','粒子が「力を運ぶ粒子（ゲージボソン）」を交換する','粒子が合体する','粒子が振動する'],ans:1,exp:'素粒子の世界では、力は粒子Aと粒子Bがゲージボソンを交換することで伝わります。キャッチボールのたとえで説明されることが多い現象です。'},
+    {q:'現在の標準模型に含まれるゲージボソンはいくつの力を伝えますか？',opts:['1種類の力','2種類の力','3種類の力','4種類の力'],ans:2,exp:'標準模型のゲージボソンは電磁気力・強い力・弱い力の3種類を伝えます。重力は標準模型の外にあり、重力子は未発見です。'},
+    {q:'クォークやレプトン（物質粒子）と比べてゲージボソンが異なる点はどれですか？',opts:['素粒子ではない','スピンが整数（1）である','電荷を必ず持つ','質量が必ずゼロ'],ans:1,exp:'物質粒子（フェルミオン）はスピン1/2をもちますが、ゲージボソンはスピンが整数（1）です。これが両グループの物理的な違いの根本です。'}
+  ]},
+  uq2:{qs:[
+    {q:'光子（フォトン）が伝える力はどれですか？',opts:['強い力','弱い力','電磁気力','重力'],ans:2,exp:'光子（γ）は電磁気力を伝えるゲージボソンです。電荷を持つ粒子（電子・陽子など）の間で光子がやりとりされ、引力・斥力が生まれます。'},
+    {q:'光子（フォトン）の質量はどれですか？',opts:['陽子の1/1836','電子と同じ','ゼロ（0）','非常に大きい'],ans:2,exp:'光子の質量はゼロです。質量がゼロだから光速で飛び、電磁気力は無限の距離まで届きます。'},
+    {q:'次のうち「光子」ではないものはどれですか？',opts:['電波','赤外線','音波','X線'],ans:2,exp:'音波は空気などの振動（波）であり、光子ではありません。電波・赤外線・可視光・紫外線・X線・ガンマ線はすべて光子です（電磁波）。エネルギーの違いで種類が変わります。'},
+    {q:'電子と陽子が引き合う（電磁気力）とき、何が飛び交っていますか？',opts:['グルーオン','仮想光子','W⁻ボソン','グラビトン'],ans:1,exp:'電荷を帯びた粒子が電磁気力で引き合う（または斥力で反発する）とき、目には見えない「仮想光子」が交換されています。これがファインマン図で描かれる相互作用です。'}
+  ]},
+  uq3:{qs:[
+    {q:'グルーオンが伝える力はどれですか？',opts:['電磁気力','弱い力','重力','強い力'],ans:3,exp:'グルーオン（g）は強い力（強い相互作用）を伝えるゲージボソンです。クォークを結びつけ、陽子・中性子がバラバラにならないようにしています。'},
+    {q:'クォークが持つ「色荷（カラーチャージ）」の種類はどれですか？',opts:['プラスとマイナスの2種類','赤・青・緑の3種類','赤・青・緑・黄の4種類','1種類のみ'],ans:1,exp:'クォークは「赤・青・緑」の3種類の色荷を持ちます（目で見える色とは無関係です）。陽子・中性子の中では3色が合わさって「白（無色）」になり安定します。'},
+    {q:'グルーオンが光子と異なる特徴として正しいのはどれですか？',opts:['質量がゼロ','電荷がゼロ','グルーオン自身が色荷を持ち自己作用する','光速で飛ぶ'],ans:2,exp:'光子は電荷を持ちませんが、グルーオンは色荷を持ちます。そのためグルーオン同士も相互作用します。これが「強い力」が距離が離れても強まる（クォークが閉じ込められる）理由です。'},
+    {q:'グルーオンは何種類ありますか？',opts:['1種類','3種類','6種類','8種類'],ans:3,exp:'グルーオンは8種類あります。色荷の組み合わせ（赤-反青、青-反赤など）に対応しています。光子が1種類なのと対照的です。'}
+  ]},
+  uq4:{qs:[
+    {q:'弱い力を伝えるゲージボソンはどれですか？',opts:['光子（γ）とグルーオン（g）','W⁺・W⁻・Z⁰ボソン','重力子（G）','Z粒子のみ'],ans:1,exp:'弱い力を伝えるゲージボソンはW⁺・W⁻・Z⁰の3種類です。β崩壊などの弱い相互作用で働きます。'},
+    {q:'W粒子・Z粒子の質量はどのくらいですか？',opts:['ゼロ（質量なし）','電子程度の軽さ','陽子の80〜90倍以上の巨大な質量','クォークの10倍程度'],ans:2,exp:'W粒子は約80 GeV（陽子の約86倍）、Z粒子は約91 GeV（陽子の約98倍）もの巨大な質量を持ちます。これがヒッグス機構により生まれた質量であり、弱い力の到達距離が非常に短い原因です。'},
+    {q:'β崩壊（中性子が陽子・電子・反ニュートリノに変わる）でどのボソンが働きますか？',opts:['光子（γ）','グルーオン（g）','W⁻ボソン','Z⁰ボソン'],ans:2,exp:'β崩壊ではダウンクォークがW⁻ボソンを放出してアップクォークに変わります。W⁻ボソンは即座に崩壊して電子と反電子ニュートリノを生みます。'},
+    {q:'W・Z粒子が巨大な質量を持つ理由はどれですか？',opts:['グルーオンとの相互作用','重力の影響','ヒッグス粒子（ヒッグス機構）との相互作用','反物質と合体するため'],ans:2,exp:'W・Z粒子は「ヒッグス機構」によってヒッグス場から質量を得ています。光子はヒッグス場と相互作用しないため質量ゼロのままです。'}
+  ]},
+  uq5:{qs:[
+    {q:'重力子（グラビトン）の現在の状況はどれですか？',opts:['1920年代に発見された','2012年にLHCで発見された','理論的に予測されているが未発見','標準模型の中心粒子'],ans:2,exp:'重力子は理論的に予測されていますが、2026年現在もまだ発見されていません。重力は他の3つの力と比べて圧倒的に弱いため、重力子の検出は非常に困難です。'},
+    {q:'4つの力のうち重力はどのくらいの強さですか？',opts:['最も強い','電磁気力の次に強い','弱い力より少し弱い','他の3つに比べ圧倒的に弱い'],ans:3,exp:'重力は他の3つの力と比べて圧倒的に弱く、強い力の約10⁻³⁸倍です。日常では地球全体の重力でやっとりんごを落とせる程度で、一方の電磁気力は磁石1つで重力に打ち勝てます。'},
+    {q:'重力が「特別な存在」とされる理由はどれですか？',opts:['重力は素粒子には働かない','重力だけが標準模型に組み込めず量子論との統一ができていない','重力は人工的に発生させられない','重力子は巨大な質量を持つため'],ans:1,exp:'電磁気力・強い力・弱い力は標準模型でうまく記述できますが、重力だけは量子論（素粒子物理学）との統一ができておらず、これが物理学最大の未解決問題のひとつです。'},
+    {q:'重力を現在最もうまく説明しているのはどの理論ですか？',opts:['クォーク模型','標準模型','アインシュタインの一般相対性理論','弦理論（確定済み）'],ans:2,exp:'重力は現在アインシュタインの一般相対性理論（時空の歪みとして重力を説明）で最もうまく記述されています。ただしこれは量子論と統一されていない古典的な理論です。'}
+  ]},
+  uq6:{qs:[
+    {q:'ファインマン図とは何ですか？',opts:['宇宙の地図','素粒子の相互作用を視覚化する図','原子の構造を示す図','力の強さを表すグラフ'],ans:1,exp:'ファインマン図は物理学者リチャード・ファインマンが考案した素粒子の相互作用を視覚化する図です。直線が粒子、頂点が相互作用（ボソンの交換）を表します。'},
+    {q:'ファインマンがノーベル物理学賞を受賞したのはいつですか？',opts:['1945年','1956年','1965年','1979年'],ans:2,exp:'リチャード・ファインマンは量子電磁力学（QED）への貢献で1965年にノーベル物理学賞を受賞しました。朝永振一郎・シュウィンガーとの共同受賞です。'},
+    {q:'「電弱統一理論」で統一されたのはどの2つの力ですか？',opts:['強い力と重力','電磁気力と重力','電磁気力と弱い力','弱い力と強い力'],ans:2,exp:'1967年にグラショウ・サラム・ワインバーグが提唱した電弱統一理論は、高エネルギーでは電磁気力と弱い力が1つの力であることを示しました。1979年ノーベル物理学賞受賞。'},
+    {q:'「超統一理論（TOE）」で目指していることはどれですか？',opts:['クォークの種類を増やす','4つの力をすべて1つの理論で統一する','素粒子の質量を統一する','重力子を合成する'],ans:1,exp:'超統一理論（Theory of Everything）は電磁気力・強い力・弱い力・重力の4つをすべて1つの理論で記述することを目指しています。現在も物理学の最前線で研究中です。'}
+  ]},
+  uq7:{qs:[
+    {q:'電磁気力を伝えるゲージボソンはどれですか？',opts:['グルーオン','W・Z粒子','光子（γ）','重力子'],ans:2,exp:'光子（γ）が電磁気力を伝えるゲージボソンです。質量ゼロで光速で飛ぶため、電磁気力は無限の距離まで届きます。'},
+    {q:'強い力を伝えるゲージボソンはどれですか？',opts:['光子（γ）','グルーオン（g）','W⁻ボソン','Z⁰ボソン'],ans:1,exp:'グルーオン（g）が強い力を伝えます。クォークを結びつけ、陽子・中性子がバラバラにならないようにしています。8種類あります。'},
+    {q:'4つの力のうち到達距離が最も短いのはどれですか？',opts:['電磁気力','強い力','弱い力','重力'],ans:2,exp:'弱い力の到達距離は約10⁻¹⁸mと最も短いです。W・Z粒子の質量が非常に大きいため、生まれてもすぐに消えてしまい遠くまで届きません。'},
+    {q:'現在も標準模型に組み込めていない力はどれですか？',opts:['電磁気力','強い力','弱い力','重力'],ans:3,exp:'重力だけは標準模型（量子論）に組み込めていません。重力子も未発見であり、重力と量子論の統一は物理学最大の未解決問題のひとつです。'}
+  ]}
+};
+
+var uqState={};
+function uqBuildBody(uid){
+  var d=uqDefs[uid];var html='';
+  d.qs.forEach(function(q,i){
+    html+='<div class="uq-card" id="'+uid+'_c'+i+'"><div class="uq-num">Q'+(i+1)+' / '+d.qs.length+'</div><div class="uq-q">'+q.q+'</div><div class="uq-opts">';
+    q.opts.forEach(function(opt,j){html+='<button class="uq-opt" id="'+uid+'_o'+i+'_'+j+'" onclick="uqAnswer(\''+uid+'\','+i+','+j+')"><span class="uq-badge">'+['A','B','C','D'][j]+'</span>'+opt+'</button>';});
+    html+='</div><div class="uq-fb" id="'+uid+'_f'+i+'"></div></div>';
+  });
+  html+='<div class="uq-result" id="'+uid+'_result"><div class="uq-result-score" id="'+uid+'_score"></div><div class="uq-result-msg" id="'+uid+'_msg"></div><button class="uq-retry-btn" onclick="uqReset(\''+uid+'\')">↺ もう一度</button></div>';
+  document.getElementById(uid+'_body').innerHTML=html;
+  uqState[uid]={answered:new Array(d.qs.length).fill(false),correct:0};
+}
+function uqToggle(uid){
+  var body=document.getElementById(uid+'_body');var arrow=document.getElementById(uid+'_arrow');
+  var isOpen=body.classList.contains('open');
+  if(!isOpen&&!uqState[uid])uqBuildBody(uid);
+  body.classList.toggle('open',!isOpen);
+  arrow.style.transform=isOpen?'':'rotate(180deg)';
+}
+function uqAnswer(uid,qi,oi){
+  if(!uqState[uid]||uqState[uid].answered[qi])return;
+  uqState[uid].answered[qi]=true;
+  var q=uqDefs[uid].qs[qi];
+  var opts=document.querySelectorAll('#'+uid+'_c'+qi+' .uq-opt');
+  var fb=document.getElementById(uid+'_f'+qi);
+  opts.forEach(function(o){o.disabled=true;});
+  if(oi===q.ans){opts[oi].classList.add('correct');fb.className='uq-fb show-ok';fb.innerHTML='✅ 正解！　'+q.exp;uqState[uid].correct++;launchConfetti(6);}
+  else{opts[oi].classList.add('wrong');opts[q.ans].classList.add('correct');fb.className='uq-fb show-ng';fb.innerHTML='❌ 不正解。正解は「'+['A','B','C','D'][q.ans]+'」。'+q.exp;}
+  if(uqState[uid].answered.every(function(v){return v;}))setTimeout(function(){uqShowResult(uid);},600);
+}
+function uqShowResult(uid){
+  var s=uqState[uid];var total=uqDefs[uid].qs.length;var pct=s.correct/total;
+  var result=document.getElementById(uid+'_result');
+  result.className='uq-result '+(pct>=0.75?'pass':'retry');result.style.display='block';
+  document.getElementById(uid+'_score').textContent=s.correct+' / '+total+' 問正解';
+  var msg=pct===1?'🎉 パーフェクト！完璧です！':pct>=0.75?'✨ 合格です！よくできました！':pct>=0.5?'👍 もう少し！復習してみよう。':'📖 もう一度学習を読んでから挑戦しよう！';
+  document.getElementById(uid+'_msg').textContent=msg;
+  if(pct===1)launchConfetti(60);
+}
+function uqReset(uid){
+  uqState[uid]={answered:new Array(uqDefs[uid].qs.length).fill(false),correct:0};
+  document.getElementById(uid+'_result').style.display='none';
+  for(var i=0;i<uqDefs[uid].qs.length;i++){
+    document.querySelectorAll('#'+uid+'_c'+i+' .uq-opt').forEach(function(o){o.disabled=false;o.className='uq-opt';});
+    var fb=document.getElementById(uid+'_f'+i);fb.className='uq-fb';fb.innerHTML='';
+  }
+}
+
+// ===== FLASHCARD =====
+var fcCards=[
+  {front:'ゲージボソンとは何か？',back:'力を伝える粒子',bsub:'電磁気力・強い力・弱い力のそれぞれに担い手がいる'},
+  {front:'光子（γ）が伝える力は？',back:'電磁気力',bsub:'質量ゼロ・光速・無限の到達距離'},
+  {front:'光子の質量は？',back:'ゼロ（0）',bsub:'だから光速で飛び、電磁気力は無限に届く'},
+  {front:'電波・X線・ガンマ線の正体は？',back:'すべて光子（電磁波）',bsub:'エネルギーの違いで種類が変わる。E＝hν'},
+  {front:'グルーオンが伝える力は？',back:'強い力（強い相互作用）',bsub:'クォークを結びつけ原子核を保つ。8種類ある'},
+  {front:'クォークが持つ「色荷」の3種類は？',back:'赤・青・緑',bsub:'3色合わせて「白（無色）」になると安定する'},
+  {front:'弱い力を伝えるボソンは？',back:'W⁺ W⁻ Z⁰ の3種類',bsub:'質量が陽子の80〜90倍と巨大 → 到達距離が極短い'},
+  {front:'W⁻ボソンはどんな現象で働く？',back:'β崩壊（中性子 → 陽子 + e⁻ + 反νₑ）',bsub:'DクォークがUクォークに変わるときW⁻を放出'},
+  {front:'W・Z粒子が巨大な質量を持つ理由は？',back:'ヒッグス機構（ヒッグス粒子との相互作用）',bsub:'光子はヒッグス場と相互作用しないため質量ゼロ'},
+  {front:'重力子（グラビトン）の現在の状況は？',back:'理論上は存在するが未発見',bsub:'重力を標準模型に組み込めないのが最大の未解決問題'},
+  {front:'4つの力の強さを強い順に並べると？',back:'強い力 > 電磁気力 > 弱い力 > 重力',bsub:'重力は強い力の約10⁻³⁸倍という圧倒的な弱さ'},
+  {front:'電磁気力と弱い力を統一した理論は？',back:'電弱統一理論（グラショウ・サラム・ワインバーグ）',bsub:'1979年ノーベル物理学賞。高エネルギーでは1つの力'},
+];
+var fcIdx=0,fcSpeed=0,fcTimer=null,fcFlipped=false;
+function renderFc(){
+  var c=fcCards[fcIdx];
+  document.getElementById('fc_front').textContent=c.front;
+  document.getElementById('fc_fsub').textContent=c.fsub||'';
+  document.getElementById('fc_back').textContent=c.back;
+  document.getElementById('fc_bsub').textContent=c.bsub||'';
+  var fc=document.getElementById('fc_card');fc.classList.remove('flipped');fcFlipped=false;
+  document.getElementById('fc_idx').textContent=(fcIdx+1)+' / '+fcCards.length;
+  document.getElementById('fc_prevBtn').disabled=fcIdx===0;
+  document.getElementById('fc_nextBtn').disabled=fcIdx===fcCards.length-1;
+  var prog=document.getElementById('fc_prog');
+  prog.innerHTML=fcCards.map(function(_,i){return '<div class="fc-dot'+(i===fcIdx?' current':i<fcIdx?' done':'')+'"></div>';}).join('');
+  if(fcSpeed>0)startAutoFc();
+}
+function flipFc(){var fc=document.getElementById('fc_card');fcFlipped=!fcFlipped;fc.classList.toggle('flipped',fcFlipped);}
+function fcNext(){if(fcIdx<fcCards.length-1){fcIdx++;renderFc();}}
+function fcPrev(){if(fcIdx>0){fcIdx--;renderFc();}}
+function setFcSpeed(ms){
+  fcSpeed=ms;clearTimeout(fcTimer);
+  [0,1,2,3].forEach(function(i){var b=document.getElementById('spbtn'+i);if(b)b.classList.remove('active');});
+  var idx=ms===0?0:ms===4000?1:ms===2500?2:3;
+  var btn=document.getElementById('spbtn'+idx);if(btn)btn.classList.add('active');
+  if(ms>0)startAutoFc();
+}
+function startAutoFc(){
+  clearTimeout(fcTimer);
+  var fill=document.getElementById('fc_timer');fill.style.transition='none';fill.style.width='0%';
+  setTimeout(function(){
+    fill.style.transition='width '+fcSpeed+'ms linear';fill.style.width='100%';
+    fcTimer=setTimeout(function(){fcIdx=(fcIdx+1)%fcCards.length;renderFc();setTimeout(function(){if(fcSpeed>0)startAutoFc();},300);},fcSpeed);
+  },50);
+}
+
+// ===== QUIZ TAB =====
+var allQuizData=[
+  {ch:1,q:'ゲージボソンとはどのような粒子ですか？',opts:['物質を作る粒子','力を伝える粒子','反物質を作る粒子','エネルギーを貯める粒子'],ans:1,exp:'ゲージボソンは「力を伝える粒子」です。'},
+  {ch:1,q:'素粒子の世界で力が伝わるしくみはどれですか？',opts:['粒子が引っ張り合う','粒子がゲージボソンを交換する','粒子が合体する','粒子が振動する'],ans:1,exp:'粒子Aと粒子Bがゲージボソンを交換することで力が伝わります。'},
+  {ch:1,q:'標準模型のゲージボソンは何種類の力を伝えますか？',opts:['1種類','2種類','3種類','4種類'],ans:2,exp:'標準模型のゲージボソンは電磁気力・強い力・弱い力の3種類を伝えます。重力は標準模型の外です。'},
+  {ch:1,q:'物質粒子（クォーク・レプトン）とゲージボソンの違いはどれですか？',opts:['素粒子ではない','スピンが整数（1）である','電荷を必ず持つ','質量が必ずゼロ'],ans:1,exp:'物質粒子（フェルミオン）はスピン1/2、ゲージボソンはスピン1（整数）です。'},
+  {ch:2,q:'光子（フォトン）が伝える力はどれですか？',opts:['強い力','弱い力','電磁気力','重力'],ans:2,exp:'光子（γ）は電磁気力を伝えるゲージボソンです。'},
+  {ch:2,q:'光子（フォトン）の質量はどれですか？',opts:['陽子の1/1836','電子と同じ','ゼロ（0）','非常に大きい'],ans:2,exp:'光子の質量はゼロです。だから光速で飛び、電磁気力は無限の距離まで届きます。'},
+  {ch:2,q:'次のうち「光子」ではないものはどれですか？',opts:['電波','赤外線','音波','X線'],ans:2,exp:'音波は空気の振動であり光子ではありません。電波・赤外線・可視光・X線・ガンマ線はすべて光子です。'},
+  {ch:2,q:'電子と陽子が引き合うとき何が飛び交っていますか？',opts:['グルーオン','仮想光子','W⁻ボソン','グラビトン'],ans:1,exp:'電荷を帯びた粒子が電磁気力で引き合うとき、目には見えない「仮想光子」が交換されています。'},
+  {ch:3,q:'グルーオンが伝える力はどれですか？',opts:['電磁気力','弱い力','重力','強い力'],ans:3,exp:'グルーオン（g）は強い力（強い相互作用）を伝えるゲージボソンです。'},
+  {ch:3,q:'クォークが持つ「色荷」の種類はどれですか？',opts:['プラスとマイナスの2種類','赤・青・緑の3種類','赤・青・緑・黄の4種類','1種類のみ'],ans:1,exp:'クォークは「赤・青・緑」の3種類の色荷を持ちます（目で見える色とは無関係）。'},
+  {ch:3,q:'グルーオンが光子と異なる特徴はどれですか？',opts:['質量がゼロ','電荷がゼロ','グルーオン自身が色荷を持ち自己作用する','光速で飛ぶ'],ans:2,exp:'光子は電荷を持ちませんが、グルーオンは色荷を持ち自己作用します。これがクォーク閉じ込めの理由です。'},
+  {ch:3,q:'グルーオンは何種類ありますか？',opts:['1種類','3種類','6種類','8種類'],ans:3,exp:'グルーオンは8種類あります。色荷の組み合わせに対応しています。'},
+  {ch:4,q:'弱い力を伝えるゲージボソンはどれですか？',opts:['光子とグルーオン','W⁺・W⁻・Z⁰ボソン','重力子','Z粒子のみ'],ans:1,exp:'弱い力を伝えるゲージボソンはW⁺・W⁻・Z⁰の3種類です。'},
+  {ch:4,q:'W粒子・Z粒子の質量はどのくらいですか？',opts:['ゼロ','電子程度','陽子の80〜90倍以上','クォークの10倍程度'],ans:2,exp:'W粒子は約80 GeV（陽子の約86倍）、Z粒子は約91 GeV（陽子の約98倍）の巨大な質量を持ちます。'},
+  {ch:4,q:'β崩壊でどのボソンが働きますか？',opts:['光子（γ）','グルーオン（g）','W⁻ボソン','Z⁰ボソン'],ans:2,exp:'β崩壊ではダウンクォークがW⁻ボソンを放出してアップクォークに変わります。'},
+  {ch:4,q:'W・Z粒子が巨大な質量を持つ理由はどれですか？',opts:['グルーオンとの相互作用','重力の影響','ヒッグス機構との相互作用','反物質と合体するため'],ans:2,exp:'W・Z粒子はヒッグス機構によってヒッグス場から質量を得ています。'},
+  {ch:5,q:'重力子（グラビトン）の現在の状況はどれですか？',opts:['1920年代に発見','2012年にLHCで発見','理論的に予測されているが未発見','標準模型の中心粒子'],ans:2,exp:'重力子は理論的に予測されていますが未発見です。'},
+  {ch:5,q:'4つの力のうち重力はどのくらいの強さですか？',opts:['最も強い','電磁気力の次に強い','弱い力より少し弱い','他の3つに比べ圧倒的に弱い'],ans:3,exp:'重力は強い力の約10⁻³⁸倍という圧倒的な弱さです。'},
+  {ch:5,q:'重力が「特別な存在」とされる理由はどれですか？',opts:['重力は素粒子に働かない','重力だけが標準模型に組み込めず量子論との統一ができていない','重力は人工的に発生させられない','重力子は巨大な質量を持つため'],ans:1,exp:'電磁気力・強い力・弱い力は標準模型で記述できますが、重力だけは量子論との統一ができていません。'},
+  {ch:5,q:'重力を現在最もうまく説明しているのはどの理論ですか？',opts:['クォーク模型','標準模型','アインシュタインの一般相対性理論','弦理論（確定済み）'],ans:2,exp:'重力はアインシュタインの一般相対性理論（時空の歪みとして重力を説明）で最もうまく記述されています。'},
+  {ch:6,q:'ファインマン図とは何ですか？',opts:['宇宙の地図','素粒子の相互作用を視覚化する図','原子の構造を示す図','力の強さを表すグラフ'],ans:1,exp:'ファインマン図は素粒子の相互作用を視覚化する図で、直線が粒子、頂点が相互作用を表します。'},
+  {ch:6,q:'ファインマンがノーベル物理学賞を受賞したのはいつですか？',opts:['1945年','1956年','1965年','1979年'],ans:2,exp:'リチャード・ファインマンは1965年にノーベル物理学賞を受賞しました（量子電磁力学への貢献）。'},
+  {ch:6,q:'「電弱統一理論」で統一されたのはどの2つの力ですか？',opts:['強い力と重力','電磁気力と重力','電磁気力と弱い力','弱い力と強い力'],ans:2,exp:'電弱統一理論は電磁気力と弱い力が高エネルギーでは1つの力であることを示しました。1979年ノーベル賞。'},
+  {ch:6,q:'「超統一理論（TOE）」で目指していることはどれですか？',opts:['クォークの種類を増やす','4つの力をすべて1つの理論で統一する','素粒子の質量を統一する','重力子を合成する'],ans:1,exp:'超統一理論は4つの力をすべて1つの理論で記述することを目指しています。'},
+  {ch:7,q:'電磁気力を伝えるゲージボソンはどれですか？',opts:['グルーオン','W・Z粒子','光子（γ）','重力子'],ans:2,exp:'光子（γ）が電磁気力を伝えます。質量ゼロで無限の到達距離を持ちます。'},
+  {ch:7,q:'強い力を伝えるゲージボソンはどれですか？',opts:['光子（γ）','グルーオン（g）','W⁻ボソン','Z⁰ボソン'],ans:1,exp:'グルーオン（g）が強い力を伝えます。8種類あります。'},
+  {ch:7,q:'4つの力のうち到達距離が最も短いのはどれですか？',opts:['電磁気力','強い力','弱い力','重力'],ans:2,exp:'弱い力の到達距離は約10⁻¹⁸mと最も短いです。W・Z粒子の質量が巨大なためです。'},
+  {ch:7,q:'現在も標準模型に組み込めていない力はどれですか？',opts:['電磁気力','強い力','弱い力','重力'],ans:3,exp:'重力だけは標準模型に組み込めていません。重力子も未発見です。'},
+];
+
+var currentChapter=0,activeQuizData=[],quizAnswered=[],quizCorrect=0;
+function selectChapter(ch){
+  currentChapter=ch;
+  document.querySelectorAll('#chapterBtns .ch-btn').forEach(function(b,i){b.classList.toggle('active',i===ch);});
+  buildQuiz();
+}
+function buildQuiz(){
+  activeQuizData=currentChapter===0?allQuizData.slice():allQuizData.filter(function(q){return q.ch===currentChapter;});
+  quizAnswered=activeQuizData.map(function(){return false;});quizCorrect=0;
+  document.getElementById('quizResult').style.display='none';
+  var total=activeQuizData.length;
+  document.getElementById('quizInfo').textContent=(currentChapter===0?'全'+total+'問':'単元'+currentChapter+'（'+total+'問）')+' ― 各問に解説がつきます。';
+  var container=document.getElementById('quizContainer');
+  container.innerHTML=activeQuizData.map(function(q,qi){
+    return '<div class="quiz-card" id="qc'+qi+'">'+
+      '<div style="font-size:0.72rem;font-weight:700;color:var(--primary);margin-bottom:4px;">Q'+(qi+1)+' / '+total+(currentChapter===0?' ［単元'+q.ch+'］':'')+'</div>'+
+      '<div class="quiz-q">'+q.q+'</div><div class="quiz-opts">'+
+      q.opts.map(function(opt,oi){return '<button class="quiz-opt" id="qo'+qi+'_'+oi+'" onclick="answerQuiz('+qi+','+oi+')"><span style="display:inline-block;width:22px;height:22px;border-radius:50%;background:var(--primary-light);color:var(--primary);font-weight:800;font-size:0.78rem;text-align:center;line-height:22px;margin-right:8px;flex-shrink:0;">'+['A','B','C','D'][oi]+'</span>'+opt+'</button>';}).join('')+
+      '</div><div class="quiz-feedback" id="qf'+qi+'"></div></div>';
+  }).join('');
+}
+function answerQuiz(qi,oi){
+  if(quizAnswered[qi])return;quizAnswered[qi]=true;
+  var q=activeQuizData[qi];var opts=document.querySelectorAll('#qc'+qi+' .quiz-opt');var fb=document.getElementById('qf'+qi);
+  opts.forEach(function(o){o.disabled=true;});
+  if(oi===q.ans){opts[oi].classList.add('correct');fb.className='quiz-feedback show ok';fb.innerHTML='✅ 正解です！　'+q.exp;quizCorrect++;launchConfetti(5);}
+  else{opts[oi].classList.add('wrong');opts[q.ans].classList.add('correct');fb.className='quiz-feedback show ng';fb.innerHTML='❌ 不正解。正解は「'+['A','B','C','D'][q.ans]+'：'+q.opts[q.ans]+'」。<br>'+q.exp;}
+  if(quizAnswered.every(function(v){return v;}))setTimeout(showResult,700);
+}
+function showResult(){
+  var result=document.getElementById('quizResult');result.style.display='block';
+  var total=activeQuizData.length;var pct=quizCorrect/total;
+  document.getElementById('quizScore').textContent=quizCorrect+' / '+total+' 問正解';
+  var msg=pct===1?'🎉 パーフェクトです！完璧に理解できています！':pct>=0.75?'✨ 合格です！よくできました！':pct>=0.5?'👍 もう少しです！惜しいですね。':'📖 もう一度学習タブに戻って復習してみましょう！';
+  document.getElementById('quizMsg').textContent=msg;
+  if(pct===1)launchConfetti(50);
+}
+function resetQuiz(){buildQuiz();}
+document.addEventListener('DOMContentLoaded',function(){renderFc();});
+</script>
+
+
+</body></html>

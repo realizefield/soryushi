@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>GAMBA 素粒子シリーズ 単元表</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Hiragino Maru Gothic ProN','Hiragino Kaku Gothic ProN','BIZ UDGothic','Yu Gothic UI',Meiryo,sans-serif;background:#f0f9ff;color:#0c4a6e;min-height:100vh;font-size:15px}
+
+/* ヘッダー */
+.top-header{background:linear-gradient(135deg,#0c4a6e 0%,#0369a1 60%,#0284c7 100%);color:#fff;padding:16px 16px 0;text-align:center}
+.top-header h1{font-size:1.15rem;font-weight:800;letter-spacing:.04em}
+.top-header p{font-size:.78rem;margin-top:3px;opacity:.85}
+.summary-bar{background:rgba(0,0,0,.22);margin-top:12px;padding:9px 14px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;font-size:.78rem;color:#fff}
+.sum-item{display:flex;align-items:center;gap:5px;white-space:nowrap}
+.sum-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.sum-dot-a{background:#4ade80}.sum-dot-b{background:#fbbf24}.sum-dot-c{background:#f87171}.sum-dot-n{background:#94a3b8}
+.sum-count{font-weight:800;font-size:1rem;min-width:18px;text-align:center}
+
+.wrap{max-width:920px;margin:0 auto;padding:14px 12px 56px}
+
+/* 学習フロー */
+.flow{background:#fff;border-radius:14px;border:1px solid #bae6fd;padding:13px 16px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.flow-title{font-size:.88rem;font-weight:800;color:#0284c7;margin-bottom:9px;padding-bottom:6px;border-bottom:2px solid #e0f2fe}
+.flow-steps{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.flow-step{background:#f0f9ff;border:1px solid #bae6fd;border-radius:8px;padding:6px 11px;font-size:.78rem;color:#0369a1;font-weight:700;white-space:nowrap}
+.flow-arrow{color:#0284c7;font-size:1rem;font-weight:700}
+
+/* メッセージバー */
+.msg-bar{background:linear-gradient(135deg,#1e3a5f,#0c4a6e);border-radius:14px;border:1px solid #1e3a5f;padding:13px 16px;margin-bottom:18px;color:#bef264;font-size:.84rem;line-height:1.8}
+.msg-bar strong{color:#38bdf8}
+
+/* ユニット */
+.unit{background:#fff;border-radius:14px;border:1px solid #bae6fd;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.05);overflow:hidden}
+.unit-hd{padding:11px 16px;display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,#0c4a6e,#0284c7);color:#fff}
+.unit-num{background:rgba(255,255,255,.18);border-radius:7px;padding:3px 10px;font-size:.78rem;font-weight:800;white-space:nowrap}
+.unit-title{font-size:1rem;font-weight:800;flex:1}
+.unit-badge{font-size:.72rem;background:rgba(190,242,100,.25);border:1px solid rgba(190,242,100,.5);border-radius:999px;padding:2px 9px;font-weight:700;white-space:nowrap;color:#bef264}
+.unit-body{padding:12px 14px}
+.group-label{font-size:.75rem;font-weight:800;color:#64748b;margin:12px 0 8px;letter-spacing:.05em;padding-bottom:4px;border-bottom:1.5px dashed #bae6fd;display:flex;align-items:center;gap:7px}
+.group-label:first-child{margin-top:0}
+.sec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-bottom:4px}
+
+/* カード */
+.sec-card{border-radius:10px;border:1.5px solid #bae6fd;overflow:hidden;transition:.18s;background:#fff;display:flex;flex-direction:column}
+.sec-card:hover{box-shadow:0 3px 14px rgba(2,132,199,.15);transform:translateY(-1px)}
+.sc-hd{background:#f0f9ff;border-bottom:2px solid #0284c7;padding:9px 12px;display:flex;align-items:center;gap:8px}
+.sc-num{background:#0284c7;color:#fff;border-radius:7px;padding:3px 9px;font-size:.75rem;font-weight:800;flex-shrink:0}
+.sc-title{font-size:.88rem;font-weight:800;flex:1;color:#0369a1;line-height:1.3}
+.sc-stars{font-size:.75rem;color:#fbbf24;letter-spacing:-1px;flex-shrink:0}
+.sc-body{padding:8px 12px;background:#fff;flex:1}
+.sc-topics{list-style:none;margin:0;padding:0}
+.sc-topics li{font-size:.78rem;color:#475569;padding:2px 0;border-bottom:1px solid #f0f9ff;line-height:1.5}
+.sc-topics li:last-child{border-bottom:none}
+.sc-topics li::before{content:"・";color:#0284c7}
+
+/* キーワードタグ */
+.sc-keywords{display:flex;flex-wrap:wrap;gap:4px;padding:6px 12px 4px}
+.sc-kw{font-size:.68rem;background:#e0f2fe;color:#0369a1;border-radius:4px;padding:2px 6px;font-weight:700}
+
+/* ボタン行 */
+.sc-btn-row{display:flex;gap:5px;padding:8px 12px 0;flex-wrap:wrap}
+.sc-btn{flex:1;min-width:60px;text-align:center;padding:7px 4px;border-radius:8px;font-size:.75rem;font-weight:800;text-decoration:none;transition:.13s;border:none;cursor:pointer;display:block;color:#fff;font-family:inherit;background:#0284c7}
+.sc-btn:hover{background:#0369a1}
+.sc-btn-flash{background:#7c3aed}
+.sc-btn-flash:hover{background:#6d28d9}
+.sc-btn-quiz{background:#0891b2}
+.sc-btn-quiz:hover{background:#0e7490}
+.sc-btn-soon{background:#cbd5e1;color:#fff;cursor:not-allowed;pointer-events:none}
+
+/* A/B/C自己評価 */
+.abc-row{display:flex;gap:5px;padding:8px 12px 10px}
+.abc-btn{flex:1;padding:6px 2px;border-radius:20px;font-size:.75rem;font-weight:800;font-family:inherit;cursor:pointer;transition:.13s;border:2px solid;text-align:center;background:#fff}
+.abc-a{border-color:#16a34a;color:#16a34a}.abc-a.sel{background:#16a34a;color:#fff}
+.abc-b{border-color:#d97706;color:#d97706}.abc-b.sel{background:#d97706;color:#fff}
+.abc-c{border-color:#dc2626;color:#dc2626}.abc-c.sel{background:#dc2626;color:#fff}
+.abc-btn:hover{opacity:.8}
+
+/* カードのステータス色 */
+.sec-card.s-a{border-color:#16a34a}.sec-card.s-a .sc-hd{background:#dcfce7!important;border-bottom-color:#16a34a!important}
+.sec-card.s-b{border-color:#d97706}.sec-card.s-b .sc-hd{background:#fef3c7!important;border-bottom-color:#d97706!important}
+.sec-card.s-c{border-color:#dc2626}.sec-card.s-c .sc-hd{background:#fee2e2!important;border-bottom-color:#dc2626!important}
+
+/* 早見表 */
+.ref-table{background:#fff;border-radius:14px;border:1px solid #bae6fd;padding:14px 16px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.ref-title{font-size:.88rem;font-weight:800;color:#0284c7;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #e0f2fe}
+.ref-table table{width:100%;border-collapse:collapse;font-size:.8rem}
+.ref-table th,.ref-table td{border:1px solid #bae6fd;padding:7px 9px;text-align:center}
+.ref-table thead th{background:#f0f9ff;color:#0369a1;font-weight:800}
+.ref-table tbody th{background:#f8fafc;text-align:left;font-weight:700}
+
+/* 戻るリンク */
+.back-link{display:flex;gap:10px;justify-content:center;margin:22px 0 6px;flex-wrap:wrap}
+.back-btn{padding:9px 18px;border-radius:10px;border:1.5px solid #bae6fd;background:#fff;color:#0284c7;font-size:.84rem;font-weight:700;text-decoration:none;transition:.13s}
+.back-btn:hover{border-color:#0284c7;color:#fff;background:#0284c7}
+
+/* 進捗バー */
+.progress-wrap{background:#fff;border-radius:14px;border:1px solid #bae6fd;padding:13px 16px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.progress-title{font-size:.82rem;font-weight:800;color:#0284c7;margin-bottom:8px}
+.progress-bar-bg{background:#e0f2fe;border-radius:99px;height:12px;overflow:hidden;margin-bottom:4px}
+.progress-bar-fill{height:100%;background:linear-gradient(90deg,#bef264,#65a30d);border-radius:99px;transition:width .5s}
+.progress-pct{font-size:.78rem;color:#64748b;text-align:right}
+
+canvas#cnf{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;display:none}
+
+@media(max-width:480px){
+  .unit-title{font-size:.9rem}
+  .sc-btn-row{gap:4px}
+  .sc-btn{font-size:.72rem;padding:6px 2px}
+}
+</style>
+</head>
+<body>
+<canvas id="cnf"></canvas>
+
+<div class="top-header">
+  <h1>⚛️ GAMBA 素粒子シリーズ 単元表</h1>
+  <p>高認・物理基礎 — クォークからビッグバンまで、宇宙の「なぜ」を一緒に解く</p>
+  <div class="summary-bar">
+    <div class="sum-item"><span class="sum-dot sum-dot-a"></span>A わかった <span class="sum-count" id="cnt-a">0</span></div>
+    <div class="sum-item"><span class="sum-dot sum-dot-b"></span>B 要復習 <span class="sum-count" id="cnt-b">0</span></div>
+    <div class="sum-item"><span class="sum-dot sum-dot-c"></span>C 何度も <span class="sum-count" id="cnt-c">0</span></div>
+    <div class="sum-item"><span class="sum-dot sum-dot-n"></span>未実施 <span class="sum-count" id="cnt-n">7</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- メッセージ -->
+  <div class="msg-bar">
+    🐶 <strong>イヌ校長より：</strong>
+    「難しそう」と思わなくていい。クォークも、ヒッグス粒子も、宇宙の始まりも――
+    ここでは全部、順番に、一緒に確認していく。<strong>あなたのペースで進めよう。</strong>
+  </div>
+
+  <!-- 学習の流れ -->
+  <div class="flow">
+    <div class="flow-title">📖 各単元の学習の流れ</div>
+    <div class="flow-steps">
+      <div class="flow-step">① 📖 学習タブで解説を読む</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">② 各単元末のミニテスト</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">③ 🃏 フラッシュカードで暗記</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">④ 🔭 ミニテストで全問挑戦</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">⑤ A/B/C 自己評価</div>
+    </div>
+  </div>
+
+  <!-- 進捗バー -->
+  <div class="progress-wrap">
+    <div class="progress-title">📊 シリーズ進捗（Aになった単元）</div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill" id="prog-fill" style="width:0%"></div></div>
+    <div class="progress-pct" id="prog-pct">0 / 7 単元クリア</div>
+  </div>
+
+  <!-- ══ SP01 クォーク ══ -->
+  <div class="unit">
+    <div class="unit-hd">
+      <span class="unit-num">SP01</span>
+      <span class="unit-title">クォーク ― 物質の最深部</span>
+      <span class="unit-badge">7単元 × 4問＋全問28問</span>
+    </div>
+    <div class="unit-body">
+      <div class="group-label">🔬 素粒子研究の歴史 → クォーク → ダークマター</div>
+      <div class="sec-grid">
+        <div class="sec-card" data-id="SP01">
+          <div class="sc-hd">
+            <span class="sc-num">SP01</span>
+            <span class="sc-title">クォーク ― 陽子・中性子の中身</span>
+            <span class="sc-stars">★★☆</span>
+          </div>
+          <div class="sc-body"><ul class="sc-topics">
+            <li>素粒子研究の歴史（デモクリトス〜ゲルマン）</li>
+            <li>クォークの種類（u・d・s・c・b・t）と電荷</li>
+            <li>陽子・中性子の構成、クォーク閉じ込め</li>
+            <li>ダークマターと銀河回転曲線</li>
+          </ul></div>
+          <div class="sc-keywords">
+            <span class="sc-kw">クォーク</span><span class="sc-kw">色荷</span><span class="sc-kw">閉じ込め</span><span class="sc-kw">3世代</span>
+          </div>
+          <div class="sc-btn-row">
+            <a class="sc-btn" href="SP01.html">📖 学習＋テスト</a>
+            <a class="sc-btn sc-btn-flash" href="SP01.html#flash" onclick="sessionStorage.setItem('sp01tab','flash')">🃏 カード</a>
+            <a class="sc-btn sc-btn-quiz" href="SP01.html#quiz" onclick="sessionStorage.setItem('sp01tab','quiz')">🔭 全問</a>
+          </div>
+          <div class="abc-row">
+            <button class="abc-btn abc-a" onclick="setABC('SP01','a',this)">A OK</button>
+            <button class="abc-btn abc-b" onclick="setABC('SP01','b',this)">B 復習</button>
+            <button class="abc-btn abc-c" onclick="setABC('SP01','c',this)">C もう一度</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SP02 レプトン ══ -->
+  <div class="unit">
+    <div class="unit-hd">
+      <span class="unit-num">SP02</span>
+      <span class="unit-title">レプトン ― 電子の仲間たち</span>
+      <span class="unit-badge">7単元 × 4問＋全問28問</span>
+    </div>
+    <div class="unit-body">
+      <div class="group-label">⚡ 電子・ミュー・タウ・ニュートリノ → 世代 → 保存則</div>
+      <div class="sec-grid">
+        <div class="sec-card" data-id="SP02">
+          <div class="sc-hd">
+            <span class="sc-num">SP02</span>
+            <span class="sc-title">レプトン ― 強い力を受けない素粒子</span>
+            <span class="sc-stars">★★☆</span>
+          </div>
+          <div class="sc-body"><ul class="sc-topics">
+            <li>荷電レプトン3種（e⁻・μ⁻・τ⁻）の特徴</li>
+            <li>ニュートリノ3種と「幽霊粒子」の正体</li>
+            <li>世代（ジェネレーション）構造</li>
+            <li>レプトン数保存則・ニュートリノ振動（梶田隆章）</li>
+          </ul></div>
+          <div class="sc-keywords">
+            <span class="sc-kw">電子</span><span class="sc-kw">ニュートリノ</span><span class="sc-kw">3世代</span><span class="sc-kw">振動</span>
+          </div>
+          <div class="sc-btn-row">
+            <a class="sc-btn" href="SP02.html">📖 学習＋テスト</a>
+            <a class="sc-btn sc-btn-flash" href="SP02.html">🃏 カード</a>
+            <a class="sc-btn sc-btn-quiz" href="SP02.html">🔭 全問</a>
+          </div>
+          <div class="abc-row">
+            <button class="abc-btn abc-a" onclick="setABC('SP02','a',this)">A OK</button>
+            <button class="abc-btn abc-b" onclick="setABC('SP02','b',this)">B 復習</button>
+            <button class="abc-btn abc-c" onclick="setABC('SP02','c',this)">C もう一度</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SP03 ゲージボソン ══ -->
+  <div class="unit">
+    <div class="unit-hd">
+      <span class="unit-num">SP03</span>
+      <span class="unit-title">ゲージボソン ― 力を伝える粒子たち</span>
+      <span class="unit-badge">7単元 × 4問＋全問28問</span>
+    </div>
+    <div class="unit-body">
+      <div class="group-label">💫 光子・グルーオン・W/Z粒子・重力子 → ファインマン図</div>
+      <div class="sec-grid">
+        <div class="sec-card" data-id="SP03">
+          <div class="sc-hd">
+            <span class="sc-num">SP03</span>
+            <span class="sc-title">ゲージボソン ― 力を運ぶ素粒子</span>
+            <span class="sc-stars">★★☆</span>
+          </div>
+          <div class="sc-body"><ul class="sc-topics">
+            <li>力が「粒子のやりとり」で伝わるしくみ</li>
+            <li>光子（電磁気力）・グルーオン（強い力）</li>
+            <li>W・Z粒子（弱い力）・重力子（未発見）</li>
+            <li>ファインマン図・力の統一という夢</li>
+          </ul></div>
+          <div class="sc-keywords">
+            <span class="sc-kw">光子</span><span class="sc-kw">グルーオン</span><span class="sc-kw">W/Z粒子</span><span class="sc-kw">ファインマン</span>
+          </div>
+          <div class="sc-btn-row">
+            <a class="sc-btn" href="SP03.html">📖 学習＋テスト</a>
+            <a class="sc-btn sc-btn-flash" href="SP03.html">🃏 カード</a>
+            <a class="sc-btn sc-btn-quiz" href="SP03.html">🔭 全問</a>
+          </div>
+          <div class="abc-row">
+            <button class="abc-btn abc-a" onclick="setABC('SP03','a',this)">A OK</button>
+            <button class="abc-btn abc-b" onclick="setABC('SP03','b',this)">B 復習</button>
+            <button class="abc-btn abc-c" onclick="setABC('SP03','c',this)">C もう一度</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SP04 四つの力 ══ -->
+  <div class="unit">
+    <div class="unit-hd">
+      <span class="unit-num">SP04</span>
+      <span class="unit-title">四つの力 ― 宇宙を動かす4つのルール</span>
+      <span class="unit-badge">7単元 × 4問＋全問28問</span>
+    </div>
+    <div class="unit-body">
+      <div class="group-label">⚡ 電磁気力 → 強い力 → 弱い力 → 重力 → 比較・もしもの宇宙</div>
+      <div class="sec-grid">
+        <div class="sec-card" data-id="SP04">
+          <div class="sc-hd">
+            <span class="sc-num">SP04</span>
+            <span class="sc-title">四つの力 ― 日常から宇宙まで</span>
+            <span class="sc-stars">★★☆</span>
+          </div>
+          <div class="sc-body"><ul class="sc-topics">
+            <li>電磁気力（光・電気・化学・磁石）無限到達</li>
+            <li>強い力（原子核・核融合）最強・短距離</li>
+            <li>弱い力（β崩壊・太陽・粒子の変身）</li>
+            <li>重力（天体・宇宙大構造）量子論と未統一</li>
+          </ul></div>
+          <div class="sc-keywords">
+            <span class="sc-kw">電磁気力</span><span class="sc-kw">強い力</span><span class="sc-kw">弱い力</span><span class="sc-kw">重力</span>
+          </div>
+          <div class="sc-btn-row">
+            <a class="sc-btn" href="SP04.html">📖 学習＋テスト</a>
+            <a class="sc-btn sc-btn-flash" href="SP04.html">🃏 カード</a>
+            <a class="sc-btn sc-btn-quiz" href="SP04.html">🔭 全問</a>
+          </div>
+          <div class="abc-row">
+            <button class="abc-btn abc-a" onclick="setABC('SP04','a',this)">A OK</button>
+            <button class="abc-btn abc-b" onclick="setABC('SP04','b',this)">B 復習</button>
+            <button class="abc-btn abc-c" onclick="setABC('SP04','c',this)">C もう一度</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SP05 標準模型 ══ -->
+  <div class="unit">
+    <div class="unit-hd" style="background:linear-gradient(90deg,#1e3a5f,#0369a1);">
+      <span class="unit-num">SP05</span>
+      <span class="unit-title">標準模型 ― すべての粒子が一枚の表に</span>
+      <span class="unit-badge">7単元 × 4問＋全問28問</span>
+    </div>
+    <div class="unit-body">
+      <div class="group-label">🗺️ 粒子表 → 完成の歴史 → できること・できないこと → 予言と実験</div>
+      <div class="sec-grid">
+        <div class="sec-card" data-id="SP05">
+          <div class="sc-hd">
+            <span class="sc-num">SP05</span>
+            <span class="sc-title">標準模型 ― 人類最高精度の理論</span>
+            <span class="sc-stars">★★★</span>
+          </div>
+          <div class="sc-body"><ul class="sc-topics">
+            <li>フェルミオン（12種）＋ボソン（5種）＝17粒子</li>
+            <li>標準模型の粒子表の読み方（3世代構造）</li>
+            <li>QED・電弱統一・QCD完成の100年史</li>
+            <li>ダークマター・反物質問題・重力統合（未解決）</li>
+          </ul></div>
+          <div class="sc-keywords">
+            <span class="sc-kw">17種類</span><span class="sc-kw">フェルミオン</span><span class="sc-kw">ボソン</span><span class="sc-kw">朝永振一郎</span>
+          </div>
+          <div class="sc-btn-row">
+            <a class="sc-btn" href="SP05.html">📖 学習＋テスト</a>
+            <a class="sc-btn sc-btn-flash" href="SP05.html">🃏 カード</a>
+            <a class="sc-btn sc-btn-quiz" href="SP05.html">🔭 全問</a>
+          </div>
+          <div class="abc-row">
+            <button class="abc-btn abc-a" onclick="setABC('SP05','a',this)">A OK</button>
+            <button class="abc-btn abc-b" onclick="setABC('SP05','b',this)">B 復習</button>
+            <button class="abc-btn abc-c" onclick="setABC('SP05','c',this)">C もう一度</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SP06 ヒッグス粒子 ══ -->
+  <div class="unit">
+    <div class="unit-hd" style="background:linear-gradient(90deg,#3b0764,#7c3aed);">
+      <span class="unit-num">SP06</span>
+      <span class="unit-title">ヒッグス粒子 ― 質量の起源</span>
+      <span class="unit-badge">7単元 × 4問＋全問28問</span>
+    </div>
+    <div class="unit-body">
+      <div class="group-label">🌊 質量とは → ヒッグス場 → ヒッグス機構 → LHCでの発見 → ピーター・ヒッグスの人生</div>
+      <div class="sec-grid">
+        <div class="sec-card" data-id="SP06">
+          <div class="sc-hd" style="background:#f5f3ff;border-bottom-color:#7c3aed;">
+            <span class="sc-num" style="background:#7c3aed;">SP06</span>
+            <span class="sc-title" style="color:#5b21b6;">ヒッグス粒子 ― 見えない場が質量を生む</span>
+            <span class="sc-stars">★★★</span>
+          </div>
+          <div class="sc-body"><ul class="sc-topics">
+            <li>質量とは「動かしにくさ」― なぜ光子はゼロか</li>
+            <li>ヒッグス場（宇宙全体に満ちた場）のたとえ</li>
+            <li>自発的対称性の破れ・メキシカンハット</li>
+            <li>2012年LHC発見・ヒッグスの48年・神の粒子の由来</li>
+          </ul></div>
+          <div class="sc-keywords">
+            <span class="sc-kw" style="background:#ede9fe;color:#5b21b6;">ヒッグス場</span>
+            <span class="sc-kw" style="background:#ede9fe;color:#5b21b6;">対称性の破れ</span>
+            <span class="sc-kw" style="background:#ede9fe;color:#5b21b6;">LHC</span>
+            <span class="sc-kw" style="background:#ede9fe;color:#5b21b6;">125GeV</span>
+          </div>
+          <div class="sc-btn-row">
+            <a class="sc-btn" style="background:#7c3aed;" href="SP06.html">📖 学習＋テスト</a>
+            <a class="sc-btn" style="background:#6d28d9;" href="SP06.html">🃏 カード</a>
+            <a class="sc-btn" style="background:#5b21b6;" href="SP06.html">🔭 全問</a>
+          </div>
+          <div class="abc-row">
+            <button class="abc-btn abc-a" onclick="setABC('SP06','a',this)">A OK</button>
+            <button class="abc-btn abc-b" onclick="setABC('SP06','b',this)">B 復習</button>
+            <button class="abc-btn abc-c" onclick="setABC('SP06','c',this)">C もう一度</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SP07 宇宙論 ══ -->
+  <div class="unit">
+    <div class="unit-hd" style="background:linear-gradient(90deg,#06091a,#1e1b4b,#312e81);">
+      <span class="unit-num">SP07</span>
+      <span class="unit-title">宇宙論 ― ビッグバンと素粒子、138億年の旅</span>
+      <span class="unit-badge">🌟 シリーズ最終章</span>
+    </div>
+    <div class="unit-body">
+      <div class="group-label">🌌 ビッグバン → 最初の1秒 → 元素誕生 → 宇宙の大構造 → あなたはスターダスト</div>
+      <div class="sec-grid">
+        <div class="sec-card" data-id="SP07">
+          <div class="sc-hd" style="background:#06091a;border-bottom-color:#818cf8;">
+            <span class="sc-num" style="background:#4338ca;">SP07</span>
+            <span class="sc-title" style="color:#a5b4fc;">宇宙論 ― 138億年の旅の終着点</span>
+            <span class="sc-stars" style="color:#818cf8;">★★★</span>
+          </div>
+          <div class="sc-body" style="background:#06091a;"><ul class="sc-topics" style="color:#94a3b8;">
+            <li style="border-bottom-color:#1e3a5f;">ビッグバン ― 空間そのものの膨張の始まり</li>
+            <li style="border-bottom-color:#1e3a5f;">最初の1秒：ヒッグス機構発動・クォーク閉じ込め</li>
+            <li style="border-bottom-color:#1e3a5f;">3分後の元素合成・38万年後の晴れ上がり</li>
+            <li>超新星爆発・あなたの炭素は星で作られた</li>
+          </ul></div>
+          <div class="sc-keywords" style="background:#06091a;">
+            <span class="sc-kw" style="background:#1e1b4b;color:#818cf8;">ビッグバン</span>
+            <span class="sc-kw" style="background:#1e1b4b;color:#818cf8;">CMB</span>
+            <span class="sc-kw" style="background:#1e1b4b;color:#818cf8;">スターダスト</span>
+            <span class="sc-kw" style="background:#1e1b4b;color:#818cf8;">138億年</span>
+          </div>
+          <div class="sc-btn-row" style="background:#06091a;">
+            <a class="sc-btn" style="background:#4338ca;" href="SP07.html">📖 学習＋テスト</a>
+            <a class="sc-btn" style="background:#3730a3;" href="SP07.html">🃏 カード</a>
+            <a class="sc-btn" style="background:#312e81;" href="SP07.html">🔭 全問</a>
+          </div>
+          <div class="abc-row" style="background:#06091a;padding-bottom:12px;">
+            <button class="abc-btn abc-a" onclick="setABC('SP07','a',this)">A OK</button>
+            <button class="abc-btn abc-b" onclick="setABC('SP07','b',this)">B 復習</button>
+            <button class="abc-btn abc-c" onclick="setABC('SP07','c',this)">C もう一度</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 早見表 -->
+  <div class="ref-table">
+    <div class="ref-title">📋 素粒子シリーズ 早見表</div>
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>単元</th><th>テーマ</th><th>キーワード</th><th>難易度</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th>SP01</th><td>クォーク</td><td>u/d/s/c/b/t・閉じ込め・3世代</td><td>★★☆</td></tr>
+          <tr><th>SP02</th><td>レプトン</td><td>電子・ニュートリノ・保存則・振動</td><td>★★☆</td></tr>
+          <tr><th>SP03</th><td>ゲージボソン</td><td>光子・グルーオン・W/Z・ファインマン図</td><td>★★☆</td></tr>
+          <tr><th>SP04</th><td>四つの力</td><td>電磁気力・強い力・弱い力・重力</td><td>★★☆</td></tr>
+          <tr><th>SP05</th><td>標準模型</td><td>17種類・フェルミオン・ボソン・100年史</td><td>★★★</td></tr>
+          <tr><th>SP06</th><td>ヒッグス粒子</td><td>ヒッグス場・対称性の破れ・LHC・125GeV</td><td>★★★</td></tr>
+          <tr><th>SP07</th><td>宇宙論</td><td>ビッグバン・CMB・スターダスト・138億年</td><td>★★★</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 素粒子3グループ早見 -->
+  <div class="ref-table">
+    <div class="ref-title">⚛️ 素粒子3グループ 早見表</div>
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr><th>グループ</th><th>種類</th><th>役割</th><th>例</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th style="color:#d97706;">クォーク</th>
+            <td>6種類</td><td>物質を作る（強い力を受ける）</td>
+            <td>u・d・s・c・b・t</td>
+          </tr>
+          <tr>
+            <th style="color:#7c3aed;">レプトン</th>
+            <td>6種類</td><td>物質を作る（強い力を受けない）</td>
+            <td>e⁻・μ⁻・τ⁻・νₑ・νᵤ・ντ</td>
+          </tr>
+          <tr>
+            <th style="color:#0284c7;">ゲージボソン</th>
+            <td>4種＋ヒッグス</td><td>力を伝える</td>
+            <td>γ・g・W±・Z⁰・H</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="back-link">
+    <a href="../gamba_kounin.html" class="back-btn">← メニューに戻る</a>
+    <a href="index_biology.html" class="back-btn">🧬 生物基礎へ</a>
+  </div>
+
+</div><!-- /wrap -->
+
+<script>
+const STORAGE_KEY = 'gamba_sp_status_v1';
+const ALL_IDS = ['SP01','SP02','SP03','SP04','SP05','SP06','SP07'];
+let status = {};
+try { const s = localStorage.getItem(STORAGE_KEY); if(s) status = JSON.parse(s); } catch(e){}
+
+function saveStatus(){ try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(status)); }catch(e){} }
+
+function applyAll(){
+  ALL_IDS.forEach(function(id){
+    const g = status[id];
+    if(!g) return;
+    const card = document.querySelector('[data-id="'+id+'"]');
+    if(!card) return;
+    card.classList.remove('s-a','s-b','s-c');
+    card.classList.add('s-'+g);
+    card.querySelectorAll('.abc-btn').forEach(function(b){ b.classList.remove('sel'); });
+    const btn = card.querySelector('.abc-'+g);
+    if(btn) btn.classList.add('sel');
+  });
+  updateSummary();
+}
+
+function setABC(id, grade, btn){
+  const card = document.querySelector('[data-id="'+id+'"]');
+  if(!card) return;
+  if(status[id] === grade){
+    delete status[id];
+    card.classList.remove('s-a','s-b','s-c');
+    card.querySelectorAll('.abc-btn').forEach(function(b){ b.classList.remove('sel'); });
+    saveStatus(); updateSummary(); return;
+  }
+  status[id] = grade;
+  card.classList.remove('s-a','s-b','s-c');
+  card.classList.add('s-'+grade);
+  card.querySelectorAll('.abc-btn').forEach(function(b){ b.classList.remove('sel'); });
+  btn.classList.add('sel');
+  saveStatus();
+  if(grade === 'a') confetti();
+  updateSummary();
+}
+
+function updateSummary(){
+  let ca=0, cb=0, cc=0, cn=0;
+  ALL_IDS.forEach(function(id){
+    const s = status[id];
+    if(s==='a') ca++; else if(s==='b') cb++; else if(s==='c') cc++; else cn++;
+  });
+  document.getElementById('cnt-a').textContent = ca;
+  document.getElementById('cnt-b').textContent = cb;
+  document.getElementById('cnt-c').textContent = cc;
+  document.getElementById('cnt-n').textContent = cn;
+  // 進捗バー
+  const pct = Math.round(ca / ALL_IDS.length * 100);
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-pct').textContent = ca + ' / ' + ALL_IDS.length + ' 単元クリア';
+}
+
+function confetti(){
+  const cv = document.getElementById('cnf');
+  cv.width = innerWidth; cv.height = innerHeight; cv.style.display = 'block';
+  const ctx = cv.getContext('2d');
+  const cols = ['#bef264','#38bdf8','#4ade80','#fbbf24','#f87171','#c084fc','#818cf8'];
+  let ps = [];
+  function petal(x,y,vx,vy){ return {x,y,vx,vy,s:Math.random()*8+5,c:cols[Math.floor(Math.random()*cols.length)],rot:Math.random()*6,vr:(Math.random()-.5)*.3,sw:Math.random()*6,shape:Math.random()<.5?'p':'s'}; }
+  for(let i=0;i<90;i++){
+    ps.push(petal(0,cv.height,4+Math.random()*8,-(10+Math.random()*10)));
+    ps.push(petal(cv.width,cv.height,-(4+Math.random()*8),-(10+Math.random()*10)));
+  }
+  for(let i=0;i<120;i++){
+    ps.push(petal(Math.random()*cv.width,-Math.random()*cv.height*.4,(Math.random()-.5)*2,1.5+Math.random()*2));
+  }
+  let f = 0;
+  (function loop(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    ps.forEach(function(p){
+      p.vy += .18; p.sw += .06;
+      p.x += p.vx + Math.sin(p.sw)*1.5; p.y += p.vy; p.rot += p.vr;
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot); ctx.fillStyle = p.c;
+      if(p.shape==='p'){ ctx.beginPath(); ctx.ellipse(0,0,p.s,p.s*.55,0,0,7); ctx.fill(); }
+      else ctx.fillRect(-p.s/2,-p.s/2,p.s,p.s);
+      ctx.restore();
+    });
+    f++;
+    if(f < 380) requestAnimationFrame(loop);
+    else { ctx.clearRect(0,0,cv.width,cv.height); cv.style.display='none'; }
+  })();
+}
+
+applyAll();
+</script>
+</body>
+</html>
